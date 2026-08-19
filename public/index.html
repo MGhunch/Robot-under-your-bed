@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>There's a Robot Under Your Bed — Michael Goldthorpe</title>
+<meta name="description" content="A little book about humans. And AI.">
+<meta name="theme-color" content="#ED1C24">
+
+<meta property="og:title" content="There's a Robot Under Your Bed">
+<meta property="og:description" content="A little book about humans. And AI.">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://robotunderyourbed.com">
+<!-- TODO: og:image — needs a 1200×630 share card from the cover art. -->
+
+<link rel="preload" href="/assets/bebas-neue-400.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- Zodiak — the book's body serif. Free from Fontshare. -->
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,401,700,701&display=swap" rel="stylesheet">
+
+<style>
+/* Bebas Neue — the book's headline face.
+   NOTE: the free release is ONE weight. The book is set in Bebas Neue *Bold*
+   (Bebas Neue Pro, Dharma Type, paid). This is the lighter free cut. If it
+   reads too thin next to the printed cover, that's a licence to buy. */
+@font-face{
+  font-family:'Bebas Neue';
+  font-style:normal;
+  font-weight:400;
+  font-display:block;
+  src:url('/assets/bebas-neue-400.woff2') format('woff2');
+}
+
+:root{
+  --red:#ED1C24;      /* ruled 19 Aug — matches the cover, print and screen */
+  --black:#231F20;    /* cover value. #191818 in the build brief — unresolved */
+  --white:#FFFFFF;
+
+  --head:'Bebas Neue', 'Arial Narrow', sans-serif;
+  --body:'Zodiak', Georgia, 'Times New Roman', serif;
+
+  --gut:clamp(18px, 5.5vw, 40px);
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{-webkit-text-size-adjust:100%;}
+
+body{
+  background:var(--red);
+  color:var(--white);
+  font-family:var(--body);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+.page{
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  padding:var(--gut);
+  padding-bottom:calc(var(--gut) + env(safe-area-inset-bottom));
+  max-width:600px;
+  margin:0 auto;
+  gap:clamp(10px,1.8vh,20px);
+}
+
+/* ---------- top bar ---------- */
+
+.top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex:none;
+}
+
+.byline{
+  font-family:var(--head);
+  font-size:clamp(13px,3.2vw,16px);
+  letter-spacing:.16em;
+  line-height:1;
+}
+
+.burger{
+  width:28px; height:18px;
+  display:flex; flex-direction:column; justify-content:space-between;
+  background:none; border:0; padding:0; cursor:pointer;
+}
+.burger span{display:block; height:3px; background:var(--white); border-radius:2px;}
+
+/* ---------- headline ---------- */
+
+h1{
+  flex:none;
+  font-family:var(--head);
+  font-weight:400;
+  font-size:clamp(54px, 16.4vw, 108px);
+  line-height:.82;
+  letter-spacing:.01em;
+  text-transform:uppercase;
+}
+
+h1 .box{
+  display:inline-block;
+  background:var(--black);
+  padding:0 .09em;
+  margin-left:.04em;
+}
+
+/* ---------- robot + bubble ---------- */
+
+.stage{
+  flex:1 1 auto;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  min-height:0;
+}
+
+.bubble{
+  position:relative;
+  background:var(--black);
+  color:var(--white);
+  border-radius:999px;
+  padding:.58em 1.1em .64em;
+  font-size:clamp(18px,4.8vw,25px);
+  line-height:1.15;
+  text-align:center;
+  margin-bottom:clamp(9px,1.6vh,16px);
+  flex:none;
+}
+.bubble::after{
+  content:"";
+  position:absolute;
+  bottom:-10px; left:50%;
+  width:18px; height:15px;
+  background:var(--black);
+  transform:translateX(-70%) rotate(6deg);
+  clip-path:polygon(0 0, 100% 0, 20% 100%);
+}
+
+.robot{
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  min-height:0;
+  object-fit:contain;
+  flex:0 1 auto;
+}
+
+/* ---------- pills ---------- */
+
+.pills{
+  flex:none;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.pill{
+  font-family:var(--body);
+  font-size:clamp(14px,3.8vw,17px);
+  line-height:1.2;
+  text-align:left;
+  color:var(--white);
+  background:none;
+  border:2px solid var(--white);
+  border-radius:999px;
+  padding:.6em 1em .66em;
+  cursor:pointer;
+  align-self:flex-start;
+  max-width:100%;
+}
+
+/* ---------- the two permanent buttons ---------- */
+
+.actions{
+  flex:none;
+  display:flex;
+  gap:8px;
+}
+
+.btn{
+  flex:1 1 0;
+  font-family:var(--head);
+  font-size:clamp(16px,4.3vw,21px);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  text-align:center;
+  padding:.68em .3em .54em;
+  border-radius:999px;
+  border:2px solid var(--white);
+  cursor:pointer;
+  text-decoration:none;
+  display:block;
+  white-space:nowrap;
+}
+.btn-solid{background:var(--white); color:var(--red);}
+.btn-ghost{background:none; color:var(--white);}
+
+/* ---------- wider screens ---------- */
+
+@media (min-width:900px){
+  .page{
+    max-width:1120px;
+    display:grid;
+    grid-template-columns:1.05fr 1fr;
+    grid-template-rows:auto 1fr auto;
+    column-gap:60px;
+    row-gap:0;
+    align-content:stretch;
+  }
+  .top{grid-column:1 / -1;}
+  h1{grid-column:1; grid-row:2; align-self:center; font-size:clamp(80px,8.1vw,140px);}
+  .stage{grid-column:2; grid-row:2; justify-content:center;}
+  .robot{max-width:600px;}
+  .pills{grid-column:1; grid-row:3; align-self:end;}
+  .actions{grid-column:2; grid-row:3; align-self:end;}
+}
+
+@media (prefers-reduced-motion:no-preference){
+  .pill,.btn{transition:transform .12s ease;}
+  .pill:active,.btn:active{transform:scale(.98);}
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <header class="top">
+    <div class="byline">Michael Goldthorpe</div>
+    <button class="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <h1>There&rsquo;s<br>a <span class="box">Robot</span><br>under<br>your bed</h1>
+
+  <div class="stage">
+    <div class="bubble">Let&rsquo;s chat.</div>
+    <img class="robot" src="/assets/robot-bed.png" width="1200" height="640"
+         alt="A small robot hiding under a bed">
+  </div>
+
+  <!-- STAND-INS. Not canon. Real pills are Michael's — ~45 of them, rotating
+       three at a time, nothing repeating once read. -->
+  <div class="pills">
+    <button class="pill">Why is there a cow in this book?</button>
+    <button class="pill">Did a robot beat Benjamin Franklin at chess?</button>
+    <button class="pill">What&rsquo;s an em-dash ever done to anyone?</button>
+  </div>
+
+  <nav class="actions">
+    <!-- TODO: Buy destination undecided. -->
+    <a class="btn btn-solid" href="#">Buy the book</a>
+    <a class="btn btn-ghost" href="#">Check the facts</a>
+  </nav>
+
+</div>
+</body>
+</html>
