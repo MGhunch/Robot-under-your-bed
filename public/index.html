@@ -81,16 +81,19 @@ h1{
 }
 /* The black box is drawn as a pseudo-element so its bleed is independent of the
    line box. Measured from Bebas Neue at line-height .82: the cap top sits exactly
-   at the content-box top, and the baseline sits .11em above the bottom — so the
-   box was hanging .10em lower than it should. These offsets give an equal .20em
-   bleed above the caps and below the baseline. */
+   at the content-box top, and the baseline sits .11em above the bottom.
+   The gap between one line's baseline and the next line's cap top is therefore
+   .82 - .71 = .11em — that is the whole budget the box has to work with. At .20em
+   it was spending nearly twice it and eating the lines above and below. Now .105em
+   each way: the box meets the baseline above and the cap line below with half a
+   thousandth of an em to spare, and stays symmetric around ROBOT. */
 h1 .box{
   position:relative; display:inline-block; z-index:0;
   padding:0 .09em; margin-left:.04em; background:none;
 }
 h1 .box::before{
   content:""; position:absolute; z-index:-1;
-  left:0; right:0; top:-.20em; bottom:-.09em;
+  left:0; right:0; top:-.105em; bottom:.005em;
   background:var(--black);
 }
 .strap{white-space:nowrap;font-size:18px;margin-top:clamp(10px,2vh,20px);}
@@ -130,6 +133,10 @@ h1 .box::before{
 .talk{flex:1 1 auto; display:flex; flex-direction:column; min-height:0;}
 
 .thread{
+  /* The card's geometry, declared here so the message block can read it too —
+     a bubble carrying a card has to be at least wide enough to hold one. */
+  --tuck-l:14px; --tuck-r:0px;
+  --tuck-w:calc(100vw - 2*var(--gut) - var(--tuck-l) - var(--tuck-r));
   flex:1 1 auto; min-height:0;
   overflow-y:auto; overscroll-behavior:contain; scrollbar-width:none;
   display:flex; flex-direction:column; justify-content:flex-end;
@@ -142,6 +149,11 @@ h1 .box::before{
 .thread::-webkit-scrollbar{display:none;}
 
 .msg{max-width:min(88%,600px);}
+/* A bubble carrying a card is never narrower than the card needs — a one-line
+   answer stretches to hold it rather than squeezing it into a third line. And on
+   a phone that message may run the full column; 88% doesn't leave enough. */
+.msg:has(.rec){min-width:calc(var(--tuck-w) + var(--tuck-l) + var(--tuck-r));}
+@media (max-width:899px){ .msg:has(.rec){max-width:100%;} }
 .msg.r{align-self:flex-start;}
 .msg.u{align-self:flex-end;}
 
@@ -166,13 +178,16 @@ h1 .box::before{
   /* Top-aligned: the icon labels the title, so it hangs off the title's cap
      line rather than floating against the block's centre. */
   display:flex; align-items:flex-start; gap:11px;
-  margin:14px 0 2px 14px;
-  /* Every card is the same width, sized off the longest line in the set — the
-     title "A small bunch of nerds walked into a pub" and the why-line "Why the
-     people who pinch stuff aren't always obvious." Both scale with the rest of
-     the composition, so the width has to as well: 46cqh on desktop. Verified
-     0/22 wrapping at 1280×760, 1366×768, 1440×900, 1512×982 and 1920×1200. */
-  width:min(calc(100% - 14px), 400px);
+  /* Anchored right, fixed width. The card lives INSIDE the message block, so
+     100% is the bubble's own width — the right edge lands where the bubble's
+     bottom-right bevel ends (--tuck-r = the 20px corner radius) and the LEFT
+     edge falls wherever the width leaves it. margin-left:auto is the anchor.
+     The width itself never changes: --tuck-w is what the longest lines in the
+     set need — the title "A small bunch of nerds walked into a pub" and the
+     why-line "Why the people who pinch stuff aren't always obvious." On phones
+     there is no room for the right tuck, so the width is the column instead. */
+  margin:14px var(--tuck-r) 2px auto;
+  width:min(calc(100% - var(--tuck-l) - var(--tuck-r)), var(--tuck-w));
   background:var(--white); border-radius:4px;
   padding:9px 10px 10px 9px;
   text-decoration:none; cursor:pointer;
@@ -209,8 +224,8 @@ h1 .box::before{
 @media (min-width:900px){
   .rec .bk{width:29px;height:38px;}
   .rec .arw{width:29px;height:29px;}
-  .rec{gap:13px; margin-left:22px; padding:9px 12px 10px 11px;
-       width:min(calc(100% - 22px), 46cqh); max-width:450px;}
+  .thread{--tuck-l:22px; --tuck-r:20px; --tuck-w:min(46cqh, 450px);}
+  .rec{gap:13px; padding:9px 12px 10px 11px;}
 }
 
 /* compose — the blank speech bubble. Never moves. */

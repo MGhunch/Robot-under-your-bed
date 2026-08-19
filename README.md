@@ -7,12 +7,26 @@ And AI.* by Michael Goldthorpe.
 
 ### What's new in v1.1
 
-- **The cards are wide enough now.** They were 330px with a 233px text column,
-  and the longest lines measure 285px — so eight of fourteen chapters were
-  wrapping to a third line. The card is now `46cqh` (max 450px), which is
-  measured against the same container height that drives the headline and the
-  bed, so it grows and shrinks with them. **0 of 22 wrap** at 1280×760,
-  1366×768, 1440×900, 1512×982 and 1920×1200.
+- **The ROBOT box was too big.** The gap between one line's baseline and the
+  next line's cap top is `.82 - .71 = .11em` — that is the entire budget. The box
+  was bleeding `.20em` each way, nearly twice it, so it cut into the lines above
+  and below. Now `.105em` each way: it meets the baseline above and the cap line
+  below with half a thousandth of an em to spare, and stays symmetric.
+
+- **The card is anchored right, not left.** Its right edge lands where the
+  bubble's bottom-right bevel ends — inset by the 20px corner radius — and the
+  left edge falls wherever the width leaves it. The card lives inside the
+  message block, so `100%` is the bubble's own width; `margin-left:auto` is the
+  whole anchor.
+- **The width is constant.** `--tuck-w` is `46cqh` (max 450px), sized off the
+  longest lines in the set and scaling with the same container height that drives
+  the headline and the bed. They were 330px against 285px of type, so eight of
+  fourteen chapters wrapped to a third line. **0 of 22 wrap** at 1280×760,
+  1366×768, 1440×900, 1512×982 and 1920×1200 — for a long answer *and* a
+  one-line one.
+- **A bubble carrying a card is never narrower than the card.** A short answer
+  used to leave the card overhanging it. The message block now takes a
+  `min-width` off `--tuck-w`, so the bubble stretches to hold the card instead.
 - **The book icon is top-aligned**, hung off the title's cap line rather than
   floating against the block's centre — the icon labels the title, not the card.
 - **The arrow is a solid red disc with a white arrow**, so it reads as a control
