@@ -34,6 +34,7 @@
   --head:'Bebas Neue','Arial Narrow',sans-serif;
   --body:'Zodiak',Georgia,'Times New Roman',serif;
   --gut:clamp(22px,6vw,92px);
+  --bridge:clamp(28px,3.4vw,64px);   /* how far the bed may cross the gutter */
   --btm:clamp(18px,3.4vw,52px);
 }
 
@@ -44,16 +45,21 @@ body{
   font-family:var(--body);
   -webkit-font-smoothing:antialiased;
   overflow:hidden;
+  height:100svh; display:flex; align-items:center;
 }
 
 /* ---------------------------------------------------------------- shell */
 
 .wrap{
-  height:100svh;
+  /* The composition is capped and centred. On a tall window that means red
+     above and below rather than a headline stranded at the bottom — and both
+     columns still bottom-align to the same line. */
+  height:min(100svh, 1080px);
+  width:100%;
   display:flex; flex-direction:column;
   padding:var(--gut) var(--gut) calc(var(--btm) + env(safe-area-inset-bottom));
   gap:14px;
-  max-width:1360px; margin:0 auto;
+  max-width:1360px; margin:auto;
 }
 
 .burger{
@@ -77,7 +83,7 @@ body{
 h1{
   width:fit-content;
   font-family:var(--head); font-weight:400; text-transform:uppercase;
-  font-size:clamp(48px,14vw,112px);
+  font-size:clamp(48px, min(13.5vw, 15vh), 150px);
   line-height:.82; letter-spacing:.01em;
 }
 h1 .box{display:inline-block;background:var(--black);padding:0 .09em;margin-left:.04em;}
@@ -173,7 +179,15 @@ h1 .box{display:inline-block;background:var(--black);padding:0 .09em;margin-left
 
 /* ------- the bed. Anchored, and wider than its column so it bridges ------- */
 .bed{flex:none; margin-top:clamp(10px,1.8vh,22px); display:flex; justify-content:flex-end;}
-.bed img{display:block; height:min(33vh,312px); width:auto; max-width:none;}
+.bed img{
+  display:block;
+  /* width-driven, so it always crosses the gutter by exactly --bridge.
+     The max-height guard means a short window shrinks the bed rather than
+     squeezing the thread to nothing. */
+  width:calc(100% + var(--bridge));
+  height:auto;
+  max-height:min(30vh,280px);
+}
 
 /* ---------------------------------------------------------------- desktop */
 
@@ -185,7 +199,7 @@ h1 .box{display:inline-block;background:var(--black);padding:0 .09em;margin-left
          justify-content:flex-end; align-items:flex-start;}
   .talk{width:54%;}
   .thread{padding-top:20px;}
-  .bed img{height:min(38vh,360px);}
+  .bed img{max-height:min(36vh,380px);}
 }
 
 /* ---------------------------------------------------------------- mobile, mid-chat */
