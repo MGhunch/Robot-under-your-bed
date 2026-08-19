@@ -3,8 +3,18 @@
 The website for **There's a Robot Under Your Bed** — *A little book about humans.
 And AI.* by Michael Goldthorpe.
 
-**Status: v0.1 — the page does nothing.** It's a static hero, built to get the
-visuals right. No chat, no email, no working buttons.
+**Status: v0.2 — working dummy chat.** The layout and the interaction are real.
+The robot's replies are Claude's stand-ins matched on keywords in the browser —
+no model, no server calls, no email. Buy the book still goes nowhere.
+
+### How it behaves
+
+One thread. Type in the blank speech bubble and the exchange appears above it.
+The **bed is anchored** and never scrolls away — the thread grows upward off it
+and older messages scroll out under the title. The input never moves.
+
+On mobile mid-chat the title collapses to a single line and Buy drops to the
+bottom-left corner beside the bed, in thumb reach.
 
 ---
 
@@ -93,14 +103,25 @@ licence and swap `public/assets/bebas-neue-400.woff2`. Nothing else changes.
 Per the working rules: **Michael writes all prose.** Anything Claude wrote is a
 stand-in to be killed or kept, and is marked in the source.
 
-- **Stand-in** — the three pills. Real ones are Michael's: ~45 of them, rotating
-  three at a time, nothing repeating once read.
-- **Canon** — the title lockup, "Let's chat.", the two button labels, the colours.
+- **Stand-in** — every robot reply in the `ROUTES` table in `index.html`, plus the
+  fallbacks. All of it written to the pattern so the page can be felt. None is
+  canon. In the real build these become Michael's lines in a table on the
+  server, and the model's only job is choosing which line comes next — it never
+  generates prose.
+- **Canon** — the title lockup, the strapline, "Ask me about the book", the Buy
+  label, the colours, the *Read:* link.
 
 ---
 
 ## TODO
 
+- [ ] **Move the routing server-side.** `ROUTES` currently lives in the browser,
+      which is fine for a mock and wrong for launch — the copy table and the
+      model call both belong behind `/api/chat`.
+- [ ] Chapter reader behind the *Read:* links. Text comes from the final
+      manuscript.
+- [ ] Burger contents: Michael's name, Check the facts (`/facts`), and whatever
+      else. Currently does nothing.
 - [ ] **Buy button has no destination.** Blocks price, format, and whether a
       retail exclusivity clause would kill the free chapters.
 - [ ] Rule on black: `#231F20` or `#191818`.
