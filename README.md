@@ -3,7 +3,21 @@
 The website for **There's a Robot Under Your Bed** — *A little book about humans.
 And AI.* by Michael Goldthorpe.
 
-**Status: v0.8 — composition locked.**
+**Status: v0.9 — vertical rhythm.**
+
+### What's new in v0.9
+
+- **More air above the title**, and both bottom blocks lifted. They share a
+  baseline, so raising the bottom padding moves the bed and the lockup together
+  and closes the title-to-CTA gap in the same move.
+- **The size container was eating itself.** Container units resolve against the
+  *content* box, so every pixel of padding added to `.wrap` shrank the headline
+  and the bed — which reopened the gap it was meant to close. The composition is
+  now `.stage` (sized, container) wrapping `.wrap` (padded), so padding and scale
+  are independent.
+
+  At 1272×848 that alone took the headline from 99px to 127px, the bed from 206px
+  to 263px, and the title-to-CTA gap from 210px down to 93px.
 
 ### What's new in v0.8
 

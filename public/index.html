@@ -33,9 +33,13 @@
   --white:#fff;
   --head:'Bebas Neue','Arial Narrow',sans-serif;
   --body:'Zodiak',Georgia,'Times New Roman',serif;
-  --gut:clamp(22px,6vw,92px);
+  --gut:clamp(22px,6vw,92px);        /* left and right */
+  --top:clamp(28px,7vw,130px);       /* more air above the title */
   --bridge:clamp(28px,3.4vw,64px);   /* how far the bed may cross the gutter */
-  --btm:clamp(18px,3.4vw,52px);
+  /* Both bottom blocks — the bed and the lockup — sit on this line. Raising it
+     lifts them together, keeps their shared baseline, and closes the gap between
+     the title and the CTA in the same move. */
+  --btm:clamp(24px,7.5vw,140px);
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -50,16 +54,19 @@ body{
 
 /* ---------------------------------------------------------------- shell */
 
-.wrap{
-  /* The composition is capped and centred. On a tall window that means red
-     above and below rather than a headline stranded at the bottom — and both
-     columns still bottom-align to the same line. */
+.stage{
+  /* The composition is capped and centred. This box is the size container, and
+     the padding lives INSIDE it — container units resolve against the content
+     box, so padding on the container itself would shrink the type and the bed
+     every time we added air. */
   height:min(100svh, 1080px);
-  width:100%;
+  width:100%; max-width:1360px; margin:auto;
+}
+.wrap{
+  height:100%;
   display:flex; flex-direction:column;
-  padding:var(--gut) var(--gut) calc(var(--btm) + env(safe-area-inset-bottom));
+  padding:var(--top) var(--gut) calc(var(--btm) + env(safe-area-inset-bottom));
   gap:14px;
-  max-width:1360px; margin:auto;
 }
 
 
@@ -230,10 +237,8 @@ h1 .box::before{
      on vh, the bubbles on vw and the bed on vh, so changing the window's shape
      changed the relationship between them. Now one number drives all of it: the
      whole thing scales up and down as a unit and the proportions never move. */
-  .wrap{
-    container-type:size;
-    flex-direction:row; align-items:stretch; gap:clamp(34px,4vw,70px);
-  }
+  .stage{container-type:size;}
+  .wrap{flex-direction:row; align-items:stretch; gap:clamp(34px,4vw,70px);}
 
   /* Title anchored at the top, lockup on the baseline, subhead welded to the
      title because they share a wrapper. */
@@ -254,7 +259,7 @@ h1 .box::before{
   .minor a{font-size:clamp(12px,1.8cqh,18px);}
   .buy{font-size:clamp(17px,2.8cqh,28px);}
 
-  .bed img{max-height:34cqh;}
+  .bed img{max-height:31cqh;}
 }
 
 /* ---------------------------------------------------------------- mobile, mid-chat */
@@ -346,6 +351,7 @@ h1 .box::before{
 
 <body>
 
+<div class="stage">
 <div class="wrap">
 
   <div class="brand">
@@ -385,6 +391,7 @@ h1 .box::before{
     </div>
   </div>
 
+</div>
 </div>
 
 <!-- ============================================================= reader -->
