@@ -3,7 +3,25 @@
 The website for **There's a Robot Under Your Bed** — *A little book about humans.
 And AI.* by Michael Goldthorpe.
 
-**Status: v1.0 — the bed lands.**
+**Status: v1.1 — the card.**
+
+### What's new in v1.1
+
+- **The cards are wide enough now.** They were 330px with a 233px text column,
+  and the longest lines measure 285px — so eight of fourteen chapters were
+  wrapping to a third line. The card is now `46cqh` (max 450px), which is
+  measured against the same container height that drives the headline and the
+  bed, so it grows and shrinks with them. **0 of 22 wrap** at 1280×760,
+  1366×768, 1440×900, 1512×982 and 1920×1200.
+- **The book icon is top-aligned**, hung off the title's cap line rather than
+  floating against the block's centre — the icon labels the title, not the card.
+- **The arrow is a solid red disc with a white arrow**, so it reads as a control
+  rather than a piece of punctuation. The slide-on-hover is kept.
+- **Narrow phones**: the indent drops from 22px to 14px and the padding tightens,
+  which claws back enough width to take 390px from four wrapping cards to one.
+  At 360px, seven still take a third line — a 53-character italic line cannot sit
+  on one line at a readable size on a 360px screen, and shrinking the type far
+  enough to do it costs more than the wrap does.
 
 ### What's new in v1.0
 
