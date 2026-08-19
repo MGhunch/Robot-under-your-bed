@@ -3,9 +3,24 @@
 The website for **There's a Robot Under Your Bed** — *A little book about humans.
 And AI.* by Michael Goldthorpe.
 
-**Status: v0.2 — working dummy chat.** The layout and the interaction are real.
+**Status: v0.5 — chat, recommendation cards and a working chapter reader.** The layout and the interaction are real.
 The robot's replies are Claude's stand-ins matched on keywords in the browser —
 no model, no server calls, no email. Buy the book still goes nowhere.
+
+### What's new in v0.5
+
+- **Recommendation cards** — red chapter title, black why-line, book glyph. Sidebars
+  show the title only (they have no why-line in the book).
+- **Chapter reader** — a full-screen modal with the **real chapter text**, pulled
+  from the final manuscript into `public/chapters.json` (22 pieces, ~14,500 words).
+  White page, black serif, red section heads, TLDR in a black box.
+- **A gentle nudge** at the end of each chapter that escalates over three reads.
+  Never blocks, no counters, no wall.
+- **The bed bridges the columns** — it's sized off viewport *height* and runs wider
+  than its own column, crossing the gutter so the two halves interlock.
+- **Both columns bottom-align**, so Buy's baseline and the bed's baseline are the
+  same line.
+- More side padding, and the chat is smaller again.
 
 ### How it behaves
 

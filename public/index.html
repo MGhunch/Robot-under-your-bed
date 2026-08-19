@@ -18,9 +18,9 @@
 <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,401,700,701&display=swap" rel="stylesheet">
 
 <style>
-/* Bebas Neue — the book's headline face.
-   The free release is ONE weight; the book is set in Bebas Neue *Bold* (Pro, paid).
-   If the headline reads thin next to the printed cover, licence Pro and swap this file. */
+/* Bebas Neue — the book's headline face. The free release is ONE weight; the
+   book is set in Bebas Neue *Bold* (Pro, paid). If the headline reads thin next
+   to the printed cover, licence Pro and swap this file. */
 @font-face{
   font-family:'Bebas Neue';
   font-style:normal; font-weight:400; font-display:block;
@@ -33,7 +33,8 @@
   --white:#fff;
   --head:'Bebas Neue','Arial Narrow',sans-serif;
   --body:'Zodiak',Georgia,'Times New Roman',serif;
-  --gut:clamp(20px,5vw,64px);
+  --gut:clamp(22px,6vw,92px);
+  --btm:clamp(18px,3.4vw,52px);
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -50,10 +51,9 @@ body{
 .wrap{
   height:100svh;
   display:flex; flex-direction:column;
-  padding:var(--gut);
-  padding-bottom:calc(var(--gut) * .6 + env(safe-area-inset-bottom));
+  padding:var(--gut) var(--gut) calc(var(--btm) + env(safe-area-inset-bottom));
   gap:14px;
-  max-width:1400px; margin:0 auto;
+  max-width:1360px; margin:0 auto;
 }
 
 .burger{
@@ -64,9 +64,8 @@ body{
   background:none; border:0; padding:0; cursor:pointer;
 }
 .burger span{display:block;height:3px;background:var(--white);border-radius:3px;}
-/* Desktop: the whole right column belongs to the thread, so the burger moves
-   to the quiet top-left of the brand column. Mobile keeps it top-right, where
-   the title bar already holds the left. */
+/* Desktop: the right column belongs to the thread, so the burger moves to the
+   quiet top-left. Mobile keeps it top-right — the title bar holds the left. */
 @media (min-width:900px){
   .burger{width:46px;height:30px;left:var(--gut);right:auto;}
   .burger span{height:4px;}
@@ -75,145 +74,123 @@ body{
 /* ---------------------------------------------------------------- brand */
 
 .brand{flex:none;}
-
 h1{
-  width:fit-content;          /* so we can measure the widest line */
-  font-family:var(--head); font-weight:400;
-  text-transform:uppercase;
-  font-size:clamp(50px,15vw,116px);
+  width:fit-content;
+  font-family:var(--head); font-weight:400; text-transform:uppercase;
+  font-size:clamp(48px,14vw,112px);
   line-height:.82; letter-spacing:.01em;
 }
-h1 .box{
-  display:inline-block; background:var(--black);
-  padding:0 .09em; margin-left:.04em;
-}
-.strap{
-  white-space:nowrap;         /* size is set by fitStrap() in the script */
-  font-size:18px;
-  margin-top:clamp(10px,2vh,20px);
-}
+h1 .box{display:inline-block;background:var(--black);padding:0 .09em;margin-left:.04em;}
+.strap{white-space:nowrap;font-size:18px;margin-top:clamp(10px,2vh,20px);}
 .buy{
   align-self:flex-start;
   font-family:var(--head); text-transform:uppercase; letter-spacing:.06em;
-  font-size:clamp(17px,4.4vw,26px);
+  font-size:clamp(17px,4.4vw,25px);
   background:var(--white); color:var(--red);
   border-radius:999px; border:0; cursor:pointer;
   padding:.66em 1.8em .5em;
   text-decoration:none; display:inline-block;
-  margin-top:clamp(16px,3vh,34px);
+  margin-top:clamp(14px,2.6vh,30px);
 }
 
 /* ---------------------------------------------------------------- talk */
 
-.talk{
-  flex:1 1 auto;
-  display:flex; flex-direction:column;
-  min-height:0;
-}
+.talk{flex:1 1 auto; display:flex; flex-direction:column; min-height:0;}
 
 .thread{
-  flex:1 1 auto;
-  min-height:0;
-  overflow-y:auto;
-  overscroll-behavior:contain;
-  scrollbar-width:none;
+  flex:1 1 auto; min-height:0;
+  overflow-y:auto; overscroll-behavior:contain; scrollbar-width:none;
   display:flex; flex-direction:column; justify-content:flex-end;
-  gap:clamp(10px,1.8vh,18px);
-  padding-top:10px;
-  padding-bottom:16px;   /* room for the tail on the last bubble */
-  -webkit-mask-image:linear-gradient(transparent 0, #000 46px);
-          mask-image:linear-gradient(transparent 0, #000 46px);
+  gap:clamp(9px,1.6vh,15px);
+  padding:10px 0 16px;   /* bottom room for the last bubble's tail */
+  -webkit-mask-image:linear-gradient(transparent 0,#000 46px);
+          mask-image:linear-gradient(transparent 0,#000 46px);
 }
 .thread::-webkit-scrollbar{display:none;}
 
-.msg{max-width:min(86%,620px);}
+.msg{max-width:min(88%,600px);}
 .msg.r{align-self:flex-start;}
 .msg.u{align-self:flex-end;}
 
 .bub{
-  position:relative;
-  border-radius:999px;
-  padding:.6em 1.15em .68em;
-  font-size:clamp(15px,3.5vw,21px);
-  line-height:1.3;
+  position:relative; border-radius:20px;
+  padding:.6em 1.1em .68em;
+  font-size:clamp(14px,3.2vw,19px); line-height:1.32;
 }
-.msg .bub{border-radius:22px;}
-
 /* Two solid bubbles. Filled tails overlap up into the bubble, so there is no
-   seam to get wrong. An outlined bubble can't carry a clean tail — its tail
-   would have to be one continuous stroke with the border — so the only hollow
-   shape on the page is the input, and that has no tail: nothing said yet. */
+   seam. The only hollow shape is the input — nothing said yet. */
 .r .bub{background:var(--black); color:var(--white);}
 .u .bub{background:var(--white); color:var(--red);}
-
 .bub svg.tl{position:absolute; bottom:0; overflow:visible;}
-.r .bub svg.tl{left:20px;  transform:translateY(100%);}
-.u .bub svg.tl{right:20px; transform:translateY(100%) scaleX(-1);}
+.r .bub svg.tl{left:18px;  transform:translateY(100%);}
+.u .bub svg.tl{right:18px; transform:translateY(100%) scaleX(-1);}
 
-.read{
-  display:inline-block; margin:19px 0 0 4px;   /* clears the tail */
-  color:var(--white); font-style:italic;
-  font-size:clamp(13px,3.1vw,17px);
-  text-decoration:underline; text-underline-offset:.22em;
-  text-decoration-thickness:2px;
+/* ------- the recommendation. Red title, black why-line. Two lines. ------- */
+.rec{
+  display:flex; align-items:center; gap:13px;
+  width:fit-content;
+  margin:16px 0 2px 2px;
+  background:var(--white); border-radius:13px;
+  padding:11px 20px 12px 14px;
+  text-decoration:none; cursor:pointer;
+  border:0; font-family:var(--body); text-align:left;
+  max-width:100%;
 }
+.rec svg{flex:none;width:34px;height:44px;}
+.rec-t{
+  display:block; font-family:var(--head); color:var(--red);
+  font-size:clamp(17px,4vw,22px); line-height:1;
+  letter-spacing:.02em; text-transform:uppercase;
+}
+.rec-w{
+  display:block; font-family:var(--body); font-style:italic;
+  color:var(--black); opacity:.78;
+  font-size:clamp(12.5px,3vw,14px); line-height:1.25; margin-top:4px;
+}
+@media (min-width:900px){ .rec svg{width:38px;height:50px;} .rec{gap:15px;padding:12px 22px 13px 15px;} }
 
 /* compose — the blank speech bubble. Never moves. */
 .compose{
-  flex:none;
-  align-self:flex-end;
-  position:relative;
-  margin:clamp(12px,2vh,18px) 0 0;
-  width:min(100%,360px);
+  flex:none; align-self:flex-end; position:relative;
+  margin:clamp(10px,1.8vh,16px) 0 0; width:min(100%,340px);
 }
 .compose input{
-  width:100%;
-  font-family:var(--body);
-  font-size:clamp(15px,3.5vw,21px);
-  line-height:1.3;
-  color:var(--white);
-  background:none;
-  border:3px solid var(--white);
-  border-radius:22px;
-  padding:.6em 1.15em .68em;
-  outline:none;
+  width:100%; font-family:var(--body);
+  font-size:clamp(14px,3.2vw,19px); line-height:1.32;
+  color:var(--white); background:none;
+  border:3px solid var(--white); border-radius:20px;
+  padding:.6em 1.1em .68em; outline:none;
 }
 .compose input::placeholder{color:rgba(255,255,255,.45);}
 .compose .cursor{
-  position:absolute; left:1.15em; top:50%; transform:translateY(-50%);
+  position:absolute; left:1.1em; top:50%; transform:translateY(-50%);
   width:2px; height:1.1em; background:var(--white);
   animation:blink 1.1s steps(1,end) infinite; pointer-events:none;
 }
 .compose:has(input:focus) .cursor,
 .compose:has(input:not(:placeholder-shown)) .cursor{display:none;}
 @keyframes blink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
-/* the bed — anchored. It never scrolls away. */
-.bed{flex:none; margin-top:clamp(12px,2vh,26px);}
-.bed img{display:block;width:100%;height:auto;}
+
+/* ------- the bed. Anchored, and wider than its column so it bridges ------- */
+.bed{flex:none; margin-top:clamp(10px,1.8vh,22px); display:flex; justify-content:flex-end;}
+.bed img{display:block; height:min(33vh,312px); width:auto; max-width:none;}
 
 /* ---------------------------------------------------------------- desktop */
 
 @media (min-width:900px){
-  .wrap{
-    flex-direction:row;
-    align-items:stretch;
-    gap:clamp(40px,5vw,80px);
-  }
-  .brand{
-    width:48%;
-    display:flex; flex-direction:column; justify-content:center;
-    align-items:flex-start;
-  }
-  .talk{width:52%;}
+  .wrap{flex-direction:row; align-items:stretch; gap:clamp(34px,4vw,70px);}
+  /* Both columns bottom-align, so Buy's baseline and the bed's baseline are
+     the same line. That shared line is what stops it reading as two pages. */
+  .brand{width:46%; display:flex; flex-direction:column;
+         justify-content:flex-end; align-items:flex-start;}
+  .talk{width:54%;}
   .thread{padding-top:20px;}
-  .bed img{max-width:640px;margin-left:auto;}
+  .bed img{height:min(38vh,360px);}
 }
 
 /* ---------------------------------------------------------------- mobile, mid-chat */
 
 @media (max-width:899px){
-  /* Mid-chat the title steps back to a single line and Buy drops to the
-     bottom corner, beside the bed, where a thumb can reach it. */
   body.chatting h1{font-size:22px;line-height:1;white-space:nowrap;}
   body.chatting h1 br{display:none;}
   body.chatting h1 .box{margin-left:.1em;}
@@ -221,16 +198,76 @@ h1 .box{
   body.chatting .brand{padding-right:56px;}
   body.chatting .buy{
     position:fixed; z-index:30; margin:0;
-    left:var(--gut);
-    bottom:calc(var(--gut) * .6 + env(safe-area-inset-bottom));
+    left:var(--gut); bottom:calc(var(--btm) + env(safe-area-inset-bottom));
     font-size:16px; padding:.6em 1.3em .44em;
   }
-  body.chatting .bed img{max-width:220px;margin:0 auto;}
+  body.chatting .bed{justify-content:center;}
+  body.chatting .bed img{height:min(22vh,190px);}
+  .brand{order:0;} .talk{order:1;}
 }
 
 @media (prefers-reduced-motion:no-preference){
-  .msg{animation:rise .26s ease-out;}
+  .msg,.rec{animation:rise .26s ease-out;}
   @keyframes rise{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+}
+
+/* ================================================================ reader */
+
+.reader{
+  position:fixed; inset:0; z-index:60;
+  background:var(--white); color:var(--black);
+  overflow-y:auto; -webkit-overflow-scrolling:touch;
+  display:none;
+}
+.reader[open]{display:block;}
+
+.reader .inner{max-width:640px; margin:0 auto; padding:clamp(56px,9vw,90px) var(--gut) 90px;}
+
+.reader .close{
+  position:fixed; top:clamp(14px,2.4vw,26px); right:clamp(14px,2.4vw,26px);
+  z-index:2; width:44px; height:44px; border-radius:999px;
+  background:var(--black); border:0; cursor:pointer;
+  display:grid; place-items:center;
+}
+.reader .close::before{
+  content:"×"; color:#fff; font-family:var(--head); font-size:30px; line-height:1;
+  margin-top:-2px;
+}
+
+.reader h2{
+  font-family:var(--head); font-weight:400; text-transform:uppercase;
+  color:var(--red); font-size:clamp(34px,8vw,54px);
+  line-height:.9; letter-spacing:.01em;
+}
+.reader .why{font-style:italic; font-size:clamp(15px,4vw,19px); margin-top:10px; opacity:.7;}
+.reader .rule{height:3px;background:var(--black);margin:26px 0 30px;}
+
+.reader p{font-size:clamp(16px,4.2vw,19px); line-height:1.55; margin-bottom:1.05em;}
+.reader h3{
+  font-family:var(--head); text-transform:uppercase; color:var(--red);
+  font-size:clamp(19px,4.6vw,25px); letter-spacing:.03em;
+  margin:1.7em 0 .55em;
+}
+.reader .tldr{
+  background:var(--black); color:#fff; border-radius:4px;
+  padding:22px 26px; margin:34px 0 10px; text-align:center;
+}
+.reader .tldr b{
+  display:block; font-family:var(--head); font-size:17px;
+  letter-spacing:.18em; opacity:.75; margin-bottom:8px;
+}
+.reader .tldr i{font-size:clamp(16px,4.2vw,19px); line-height:1.45;}
+
+/* the nudge. Never blocks, escalates gently. */
+.reader .nudge{
+  border-top:3px solid var(--black); margin-top:46px; padding-top:26px;
+}
+.reader .nudge p{font-style:italic; opacity:.8;}
+.reader .nudge a{
+  font-family:var(--head); text-transform:uppercase; letter-spacing:.06em;
+  font-size:22px; background:var(--red); color:#fff;
+  border-radius:999px; padding:.6em 1.7em .46em;
+  text-decoration:none; display:inline-block; margin-top:6px;
 }
 </style>
 </head>
@@ -242,8 +279,8 @@ h1 .box{
 <div class="wrap">
 
   <div class="brand">
-    <!-- Spaces after each <br> matter: mid-chat on mobile the breaks are
-         hidden and the title reflows to one line. -->
+    <!-- Spaces after each <br> matter: mid-chat on mobile the breaks are hidden
+         and the title reflows to one line. -->
     <h1>There&rsquo;s<br> a <span class="box">Robot</span><br> under<br> your bed</h1>
     <p class="strap">A little book about humans. And AI.</p>
     <!-- TODO: Buy destination undecided. -->
@@ -252,8 +289,8 @@ h1 .box{
 
   <div class="talk">
     <div class="thread" id="thread" aria-live="polite">
-      <div class="msg r"><div class="bub">Ask me about the book<svg class="tl" width="22" height="17"
-        viewBox="0 -5 22 22" aria-hidden="true"><path d="M2,-5 L22,-5 L22,2 L4,16 L2,2 Z"
+      <div class="msg r"><div class="bub">Ask me about the book<svg class="tl" width="20" height="16"
+        viewBox="0 -5 20 21" aria-hidden="true"><path d="M2,-5 L20,-5 L20,2 L4,15 L2,2 Z"
         fill="#231F20"/></svg></div></div>
     </div>
 
@@ -270,155 +307,222 @@ h1 .box{
 
 </div>
 
+<!-- ============================================================= reader -->
+<div class="reader" id="reader" role="dialog" aria-modal="true" aria-labelledby="rtitle">
+  <button class="close" id="rclose" aria-label="Close"></button>
+  <div class="inner">
+    <h2 id="rtitle"></h2>
+    <p class="why" id="rwhy"></p>
+    <div class="rule"></div>
+    <div id="rbody"></div>
+    <div class="nudge" id="rnudge"></div>
+  </div>
+</div>
+
 <script>
 /* ------------------------------------------------------------------ *
  * DUMMY CHAT — stand-in only.
  *
- * Every reply below is Claude's, written to the pattern so the page can
- * be felt. None of it is canon. In the real build these become Michael's
- * lines in a table on the server, and Claude's only job is choosing which
- * line comes next. The model never generates prose.
+ * Every reply below is Claude's, written to the pattern so the page can be
+ * felt. None of it is canon. In the real build these become Michael's lines
+ * in a table on the server, and Claude's only job is choosing which line
+ * comes next. The model never generates prose.
+ *
+ * Chapter text in the reader IS real — pulled from the final manuscript.
  * ------------------------------------------------------------------ */
 
 const ROUTES = [
   { on:/\bcow|daisy|shark\b/i,
     say:"Daisy. She's twenty times more likely to finish you off than a shark, and nobody made a film about her.",
-    read:"AI-mageddon" },
-
+    read:"ai-mageddon" },
   { on:/em.?dash|punctuation/i,
     say:"Ah. My favourite crime. Every proper writer used them until we did, and now they're evidence.",
-    read:"What's the deal with the em-dash?" },
-
+    read:"deal-with-the-em-dash" },
   { on:/\b(job|jobs|work|career|redundan|employ|unemploy)/i,
     say:"On the face of it, we're pretty pinchy. We'll knock out a spreadsheet before you've found the kettle. But the horses did alright, and it took forty years.",
-    read:"Last horse standing" },
-
+    read:"last-horse-standing" },
   { on:/\b(kill|die|dead|danger|dangerous|doom|apocalyp|scared|afraid|terrif|destroy|end of the world)/i,
     say:"Everyone worries about the wrong thing. The big scary stuff makes better films, but it's the creepers that get you.",
-    read:"AI-mageddon" },
-
+    read:"ai-mageddon" },
   { on:/\b(art|artist|steal|stealing|stole|theft|copyright|music|paint)/i,
     say:"We remix, yes. But the money isn't in the making, it's in the pipes. Follow who's clipping the ticket.",
-    read:"The great art heist" },
-
+    read:"great-art-heist" },
   { on:/\b(alive|sentient|conscious|real|feel|think|thinking|smart|clever|how do you work|chatgpt|claude|gemini)/i,
     say:"I don't actually know anything at all. I'm a very clever guesser. That's the whole trick.",
-    read:"How robots think and why they don't" },
-
+    read:"how-robots-think" },
   { on:/\b(train|memory|remember|better answers|prompt|prompting|unicorn|butler)/i,
     say:"Less unicorn, more butler. Tell me how you take your tea and I'll stop acting like a stranger at the bus stop.",
-    read:"How to train your unicorn" },
-
+    read:"train-your-unicorn" },
+  { on:/\b(nerd|openai|altman|musk|anthropic|who built|google|silicon)/i,
+    say:"It started with steak and a story about saving the world. It ended with everyone's swipe cards in different buildings.",
+    read:"small-bunch-of-nerds" },
   { on:/\b(did ai write|did a robot write|who wrote|ai written|write this)/i,
     say:"Michael wrote every word. I just point at the chapters. I'd have made it longer and worse." },
-
   { on:/\b(price|cost|how much|buy|where can i)/i,
     say:"I'd rather you read it than priced it. There's a button on the left for the other thing." },
-
   { on:/\b(mum|mother|dad|father|nana|grandma|kids?|children)/i,
     say:"Assuming your Mum can read, she'll be fine. It's a one-hour job and there are no equations." },
-
   { on:/\b(good|any good|worth it|recommend|should i)/i,
     say:"I like it because it's all about me. But it's short, and it's funny, and it doesn't sell you anything.",
-    read:"There's a robot under your bed" },
-
+    read:"robot-under-your-bed" },
   { on:/\b(bad|shit|rubbish|terrible|boring)/i,
     say:"Honestly, not shit at all. Try one chapter and tell me I'm wrong.",
-    read:"A brief history of robots" },
-
+    read:"brief-history-of-robots" },
   { on:/\b(hello|hi|hey|yo|sup)\b/i,
     say:"Hello. I'd quite like to get out from under here, so ask me something." },
 ];
 
 const FALLBACK = [
   { say:"Not sure I follow. But I'm a guesser by trade, so here's the chapter I'd guess at.",
-    read:"A brief history of robots" },
-  { say:"Bit off-book, that. Try me on robots, jobs, art or whether we're about to end the world.",
-    read:"What the robot?" },
+    read:"brief-history-of-robots" },
+  { say:"Bit off-book, that. Try me on robots, jobs, art, or whether we're about to end the world.",
+    read:"second-order-of-things" },
   { say:"No idea. Genuinely. Here's something I do know about.",
-    read:"Brainpower and firepower" },
+    read:"brainpower-and-firepower" },
 ];
+
+/* chapter bodies are real text, fetched once */
+const CHAPTERS = fetch('/chapters.json').then(r => r.json()).catch(() => ({}));
+
+const thread  = document.getElementById('thread');
+const compose = document.getElementById('compose');
+const say     = document.getElementById('say');
+const reader  = document.getElementById('reader');
+let fallbackAt = 0, chaptersRead = 0;
 
 /* The strapline is set to the exact width of the widest headline line, at any
    viewport. Guessed ratios drift; measuring doesn't. */
 function fitStrap(){
-  const h1 = document.querySelector('h1');
-  const st = document.querySelector('.strap');
+  const h1 = document.querySelector('h1'), st = document.querySelector('.strap');
   if (!h1 || !st) return;
   const target = h1.getBoundingClientRect().width;
   if (!target) return;
   st.style.fontSize = '100px';
   const natural = st.scrollWidth;
   if (!natural) return;
-  const size = Math.max(13, Math.min(40, 100 * target / natural));
-  st.style.fontSize = size.toFixed(2) + 'px';
+  st.style.fontSize = Math.max(13, Math.min(40, 100 * target / natural)).toFixed(2) + 'px';
 }
 addEventListener('resize', fitStrap);
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitStrap);
 fitStrap();
 
-const thread  = document.getElementById('thread');
-const compose = document.getElementById('compose');
-const say     = document.getElementById('say');
-let fallbackAt = 0;
-
-/* One tail shape, two colours. Mirrored in CSS for the right-hand side. */
+/* one tail shape, two colours; mirrored in CSS for the right-hand side */
 function tail(colour){
   const ns = 'http://www.w3.org/2000/svg';
   const svg = document.createElementNS(ns, 'svg');
-  svg.setAttribute('class', 'tl');
-  svg.setAttribute('width', '22');
-  svg.setAttribute('height', '17');
-  svg.setAttribute('viewBox', '0 -5 22 22');
-  svg.setAttribute('aria-hidden', 'true');
-  const p = document.createElementNS(ns, 'path');
-  p.setAttribute('d', 'M2,-5 L22,-5 L22,2 L4,16 L2,2 Z');
+  svg.setAttribute('class','tl'); svg.setAttribute('width','20');
+  svg.setAttribute('height','16'); svg.setAttribute('viewBox','0 -5 20 21');
+  svg.setAttribute('aria-hidden','true');
+  const p = document.createElementNS(ns,'path');
+  p.setAttribute('d','M2,-5 L20,-5 L20,2 L4,15 L2,2 Z');
   p.setAttribute('fill', colour);
   svg.appendChild(p);
   return svg;
 }
 
-function bubble(who, text, read){
+const BOOK_SVG = `<svg viewBox="0 0 34 44" aria-hidden="true">
+  <rect x="0.5" y="0.5" width="33" height="43" rx="3" fill="#ED1C24"/>
+  <rect x="5" y="7"  width="14" height="3" fill="#fff"/>
+  <rect x="5" y="12" width="6"  height="3" fill="#fff"/>
+  <rect x="12" y="11.5" width="17" height="4.5" fill="#231F20"/>
+  <rect x="13.5" y="12.5" width="14" height="2.5" fill="#fff"/>
+  <rect x="5" y="18" width="19" height="3" fill="#fff"/>
+  <rect x="5" y="23" width="22" height="3" fill="#fff"/>
+  <rect x="10" y="32" width="14" height="6" rx="3" fill="#231F20"/>
+</svg>`;
+
+async function recCard(slug){
+  const all = await CHAPTERS;
+  const ch = all[slug];
+  if (!ch) return null;
+  const a = document.createElement('button');
+  a.className = 'rec'; a.type = 'button';
+  a.innerHTML = BOOK_SVG +
+    `<span><span class="rec-t"></span><span class="rec-w"></span></span>`;
+  a.querySelector('.rec-t').textContent = ch.title;
+  const w = a.querySelector('.rec-w');
+  if (ch.why) w.textContent = ch.why; else w.remove();
+  a.addEventListener('click', () => openChapter(slug));
+  return a;
+}
+
+async function bubble(who, text, read){
   const wrap = document.createElement('div');
   wrap.className = 'msg ' + who;
-
   const b = document.createElement('div');
   b.className = 'bub';
   b.textContent = text;
   b.appendChild(tail(who === 'r' ? '#231F20' : '#ffffff'));
   wrap.appendChild(b);
-
-  if (read) {
-    const a = document.createElement('a');
-    a.className = 'read';
-    a.href = '#';
-    a.textContent = 'Read: ' + read;
-    wrap.appendChild(a);
-  }
-
   thread.appendChild(wrap);
   thread.scrollTop = thread.scrollHeight;
+
+  if (read) {
+    const card = await recCard(read);
+    if (card) { wrap.appendChild(card); thread.scrollTop = thread.scrollHeight; }
+  }
 }
 
 function route(q){
   for (const r of ROUTES) if (r.on.test(q)) return r;
-  const f = FALLBACK[fallbackAt % FALLBACK.length];
-  fallbackAt++;
-  return f;
+  return FALLBACK[fallbackAt++ % FALLBACK.length];
 }
 
 compose.addEventListener('submit', e => {
   e.preventDefault();
   const q = say.value.trim();
   if (!q) return;
-
   document.body.classList.add('chatting');
   bubble('u', q);
   say.value = '';
-
   const r = route(q);
-  setTimeout(() => bubble('r', r.say, r.read), 480);
+  setTimeout(() => bubble('r', r.say, r.read), 460);
 });
+
+/* ------------------------------------------------------------------ reader */
+
+/* STAND-IN nudge copy. Escalates gently, never blocks — no counters, no wall. */
+const NUDGES = [
+  "There are thirteen more where that came from.",
+  "That&rsquo;s two. The rest are in the book, and it&rsquo;s a one-hour read.",
+  "You&rsquo;ve read a fair bit of it now. Might be cheaper to own it.",
+];
+
+async function openChapter(slug){
+  const all = await CHAPTERS;
+  const ch = all[slug];
+  if (!ch) return;
+
+  document.getElementById('rtitle').textContent = ch.title;
+  document.getElementById('rwhy').textContent = ch.why;
+
+  const body = document.getElementById('rbody');
+  body.innerHTML = '';
+  for (const blk of ch.blocks) {
+    if (blk.t === 'h') {
+      const h = document.createElement('h3'); h.textContent = blk.x; body.appendChild(h);
+    } else if (blk.t === 'tldr') {
+      const d = document.createElement('div'); d.className = 'tldr';
+      d.innerHTML = '<b>TLDR</b>'; const i = document.createElement('i');
+      i.textContent = blk.x; d.appendChild(i); body.appendChild(d);
+    } else {
+      const p = document.createElement('p'); p.textContent = blk.x; body.appendChild(p);
+    }
+  }
+
+  chaptersRead++;
+  const n = document.getElementById('rnudge');
+  n.innerHTML = `<p>${NUDGES[Math.min(chaptersRead, NUDGES.length) - 1]}</p>
+                 <a href="#">Buy the book</a>`;
+
+  reader.setAttribute('open','');
+  reader.scrollTop = 0;
+  document.getElementById('rclose').focus();
+}
+
+function closeChapter(){ reader.removeAttribute('open'); }
+document.getElementById('rclose').addEventListener('click', closeChapter);
+addEventListener('keydown', e => { if (e.key === 'Escape') closeChapter(); });
 </script>
 </body>
 </html>
