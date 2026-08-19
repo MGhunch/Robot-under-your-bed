@@ -226,6 +226,12 @@ h1 .box::before{
   width:calc(100% + var(--bridge));
   height:auto;
   max-height:min(30vh,280px);
+  /* The artwork's ground line is raked. Its lowest point is a single thin post
+     foot; the shoes-and-near-post cluster — where the eye reads the bed as
+     touching the floor — sits 4.58% of the artwork's height above it. Dropping
+     by that amount puts the visual mass on the baseline and lets the one post
+     foot cross it. Proportional, so it holds at every size. */
+  transform:translateY(4.58%);
 }
 
 /* ---------------------------------------------------------------- desktop */
@@ -256,8 +262,8 @@ h1 .box::before{
   .rec-again{font-size:clamp(13px,1.8cqh,17px);}
   .rec .bk{width:3.2cqh;height:4.2cqh;}
 
-  .minor a{font-size:clamp(12px,1.8cqh,18px);}
-  .buy{font-size:clamp(17px,2.8cqh,28px);}
+  .minor a{font-size:clamp(12px,1.95cqh,19px);}
+  .buy{font-size:clamp(17px,3.1cqh,31px);}
 
   .bed img{max-height:31cqh;}
 }
@@ -386,7 +392,7 @@ h1 .box::before{
     </form>
 
     <div class="bed">
-      <img src="/assets/robot-bed.png" width="1200" height="640"
+      <img src="/assets/robot-bed.png" width="1200" height="612"
            alt="A small robot hiding under a bed">
     </div>
   </div>

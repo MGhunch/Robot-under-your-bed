@@ -3,7 +3,20 @@
 The website for **There's a Robot Under Your Bed** — *A little book about humans.
 And AI.* by Michael Goldthorpe.
 
-**Status: v0.9 — vertical rhythm.**
+**Status: v1.0 — the bed lands.**
+
+### What's new in v1.0
+
+- **The artwork had 28 rows of fully transparent padding at its base** — an
+  artefact of the optimise-then-quantise pass. The boxes aligned at 0px while the
+  visible ink floated 13.5px above the CTA. Trimmed.
+- **The baseline is now set on visual mass, not the bounding box.** The bed's
+  ground line is raked: its lowest point is one thin post foot, and the
+  shoes-and-near-post cluster sits 4.58% of the artwork's height above it. The bed
+  is dropped by exactly that, so the heavy cluster lands on the line and the post
+  foot crosses it by ~12px. Expressed as a percentage, so it holds at any size.
+- **CTA up ~10%.** Because the two pills total the hero's width, the whole lockup
+  gains presence horizontally as well as vertically.
 
 ### What's new in v0.9
 
