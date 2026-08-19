@@ -3,11 +3,35 @@
 The website for **There's a Robot Under Your Bed** — *A little book about humans.
 And AI.* by Michael Goldthorpe.
 
-**Status: v0.5 — chat, recommendation cards and a working chapter reader.** The layout and the interaction are real.
+**Status: v0.7 — design review changes folded in.** The layout and the interaction are real.
 The robot's replies are Claude's stand-ins matched on keywords in the browser —
 no model, no server calls, no email. Buy the book still goes nowhere.
 
-### What's new in v0.5
+### What's new in v0.7
+
+- **The lockup** — two hollow pills (Fact check / About) above the hero
+  *Why not buy the book?*. The pair totals the hero's width, which is what makes
+  it one object. Subordinates sit **above** so the hero keeps the baseline it
+  shares with the bed. The burger is gone.
+- **Cards** — indented, square-cornered, arrow pinned right (slides on hover),
+  smaller. First mention gets a card; repeats drop to a quiet underlined link.
+- **The ROBOT box bleeds evenly.** It was hanging 0.10em low — Bebas Neue's
+  ascender-to-cap gap is .09em but its descender is .19em, and the background was
+  drawn to the line box. Now drawn as a pseudo-element with measured offsets;
+  verified symmetric to within an eighth of a pixel.
+- **A "something else" intent** — *different chapter? / another one / what else*
+  now offers a chapter you haven't been shown, instead of deflecting as off-book.
+- **Real focus, no fake caret.** The blinking line was drawn in CSS whether or not
+  the field had focus, so typing did nothing until you clicked. Now the field is
+  genuinely focused on load — desktop width and a real pointer only, because on a
+  phone that opens the keyboard on arrival and collapses the layout. Typing
+  anywhere on the page also lands in the field.
+- **A prompt in the reader's voice** — *why is there a cow in this book*. The
+  empty bubble is the reader's, so a robot line would be the wrong mouth, and the
+  black bubble above already does the instructing.
+- Left column spaced apart, shorter thread fade, separate nudge copy for sidebars.
+
+### What was new in v0.5
 
 - **Recommendation cards** — red chapter title, black why-line, book glyph. Sidebars
   show the title only (they have no why-line in the book).

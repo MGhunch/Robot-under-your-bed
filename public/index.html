@@ -79,24 +79,57 @@ body{
 
 /* ---------------------------------------------------------------- brand */
 
-.brand{flex:none;}
+.brand{flex:none; display:flex; flex-direction:column; justify-content:space-between;}
 h1{
   width:fit-content;
   font-family:var(--head); font-weight:400; text-transform:uppercase;
   font-size:clamp(48px, min(13.5vw, 15vh), 150px);
   line-height:.82; letter-spacing:.01em;
 }
-h1 .box{display:inline-block;background:var(--black);padding:0 .09em;margin-left:.04em;}
+/* The black box is drawn as a pseudo-element so its bleed is independent of the
+   line box. Measured from Bebas Neue at line-height .82: the cap top sits exactly
+   at the content-box top, and the baseline sits .11em above the bottom — so the
+   box was hanging .10em lower than it should. These offsets give an equal .20em
+   bleed above the caps and below the baseline. */
+h1 .box{
+  position:relative; display:inline-block; z-index:0;
+  padding:0 .09em; margin-left:.04em; background:none;
+}
+h1 .box::before{
+  content:""; position:absolute; z-index:-1;
+  left:0; right:0; top:-.20em; bottom:-.09em;
+  background:var(--black);
+}
 .strap{white-space:nowrap;font-size:18px;margin-top:clamp(10px,2vh,20px);}
+/* ---- the lockup: two hollow pills above one solid hero ----
+   The pills total the hero's width, which is what makes it one object rather
+   than three adjacent ones. Proportional split, because forcing ABOUT to match
+   FACT CHECK leaves it padded out. Subordinates sit ABOVE so the hero keeps the
+   baseline it shares with the bed. */
+.lockup{display:inline-block; align-self:flex-start;}
+
+.minor{display:flex; gap:10px; margin-bottom:11px;}
+.minor a{
+  font-family:var(--head); text-transform:uppercase; letter-spacing:.1em;
+  font-size:clamp(13px,3.2vw,16px);
+  color:var(--white); text-decoration:none; text-align:center;
+  border:2px solid var(--white); border-radius:999px;
+  /* Filled with page red rather than transparent: invisible on the red field,
+     but it occludes the bed when the lockup sits over it mid-chat on mobile. */
+  background:var(--red);
+  padding:.62em 0 .48em;
+}
+.minor a.f{flex:1.9 1 0;}   /* sized to the words, still totalling the hero */
+.minor a.b{flex:1 1 0;}
+
 .buy{
-  align-self:flex-start;
+  display:block; width:100%; text-align:center; white-space:nowrap;
   font-family:var(--head); text-transform:uppercase; letter-spacing:.06em;
   font-size:clamp(17px,4.4vw,25px);
   background:var(--white); color:var(--red);
   border-radius:999px; border:0; cursor:pointer;
-  padding:.66em 1.8em .5em;
-  text-decoration:none; display:inline-block;
-  margin-top:clamp(14px,2.6vh,30px);
+  padding:.66em 1.7em .5em;
+  text-decoration:none;
 }
 
 /* ---------------------------------------------------------------- talk */
@@ -109,8 +142,9 @@ h1 .box{display:inline-block;background:var(--black);padding:0 .09em;margin-left
   display:flex; flex-direction:column; justify-content:flex-end;
   gap:clamp(9px,1.6vh,15px);
   padding:10px 0 16px;   /* bottom room for the last bubble's tail */
-  -webkit-mask-image:linear-gradient(transparent 0,#000 46px);
-          mask-image:linear-gradient(transparent 0,#000 46px);
+  /* short fade — a long one looks like a rendering fault on a white card */
+  -webkit-mask-image:linear-gradient(transparent 0,#000 18px);
+          mask-image:linear-gradient(transparent 0,#000 18px);
 }
 .thread::-webkit-scrollbar{display:none;}
 
@@ -132,28 +166,46 @@ h1 .box{display:inline-block;background:var(--black);padding:0 .09em;margin-left
 .u .bub svg.tl{right:18px; transform:translateY(100%) scaleX(-1);}
 
 /* ------- the recommendation. Red title, black why-line. Two lines. ------- */
+/* Indented so it reads as subordinate to the answer above it. Square corners so
+   it stops reading as a bubble — white-with-red-type is what YOUR messages look
+   like. Arrow pinned right, which also gives every card the same width. */
 .rec{
-  display:flex; align-items:center; gap:13px;
-  width:fit-content;
-  margin:16px 0 2px 2px;
-  background:var(--white); border-radius:13px;
-  padding:11px 20px 12px 14px;
+  display:flex; align-items:center; gap:11px;
+  margin:14px 0 2px 22px;
+  width:min(calc(100% - 22px), 330px);
+  background:var(--white); border-radius:4px;
+  padding:9px 12px 10px 11px;
   text-decoration:none; cursor:pointer;
   border:0; font-family:var(--body); text-align:left;
-  max-width:100%;
 }
-.rec svg{flex:none;width:34px;height:44px;}
+.rec .bk{flex:none;width:26px;height:34px;}
+.rec-txt{flex:1 1 auto; min-width:0;}
+.rec .arw{
+  flex:none; width:15px; height:15px; margin-left:4px;
+  transition:transform .16s ease;
+}
+.rec:hover .arw{transform:translateX(4px);}
+
+/* repeat mentions drop back to a quiet link — a treat every time is wallpaper */
+.rec-again{
+  display:inline-block; margin:11px 0 0 22px;
+  background:none; border:0; padding:0; cursor:pointer;
+  font-family:var(--body);
+  color:var(--white); font-style:italic;
+  font-size:clamp(13px,3.1vw,16px);
+  text-decoration:underline; text-underline-offset:.22em; text-decoration-thickness:2px;
+}
 .rec-t{
   display:block; font-family:var(--head); color:var(--red);
-  font-size:clamp(17px,4vw,22px); line-height:1;
+  font-size:clamp(15px,3.6vw,19px); line-height:1.02;
   letter-spacing:.02em; text-transform:uppercase;
 }
 .rec-w{
   display:block; font-family:var(--body); font-style:italic;
   color:var(--black); opacity:.78;
-  font-size:clamp(12.5px,3vw,14px); line-height:1.25; margin-top:4px;
+  font-size:clamp(11.5px,2.8vw,13px); line-height:1.22; margin-top:3px;
 }
-@media (min-width:900px){ .rec svg{width:38px;height:50px;} .rec{gap:15px;padding:12px 22px 13px 15px;} }
+@media (min-width:900px){ .rec .bk{width:29px;height:38px;} .rec{gap:13px;} }
 
 /* compose — the blank speech bubble. Never moves. */
 .compose{
@@ -167,15 +219,9 @@ h1 .box{display:inline-block;background:var(--black);padding:0 .09em;margin-left
   border:3px solid var(--white); border-radius:20px;
   padding:.6em 1.1em .68em; outline:none;
 }
-.compose input::placeholder{color:rgba(255,255,255,.45);}
-.compose .cursor{
-  position:absolute; left:1.1em; top:50%; transform:translateY(-50%);
-  width:2px; height:1.1em; background:var(--white);
-  animation:blink 1.1s steps(1,end) infinite; pointer-events:none;
-}
-.compose:has(input:focus) .cursor,
-.compose:has(input:not(:placeholder-shown)) .cursor{display:none;}
-@keyframes blink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
+/* The prompt is load-bearing — it's the only thing telling people what to do —
+   so it can't be faint. */
+.compose input::placeholder{color:rgba(255,255,255,.62);}
 
 /* ------- the bed. Anchored, and wider than its column so it bridges ------- */
 .bed{flex:none; margin-top:clamp(10px,1.8vh,22px); display:flex; justify-content:flex-end;}
@@ -210,11 +256,14 @@ h1 .box{display:inline-block;background:var(--black);padding:0 .09em;margin-left
   body.chatting h1 .box{margin-left:.1em;}
   body.chatting .strap{display:none;}
   body.chatting .brand{padding-right:56px;}
-  body.chatting .buy{
-    position:fixed; z-index:30; margin:0;
+  body.chatting .lockup{
+    position:fixed; z-index:30;
     left:var(--gut); bottom:calc(var(--btm) + env(safe-area-inset-bottom));
-    font-size:16px; padding:.6em 1.3em .44em;
+    width:auto;
   }
+  body.chatting .minor{margin-bottom:8px;}
+  body.chatting .minor a{font-size:12px;padding:.5em .9em .38em;flex:0 0 auto;}
+  body.chatting .buy{font-size:16px;padding:.6em 1.3em .44em;width:auto;}
   body.chatting .bed{justify-content:center;}
   body.chatting .bed img{height:min(22vh,190px);}
   .brand{order:0;} .talk{order:1;}
@@ -295,10 +344,18 @@ h1 .box{display:inline-block;background:var(--black);padding:0 .09em;margin-left
   <div class="brand">
     <!-- Spaces after each <br> matter: mid-chat on mobile the breaks are hidden
          and the title reflows to one line. -->
-    <h1>There&rsquo;s<br> a <span class="box">Robot</span><br> under<br> your bed</h1>
-    <p class="strap">A little book about humans. And AI.</p>
-    <!-- TODO: Buy destination undecided. -->
-    <a class="buy" href="#">Buy the book</a>
+    <div>
+      <h1>There&rsquo;s<br> a <span class="box">Robot</span><br> under<br> your bed</h1>
+      <p class="strap">A little book about humans. And AI.</p>
+    </div>
+    <div class="lockup">
+      <div class="minor">
+        <a class="f" href="#">Fact check</a>
+        <a class="b" href="#">About</a>
+      </div>
+      <!-- TODO: Buy destination undecided. -->
+      <a class="buy" href="#">Why not buy the book?</a>
+    </div>
   </div>
 
   <div class="talk">
@@ -309,8 +366,10 @@ h1 .box{display:inline-block;background:var(--black);padding:0 .09em;margin-left
     </div>
 
     <form class="compose" id="compose" autocomplete="off">
-      <input id="say" type="text" placeholder=" " aria-label="Ask the robot something">
-      <span class="cursor" aria-hidden="true"></span>
+      <!-- STAND-IN prompt. Reader's voice, lowercase — this bubble is theirs, not
+           the robot's, and the black bubble above already does the instructing. -->
+      <input id="say" type="text" placeholder="why is there a cow in this book"
+             aria-label="Ask the robot something">
     </form>
 
     <div class="bed">
@@ -382,6 +441,9 @@ const ROUTES = [
   { on:/\b(bad|shit|rubbish|terrible|boring)/i,
     say:"Honestly, not shit at all. Try one chapter and tell me I'm wrong.",
     read:"brief-history-of-robots" },
+  { on:/\b(different|another|other|else|next|others?)\b|what else|something else|anything else/i,
+    say:"Fair. Plenty more where that came from.",
+    pick:true },
   { on:/\b(hello|hi|hey|yo|sup)\b/i,
     say:"Hello. I'd quite like to get out from under here, so ask me something." },
 ];
@@ -416,6 +478,22 @@ function fitStrap(){
   if (!natural) return;
   st.style.fontSize = Math.max(13, Math.min(40, 100 * target / natural)).toFixed(2) + 'px';
 }
+/* Focus the field on load — but only on a real pointer at desktop width.
+   On a phone this opens the keyboard on arrival, which resizes the viewport and
+   collapses the whole one-screen composition before anyone has seen it. (iOS
+   blocks programmatic focus without a gesture anyway.) */
+if (matchMedia('(min-width:900px) and (hover:hover)').matches) {
+  addEventListener('DOMContentLoaded', () => say.focus());
+}
+
+/* And if someone just starts typing without clicking, catch it. */
+addEventListener('keydown', e => {
+  if (reader.hasAttribute('open')) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  if (document.activeElement === say) return;
+  if (e.key.length === 1) say.focus();
+});
+
 addEventListener('resize', fitStrap);
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitStrap);
 fitStrap();
@@ -434,7 +512,12 @@ function tail(colour){
   return svg;
 }
 
-const BOOK_SVG = `<svg viewBox="0 0 34 44" aria-hidden="true">
+const ARROW_SVG = `<svg class="arw" viewBox="0 0 16 16" aria-hidden="true">
+  <path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="#ED1C24"
+        stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
+const BOOK_SVG = `<svg class="bk" viewBox="0 0 34 44" aria-hidden="true">
   <rect x="0.5" y="0.5" width="33" height="43" rx="3" fill="#ED1C24"/>
   <rect x="5" y="7"  width="14" height="3" fill="#fff"/>
   <rect x="5" y="12" width="6"  height="3" fill="#fff"/>
@@ -445,19 +528,42 @@ const BOOK_SVG = `<svg viewBox="0 0 34 44" aria-hidden="true">
   <rect x="10" y="32" width="14" height="6" rx="3" fill="#231F20"/>
 </svg>`;
 
+/* Card on first mention; a quiet link on repeats. */
+const offered = new Set();
+
 async function recCard(slug){
   const all = await CHAPTERS;
   const ch = all[slug];
   if (!ch) return null;
+
+  if (offered.has(slug)) {
+    const link = document.createElement('button');
+    link.className = 'rec-again'; link.type = 'button';
+    link.textContent = 'Read: ' + ch.title;
+    link.addEventListener('click', () => openChapter(slug));
+    return link;
+  }
+  offered.add(slug);
+
   const a = document.createElement('button');
   a.className = 'rec'; a.type = 'button';
   a.innerHTML = BOOK_SVG +
-    `<span><span class="rec-t"></span><span class="rec-w"></span></span>`;
+    `<span class="rec-txt"><span class="rec-t"></span><span class="rec-w"></span></span>` +
+    ARROW_SVG;
   a.querySelector('.rec-t').textContent = ch.title;
   const w = a.querySelector('.rec-w');
   if (ch.why) w.textContent = ch.why; else w.remove();
   a.addEventListener('click', () => openChapter(slug));
   return a;
+}
+
+/* "something else" — offer a chapter they haven't been shown yet */
+const POOL = ['last-horse-standing','ai-mageddon','great-art-heist','how-robots-think',
+  'train-your-unicorn','brief-history-of-robots','brainpower-and-firepower',
+  'small-bunch-of-nerds','second-order-of-things','robot-scientists',
+  'everything-old-is-new-again','feed-it-fight-it-fix-it','deal-with-the-em-dash'];
+function freshChapter(){
+  return POOL.find(s => !offered.has(s)) || POOL[0];
 }
 
 async function bubble(who, text, read){
@@ -490,17 +596,25 @@ compose.addEventListener('submit', e => {
   bubble('u', q);
   say.value = '';
   const r = route(q);
-  setTimeout(() => bubble('r', r.say, r.read), 460);
+  const read = r.pick ? freshChapter() : r.read;
+  setTimeout(() => bubble('r', r.say, read), 460);
 });
 
 /* ------------------------------------------------------------------ reader */
 
 /* STAND-IN nudge copy. Escalates gently, never blocks — no counters, no wall. */
-const NUDGES = [
-  "There are thirteen more where that came from.",
-  "That&rsquo;s two. The rest are in the book, and it&rsquo;s a one-hour read.",
-  "You&rsquo;ve read a fair bit of it now. Might be cheaper to own it.",
-];
+const NUDGES = {
+  chapter: [
+    "There are thirteen more where that came from.",
+    "That&rsquo;s two. The rest are in the book, and it&rsquo;s a one-hour read.",
+    "You&rsquo;ve read a fair bit of it now. Might be cheaper to own it.",
+  ],
+  sidebar: [
+    "That&rsquo;s one of the little ones. The actual chapters are longer and better.",
+    "Another aside. There are fourteen proper chapters underneath them.",
+    "You&rsquo;re collecting the footnotes. The book&rsquo;s the main event.",
+  ],
+};
 
 async function openChapter(slug){
   const all = await CHAPTERS;
@@ -525,9 +639,10 @@ async function openChapter(slug){
   }
 
   chaptersRead++;
+  const set = NUDGES[ch.kind === 'sidebar' ? 'sidebar' : 'chapter'];
   const n = document.getElementById('rnudge');
-  n.innerHTML = `<p>${NUDGES[Math.min(chaptersRead, NUDGES.length) - 1]}</p>
-                 <a href="#">Buy the book</a>`;
+  n.innerHTML = `<p>${set[Math.min(chaptersRead, set.length) - 1]}</p>
+                 <a href="#">Why not buy the book?</a>`;
 
   reader.setAttribute('open','');
   reader.scrollTop = 0;
