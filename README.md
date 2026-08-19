@@ -3,7 +3,22 @@
 The website for **There's a Robot Under Your Bed** — *A little book about humans.
 And AI.* by Michael Goldthorpe.
 
-**Status: v0.7 — design review changes folded in.** The layout and the interaction are real.
+**Status: v0.8 — composition locked.**
+
+### What's new in v0.8
+
+- **The hamburger is gone**, markup and CSS.
+- **Title anchored at the top** of the brand column, with the strapline welded to
+  it. (The desktop rule was still overriding with `flex-end`, which is why the
+  headline stayed low in v0.7 even though the column was meant to be spaced apart.)
+- **About before Fact check.**
+- Prompt is now *Why is there a cow in this book?*
+- **The two columns are locked to each other.** `.wrap` is a size container and
+  everything inside is measured in `cqh` — a fraction of the composition's own
+  height. Previously the headline scaled on `vh`, the bubbles on `vw` and the bed
+  on `vh`, so changing the window's shape changed the relationships between them.
+  Now one number drives all of it. Verified: the title-to-bed ratio is identical
+  at 1440×900, 1440×1200, 1920×1080, 1930×1660 and 1280×760. The layout and the interaction are real.
 The robot's replies are Claude's stand-ins matched on keywords in the browser —
 no model, no server calls, no email. Buy the book still goes nowhere.
 

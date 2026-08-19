@@ -62,20 +62,6 @@ body{
   max-width:1360px; margin:auto;
 }
 
-.burger{
-  position:fixed; z-index:30;
-  top:var(--gut); right:var(--gut);
-  width:34px; height:22px;
-  display:flex; flex-direction:column; justify-content:space-between;
-  background:none; border:0; padding:0; cursor:pointer;
-}
-.burger span{display:block;height:3px;background:var(--white);border-radius:3px;}
-/* Desktop: the right column belongs to the thread, so the burger moves to the
-   quiet top-left. Mobile keeps it top-right — the title bar holds the left. */
-@media (min-width:900px){
-  .burger{width:46px;height:30px;left:var(--gut);right:auto;}
-  .burger span{height:4px;}
-}
 
 /* ---------------------------------------------------------------- brand */
 
@@ -238,14 +224,37 @@ h1 .box::before{
 /* ---------------------------------------------------------------- desktop */
 
 @media (min-width:900px){
-  .wrap{flex-direction:row; align-items:stretch; gap:clamp(34px,4vw,70px);}
-  /* Both columns bottom-align, so Buy's baseline and the bed's baseline are
-     the same line. That shared line is what stops it reading as two pages. */
+  /* ---- the composition is locked to itself ----
+     .wrap becomes a size container, and everything inside is measured in cqh —
+     a fraction of the composition's own height. Previously the headline scaled
+     on vh, the bubbles on vw and the bed on vh, so changing the window's shape
+     changed the relationship between them. Now one number drives all of it: the
+     whole thing scales up and down as a unit and the proportions never move. */
+  .wrap{
+    container-type:size;
+    flex-direction:row; align-items:stretch; gap:clamp(34px,4vw,70px);
+  }
+
+  /* Title anchored at the top, lockup on the baseline, subhead welded to the
+     title because they share a wrapper. */
   .brand{width:46%; display:flex; flex-direction:column;
-         justify-content:flex-end; align-items:flex-start;}
+         justify-content:space-between; align-items:flex-start;}
   .talk{width:54%;}
-  .thread{padding-top:20px;}
-  .bed img{max-height:min(36vh,380px);}
+
+  h1{font-size:clamp(48px, 15cqh, 150px);}
+
+  .thread{padding-top:2.2cqh; gap:clamp(9px,1.7cqh,17px);}
+  .bub{font-size:clamp(14px,2.1cqh,21px);}
+  .compose input{font-size:clamp(14px,2.1cqh,21px);}
+  .rec-t{font-size:clamp(14px,2.1cqh,21px);}
+  .rec-w{font-size:clamp(11px,1.45cqh,15px);}
+  .rec-again{font-size:clamp(13px,1.8cqh,17px);}
+  .rec .bk{width:3.2cqh;height:4.2cqh;}
+
+  .minor a{font-size:clamp(12px,1.8cqh,18px);}
+  .buy{font-size:clamp(17px,2.8cqh,28px);}
+
+  .bed img{max-height:34cqh;}
 }
 
 /* ---------------------------------------------------------------- mobile, mid-chat */
@@ -337,8 +346,6 @@ h1 .box::before{
 
 <body>
 
-<button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-
 <div class="wrap">
 
   <div class="brand">
@@ -350,8 +357,8 @@ h1 .box::before{
     </div>
     <div class="lockup">
       <div class="minor">
-        <a class="f" href="#">Fact check</a>
         <a class="b" href="#">About</a>
+        <a class="f" href="#">Fact check</a>
       </div>
       <!-- TODO: Buy destination undecided. -->
       <a class="buy" href="#">Why not buy the book?</a>
@@ -368,7 +375,7 @@ h1 .box::before{
     <form class="compose" id="compose" autocomplete="off">
       <!-- STAND-IN prompt. Reader's voice, lowercase — this bubble is theirs, not
            the robot's, and the black bubble above already does the instructing. -->
-      <input id="say" type="text" placeholder="why is there a cow in this book"
+      <input id="say" type="text" placeholder="Why is there a cow in this book?"
              aria-label="Ask the robot something">
     </form>
 
