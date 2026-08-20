@@ -423,6 +423,73 @@ h1 .box::before{
   font-size:14px; line-height:1.7; opacity:.6;
 }
 
+/* --------------------------------------------------------------- facts */
+/* The trust room. Straight, no jokes, and the only link on the page sits under
+   a fact. Built as <details>/<summary> rather than hand-rolled divs so keyboard
+   and find-in-page both work — people come here to look up the one claim they
+   don't believe, and Ctrl+F failing silently would break the page's only job. */
+
+.facts-meta{font-size:14px; opacity:.55; margin:-4px 0 26px;}
+
+.facts-search{
+  width:100%; font-family:var(--body); font-size:16px;
+  color:var(--black); background:none;
+  border:2px solid var(--black); border-radius:999px;
+  padding:.6em 1.1em .66em; outline:none; margin-bottom:6px;
+}
+.facts-search::placeholder{color:rgba(35,31,32,.45);}
+.facts-none{font-style:italic; opacity:.6; padding:22px 0;}
+
+.fx{border-bottom:1px solid rgba(35,31,32,.18);}
+.fx:first-of-type{border-top:1px solid rgba(35,31,32,.18);}
+.fx[hidden]{display:none;}
+.fx>summary{
+  list-style:none; cursor:pointer;
+  display:flex; align-items:baseline; gap:12px;
+  padding:15px 2px; font-size:clamp(16px,4.2vw,19px);
+}
+.fx>summary::-webkit-details-marker{display:none;}
+.fx>summary:focus-visible{outline:2px solid var(--red); outline-offset:3px;}
+.chev{
+  flex:none; width:0; height:0; margin-top:.35em;
+  border-left:7px solid var(--black);
+  border-top:5px solid transparent; border-bottom:5px solid transparent;
+  transition:transform .14s ease; transform-origin:3px 50%;
+}
+.fx[open] .chev{transform:rotate(90deg);}
+.fx-t{flex:1 1 auto;}
+/* Sidebars sit in book order rather than in their own group, so they need a
+   mark to keep the hierarchy legible. */
+.fx-side{
+  font-family:var(--head); font-size:12px; letter-spacing:.1em;
+  border:1px solid rgba(35,31,32,.35); border-radius:3px;
+  padding:3px 5px 1px; opacity:.55; flex:none;
+}
+.fx-n{font-size:13px; opacity:.5; white-space:nowrap; flex:none;}
+.fx-n.todo{font-style:italic;}
+
+.fx .panel{padding:0 0 26px 19px;}
+.fx h4{
+  font-family:var(--head); text-transform:uppercase; color:var(--red);
+  font-size:16px; letter-spacing:.09em; margin:16px 0 10px;
+}
+.fx .item{margin-bottom:14px; font-size:clamp(15px,4vw,17px); line-height:1.5;}
+.fx .q{display:block;}
+.fx .src, .fx .when{display:block; opacity:.62; font-size:.92em; margin-top:2px;}
+.fx .dig{
+  font-family:var(--head); text-transform:uppercase; letter-spacing:.06em;
+  font-size:15px; color:var(--red); text-decoration:none;
+  border-bottom:2px solid var(--red); padding-bottom:1px;
+}
+/* Loud on this page, silent everywhere else — a bad facts.json must never take
+   the site down, only this panel. */
+.facts-err{
+  background:var(--black); color:#fff; border-radius:4px;
+  padding:18px 22px; margin-bottom:26px; font-size:14px; line-height:1.6;
+}
+.facts-err b{font-family:var(--head); letter-spacing:.1em; display:block; margin-bottom:6px;}
+.facts-err li{margin-left:18px;}
+
 /* the nudge. Never blocks, escalates gently. */
 .reader .nudge{
   border-top:3px solid var(--black); margin-top:46px; padding-top:26px;
@@ -805,7 +872,8 @@ async function openChapter(slug){
   if (!ch) return;
 
   document.getElementById('rtitle').textContent = ch.title;
-  document.getElementById('rwhy').textContent = ch.why;
+  const rw = document.getElementById('rwhy');
+  rw.style.display = ''; rw.textContent = ch.why;   /* facts hides it */
 
   const body = document.getElementById('rbody');
   body.innerHTML = '';
@@ -839,7 +907,8 @@ async function openChapter(slug){
    one Escape handler, and one place to fix the return when we get to it. */
 function openPage(title, sub, frag){
   document.getElementById('rtitle').textContent = title;
-  document.getElementById('rwhy').textContent = sub;
+  const rw = document.getElementById('rwhy');
+  rw.style.display = ''; rw.textContent = sub;       /* facts hides it */
   const body = document.getElementById('rbody');
   body.innerHTML = '';
   body.appendChild(frag.cloneNode(true));
@@ -858,7 +927,194 @@ document.querySelector('a.b').addEventListener('click', e => {
            document.getElementById('aboutBody').content);
 });
 
+/* ------------------------------------------------------------------- facts */
+
+/* MG copy, 20 Aug. Not a stand-in. */
+const FACTS_INTRO = "Facts can be fickle. But they matter. So if you’re " +
+  "interested in the research that backs the book, feel free to dig in here.";
+
+/* An absent file is a legitimate state, not an error — the content lands in
+   batches and every row reads "Not yet checked" until it does. */
+const FACTS = fetch('/facts.json').then(r => r.ok ? r.json() : null).catch(() => null);
+
+const MONTHS = ['January','February','March','April','May','June','July',
+                'August','September','October','November','December'];
+function niceMonth(s){
+  const m = /^(\d{4})-(\d{2})$/.exec(s || '');
+  return m && +m[2] >= 1 && +m[2] <= 12 ? MONTHS[+m[2] - 1] + ' ' + m[1] : null;
+}
+
+/* The brief promises the page enforces these rather than trusting anyone to
+   remember them. Chief among them: a link under an assumption. */
+function factsErrors(data, slugs){
+  const e = [];
+  if (data === null) return e;
+  if (typeof data !== 'object') return ['facts.json is not an object.'];
+  if (!niceMonth(data.checked)) e.push('“checked” must be YYYY-MM.');
+  if (!data.chapters || typeof data.chapters !== 'object') return e.concat('“chapters” is missing.');
+  for (const [slug, entry] of Object.entries(data.chapters)) {
+    if (!slugs.includes(slug)) { e.push(`Unknown slug “${slug}” — not in chapters.json.`); continue; }
+    for (const a of (entry.assumptions || [])) {
+      if ('link' in a) e.push(`${slug}: an assumption carries a link. Links go where receipts live, nowhere else.`);
+      if (!a.claim) e.push(`${slug}: an assumption has no claim.`);
+      if (!niceMonth(a.dated)) e.push(`${slug}: assumption dated “${a.dated}” — must be YYYY-MM.`);
+    }
+    for (const f of (entry.facts || [])) {
+      if (!f.quote || !f.source || !f.link) e.push(`${slug}: a fact is missing quote, source or link.`);
+      else if (!/^https?:\/\//i.test(f.link)) e.push(`${slug}: link “${f.link}” is not http(s).`);
+    }
+  }
+  return e;
+}
+
+function el(tag, cls, text){
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text != null) n.textContent = text;
+  return n;
+}
+
+function factRow(slug, ch, entry){
+  const d = el('details', 'fx'); d.id = 'fx-' + slug;
+  const s = el('summary');
+  s.appendChild(el('span', 'chev'));
+  s.appendChild(el('span', 'fx-t', ch.title));
+  if (ch.kind === 'sidebar') s.appendChild(el('span', 'fx-side', 'Aside'));
+
+  const A = entry && entry.assumptions ? entry.assumptions.length : 0;
+  const F = entry && entry.facts ? entry.facts.length : 0;
+  const n = el('span', 'fx-n');
+  if (!entry) { n.textContent = 'Not yet checked'; n.classList.add('todo'); }
+  else if (!A && !F) n.textContent = 'Nothing to check';
+  /* Counted separately on purpose — "8 claims checked" over six facts and two
+     guesses would launder the guesses into evidence. */
+  else n.textContent = F + ' checked' + (A ? ` · ${A} assumption${A > 1 ? 's' : ''}` : '');
+  s.appendChild(n);
+  d.appendChild(s);
+
+  const p = el('div', 'panel');
+  if (!entry) {
+    p.appendChild(el('p', 'item')).appendChild(el('i', null, 'Still being written.'));
+  } else if (!A && !F) {
+    p.appendChild(el('p', 'item')).appendChild(el('i', null, 'Nothing in this one needed checking.'));
+  } else {
+    /* Ruled 20 Aug: assumptions first, receipts after. Front-load the
+       confession; close the panel on solid ground. */
+    if (A) {
+      p.appendChild(el('h4', null, 'The assumptions'));
+      for (const a of entry.assumptions) {
+        const i = el('div', 'item');
+        i.appendChild(el('span', 'q', '“' + a.claim + '”'));
+        i.appendChild(el('span', 'when', 'Reckoned ' + (niceMonth(a.dated) || a.dated) + '.'));
+        p.appendChild(i);
+      }
+    }
+    if (F) {
+      p.appendChild(el('h4', null, 'The facts'));
+      for (const f of entry.facts) {
+        const i = el('div', 'item');
+        i.appendChild(el('span', 'q', '“' + f.quote + '”'));
+        const src = el('span', 'src', f.source + ' ');
+        const a = el('a', 'dig', 'Dig in here →');
+        a.href = f.link; a.target = '_blank'; a.rel = 'noopener';
+        src.appendChild(a);
+        i.appendChild(src);
+        p.appendChild(i);
+      }
+    }
+  }
+  d.appendChild(p);
+  return d;
+}
+
+async function openFacts(slug){
+  const all = await CHAPTERS;
+  const slugs = Object.keys(all);            /* book order, straight from the reader's own file */
+  const data = await FACTS;
+  const errs = factsErrors(data, slugs);
+  const entries = (errs.length || !data) ? {} : (data.chapters || {});
+
+  document.getElementById('rtitle').textContent = 'Fact check';
+  const why = document.getElementById('rwhy');
+  why.textContent = ''; why.style.display = 'none';
+
+  const body = document.getElementById('rbody');
+  body.innerHTML = '';
+
+  const lead = el('div', 'lead');
+  lead.appendChild(el('p', null, FACTS_INTRO));
+  body.appendChild(lead);
+
+  if (errs.length) {
+    const box = el('div', 'facts-err');
+    box.appendChild(el('b', null, 'FACTS.JSON REJECTED'));
+    box.appendChild(el('p', null, 'The list below is showing as unchecked because the file did not pass:'));
+    const ul = el('ul');
+    for (const m of errs.slice(0, 8)) ul.appendChild(el('li', null, m));
+    if (errs.length > 8) ul.appendChild(el('li', null, `…and ${errs.length - 8} more.`));
+    box.appendChild(ul);
+    body.appendChild(box);
+  } else if (data && niceMonth(data.checked)) {
+    body.appendChild(el('p', 'facts-meta', 'Sources last checked: ' + niceMonth(data.checked) + '.'));
+  }
+
+  const search = el('input', 'facts-search');
+  search.type = 'search';
+  search.placeholder = 'Search the claims';
+  search.setAttribute('aria-label', 'Search the fact checks');
+  body.appendChild(search);
+
+  const list = el('div', 'facts-list');
+  for (const s of slugs) list.appendChild(factRow(s, all[s], entries[s]));
+  body.appendChild(list);
+  const none = el('p', 'facts-none', 'Nothing matches that.');
+  none.hidden = true; body.appendChild(none);
+
+  /* <details> is expanded by find-in-page in some browsers and not others, and
+     this is the page where that failing quietly is worst. So the search is
+     explicit: it filters rows and opens the ones whose contents match. */
+  search.addEventListener('input', () => {
+    const q = search.value.trim().toLowerCase();
+    let shown = 0;
+    for (const row of list.children) {
+      const title = row.querySelector('.fx-t').textContent.toLowerCase();
+      const panel = row.querySelector('.panel').textContent.toLowerCase();
+      const hit = !q || title.includes(q) || panel.includes(q);
+      row.hidden = !hit;
+      if (hit) { shown++; if (q && panel.includes(q)) row.open = true; }
+    }
+    none.hidden = shown > 0;
+  });
+
+  const n = document.getElementById('rnudge');
+  n.innerHTML = ''; n.style.display = 'none';
+
+  reader.setAttribute('open','');
+  reader.scrollTop = 0;
+
+  const target = slug && list.querySelector('#fx-' + CSS.escape(slug));
+  if (target) { target.open = true; target.scrollIntoView({ block: 'center' }); }
+  else document.getElementById('rclose').focus();
+
+  go('/facts' + (target ? '#' + slug : ''));
+}
+
+/* --------------------------------------------------------------- routing */
+/* server.js already returns index.html for any path, so /facts is a real URL
+   people can link and cite — which is most of the point of a fact page. */
+function go(path){
+  if (location.pathname + location.hash !== path) history.pushState({}, '', path);
+}
+function routeTo(path, hash){
+  if (path === '/facts') openFacts(hash ? hash.slice(1) : '');
+  else closeChapter();
+}
+document.querySelector('a.f').addEventListener('click', e => { e.preventDefault(); openFacts(); });
+addEventListener('popstate', () => routeTo(location.pathname, location.hash));
+if (location.pathname === '/facts') routeTo('/facts', location.hash);
+
 function closeChapter(){
+  if (location.pathname === '/facts') go('/');
   reader.removeAttribute('open');
   /* Closing used to drop you back on a half-forgotten thread with nothing
      focused. Same desktop-only guard as the load focus — on a phone this
