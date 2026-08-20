@@ -248,11 +248,46 @@ h1 .box::before{
   font-size:clamp(14px,3.2vw,19px); line-height:1.32;
   color:var(--white); background:none;
   border:3px solid var(--white); border-radius:20px;
-  padding:.6em 1.1em .68em; outline:none;
+  /* Right padding clears the ask key. */
+  padding:.6em 3.2em .68em 1.15em; outline:none;
 }
-/* The prompt is load-bearing — it's the only thing telling people what to do —
-   so it can't be faint. */
-.compose input::placeholder{color:rgba(255,255,255,.62);}
+
+/* ---- the suggestion -----------------------------------------------------
+   It sits INSIDE the empty input rather than beside it, so the composition
+   still holds exactly one hollow shape — outlined means unsaid, and adding
+   pills alongside would have put two more empty outlines on the page.
+
+   The text is pointer-events:none on purpose. Tapping the field has to focus
+   the field and let you type your own question; the only tappable thing is
+   the ask key at the right edge. That's what stops the suggestion getting in
+   the way of the person who arrived with their own question.
+
+   Solid white, regular weight. The old 62% white measured 2.35:1 against the
+   red and this line is the only instruction on the page. Solid is 4.38:1.
+   Zodiak has no medium — Fontshare serves 300/400/700/800 — and bold at this
+   size would read as something already typed rather than something offered. */
+.compose .pill{
+  position:absolute; inset:0;
+  display:flex; align-items:center;
+  padding:.6em 3.2em .68em 1.15em;
+  font-family:var(--body); font-size:clamp(14px,3.2vw,19px); line-height:1.32;
+  color:var(--white);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  pointer-events:none; opacity:0; transition:opacity .16s ease;
+}
+.compose .go{
+  position:absolute; right:.42em; top:50%; transform:translateY(-50%);
+  font-size:clamp(14px,3.2vw,19px);
+  width:1.75em; height:1.75em; display:grid; place-items:center;
+  border:0; border-radius:50%; background:var(--white); color:var(--red);
+  cursor:pointer; opacity:0; pointer-events:none;
+  transition:opacity .16s ease, transform .12s ease;
+}
+.compose .go:hover{transform:translateY(-50%) scale(1.07);}
+.compose .go:active{transform:translateY(-50%) scale(.95);}
+/* Both are visible only while the field is empty and a suggestion is left. */
+.compose.suggesting .pill{opacity:1;}
+.compose.suggesting .go{opacity:1; pointer-events:auto;}
 
 /* ------- the bed. Anchored, and wider than its column so it bridges ------- */
 .bed{flex:none; margin-top:clamp(10px,1.8vh,22px); display:flex; justify-content:flex-end;}
@@ -423,10 +458,17 @@ h1 .box::before{
     </div>
 
     <form class="compose" id="compose" autocomplete="off">
-      <!-- STAND-IN prompt. Reader's voice, lowercase — this bubble is theirs, not
-           the robot's, and the black bubble above already does the instructing. -->
-      <input id="say" type="text" placeholder="Why is there a cow in this book?"
-             aria-label="Ask the robot something">
+      <input id="say" type="text" aria-label="Ask the robot something">
+      <!-- STAND-IN suggestion. Reader's voice — this bubble is theirs, not the
+           robot's, and the black bubble above already does the instructing.
+           Filled from PILLS below; tap the key or press return to ask it. -->
+      <span class="pill" id="pill" aria-hidden="true"></span>
+      <button class="go" id="go" type="button" aria-label="Ask this question">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M2.6 7h8M7.4 3.4 11 7l-3.6 3.6" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
     </form>
 
     <div class="bed">
@@ -523,6 +565,43 @@ const compose = document.getElementById('compose');
 const say     = document.getElementById('say');
 const reader  = document.getElementById('reader');
 let fallbackAt = 0, chaptersRead = 0;
+
+/* ---- the suggestions ----------------------------------------------------
+   ALL STAND-IN. Michael writes these.
+
+   The brief rules three at a time, rotating, nothing repeating once read.
+   Three would mean three more outlined shapes on a page whose canon says the
+   empty input is the only hollow thing — so they rotate through one slot
+   instead. Same rule, one shape. Worth a ruling either way.
+
+   The strongest is pinned first, per the brief; the rest are shuffled, so two
+   people don't get the same run. Every line matches a ROUTES pattern on
+   purpose — a suggestion the site offers must never land in the fallback. */
+const PILLS = [
+  "Why is there a cow in this book?",
+  "Are you going to take my job?",
+  "Did you write this book?",
+  "Are robots stealing art?",
+  "What's the deal with em-dashes?",
+  "Are we all going to die?",
+  "Are you actually alive?",
+];
+const pillQueue = [PILLS[0], ...PILLS.slice(1).sort(() => Math.random() - .5)];
+const pillEl = document.getElementById('pill');
+const goEl   = document.getElementById('go');
+let pillAt = 0;
+
+/* Empty field + a suggestion left = the suggestion is live. The moment there's
+   a character in the field it's their question, not ours. */
+function currentPill(){ return say.value.trim() ? '' : (pillQueue[pillAt] || ''); }
+function syncPill(){
+  const q = pillQueue[pillAt];
+  if (q){ pillEl.textContent = q; goEl.setAttribute('aria-label', 'Ask: ' + q); }
+  compose.classList.toggle('suggesting', !!q && !say.value.trim());
+}
+say.addEventListener('input', syncPill);
+goEl.addEventListener('click', () => { if (currentPill()) compose.requestSubmit(); });
+syncPill();
 
 /* The strapline is set to the exact width of the widest headline line, at any
    viewport. Guessed ratios drift; measuring doesn't. */
@@ -649,11 +728,15 @@ function route(q){
 
 compose.addEventListener('submit', e => {
   e.preventDefault();
-  const q = say.value.trim();
+  /* Return on an empty field asks the suggestion — the same thing the key does,
+     for anyone whose hands are already on the keyboard. */
+  const q = say.value.trim() || currentPill();
   if (!q) return;
   document.body.classList.add('chatting');
   bubble('u', q);
   say.value = '';
+  if (pillAt < pillQueue.length) pillAt++;   /* read once, never shown again */
+  syncPill();
   const r = route(q);
   const read = r.pick ? freshChapter() : r.read;
   setTimeout(() => bubble('r', r.say, read), 460);
