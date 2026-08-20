@@ -414,6 +414,15 @@ h1 .box::before{
 }
 .reader .tldr i{font-size:clamp(16px,4.2vw,19px); line-height:1.45;}
 
+/* About reuses the reader shell — one overlay, one close, one Escape handler,
+   one place to fix the return. Only these two rules are new. */
+.reader .lead p{font-size:clamp(18px,4.6vw,22px); line-height:1.42;}
+.reader .credits{
+  margin-top:44px; padding-top:18px;
+  border-top:1px solid rgba(35,31,32,.22);
+  font-size:14px; line-height:1.7; opacity:.6;
+}
+
 /* the nudge. Never blocks, escalates gently. */
 .reader .nudge{
   border-top:3px solid var(--black); margin-top:46px; padding-top:26px;
@@ -479,6 +488,45 @@ h1 .box::before{
 
 </div>
 </div>
+
+<!-- ============================================================== about -->
+<!-- Real copy. The lead and the closing line are the book's own words, pulled
+     from chapters.json; the shape, the author line and the credits are facts.
+     The only written-for-the-web sentences are the two in WHAT'S IN IT, and
+     they say nothing the book doesn't. -->
+<template id="aboutBody">
+  <div class="lead">
+    <p>Writing a book about robots is stupid. It&rsquo;s the fastest-moving topic
+       on the planet. No one knows which way is up.</p>
+    <p>But stupid is also the point. When things change so fast you don&rsquo;t
+       know what they&rsquo;re called, it&rsquo;s good to name the things we can
+       rely on.</p>
+    <p>The more we know, the less we worry.</p>
+  </div>
+
+  <h3>What&rsquo;s in it</h3>
+  <p>Fourteen chapters in three parts, eight short asides answering
+     <i>What&rsquo;s the deal with&hellip;?</i>, and about an hour of your life.
+     It covers where the robots came from, how they actually think, what they
+     are and aren&rsquo;t coming for, and how to make one useful.</p>
+  <p>Some of it you can read right here. Ask the robot a question and it&rsquo;ll
+     hand you the chapter it thinks you want.</p>
+
+  <div class="tldr">
+    <b>How it ends</b>
+    <i>Go drag that robot from under your bed. And play.</i>
+  </div>
+
+  <h3>About the author</h3>
+  <p>Michael is a writer who panicked when the robots started eating his lunch.
+     So he thought he&rsquo;d try and work them out. He&rsquo;s still working on it.</p>
+
+  <p class="credits">
+    <i>There&rsquo;s a Robot Under Your Bed</i> &middot; Michael Goldthorpe<br>
+    Published by Hunch Ltd &middot; ISBN 978-0-473-80267-7<br>
+    Design by Stuart Hinds &middot; Set in Bebas Neue and Zodiak
+  </p>
+</template>
 
 <!-- ============================================================= reader -->
 <div class="reader" id="reader" role="dialog" aria-modal="true" aria-labelledby="rtitle">
@@ -783,6 +831,7 @@ async function openChapter(slug){
   chaptersRead++;
   const set = NUDGES[ch.kind === 'sidebar' ? 'sidebar' : 'chapter'];
   const n = document.getElementById('rnudge');
+  n.style.display = '';                        /* About hides it; put it back */
   n.innerHTML = `<p>${set[Math.min(chaptersRead, set.length) - 1]}</p>
                  <a href="#">Why not buy the book?</a>`;
 
@@ -791,7 +840,38 @@ async function openChapter(slug){
   document.getElementById('rclose').focus();
 }
 
-function closeChapter(){ reader.removeAttribute('open'); }
+/* ------------------------------------------------------------------- about */
+
+/* The reader shell doubles as the About panel — one overlay, one close button,
+   one Escape handler, and one place to fix the return when we get to it. */
+function openPage(title, sub, frag){
+  document.getElementById('rtitle').textContent = title;
+  document.getElementById('rwhy').textContent = sub;
+  const body = document.getElementById('rbody');
+  body.innerHTML = '';
+  body.appendChild(frag.cloneNode(true));
+  /* The nudge is a chapter thing. Emptying it isn't enough — it carries a 3px
+     top rule, which left a stray line under the credits. */
+  const n = document.getElementById('rnudge');
+  n.innerHTML = ''; n.style.display = 'none';
+  reader.setAttribute('open','');
+  reader.scrollTop = 0;
+  document.getElementById('rclose').focus();
+}
+
+document.querySelector('a.b').addEventListener('click', e => {
+  e.preventDefault();
+  openPage('About the book', 'A little book about humans. And AI.',
+           document.getElementById('aboutBody').content);
+});
+
+function closeChapter(){
+  reader.removeAttribute('open');
+  /* Closing used to drop you back on a half-forgotten thread with nothing
+     focused. Same desktop-only guard as the load focus — on a phone this
+     would throw the keyboard up over the composition. */
+  if (matchMedia('(min-width:900px) and (hover:hover)').matches) say.focus();
+}
 document.getElementById('rclose').addEventListener('click', closeChapter);
 addEventListener('keydown', e => { if (e.key === 'Escape') closeChapter(); });
 </script>
