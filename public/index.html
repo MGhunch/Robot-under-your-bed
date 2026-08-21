@@ -824,6 +824,16 @@ say.addEventListener('input', syncPill);
 goEl.addEventListener('click', () => { if (currentPill()) compose.requestSubmit(); });
 syncPill();
 
+/* Watched on real phones: people tap the robot's bubble when it says to ask.
+   The instinct is right — forgive the tap and land them where they were going.
+   Focus inside the tap gesture, so iOS raises the keyboard. Links and the
+   chapter card keep their own jobs; this only catches taps that would
+   otherwise do nothing. Not a control, so no styling and no cursor change. */
+document.getElementById('thread').addEventListener('click', e => {
+  if (e.target.closest('a, .rec')) return;
+  if (e.target.closest('.msg.r .bub')) say.focus();
+});
+
 /* The strapline is set to the exact width of the widest headline line, at any
    viewport. Guessed ratios drift; measuring doesn't. */
 function fitStrap(){
