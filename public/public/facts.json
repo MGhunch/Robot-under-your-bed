@@ -1,0 +1,186 @@
+{
+  "checked": "2026-08",
+  "chapters": {
+    "robot-under-your-bed": {
+      "reckons": [
+        {
+          "claim": "There's stacks of robot hype and doom in the extremes. We think it'll land somewhere in the middle. Because it usually does.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "brief-history-of-robots": {
+      "reckons": [
+        {
+          "claim": "This is a lot of years in a little chapter so we've pulled the bits that click together best. History was messier than this.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "deal-with-chess": {
+      "reckons": [
+        {
+          "claim": "Nobody actually knows why nerds love chess. But there's some reasonable stuff we can assume.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "brainpower-and-firepower": {
+      "reckons": [
+        {
+          "claim": "We've kept the big numbers deliberately loose. Nobody hand counted all the books in all the libraries.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "small-bunch-of-nerds": {
+      "reckons": [
+        {
+          "claim": "We know who was there and what happened next. We're guessing at what they were thinking at the time.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "deal-with-different-robots": {
+      "reckons": [
+        {
+          "claim": "This tech changes all the time. Top line, the robots are more similar than different. But they'll all tell you they're special in their own way.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "how-robots-think": {
+      "reckons": [
+        {
+          "claim": "Whether or not the robots think is more philosophy than science. Our take is that memory and math doesn't make them Plato.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "deal-with-tokens": {
+      "reckons": [
+        {
+          "claim": "Token economics is a moving target. This is more about how tokens work than where the money will land.",
+          "dated": "2026-08"
+        }
+      ],
+      "research": []
+    },
+    "feed-it-fight-it-fix-it": {
+      "reckons": [
+        {
+          "claim": "'Better chats beat better prompts' is an opinion based on experience. You'll easily find people who believe just the opposite.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "deal-with-adoption": {
+      "reckons": [
+        {
+          "claim": "We reckon training is the big unlock. Because it usually is.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "train-your-unicorn": {
+      "reckons": [
+        {
+          "claim": "The basics of how to customise robots are sound. The language will likely bounce around, bot by bot over time.",
+          "dated": "2026-08"
+        }
+      ],
+      "research": []
+    },
+    "ai-mageddon": {
+      "reckons": [
+        {
+          "claim": "Nobody knows what tomorrow will throw. But we do know what's less likely. So we've stacked the doom in order from catastrophe to creeper.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "deal-with-workslop": {
+      "reckons": [
+        {
+          "claim": "Workslop is a term coined by management consultants and is now widely uttered as an under-breath expletive.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "last-horse-standing": {
+      "reckons": [
+        {
+          "claim": "Our big assumption is that history repeats. We don't know that it will. It just always has before.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "deal-with-agents": {
+      "reckons": [
+        {
+          "claim": "Agents are usually smarter than puppies. The watch out is supervision, not intelligence.",
+          "dated": "2026-08"
+        }
+      ],
+      "research": []
+    },
+    "great-art-heist": {
+      "reckons": [
+        {
+          "claim": "It's true that robots do what they do by stealing. So the question we're really asking is who's committing the crime.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "deal-with-the-em-dash": {
+      "reckons": [
+        {
+          "claim": "Nobody knows why the em-dash became a thing. But people like to know why odd stuff happens. So we've given it a go with guesswork.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "robot-scientists": {
+      "reckons": [
+        {
+          "claim": "We cherry picked three stories to make a point. History is never that tidy. Plus robots having original ideas is about how you define 'original'.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "deal-with-ethics": {
+      "reckons": [
+        {
+          "claim": "Ethics needs another twenty books. We haven't done it justice. The basic idea is write the rules before you play the game.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "second-order-of-things": {
+      "reckons": [
+        {
+          "claim": "Again we've based the fortune telling on the clues we get from history. Past returns aren't proof of future performance.",
+          "dated": "2026-08"
+        }
+      ]
+    },
+    "everything-old-is-new-again": {
+      "reckons": [
+        {
+          "claim": "The idea that people don't change is evolutionary jazz hands. Individuals change all the time. As a species, we just left the cave.",
+          "dated": "2026-08"
+        }
+      ],
+      "research": []
+    },
+    "the-robot-under-your-bed": {
+      "reckons": [
+        {
+          "claim": "All the previous assumptions wrapped into a promise that's really a guess. But the big point is that the robots are here. Let's play.",
+          "dated": "2026-08"
+        }
+      ],
+      "research": []
+    }
+  }
+}
