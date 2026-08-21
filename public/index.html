@@ -435,7 +435,7 @@ h1 .box::before{
   width:100%; font-family:var(--body); font-size:16px;
   color:var(--black); background:none;
   border:2px solid var(--black); border-radius:999px;
-  padding:.6em 1.1em .66em; outline:none; margin-bottom:6px;
+  padding:.6em 1.1em .66em; outline:none; margin-bottom:22px;
 }
 .facts-search::placeholder{color:rgba(35,31,32,.45);}
 .facts-none{font-style:italic; opacity:.6; padding:22px 0;}
@@ -458,13 +458,9 @@ h1 .box::before{
 }
 .fx[open] .chev{transform:rotate(90deg);}
 .fx-t{flex:1 1 auto;}
-/* Sidebars sit in book order rather than in their own group, so they need a
-   mark to keep the hierarchy legible. */
-.fx-side{
-  font-family:var(--head); font-size:12px; letter-spacing:.1em;
-  border:1px solid rgba(35,31,32,.35); border-radius:3px;
-  padding:3px 5px 1px; opacity:.55; flex:none;
-}
+/* Sidebars sit in book order, untagged: eight rows all beginning "What's the
+   deal with…" already announce themselves as a set, and a label repeating what
+   the title says is furniture on a list 22 rows long. */
 .fx-n{font-size:13px; opacity:.5; white-space:nowrap; flex:none;}
 .fx-n.todo{font-style:italic;}
 
@@ -476,10 +472,17 @@ h1 .box::before{
 .fx .item{margin-bottom:14px; font-size:clamp(15px,4vw,17px); line-height:1.5;}
 .fx .q{display:block;}
 .fx .src, .fx .when{display:block; opacity:.62; font-size:.92em; margin-top:2px;}
+.reader a.ask{
+  color:var(--red); text-decoration:none;
+  border-bottom:2px solid var(--red);
+}
 .fx .dig{
   font-family:var(--head); text-transform:uppercase; letter-spacing:.06em;
   font-size:15px; color:var(--red); text-decoration:none;
   border-bottom:2px solid var(--red); padding-bottom:1px;
+  /* Never let the arrow wrap off on its own — a stranded "→" with an underline
+     under it reads as a rendering fault. */
+  white-space:nowrap;
 }
 /* Loud on this page, silent everywhere else — a bad facts.json must never take
    the site down, only this panel. */
@@ -571,11 +574,11 @@ h1 .box::before{
   <h3>What&rsquo;s in it?</h3>
   <p>A quick adventure into robot world. Where they come from, how they think
      and how to make them useful.</p>
-  <p>Plus, a few deeper dives into how the world is changing. What stuff we
-     might want to worry about and what&rsquo;s just history on repeat.</p>
-  <p>Get a little taste before you jump in. Just ask the robot about anything
-     you&rsquo;re into and it&rsquo;ll share a chapter it thinks you&rsquo;ll
-     like. Explore.</p>
+  <p>Plus, a few deeper dives into how the world is changing. What we might want
+     to worry about and what&rsquo;s just history on repeat.</p>
+  <p>Get a taste before you jump in. Just <a class="ask" href="/">ask the
+     robot</a> about anything you&rsquo;re into and it&rsquo;ll share a chapter
+     it thinks you&rsquo;ll like. Have fun.</p>
 
   <h3>About the author</h3>
   <p>Michael is a writer who panicked when the robots started eating his lunch.
@@ -930,8 +933,8 @@ document.querySelector('a.b').addEventListener('click', e => {
 /* ------------------------------------------------------------------- facts */
 
 /* MG copy, 20 Aug. Not a stand-in. */
-const FACTS_INTRO = "Facts can be fickle. But they matter. So if you’re " +
-  "interested in the research that backs the book, feel free to dig in here.";
+const FACTS_INTRO = "Facts can be fickle. But they matter. If you’re interested in the " +
+  "research that backs the book, feel free to dig in here.";
 
 /* An absent file is a legitimate state, not an error — the content lands in
    batches and every row reads "Not yet checked" until it does. */
@@ -954,10 +957,12 @@ function factsErrors(data, slugs){
   if (!data.chapters || typeof data.chapters !== 'object') return e.concat('“chapters” is missing.');
   for (const [slug, entry] of Object.entries(data.chapters)) {
     if (!slugs.includes(slug)) { e.push(`Unknown slug “${slug}” — not in chapters.json.`); continue; }
-    for (const a of (entry.assumptions || [])) {
-      if ('link' in a) e.push(`${slug}: an assumption carries a link. Links go where receipts live, nowhere else.`);
-      if (!a.claim) e.push(`${slug}: an assumption has no claim.`);
-      if (!niceMonth(a.dated)) e.push(`${slug}: assumption dated “${a.dated}” — must be YYYY-MM.`);
+    /* A missing facts key is legal and meaningful — "still checking" — so it
+       is never an error, only an absence. */
+    for (const r of (entry.reckons || [])) {
+      if ('link' in r) e.push(`${slug}: a reckon carries a link. Confessions don’t footnote.`);
+      if (!r.claim) e.push(`${slug}: a reckon has no claim.`);
+      if (!niceMonth(r.dated)) e.push(`${slug}: reckon dated “${r.dated}” — must be YYYY-MM.`);
     }
     for (const f of (entry.facts || [])) {
       if (!f.quote || !f.source || !f.link) e.push(`${slug}: a fact is missing quote, source or link.`);
@@ -979,48 +984,50 @@ function factRow(slug, ch, entry){
   const s = el('summary');
   s.appendChild(el('span', 'chev'));
   s.appendChild(el('span', 'fx-t', ch.title));
-  if (ch.kind === 'sidebar') s.appendChild(el('span', 'fx-side', 'Aside'));
 
-  const A = entry && entry.assumptions ? entry.assumptions.length : 0;
-  const F = entry && entry.facts ? entry.facts.length : 0;
+  const R = entry && entry.reckons ? entry.reckons : [];
+  const hasFacts = !!(entry && Array.isArray(entry.facts));
+  const F = hasFacts ? entry.facts.length : 0;
+
+  /* The summary counts facts only. Every chapter carries exactly one reckon,
+     always — a value that never varies tells the reader nothing and can't
+     launder a guess into evidence, which was the reason for counting the two
+     apart in the first place. The reckon shows the moment the panel opens. */
   const n = el('span', 'fx-n');
-  if (!entry) { n.textContent = 'Not yet checked'; n.classList.add('todo'); }
-  else if (!A && !F) n.textContent = 'Nothing to check';
-  /* Counted separately on purpose — "8 claims checked" over six facts and two
-     guesses would launder the guesses into evidence. */
-  else n.textContent = F + ' checked' + (A ? ` · ${A} assumption${A > 1 ? 's' : ''}` : '');
+  if (!entry || !hasFacts) { n.textContent = 'Still checking'; n.classList.add('todo'); }
+  else if (!F) n.textContent = 'Nothing to declare';
+  else n.textContent = F + ' checked';
   s.appendChild(n);
   d.appendChild(s);
 
   const p = el('div', 'panel');
-  if (!entry) {
-    p.appendChild(el('p', 'item')).appendChild(el('i', null, 'Still being written.'));
-  } else if (!A && !F) {
-    p.appendChild(el('p', 'item')).appendChild(el('i', null, 'Nothing in this one needed checking.'));
-  } else {
-    /* Ruled 20 Aug: assumptions first, receipts after. Front-load the
-       confession; close the panel on solid ground. */
-    if (A) {
-      p.appendChild(el('h4', null, 'The assumptions'));
-      for (const a of entry.assumptions) {
-        const i = el('div', 'item');
-        i.appendChild(el('span', 'q', '“' + a.claim + '”'));
-        i.appendChild(el('span', 'when', 'Reckoned ' + (niceMonth(a.dated) || a.dated) + '.'));
-        p.appendChild(i);
-      }
+  /* Reckons first, receipts after — front-load the confession, close the panel
+     on solid ground. Reckons are Michael's own copy, not book quotes, and they
+     never carry a link. */
+  if (R.length) {
+    p.appendChild(el('h4', null, 'Reckons'));
+    for (const r of R) {
+      const i = el('div', 'item');
+      i.appendChild(el('span', 'q', '“' + r.claim + '”'));
+      i.appendChild(el('span', 'when', 'Reckoned ' + (niceMonth(r.dated) || r.dated) + '.'));
+      p.appendChild(i);
     }
-    if (F) {
-      p.appendChild(el('h4', null, 'The facts'));
-      for (const f of entry.facts) {
-        const i = el('div', 'item');
-        i.appendChild(el('span', 'q', '“' + f.quote + '”'));
-        const src = el('span', 'src', f.source + ' ');
-        const a = el('a', 'dig', 'Dig in here →');
-        a.href = f.link; a.target = '_blank'; a.rel = 'noopener';
-        src.appendChild(a);
-        i.appendChild(src);
-        p.appendChild(i);
-      }
+  }
+  p.appendChild(el('h4', null, 'The facts'));
+  if (!hasFacts) {
+    p.appendChild(el('p', 'item')).appendChild(el('i', null, 'Still checking.'));
+  } else if (!F) {
+    p.appendChild(el('p', 'item')).appendChild(el('i', null, 'Nothing to declare.'));
+  } else {
+    for (const f of entry.facts) {
+      const i = el('div', 'item');
+      i.appendChild(el('span', 'q', '“' + f.quote + '”'));
+      const src = el('span', 'src', f.source + ' ');
+      const a = el('a', 'dig', 'Dig in here →');
+      a.href = f.link; a.target = '_blank'; a.rel = 'noopener';
+      src.appendChild(a);
+      i.appendChild(src);
+      p.appendChild(i);
     }
   }
   d.appendChild(p);
@@ -1054,7 +1061,11 @@ async function openFacts(slug){
     if (errs.length > 8) ul.appendChild(el('li', null, `…and ${errs.length - 8} more.`));
     box.appendChild(ul);
     body.appendChild(box);
-  } else if (data && niceMonth(data.checked)) {
+  /* Only once at least one chapter actually carries a fact. Printing "sources
+     last checked" above 22 rows with no sources in them is the one claim this
+     room can't make. */
+  } else if (data && niceMonth(data.checked) &&
+             Object.values(entries).some(v => v && v.facts && v.facts.length)) {
     body.appendChild(el('p', 'facts-meta', 'Sources last checked: ' + niceMonth(data.checked) + '.'));
   }
 
@@ -1110,6 +1121,17 @@ function routeTo(path, hash){
   else closeChapter();
 }
 document.querySelector('a.f').addEventListener('click', e => { e.preventDefault(); openFacts(); });
+
+/* "ask the robot", inside About. A real navigation would reload the page and
+   wipe the thread, so the click is intercepted and the panel closes softly.
+   Focused on mobile too, unlike a plain close — they've asked to go and talk,
+   so the keyboard is the point rather than an ambush. */
+reader.addEventListener('click', e => {
+  if (!e.target.closest('a.ask')) return;
+  e.preventDefault();
+  closeChapter();
+  say.focus();
+});
 addEventListener('popstate', () => routeTo(location.pathname, location.hash));
 if (location.pathname === '/facts') routeTo('/facts', location.hash);
 
