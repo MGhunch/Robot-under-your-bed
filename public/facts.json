@@ -7,6 +7,13 @@
           "claim": "There's stacks of robot hype and doom in the extremes. We think it'll land somewhere in the middle. Because it usually does.",
           "dated": "2026-08"
         }
+      ],
+      "research": [
+        {
+          "quote": "A hundred million people had given it a go by Tuesday.",
+          "source": "Time, reporting a UBS analysis: ChatGPT reached 100 million users about two months after launch, the fastest-growing consumer app on record. The Tuesday is ours.",
+          "link": "https://time.com/6253615/chatgpt-fastest-growing/"
+        }
       ]
     },
     "brief-history-of-robots": {
@@ -14,6 +21,38 @@
         {
           "claim": "This is a lot of years in a little chapter so we've pulled the bits that click together best. History was messier than this.",
           "dated": "2026-08"
+        }
+      ],
+      "research": [
+        {
+          "quote": "Alan Turing, the code-cracking guy, famously imagined machines that could think like humans about halfway through last century.",
+          "source": "Turing's 1950 paper “Computing Machinery and Intelligence”, in the journal Mind.",
+          "link": "https://academic.oup.com/mind/article/LIX/236/433/986238"
+        },
+        {
+          "quote": "Lovelace imagined a way to turn music into math so machines “might compose elaborate and scientific pieces of music of any degree of complexity”.",
+          "source": "Ada Lovelace's notes on the Analytical Engine, 1843. The quoted words are hers, from Note A.",
+          "link": "https://psychclassics.yorku.ca/Lovelace/lovelace.htm"
+        },
+        {
+          "quote": "In 1956, a summer camp in Dartmouth nudged the idea along. Ten guys, two months, one big idea: let's get in a room and crack intelligence.",
+          "source": "The 1955 proposal for the Dartmouth Summer Research Project on Artificial Intelligence, which asked for “a 2 month, 10 man study”.",
+          "link": "https://www-formal.stanford.edu/jmc/history/dartmouth/dartmouth.html"
+        },
+        {
+          "quote": "But the first ones were built in Denver, in 1952.",
+          "source": "The Utah Department of Transportation on the history of traffic signals: Denver installed the first electronically actuated system in 1952.",
+          "link": "https://udot.utah.gov/connect/2012/10/04/udot-display-shows-signals-from-the-past-and-present"
+        },
+        {
+          "quote": "It lost its first match against Kasparov, the Russian Grandmaster. But with a year's worth of tweaking, the computer won and the world freaked out.",
+          "source": "IBM's own history of Deep Blue: lost to Kasparov in 1996, won the rematch in May 1997.",
+          "link": "https://www.ibm.com/history/deep-blue"
+        },
+        {
+          "quote": "IBM's Deep Blue was about the size of a fridge. It was taught the rules of chess and could figure out the next best move by crunching 200 million options a second.",
+          "source": "IBM's own history of Deep Blue: the machine evaluated 200 million chess positions per second.",
+          "link": "https://www.ibm.com/history/deep-blue"
         }
       ]
     },
@@ -23,6 +62,28 @@
           "claim": "Nobody actually knows why nerds love chess. But there's some reasonable stuff we can assume.",
           "dated": "2026-08"
         }
+      ],
+      "research": [
+        {
+          "quote": "They called it the 'Mechanical Turk'. Built by a Hungarian showman to impress an Austrian Empress.",
+          "source": "IEEE Spectrum on Wolfgang von Kempelen's chess automaton, built in 1770 for Empress Maria Theresa.",
+          "link": "https://spectrum.ieee.org/untold-history-of-ai-charles-babbage-and-the-turk"
+        },
+        {
+          "quote": "So he was very disappointed to be beaten by a robot.",
+          "source": "Benjamin Franklin played the Turk in Paris in 1783 and lost. The disappointment is our guess — the game is on record at the US National Archives' Founders Online.",
+          "link": "https://founders.archives.gov/documents/Franklin/01-40-02-0041"
+        },
+        {
+          "quote": "The Turk went on tour for over 80 years and wiped the floor with the smartest players in town.",
+          "source": "IEEE Spectrum: the Turk toured Europe and America from 1770 until it was destroyed by fire in 1854, beating most challengers.",
+          "link": "https://spectrum.ieee.org/untold-history-of-ai-charles-babbage-and-the-turk"
+        },
+        {
+          "quote": "One was a math nerd called Charles Babbage. He couldn't work out how the robot won.",
+          "source": "IEEE Spectrum: Babbage played the Turk in 1819, lost, and suspected a trick without solving it.",
+          "link": "https://spectrum.ieee.org/untold-history-of-ai-charles-babbage-and-the-turk"
+        }
       ]
     },
     "brainpower-and-firepower": {
@@ -30,6 +91,23 @@
         {
           "claim": "We've kept the big numbers deliberately loose. Nobody hand counted all the books in all the libraries.",
           "dated": "2026-08"
+        }
+      ],
+      "research": [
+        {
+          "quote": "Then came the big unlock from Google. In 2017, a small team of researchers were after better ways to do translation.",
+          "source": "“Attention Is All You Need”, the 2017 transformer paper by eight Google researchers, framed around machine translation.",
+          "link": "https://arxiv.org/abs/1706.03762"
+        },
+        {
+          "quote": "It's also why NVIDIA leapt from graphics-chip king to the top of the big cash leaderboard.",
+          "source": "Al Jazeera, 19 June 2024: NVIDIA became the world's most valuable company, passing Microsoft.",
+          "link": "https://www.aljazeera.com/economy/2024/6/19/nvidia-becomes-worlds-most-valuable-company-dethroning-microsoft"
+        },
+        {
+          "quote": "Data was named the new oil.",
+          "source": "The UK Information Commissioner's Office attributes “data is the new oil” to mathematician Clive Humby in 2006.",
+          "link": "https://ico.org.uk/for-the-public/ico-40/data-as-a-commodity/"
         }
       ]
     },
@@ -39,6 +117,78 @@
           "claim": "We know who was there and what happened next. We're guessing at what they were thinking at the time.",
           "dated": "2026-08"
         }
+      ],
+      "research": [
+        {
+          "quote": "It wasn't exactly a pub, it was the Rosewood Sand Hill in Silicon Valley.",
+          "source": "Fortune's account of the July 2015 dinner at the Rosewood Sand Hill on Menlo Park's Sand Hill Road where OpenAI was hatched.",
+          "link": "https://fortune.com/longform/chatgpt-openai-sam-altman-microsoft/"
+        },
+        {
+          "quote": "After winning a famous picture-guessing competition, everyone spotted the potential of what they'd invented.",
+          "source": "The AlexNet paper by Krizhevsky, Sutskever and Hinton, which won the 2012 ImageNet image-recognition challenge.",
+          "link": "https://proceedings.neurips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html"
+        },
+        {
+          "quote": "And before you could say stock options, Hinton's lab was gobbled by Google for a very big cheque.",
+          "source": "CBC News, March 2013: Google acquired Hinton's University of Toronto startup DNNresearch. The price wasn't disclosed.",
+          "link": "https://www.cbc.ca/news/science/google-buys-university-of-toronto-startup-1.1373641"
+        },
+        {
+          "quote": "So Google got out its chequebook again and paid over ten times more to lock down the promising tech.",
+          "source": "TechCrunch, January 2014: Google bought DeepMind for a reported $500 million or more — more than ten times the roughly $44 million reported for DNNresearch.",
+          "link": "https://techcrunch.com/2014/01/26/google-deepmind"
+        },
+        {
+          "quote": "Together with Altman and crew, they conceived the idea of OpenAI.",
+          "source": "Fortune's account of OpenAI's founding, from the 2015 dinner through launch.",
+          "link": "https://fortune.com/longform/chatgpt-openai-sam-altman-microsoft/"
+        },
+        {
+          "quote": "just before Christmas in 2015, OpenAI was launched.",
+          "source": "Fast Company: OpenAI announced itself on December 11, 2015.",
+          "link": "https://www.fastcompany.com/91447143/openai-anniversary-sam-altman-chatgpt"
+        },
+        {
+          "quote": "Over a billion dollars was pledged to launch the lab. With all the usual suspects promising cash in the tin. Although not all that much of it ever showed up.",
+          "source": "OpenAI's own account: $1 billion was pledged at launch; Musk contributed less than $45 million and other donors over $90 million.",
+          "link": "https://openai.com/index/openai-elon-musk/"
+        },
+        {
+          "quote": "They couldn't very well accept money from Google. So they chose Microsoft instead.",
+          "source": "Fortune on Microsoft's investment in OpenAI, starting with $1 billion in 2019.",
+          "link": "https://fortune.com/longform/chatgpt-openai-sam-altman-microsoft/"
+        },
+        {
+          "quote": "Most famous was Dario Amodei. He was poached from Google to help build GPT-3.",
+          "source": "Dario Amodei's own biography: left Google for OpenAI in 2016, where he led the teams behind GPT-2 and GPT-3.",
+          "link": "https://darioamodei.com/"
+        },
+        {
+          "quote": "When that was apparently not the plan he gathered a team to set up Anthropic.",
+          "source": "Anthropic's own announcement, 2021: founded by Dario Amodei with former OpenAI colleagues.",
+          "link": "https://anthropic.com/news/anthropic-raises-124-million-to-build-more-reliable-general-ai-systems"
+        },
+        {
+          "quote": "He joined a coup in 2023 that had Altman fired for at least a weekend.",
+          "source": "ABC News: Altman was fired on Friday November 17, 2023, with Sutskever on the board that removed him, and was reinstated within five days.",
+          "link": "https://abcnews.com/Business/sam-altman-reaches-deal-return-ceo-openai/story?id=105091534"
+        },
+        {
+          "quote": "He went on to set up Safe Superintelligence.",
+          "source": "Safe Superintelligence Inc., co-founded by Ilya Sutskever in June 2024, in the company's own words.",
+          "link": "https://ssi.inc"
+        },
+        {
+          "quote": "Musk threw a spat when he couldn't be the boss. He cut off the cash and crossed the road to build a toy of his own.",
+          "source": "OpenAI's own account of Musk's 2018 departure, the funding he withheld, and his move to build a competitor.",
+          "link": "https://openai.com/index/openai-elon-musk/"
+        },
+        {
+          "quote": "He hung in for a while, won a Nobel Prize.",
+          "source": "The Nobel Prize in Physics 2024, awarded to Geoffrey Hinton and John Hopfield.",
+          "link": "https://www.nobelprize.org/prizes/physics/2024/"
+        }
       ]
     },
     "deal-with-different-robots": {
@@ -47,13 +197,26 @@
           "claim": "This tech changes all the time. Top line, the robots are more similar than different. But they'll all tell you they're special in their own way.",
           "dated": "2026-08"
         }
-      ]
+      ],
+      "research": []
     },
     "how-robots-think": {
       "reckons": [
         {
           "claim": "Whether or not the robots think is more philosophy than science. Our take is that memory and math doesn't make them Plato.",
           "dated": "2026-08"
+        }
+      ],
+      "research": [
+        {
+          "quote": "Plenty of lawyers have tuned up their arguments with a robot. Many go on to cite cases that don't exist.",
+          "source": "Mata v. Avianca: the June 2023 federal court opinion sanctioning lawyers who filed ChatGPT-invented cases.",
+          "link": "https://law.justia.com/cases/federal/district-courts/new-york/nysdce/1:2022cv01461/575368/54/"
+        },
+        {
+          "quote": "One measure of success is the number of things a robot can do in a row. That doubles every year. And then some.",
+          "source": "METR's research on task length: the length of tasks AI can complete has been doubling about every seven months.",
+          "link": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/"
         }
       ]
     },
@@ -72,6 +235,13 @@
           "claim": "'Better chats beat better prompts' is an opinion based on experience. You'll easily find people who believe just the opposite.",
           "dated": "2026-08"
         }
+      ],
+      "research": [
+        {
+          "quote": "'Prompt engineer' was the hottest job of 2023. Salaries went nuts",
+          "source": "Fortune, March 2023, on prompt-engineering roles advertising salaries up to $335,000.",
+          "link": "https://www.fortune.com/2023/03/09/new-ai-jobs-chatgpt-like-assistants"
+        }
       ]
     },
     "deal-with-adoption": {
@@ -79,6 +249,13 @@
         {
           "claim": "We reckon training is the big unlock. Because it usually is.",
           "dated": "2026-08"
+        }
+      ],
+      "research": [
+        {
+          "quote": "More than a billion people now chat with a bot on the regular.",
+          "source": "CNBC, June 2026: ChatGPT alone passed one billion monthly mobile app users, per Sensor Tower.",
+          "link": "https://www.cnbc.com/2026/06/12/chatgpt-a-billion-monthly-app-users-despite-souring-public-ai-sentiment.html"
         }
       ]
     },
@@ -97,6 +274,33 @@
           "claim": "Nobody knows what tomorrow will throw. But we do know what's less likely. So we've stacked the doom in order from catastrophe to creeper.",
           "dated": "2026-08"
         }
+      ],
+      "research": [
+        {
+          "quote": "They're also twenty times more likely to kill you than a shark.",
+          "source": "The US CDC counted about 22 cattle-related deaths a year; shark attacks kill about one American a year. The twenty-times is that arithmetic.",
+          "link": "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm5829a2.htm"
+        },
+        {
+          "quote": "That's roughly the plot of 2001: A Space Odyssey. Stanley Kubrick's HAL was scary in 1968.",
+          "source": "The American Film Institute's catalogue entry for 2001: A Space Odyssey, released April 1968.",
+          "link": "https://catalog.afi.com/Catalog/moviedetails/23399"
+        },
+        {
+          "quote": "An Oxford academic wrote a paper on the risks of superintelligence. A thought experiment with stationery.",
+          "source": "Nick Bostrom's 2003 paper “Ethical Issues in Advanced Artificial Intelligence”, with the paperclip thought experiment, on his own site.",
+          "link": "https://nickbostrom.com/ethics/ai.pdf"
+        },
+        {
+          "quote": "The AI Safety Index grades the big labs. But the best they could score in the first few years was C+.",
+          "source": "The Future of Life Institute's AI Safety Index: C+ has been the top overall grade across its editions, including Summer 2026.",
+          "link": "https://futureoflife.org/ai-safety-index-summer-2026/"
+        },
+        {
+          "quote": "Even experts studying deepfakes only pick them half the time.",
+          "source": "A 2024 meta-analysis of 56 deepfake-detection studies found people spot good deepfakes at about chance — roughly half the time.",
+          "link": "https://www.sciencedirect.com/science/article/pii/S2451958824001714"
+        }
       ]
     },
     "deal-with-workslop": {
@@ -105,13 +309,46 @@
           "claim": "Workslop is a term coined by management consultants and is now widely uttered as an under-breath expletive.",
           "dated": "2026-08"
         }
-      ]
+      ],
+      "research": []
     },
     "last-horse-standing": {
       "reckons": [
         {
           "claim": "Our big assumption is that history repeats. We don't know that it will. It just always has before.",
           "dated": "2026-08"
+        }
+      ],
+      "research": [
+        {
+          "quote": "From 25 million in 1920, they started a gentle downhill trot. By 1965, only 3 million were left.",
+          "source": "US equine census figures: about 25.2 million horses and mules in 1920, about 3.1 million at the last count in 1960.",
+          "link": "https://www.americanequestrian.com/pdf/US-Equine-Demographics.pdf"
+        },
+        {
+          "quote": "One US crowd who counts layoffs for a living keeps a running tally on AI-related job cuts.",
+          "source": "Challenger, Gray & Christmas, whose layoff reports have tracked job cuts attributed to AI since 2023.",
+          "link": "https://www.challengergray.com/blog/2025-year-end-challenger-report-highest-q4-layoffs-since-2008-lowest-ytd-hiring-since-2010/"
+        },
+        {
+          "quote": "In a stadium packed with 50,000 workers, only 22 were told that a robot took their job. Less a revolution. More a bathroom break.",
+          "source": "The stadium is our maths: Challenger counted 71,825 announced job cuts naming AI across 2023–2025, out of roughly 163 million US jobs — about 22 in every 50,000.",
+          "link": "https://www.challengergray.com/blog/2025-year-end-challenger-report-highest-q4-layoffs-since-2008-lowest-ytd-hiring-since-2010/"
+        },
+        {
+          "quote": "Unemployment (in rich countries) stubbornly hovers around 5%.",
+          "source": "OECD figures, June 2026: unemployment across member countries at 5.0%, near that level for a fifth year.",
+          "link": "https://www.oecd.org/en/data/insights/statistical-releases/2026/06/unemployment-rates-updated-june-2026.html"
+        },
+        {
+          "quote": "Back in the 1900s, 40% of Americans worked on farms. Today it's less than 2%.",
+          "source": "The US Department of Agriculture: farm jobs were 41% of the workforce in 1900 and under 2% by 2000.",
+          "link": "https://ers.usda.gov/sites/default/files/_laserfiche/publications/44197/13566_eib3_1_.pdf"
+        },
+        {
+          "quote": "Over half the jobs we do today didn't exist when they were starting out.",
+          "source": "Research by MIT economist David Autor and colleagues: about 60% of 2018 US jobs were in kinds of work that didn't exist in 1940.",
+          "link": "https://www.nber.org/papers/w30389"
         }
       ]
     },
@@ -130,6 +367,38 @@
           "claim": "It's true that robots do what they do by stealing. So the question we're really asking is who's committing the crime.",
           "dated": "2026-08"
         }
+      ],
+      "research": [
+        {
+          "quote": "Rather than hand it over, he kept it and he tinkered with it for sixteen years.",
+          "source": "Time's account of the Mona Lisa: begun in Florence in 1503, still with Leonardo in France at his death in 1519.",
+          "link": "https://time.com/archive/6909920/arts-great-whodunit-the-mona-lisa-theft-of-1911/"
+        },
+        {
+          "quote": "Then it was stolen. Story turned to legend and that enigmatic smile became one of the most widely shared images in the world.",
+          "source": "PBS on the 1911 Louvre theft, which turned a little-known portrait into a household name.",
+          "link": "https://www.pbs.org/wnet/secrets/mona-lisa-mystery-theft-mona-lisa-louvre/1769"
+        },
+        {
+          "quote": "For one crazy year in 2021 the NFT market boomed to $25B before crashing",
+          "source": "DappRadar's 2021 industry report counted $23 billion in NFT sales — we rounded up with the crowd.",
+          "link": "https://dappradar.com/blog/2021-dapp-industry-report"
+        },
+        {
+          "quote": "MTV launched in 1981. And boldly played that Buggles track as first cab off the rank.",
+          "source": "Rolling Stone: MTV went to air on August 1, 1981, opening with “Video Killed the Radio Star”.",
+          "link": "https://www.rollingstone.com/music/music-news/mtv-music-only-channels-off-air-1235492854/"
+        },
+        {
+          "quote": "Streaming killed MTV by 2025. And yes, they had the Buggles play it out.",
+          "source": "NME: MTV's music-only channels shut down on December 31, 2025, closing with the same Buggles video they opened with.",
+          "link": "https://www.nme.com/news/music/mtv-shuts-down-final-music-only-channels-with-video-killed-the-radio-star-3920577"
+        },
+        {
+          "quote": "From the moment streaming started, vinyl came back from the dead. Sales shot up year on year.",
+          "source": "The Recording Industry Association of America: 2025 was vinyl's 19th straight year of growth.",
+          "link": "https://www.riaa.com/riaa-reports-us-recorded-music-annual-revenue-achieves-new-high-of-11-5-billion-in-2025/"
+        }
       ]
     },
     "deal-with-the-em-dash": {
@@ -138,13 +407,66 @@
           "claim": "Nobody knows why the em-dash became a thing. But people like to know why odd stuff happens. So we've given it a go with guesswork.",
           "dated": "2026-08"
         }
-      ]
+      ],
+      "research": []
     },
     "robot-scientists": {
       "reckons": [
         {
           "claim": "We cherry picked three stories to make a point. History is never that tidy. Plus robots having original ideas is about how you define 'original'.",
           "dated": "2026-08"
+        }
+      ],
+      "research": [
+        {
+          "quote": "Fleming noticed that mould was attacking his experiment. It killed some bacteria growing in the dish.",
+          "source": "The American Chemical Society's history of penicillin: Fleming's 1928 observation of mould killing bacteria in a petri dish.",
+          "link": "https://www.acs.org/education/whatischemistry/landmarks/penicillin.html"
+        },
+        {
+          "quote": "He made a discovery in an untidy lab, but it took ten years and a stack of experiments to turn that discovery into drugs.",
+          "source": "The American Chemical Society: penicillin stayed a laboratory curiosity for the next decade, until Florey and Chain's team turned it into a drug in the 1940s.",
+          "link": "https://www.acs.org/education/whatischemistry/landmarks/penicillin.html"
+        },
+        {
+          "quote": "Mortality rates dropped dramatically. This bold new idea of doctors washing with decent soap could actually save lives.",
+          "source": "The Linda Hall Library on Semmelweis: death rates in his Vienna clinic ran over 13% against 2% in the midwives' clinic, and fell once handwashing came in.",
+          "link": "https://www.lindahall.org/about/news/scientist-of-the-day/ignaz-semmelweis/"
+        },
+        {
+          "quote": "In the end they quietly had him committed.",
+          "source": "The Linda Hall Library: Semmelweis was committed to an asylum, where he died in 1865.",
+          "link": "https://www.lindahall.org/about/news/scientist-of-the-day/ignaz-semmelweis/"
+        },
+        {
+          "quote": "Demis Hassabis is a video game designer. He started DeepMind",
+          "source": "Hassabis's own biography at Isomorphic Labs: designed the game Theme Park at 17, founded DeepMind in 2010.",
+          "link": "https://www.isomorphiclabs.com/people/sir-demis-hassabis-phd"
+        },
+        {
+          "quote": "Scientists had been working on it since the 60s. Thousands of biologists, fifty-odd years, building, testing, authenticating, one fold at a time.",
+          "source": "The Nobel Committee called protein-structure prediction a 50-year-old problem when it awarded the 2024 Chemistry prize.",
+          "link": "https://www.nobelprize.org/prizes/chemistry/2024/"
+        },
+        {
+          "quote": "There are more possible shapes than atoms in the universe.",
+          "source": "The classic framing of Levinthal's paradox: a protein's possible folds outnumber astronomical figures, popularised by DeepMind as more than the atoms in the universe.",
+          "link": "https://www.nobelprize.org/prizes/chemistry/2024/"
+        },
+        {
+          "quote": "In 2022 they released the predicted shapes of over 200 million proteins. Pretty much the known protein universe, free and publicly available",
+          "source": "DeepMind's own announcement, July 2022: predicted structures for over 200 million proteins, free for anyone.",
+          "link": "https://deepmind.google/blog/alphafold-reveals-the-structure-of-the-protein-universe/"
+        },
+        {
+          "quote": "That's a starting point for brand new drugs, nailed by a robot and recognised with a Nobel Prize.",
+          "source": "The Nobel Prize in Chemistry 2024, awarded to Demis Hassabis and John Jumper for protein-structure prediction.",
+          "link": "https://www.nobelprize.org/prizes/chemistry/2024/"
+        },
+        {
+          "quote": "Genius, according to Edison, is 1% inspiration and 99% perspiration.",
+          "source": "Quote Investigator's provenance record: attributed to Edison from around 1902, first printed in Harper's Monthly in 1932.",
+          "link": "https://quoteinvestigator.com/2012/12/14/genius-ratio/"
         }
       ]
     },
@@ -154,6 +476,23 @@
           "claim": "Ethics needs another twenty books. We haven't done it justice. The basic idea is write the rules before you play the game.",
           "dated": "2026-08"
         }
+      ],
+      "research": [
+        {
+          "quote": "Like that doctor in 2018 who was aiming to help kids at risk of HIV. He edited their genes to make them immune.",
+          "source": "Science on He Jiankui, who announced in November 2018 that he had edited embryos aiming to confer resistance to HIV.",
+          "link": "https://www.science.org/content/article/chinese-scientist-who-produced-genetically-altered-babies-sentenced-3-years-jail"
+        },
+        {
+          "quote": "It's a fine line between a Nobel Prize and prison. He won the latter.",
+          "source": "Science: He Jiankui was sentenced to three years in jail in December 2019.",
+          "link": "https://www.science.org/content/article/chinese-scientist-who-produced-genetically-altered-babies-sentenced-3-years-jail"
+        },
+        {
+          "quote": "Tech is already implanted into brains.",
+          "source": "Neuralink's own update: its first human brain-computer implant was carried out in January 2024.",
+          "link": "https://neuralink.com/updates/prime-study-progress-update/"
+        }
       ]
     },
     "second-order-of-things": {
@@ -161,6 +500,13 @@
         {
           "claim": "Again we've based the fortune telling on the clues we get from history. Past returns aren't proof of future performance.",
           "dated": "2026-08"
+        }
+      ],
+      "research": [
+        {
+          "quote": "Right across town we'd already invented much smaller motors that could do a better job. But it took over 30 years to bring them in.",
+          "source": "Economic historian Paul David's “The Dynamo and the Computer”, 1990: factories took decades to redesign around the electric motor.",
+          "link": "https://ideas.repec.org/a/aea/aecrev/v80y1990i2p355-61.html"
         }
       ]
     },
