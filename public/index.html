@@ -7,6 +7,16 @@
 <meta name="description" content="A little book about humans. And AI.">
 <meta name="theme-color" content="#ED1C24">
 
+<!-- Icons. Drawn on a 32-unit grid so every edge lands on a whole pixel at both
+     16 and 32 — the sizes a tab actually uses. The .ico carries baked 16/32/48
+     for Safari and older browsers; modern ones take the SVG and rasterise it
+     fresh. The maskable PNG is padded to the 60% safe area so Android can crop
+     it to a circle without taking the robot's head off. -->
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
 <meta property="og:title" content="There's a Robot Under Your Bed">
 <meta property="og:description" content="A little book about humans. And AI.">
 <meta property="og:type" content="book">
@@ -18,9 +28,9 @@
 <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,401,700,701&display=swap" rel="stylesheet">
 
 <style>
-/* Bebas Neue — the book's headline face.
-   The free release is ONE weight; the book is set in Bebas Neue *Bold* (Pro, paid).
-   If the headline reads thin next to the printed cover, licence Pro and swap this file. */
+/* Bebas Neue — the book's headline face. The free release is ONE weight; the
+   book is set in Bebas Neue *Bold* (Pro, paid). If the headline reads thin next
+   to the printed cover, licence Pro and swap this file. */
 @font-face{
   font-family:'Bebas Neue';
   font-style:normal; font-weight:400; font-display:block;
@@ -33,7 +43,13 @@
   --white:#fff;
   --head:'Bebas Neue','Arial Narrow',sans-serif;
   --body:'Zodiak',Georgia,'Times New Roman',serif;
-  --gut:clamp(20px,5vw,64px);
+  --gut:clamp(22px,6vw,92px);        /* left and right */
+  --top:clamp(28px,7vw,130px);       /* more air above the title */
+  --bridge:clamp(28px,3.4vw,64px);   /* how far the bed may cross the gutter */
+  /* Both bottom blocks — the bed and the lockup — sit on this line. Raising it
+     lifts them together, keeps their shared baseline, and closes the gap between
+     the title and the CTA in the same move. */
+  --btm:clamp(24px,7.5vw,140px);
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -43,355 +59,1210 @@ body{
   font-family:var(--body);
   -webkit-font-smoothing:antialiased;
   overflow:hidden;
+  height:100svh; display:flex; align-items:center;
 }
 
 /* ---------------------------------------------------------------- shell */
 
+.stage{
+  /* The composition is capped and centred. This box is the size container, and
+     the padding lives INSIDE it — container units resolve against the content
+     box, so padding on the container itself would shrink the type and the bed
+     every time we added air. */
+  height:min(100svh, 1080px);
+  width:100%; max-width:1360px; margin:auto;
+}
 .wrap{
-  height:100svh;
+  height:100%;
   display:flex; flex-direction:column;
-  padding:var(--gut);
-  padding-bottom:calc(var(--gut) * .6 + env(safe-area-inset-bottom));
+  padding:var(--top) var(--gut) calc(var(--btm) + env(safe-area-inset-bottom));
   gap:14px;
-  max-width:1400px; margin:0 auto;
 }
 
-.burger{
-  position:fixed; z-index:30;
-  top:var(--gut); right:var(--gut);
-  width:34px; height:22px;
-  display:flex; flex-direction:column; justify-content:space-between;
-  background:none; border:0; padding:0; cursor:pointer;
-}
-.burger span{display:block;height:3px;background:var(--white);border-radius:3px;}
-@media (min-width:900px){ .burger{width:46px;height:30px;} .burger span{height:4px;} }
 
 /* ---------------------------------------------------------------- brand */
 
-.brand{flex:none;}
-
+.brand{flex:none; display:flex; flex-direction:column; justify-content:space-between;}
 h1{
-  font-family:var(--head); font-weight:400;
-  text-transform:uppercase;
-  font-size:clamp(50px,15vw,116px);
+  width:fit-content;
+  font-family:var(--head); font-weight:400; text-transform:uppercase;
+  font-size:clamp(48px, min(13.5vw, 15vh), 150px);
   line-height:.82; letter-spacing:.01em;
 }
+/* The black box is drawn as a pseudo-element so its bleed is independent of the
+   line box. Measured from Bebas Neue at line-height .82: the cap top sits exactly
+   at the content-box top, and the baseline sits .11em above the bottom.
+   The gap between one line's baseline and the next line's cap top is therefore
+   .82 - .71 = .11em — that is the whole budget the box has to work with. At .20em
+   it was spending nearly twice it and eating the lines above and below. Now .105em
+   each way: the box meets the baseline above and the cap line below with half a
+   thousandth of an em to spare, and stays symmetric around ROBOT. */
 h1 .box{
-  display:inline-block; background:var(--black);
-  padding:0 .09em; margin-left:.04em;
+  position:relative; display:inline-block; z-index:0;
+  padding:0 .09em; margin-left:.04em; background:none;
 }
-.strap{
-  font-size:clamp(16px,4.3vw,26px);
-  margin-top:clamp(12px,2.4vh,24px);
+h1 .box::before{
+  content:""; position:absolute; z-index:-1;
+  left:0; right:0; top:-.105em; bottom:.005em;
+  background:var(--black);
 }
+.strap{white-space:nowrap;font-size:18px;margin-top:clamp(10px,2vh,20px);}
+/* ---- the lockup: two hollow pills above one solid hero ----
+   The pills total the hero's width, which is what makes it one object rather
+   than three adjacent ones. Proportional split, because forcing ABOUT to match
+   FACT CHECK leaves it padded out. Subordinates sit ABOVE so the hero keeps the
+   baseline it shares with the bed. */
+.lockup{display:inline-block; align-self:flex-start;}
+
+.minor{display:flex; gap:10px; margin-bottom:11px;}
+.minor a{
+  font-family:var(--head); text-transform:uppercase; letter-spacing:.1em;
+  font-size:clamp(13px,3.2vw,16px);
+  color:var(--white); text-decoration:none; text-align:center;
+  border:2px solid var(--white); border-radius:999px;
+  /* Transparent again. The red fill was an occlusion patch for the lockup
+     sitting fixed over the bed mid-chat on mobile; the lockup lives under the
+     bed now (21 Aug) and nothing overlaps anything. */
+  background:none;
+  padding:.62em 0 .48em;
+}
+.minor a.f{flex:1.9 1 0;}   /* sized to the words, still totalling the hero */
+.minor a.b{flex:1 1 0;}
+
 .buy{
-  align-self:flex-start;
+  display:block; width:100%; text-align:center; white-space:nowrap;
   font-family:var(--head); text-transform:uppercase; letter-spacing:.06em;
-  font-size:clamp(17px,4.4vw,26px);
+  font-size:clamp(17px,4.4vw,25px);
   background:var(--white); color:var(--red);
   border-radius:999px; border:0; cursor:pointer;
-  padding:.66em 1.8em .5em;
-  text-decoration:none; display:inline-block;
-  margin-top:clamp(16px,3vh,34px);
+  padding:.66em 1.7em .5em;
+  text-decoration:none;
 }
 
 /* ---------------------------------------------------------------- talk */
 
-.talk{
-  flex:1 1 auto;
-  display:flex; flex-direction:column;
-  min-height:0;
-}
+.talk{flex:1 1 auto; display:flex; flex-direction:column; min-height:0;}
 
 .thread{
-  flex:1 1 auto;
-  min-height:0;
-  overflow-y:auto;
-  overscroll-behavior:contain;
-  scrollbar-width:none;
+  /* The card's geometry, declared here so the message block can read it too —
+     a bubble carrying a card has to be at least wide enough to hold one. */
+  --tuck-l:14px; --tuck-r:0px;
+  --tuck-w:calc(100vw - 2*var(--gut) - var(--tuck-l) - var(--tuck-r));
+  flex:1 1 auto; min-height:0;
+  overflow-y:auto; overscroll-behavior:contain; scrollbar-width:none;
   display:flex; flex-direction:column; justify-content:flex-end;
-  gap:clamp(10px,1.8vh,18px);
-  padding-top:10px;
-  padding-bottom:16px;   /* room for the tail on the last bubble */
-  -webkit-mask-image:linear-gradient(transparent 0, #000 46px);
-          mask-image:linear-gradient(transparent 0, #000 46px);
+  gap:clamp(9px,1.6vh,15px);
+  padding:10px 0 16px;   /* bottom room for the last bubble's tail */
+  /* short fade — a long one looks like a rendering fault on a white card */
+  -webkit-mask-image:linear-gradient(transparent 0,#000 18px);
+          mask-image:linear-gradient(transparent 0,#000 18px);
 }
 .thread::-webkit-scrollbar{display:none;}
 
-.msg{max-width:min(86%,620px);}
+.msg{max-width:min(88%,600px);}
+/* A bubble carrying a card is never narrower than the card needs — a one-line
+   answer stretches to hold it rather than squeezing it into a third line. And on
+   a phone that message may run the full column; 88% doesn't leave enough. */
+.msg:has(.rec){min-width:calc(var(--tuck-w) + var(--tuck-l) + var(--tuck-r));}
+@media (max-width:899px){ .msg:has(.rec){max-width:100%;} }
 .msg.r{align-self:flex-start;}
 .msg.u{align-self:flex-end;}
 
 .bub{
-  position:relative;
-  border-radius:999px;
-  padding:.6em 1.15em .68em;
-  font-size:clamp(16px,4.2vw,27px);
-  line-height:1.26;
+  position:relative; border-radius:20px;
+  padding:.6em 1.1em .68em;
+  font-size:clamp(14px,3.2vw,19px); line-height:1.32;
 }
-.msg .bub{border-radius:26px;}
-
+/* Two solid bubbles. Filled tails overlap up into the bubble, so there is no
+   seam. The only hollow shape is the input — nothing said yet. */
 .r .bub{background:var(--black); color:var(--white);}
-.r .bub::after{
-  content:""; position:absolute; bottom:-11px; left:26px;
-  width:22px; height:18px; background:var(--black);
-  clip-path:polygon(0 0,100% 0,18% 100%);
-}
-.u .bub{border:3px solid var(--white); color:var(--white);}
-.u .bub::before{
-  content:""; position:absolute; bottom:-19px; right:24px;
-  width:24px; height:20px; background:var(--white);
-  clip-path:polygon(0 0,100% 0,100% 100%);
-}
-.u .bub::after{
-  content:""; position:absolute; bottom:-12px; right:30px;
-  width:15px; height:13px; background:var(--red);
-  clip-path:polygon(0 0,100% 0,100% 100%);
-}
+.u .bub{background:var(--white); color:var(--red);}
+.bub svg.tl{position:absolute; bottom:0; overflow:visible;}
+.r .bub svg.tl{left:18px;  transform:translateY(100%);}
+.u .bub svg.tl{right:18px; transform:translateY(100%) scaleX(-1);}
 
-.read{
-  display:inline-block; margin:8px 0 0 8px;
+/* ------- the recommendation. Red title, black why-line. Two lines. ------- */
+/* Indented so it reads as subordinate to the answer above it. Square corners so
+   it stops reading as a bubble — white-with-red-type is what YOUR messages look
+   like. Arrow pinned right, which also gives every card the same width. */
+.rec{
+  /* Top-aligned: the icon labels the title, so it hangs off the title's cap
+     line rather than floating against the block's centre. */
+  display:flex; align-items:flex-start; gap:11px;
+  /* Anchored right, fixed width. The card lives INSIDE the message block, so
+     100% is the bubble's own width — the right edge lands where the bubble's
+     bottom-right bevel ends (--tuck-r = the 20px corner radius) and the LEFT
+     edge falls wherever the width leaves it. margin-left:auto is the anchor.
+     The width itself never changes: --tuck-w is what the longest lines in the
+     set need — the title "A small bunch of nerds walked into a pub" and the
+     why-line "Why the people who pinch stuff aren't always obvious." On phones
+     there is no room for the right tuck, so the width is the column instead. */
+  margin:14px var(--tuck-r) 2px auto;
+  width:min(calc(100% - var(--tuck-l) - var(--tuck-r)), var(--tuck-w));
+  background:var(--white); border-radius:4px;
+  padding:9px 10px 10px 9px;
+  text-decoration:none; cursor:pointer;
+  border:0; font-family:var(--body); text-align:left;
+}
+.rec .bk{flex:none;width:26px;height:34px;margin-top:.1em;}  /* .1em drops it to the cap line */
+.rec-txt{flex:1 1 auto; min-width:0;}
+.rec .arw{
+  flex:none; align-self:center;         /* a control, not a line of type */
+  width:26px; height:26px; margin-left:6px;
+  transition:transform .16s ease;
+}
+.rec:hover .arw{transform:translateX(4px);}
+
+/* repeat mentions drop back to a quiet link — a treat every time is wallpaper */
+.rec-again{
+  display:inline-block; margin:11px 0 0 22px;
+  background:none; border:0; padding:0; cursor:pointer;
+  font-family:var(--body);
   color:var(--white); font-style:italic;
-  font-size:clamp(14px,3.7vw,23px);
-  text-decoration:underline; text-underline-offset:.22em;
-  text-decoration-thickness:2px;
+  font-size:clamp(13px,3.1vw,16px);
+  text-decoration:underline; text-underline-offset:.22em; text-decoration-thickness:2px;
+}
+.rec-t{
+  display:block; font-family:var(--head); color:var(--red);
+  font-size:clamp(15px,3.6vw,19px); line-height:1.02;
+  letter-spacing:.02em; text-transform:uppercase;
+}
+.rec-w{
+  display:block; font-family:var(--body); font-style:italic;
+  color:var(--black); opacity:.78;
+  font-size:clamp(11px,2.8vw,13px); line-height:1.22; margin-top:3px;
+}
+@media (min-width:900px){
+  .rec .bk{width:29px;height:38px;}
+  .rec .arw{width:29px;height:29px;}
+  .thread{--tuck-l:22px; --tuck-r:20px; --tuck-w:min(46cqh, 450px);}
+  .rec{gap:13px; padding:9px 12px 10px 11px;}
 }
 
 /* compose — the blank speech bubble. Never moves. */
 .compose{
-  flex:none;
-  align-self:flex-end;
-  position:relative;
-  margin:clamp(14px,2.4vh,22px) 0 0;
-  width:min(100%,430px);
+  flex:none; align-self:flex-end; position:relative;
+  margin:clamp(10px,1.8vh,16px) 0 0; width:min(100%,340px);
 }
 .compose input{
-  width:100%;
-  font-family:var(--body);
-  font-size:clamp(16px,4.2vw,27px);
-  line-height:1.26;
-  color:var(--white);
-  background:none;
-  border:3px solid var(--white);
-  border-radius:26px;
-  padding:.6em 1.15em .68em;
-  outline:none;
-}
-.compose input::placeholder{color:rgba(255,255,255,.45);}
-.compose .cursor{
-  position:absolute; left:1.15em; top:50%; transform:translateY(-50%);
-  width:2px; height:1.1em; background:var(--white);
-  animation:blink 1.1s steps(1,end) infinite; pointer-events:none;
-}
-.compose:has(input:focus) .cursor,
-.compose:has(input:not(:placeholder-shown)) .cursor{display:none;}
-@keyframes blink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
-.compose::before{
-  content:""; position:absolute; bottom:-19px; right:24px;
-  width:24px; height:20px; background:var(--white);
-  clip-path:polygon(0 0,100% 0,100% 100%);
-}
-.compose::after{
-  content:""; position:absolute; bottom:-12px; right:30px;
-  width:15px; height:13px; background:var(--red);
-  clip-path:polygon(0 0,100% 0,100% 100%);
+  width:100%; font-family:var(--body);
+  font-size:clamp(14px,3.2vw,19px); line-height:1.32;
+  color:var(--white); background:none;
+  border:3px solid var(--white); border-radius:20px;
+  /* Right padding clears the ask key. */
+  padding:.6em 3.2em .68em 1.15em; outline:none;
 }
 
-/* the bed — anchored. It never scrolls away. */
-.bed{flex:none; margin-top:clamp(12px,2vh,26px);}
-.bed img{display:block;width:100%;height:auto;}
+/* ---- the suggestion -----------------------------------------------------
+   It sits INSIDE the empty input rather than beside it, so the composition
+   still holds exactly one hollow shape — outlined means unsaid, and adding
+   pills alongside would have put two more empty outlines on the page.
+
+   The text is pointer-events:none on purpose. Tapping the field has to focus
+   the field and let you type your own question; the only tappable thing is
+   the ask key at the right edge. That's what stops the suggestion getting in
+   the way of the person who arrived with their own question.
+
+   Solid white, regular weight. The old 62% white measured 2.35:1 against the
+   red and this line is the only instruction on the page. Solid is 4.38:1.
+   Zodiak has no medium — Fontshare serves 300/400/700/800 — and bold at this
+   size would read as something already typed rather than something offered. */
+.compose .pill{
+  position:absolute; inset:0;
+  display:flex; align-items:center;
+  padding:.6em 3.2em .68em 1.15em;
+  font-family:var(--body); font-size:clamp(14px,3.2vw,19px); line-height:1.32;
+  color:var(--white);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  pointer-events:none; opacity:0; transition:opacity .16s ease;
+}
+.compose .go{
+  position:absolute; right:.42em; top:50%; transform:translateY(-50%);
+  font-size:clamp(14px,3.2vw,19px);
+  width:1.75em; height:1.75em; display:grid; place-items:center;
+  border:0; border-radius:50%; background:var(--white); color:var(--red);
+  cursor:pointer; opacity:0; pointer-events:none;
+  transition:opacity .16s ease, transform .12s ease;
+}
+.compose .go:hover{transform:translateY(-50%) scale(1.07);}
+.compose .go:active{transform:translateY(-50%) scale(.95);}
+/* Both are visible only while the field is empty and a suggestion is left. */
+.compose.suggesting .pill{opacity:1;}
+.compose.suggesting .go{opacity:1; pointer-events:auto;}
+
+/* ------- the bed. Anchored, and wider than its column so it bridges ------- */
+.bed{flex:none; margin-top:clamp(10px,1.8vh,22px); display:flex; justify-content:flex-end;}
+.bed img{
+  display:block;
+  /* width-driven, so it always crosses the gutter by exactly --bridge.
+     The max-height guard means a short window shrinks the bed rather than
+     squeezing the thread to nothing. */
+  width:calc(100% + var(--bridge));
+  height:auto;
+  max-height:min(30vh,280px);
+  /* The artwork's ground line is raked. Its lowest point is a single thin post
+     foot; the shoes-and-near-post cluster — where the eye reads the bed as
+     touching the floor — sits 4.58% of the artwork's height above it. Dropping
+     by that amount puts the visual mass on the baseline and lets the one post
+     foot cross it. Proportional, so it holds at every size. */
+  transform:translateY(4.58%);
+}
 
 /* ---------------------------------------------------------------- desktop */
 
 @media (min-width:900px){
-  .wrap{
-    flex-direction:row;
-    align-items:stretch;
-    gap:clamp(40px,5vw,80px);
-  }
-  .brand{
-    width:48%;
-    display:flex; flex-direction:column; justify-content:center;
-    align-items:flex-start;
-  }
-  .talk{width:52%;}
-  .thread{padding-top:20px;}
-  .bed img{max-width:640px;margin-left:auto;}
+  /* ---- the composition is locked to itself ----
+     .wrap becomes a size container, and everything inside is measured in cqh —
+     a fraction of the composition's own height. Previously the headline scaled
+     on vh, the bubbles on vw and the bed on vh, so changing the window's shape
+     changed the relationship between them. Now one number drives all of it: the
+     whole thing scales up and down as a unit and the proportions never move. */
+  .stage{container-type:size;}
+  .wrap{flex-direction:row; align-items:stretch; gap:clamp(34px,4vw,70px);}
+
+  /* Title anchored at the top, lockup on the baseline, subhead welded to the
+     title because they share a wrapper. */
+  .brand{width:46%; display:flex; flex-direction:column;
+         justify-content:space-between; align-items:flex-start;}
+  .talk{width:54%;}
+
+  h1{font-size:clamp(48px, 15cqh, 150px);}
+
+  .thread{padding-top:2.2cqh; gap:clamp(9px,1.7cqh,17px);}
+  .bub{font-size:clamp(14px,2.1cqh,21px);}
+  .compose input{font-size:clamp(14px,2.1cqh,21px);}
+  .rec-t{font-size:clamp(14px,2.1cqh,21px);}
+  .rec-w{font-size:clamp(11px,1.45cqh,15px);}
+  .rec-again{font-size:clamp(13px,1.8cqh,17px);}
+  .rec .bk{width:3.2cqh;height:4.2cqh;}
+
+  .minor a{font-size:clamp(12px,1.95cqh,19px);}
+  .buy{font-size:clamp(17px,3.1cqh,31px);}
+
+  .bed img{max-height:31cqh;}
 }
 
-/* ---------------------------------------------------------------- mobile, mid-chat */
+/* ---------------------------------------------------------------- mobile */
+
+/* Ruled 21 Aug (Michael): its own composition, not the desktop turned down.
+   A scrolling poster. The title is big and fills the red; the thread grows up
+   off the bed and pushes the title up the page and, eventually, off the top —
+   real document scroll, so flicking back up finds it again. The bed anchors
+   the footer as it always has, and the lockup moves UNDER the bed: the same
+   lockup as desktop, different location. Buy stays the bottom anchor.
+
+   One state. No body.chatting overrides, no fixed positioning, no full-height
+   inner scroller. The desktop's locked screen becomes a document that grows —
+   which is also what makes the keyboard behave: the browser scrolls the
+   focused input into view because there is real scroll to do it with.
+
+   No value here is shared with a desktop clamp() on purpose — the two
+   compositions must not touch (v003). */
 
 @media (max-width:899px){
-  /* Mid-chat the title steps back to a single line and Buy drops to the
-     bottom corner, beside the bed, where a thumb can reach it. */
-  body.chatting h1{font-size:22px;line-height:1;white-space:nowrap;}
-  body.chatting h1 br{display:none;}
-  body.chatting h1 .box{margin-left:.1em;}
-  body.chatting .strap{display:none;}
-  body.chatting .brand{padding-right:56px;}
-  body.chatting .buy{
-    position:fixed; z-index:30; margin:0;
-    left:var(--gut);
-    bottom:calc(var(--gut) * .6 + env(safe-area-inset-bottom));
-    font-size:16px; padding:.6em 1.3em .44em;
+
+  /* The page scrolls. Desktop's overflow:hidden one-screen shell is released;
+     the column is at least a screen tall so the bed sits at the bottom on
+     arrival, and grows past it as the thread does. svh, not dvh — dvh
+     reflows the whole page every time the URL bar hides, and the sliver it
+     leaves behind the retracted bar is page-red anyway. */
+  body{display:block; height:auto; min-height:100svh; overflow:visible; overflow-x:hidden;}
+  .stage{height:auto;}
+  .wrap{
+    min-height:100svh; height:auto;
+    display:flex; flex-direction:column; gap:0;
+    padding:clamp(18px,5vw,30px) var(--gut) calc(14px + env(safe-area-inset-bottom));
   }
-  body.chatting .bed img{max-width:220px;margin:0 auto;}
+
+  /* .brand and .talk dissolve — their children become the column, so the
+     lockup can be ordered below the bed without duplicating markup (v003:
+     reorder with order, never fork the DOM). */
+  .brand,.talk{display:contents;}
+  .ttl{order:0;} .thread{order:1;} .compose{order:2;} .bed{order:3;} .lockup{order:4;}
+
+  /* The title owns the red space. flex:1 hands it every pixel the thread
+     hasn't claimed yet, so on arrival it IS the page; each answer takes the
+     slack back and then starts pushing it up the page.
+
+     Sized by TWO ceilings and the lower one wins, both measured:
+     · width — the widest line (YOUR BED) is 2.99× the font-size in Bebas,
+       so (100vw − 2·gut)/2.99 fills the measure flush;
+     · height — everything that isn't title (bubble, input, bed, lockup,
+       padding) needs ~550px at phone widths, and the title block grows at
+       3.28px per font px (4 lines × .82 + the fitted strap), so
+       (100svh − 550px)/3.28 is the biggest title that still leaves the bed
+       on the arrival screen. Bed-on-screen outranks flush-right: a tall
+       phone gets the flush poster, a short one gives up a few % of measure
+       rather than pushing the bed below the fold. */
+  .ttl{flex:1 0 auto;}
+  h1{
+    font-size:clamp(64px,
+      min(calc((100vw - 2*var(--gut))/2.99), calc((100svh - 550px)/3.28)),
+      150px);
+    line-height:.82;
+  }
+  .strap{margin-top:12px;}
+
+  /* The thread is content-height in normal flow — no inner scroll, no
+     bottom-anchoring, no fade mask (there is no scroll edge to fade at).
+     It grows; the document grows; the title moves. */
+  .thread{
+    flex:none; min-height:0; overflow:visible;
+    justify-content:flex-start;
+    gap:10px; padding:20px 0 16px;
+    -webkit-mask-image:none; mask-image:none;
+  }
+
+  .compose{width:100%; margin:0 0 16px;}
+
+  /* The bed spans the column and sits on the lockup. The desktop baseline
+     transform is off — down there it exists to sit the shoes on an invisible
+     line the lockup shares from the side; here the buttons underneath ARE the
+     ground. */
+  .bed{margin:0; justify-content:center;}
+  .bed img{width:100%; max-height:none; transform:none;}
+
+  /* The lockup, under the bed. Same object as desktop — two hollow pills
+     over one solid hero — different location. Buy anchors the page. */
+  .lockup{position:static; width:100%; margin-top:12px; align-self:stretch;}
+}
+
+/* ---- a phone on its side ----
+   Not a third composition — the mobile poster, told about width it never
+   asked for. Under 900px but wider than tall, the column-driven rules
+   produce an 840px input and a bed taller than the screen. So: the whole
+   column is contained and centred, and the bed flips from width-driven to
+   height-driven. Arrival scrolls here — with the title, the chat and the
+   bed stacked in a 390px-tall window it must — and graceful scroll beats
+   hiding the bed, which the canon wouldn't allow anyway. */
+@media (max-width:899px) and (orientation:landscape){
+  .wrap{max-width:560px; margin-inline:auto;}
+  .bed img{width:auto; max-width:100%; height:min(42svh,190px); margin-inline:auto;}
 }
 
 @media (prefers-reduced-motion:no-preference){
-  .msg{animation:rise .26s ease-out;}
+  .msg,.rec{animation:rise .26s ease-out;}
   @keyframes rise{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+}
+
+/* ================================================================ reader */
+
+.reader{
+  position:fixed; inset:0; z-index:60;
+  background:var(--white); color:var(--black);
+  overflow-y:auto; -webkit-overflow-scrolling:touch;
+  /* The mobile body scrolls now, so a flick past the chapter's end must not
+     scroll the page underneath the overlay. */
+  overscroll-behavior:contain;
+  display:none;
+}
+.reader[open]{display:block;}
+
+.reader .inner{max-width:640px; margin:0 auto; padding:clamp(56px,9vw,90px) var(--gut) 90px;}
+
+.reader .close{
+  position:fixed; top:clamp(14px,2.4vw,26px); right:clamp(14px,2.4vw,26px);
+  z-index:2; width:44px; height:44px; border-radius:999px;
+  background:var(--black); border:0; cursor:pointer;
+  display:grid; place-items:center;
+}
+.reader .close::before{
+  content:"×"; color:#fff; font-family:var(--head); font-size:30px; line-height:1;
+  margin-top:-2px;
+}
+
+.reader h2{
+  font-family:var(--head); font-weight:400; text-transform:uppercase;
+  color:var(--red); font-size:clamp(34px,8vw,54px);
+  line-height:.9; letter-spacing:.01em;
+}
+.reader .why{font-style:italic; font-size:clamp(15px,4vw,19px); margin-top:10px; opacity:.7;}
+.reader .rule{height:3px;background:var(--black);margin:26px 0 30px;}
+
+.reader p{font-size:clamp(16px,4.2vw,19px); line-height:1.55; margin-bottom:1.05em;}
+.reader h3{
+  font-family:var(--head); text-transform:uppercase; color:var(--red);
+  font-size:clamp(19px,4.6vw,25px); letter-spacing:.03em;
+  margin:1.7em 0 .55em;
+}
+.reader .tldr{
+  background:var(--black); color:#fff; border-radius:4px;
+  padding:22px 26px; margin:34px 0 10px; text-align:center;
+}
+.reader .tldr b{
+  display:block; font-family:var(--head); font-size:17px;
+  letter-spacing:.18em; opacity:.75; margin-bottom:8px;
+}
+.reader .tldr i{font-size:clamp(16px,4.2vw,19px); line-height:1.45;}
+
+/* About reuses the reader shell — one overlay, one close, one Escape handler,
+   one place to fix the return. Only these two rules are new. */
+.reader .lead p{font-size:clamp(18px,4.6vw,22px); line-height:1.42;}
+.reader .credits{
+  margin-top:44px; padding-top:18px;
+  border-top:1px solid rgba(35,31,32,.22);
+  font-size:14px; line-height:1.7; opacity:.6;
+}
+
+/* --------------------------------------------------------------- facts */
+/* The trust room. Straight, no jokes, and the only link on the page sits under
+   a fact. Built as <details>/<summary> rather than hand-rolled divs so keyboard
+   and find-in-page both work — people come here to look up the one claim they
+   don't believe, and Ctrl+F failing silently would break the page's only job. */
+
+.facts-meta{font-size:14px; opacity:.55; margin:-4px 0 26px;}
+
+.facts-search{
+  width:100%; font-family:var(--body); font-size:16px;
+  color:var(--black); background:none;
+  border:2px solid var(--black); border-radius:999px;
+  padding:.6em 1.1em .66em; outline:none; margin-bottom:22px;
+}
+.facts-search::placeholder{color:rgba(35,31,32,.45);}
+.facts-none{font-style:italic; opacity:.6; padding:22px 0;}
+
+.fx{border-bottom:1px solid rgba(35,31,32,.18);}
+.fx:first-of-type{border-top:1px solid rgba(35,31,32,.18);}
+.fx[hidden]{display:none;}
+.fx>summary{
+  list-style:none; cursor:pointer;
+  display:flex; align-items:baseline; gap:12px;
+  padding:15px 2px; font-size:clamp(16px,4.2vw,19px);
+}
+.fx>summary::-webkit-details-marker{display:none;}
+.fx>summary:focus-visible{outline:2px solid var(--red); outline-offset:3px;}
+.chev{
+  flex:none; width:0; height:0; margin-top:.35em;
+  border-left:7px solid var(--black);
+  border-top:5px solid transparent; border-bottom:5px solid transparent;
+  transition:transform .14s ease; transform-origin:3px 50%;
+}
+.fx[open] .chev{transform:rotate(90deg);}
+.fx-t{flex:1 1 auto;}
+/* Sidebars sit in book order, untagged: eight rows all beginning "What's the
+   deal with…" already announce themselves as a set, and a label repeating what
+   the title says is furniture on a list 22 rows long. */
+.fx-n{font-size:13px; opacity:.5; white-space:nowrap; flex:none;}
+.fx-n.todo{font-style:italic;}
+
+.fx .panel{padding:0 0 26px 19px;}
+.fx h4{
+  font-family:var(--head); text-transform:uppercase; color:var(--red);
+  font-size:16px; letter-spacing:.09em; margin:16px 0 10px;
+}
+.fx .item{margin-bottom:14px; font-size:clamp(15px,4vw,17px); line-height:1.5;}
+.fx .q{display:block;}
+.fx .src{display:block; opacity:.62; font-size:.92em; margin-top:2px;}
+.reader a.ask{
+  color:var(--red); text-decoration:none;
+  border-bottom:2px solid var(--red);
+}
+.fx .dig{
+  font-family:var(--head); text-transform:uppercase; letter-spacing:.06em;
+  font-size:15px; color:var(--red); text-decoration:none;
+  border-bottom:2px solid var(--red); padding-bottom:1px;
+  /* Never let the arrow wrap off on its own — a stranded "→" with an underline
+     under it reads as a rendering fault. */
+  white-space:nowrap;
+}
+/* Loud on this page, silent everywhere else — a bad facts.json must never take
+   the site down, only this panel. */
+.facts-err{
+  background:var(--black); color:#fff; border-radius:4px;
+  padding:18px 22px; margin-bottom:26px; font-size:14px; line-height:1.6;
+}
+.facts-err b{font-family:var(--head); letter-spacing:.1em; display:block; margin-bottom:6px;}
+.facts-err li{margin-left:18px;}
+
+/* the nudge. Never blocks, escalates gently. */
+.reader .nudge{
+  border-top:3px solid var(--black); margin-top:46px; padding-top:26px;
+}
+.reader .nudge p{font-style:italic; opacity:.8;}
+.reader .nudge a{
+  font-family:var(--head); text-transform:uppercase; letter-spacing:.06em;
+  font-size:22px; background:var(--red); color:#fff;
+  border-radius:999px; padding:.6em 1.7em .46em;
+  text-decoration:none; display:inline-block; margin-top:6px;
+}
+
+/* ---- the reader, on a phone ----
+   Not a second composition — a white page is the same page at every size —
+   but its own numbers. The margins were borrowing --gut (6vw) from the red
+   page and the type was vw-clamped, so every phone width read differently.
+   A prose page's measure is a type decision, not a viewport one: fixed 18px
+   side margins, fixed 17.5px body, line-height 1.6 — a paperback measure.
+   Sits AFTER every base .reader rule on purpose: same specificity, so the
+   cascade is the mechanism. Don't move it above them. */
+@media (max-width:899px){
+  .reader .inner{padding:60px 18px 80px;}
+  .reader p{font-size:17.5px; line-height:1.6;}
+  .reader h2{font-size:clamp(30px,10.5vw,44px); padding-right:40px;}
+  .reader .why{font-size:16px;}
+  .reader h3{font-size:21px;}
+  .reader .tldr{padding:18px; margin:30px 0 10px;}
+  .reader .tldr i{font-size:16.5px; line-height:1.5;}
+  .reader .lead p{font-size:19px; line-height:1.5;}
+  /* Fact check rides the same shell, so it already got the margins; its own
+     type was still vw-clamped. Same cure. */
+  .fx>summary{font-size:17px;}
+  .fx .item{font-size:16px;}
+  .fx .panel{padding-left:14px;}
 }
 </style>
 </head>
 
 <body>
 
-<button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-
+<div class="stage">
 <div class="wrap">
 
   <div class="brand">
-    <!-- Spaces after each <br> matter: mid-chat on mobile the breaks are
-         hidden and the title reflows to one line. -->
-    <h1>There&rsquo;s<br> a <span class="box">Robot</span><br> under<br> your bed</h1>
-    <p class="strap">A little book about humans. And AI.</p>
-    <!-- TODO: Buy destination undecided. -->
-    <a class="buy" href="#">Buy the book</a>
+    <!-- Spaces after each <br> matter: mid-chat on mobile the breaks are hidden
+         and the title reflows to one line. -->
+    <div class="ttl">
+      <h1>There&rsquo;s<br> a <span class="box">Robot</span><br> under<br> your bed</h1>
+      <p class="strap">A little book about humans. And AI.</p>
+    </div>
+    <div class="lockup">
+      <div class="minor">
+        <a class="b" href="#">About</a>
+        <a class="f" href="#">Fact check</a>
+      </div>
+      <!-- TODO: Buy destination undecided. -->
+      <a class="buy" href="#">Why not buy the book?</a>
+    </div>
   </div>
 
   <div class="talk">
     <div class="thread" id="thread" aria-live="polite">
-      <div class="msg r"><div class="bub">Ask me about the book</div></div>
+      <div class="msg r"><div class="bub">Ask me about the book<svg class="tl" width="20" height="16"
+        viewBox="0 -5 20 21" aria-hidden="true"><path d="M2,-5 L20,-5 L20,2 L4,15 L2,2 Z"
+        fill="#231F20"/></svg></div></div>
     </div>
 
     <form class="compose" id="compose" autocomplete="off">
-      <input id="say" type="text" placeholder=" " aria-label="Ask the robot something">
-      <span class="cursor" aria-hidden="true"></span>
+      <input id="say" type="text" aria-label="Ask the robot something">
+      <!-- STAND-IN suggestion. Reader's voice — this bubble is theirs, not the
+           robot's, and the black bubble above already does the instructing.
+           Filled from PILLS below; tap the key or press return to ask it. -->
+      <span class="pill" id="pill" aria-hidden="true"></span>
+      <button class="go" id="go" type="button" aria-label="Ask this question">
+        <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M2.6 7h8M7.4 3.4 11 7l-3.6 3.6" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
     </form>
 
     <div class="bed">
-      <img src="/assets/robot-bed.png" width="1200" height="640"
+      <img src="/assets/robot-bed.png" width="1200" height="612"
            alt="A small robot hiding under a bed">
     </div>
   </div>
 
+</div>
+</div>
+
+<!-- ============================================================== about -->
+<!-- MG copy, 20 Aug. Not a stand-in — do not rewrite. -->
+<template id="aboutBody">
+  <div class="lead">
+    <p>Writing a book about robots is stupid. It&rsquo;s the fastest-moving topic
+       on the planet. No one knows which way is up.</p>
+    <p>But stupid is also the point. When things change so fast you don&rsquo;t
+       know what they&rsquo;re called, it&rsquo;s good to name the things we can
+       rely on.</p>
+    <p>Because the more we know, the less we worry.</p>
+  </div>
+
+  <h3>What&rsquo;s in it?</h3>
+  <p>A quick adventure into robot world. Where they come from, how they think
+     and how to make them useful.</p>
+  <p>Plus, a few deeper dives into how the world is changing. What we might want
+     to worry about and what&rsquo;s just history on repeat.</p>
+  <p>Get a taste before you jump in. Just <a class="ask" href="/">ask the
+     robot</a> about anything you&rsquo;re into and it&rsquo;ll share a chapter
+     it thinks you&rsquo;ll like. Have fun.</p>
+
+  <h3>About the author</h3>
+  <p>Michael is a writer who panicked when the robots started eating his lunch.
+     So he thought he&rsquo;d try and work them out. He&rsquo;s still working on it.</p>
+
+  <p class="credits">
+    <i>There&rsquo;s a Robot Under Your Bed</i> &middot; Michael Goldthorpe<br>
+    Published by Hunch Ltd &middot; ISBN 978-0-473-80267-7<br>
+    Design by Stuart Hinds &middot; Set in Bebas Neue and Zodiak
+  </p>
+</template>
+
+<!-- ============================================================= reader -->
+<div class="reader" id="reader" role="dialog" aria-modal="true" aria-labelledby="rtitle">
+  <button class="close" id="rclose" aria-label="Close"></button>
+  <div class="inner">
+    <h2 id="rtitle"></h2>
+    <p class="why" id="rwhy"></p>
+    <div class="rule"></div>
+    <div id="rbody"></div>
+    <div class="nudge" id="rnudge"></div>
+  </div>
 </div>
 
 <script>
 /* ------------------------------------------------------------------ *
  * DUMMY CHAT — stand-in only.
  *
- * Every reply below is Claude's, written to the pattern so the page can
- * be felt. None of it is canon. In the real build these become Michael's
- * lines in a table on the server, and Claude's only job is choosing which
- * line comes next. The model never generates prose.
+ * Every reply below is Claude's, written to the pattern so the page can be
+ * felt. None of it is canon. In the real build these become Michael's lines
+ * in a table on the server, and Claude's only job is choosing which line
+ * comes next. The model never generates prose.
+ *
+ * Chapter text in the reader IS real — pulled from the final manuscript.
  * ------------------------------------------------------------------ */
 
 const ROUTES = [
   { on:/\bcow|daisy|shark\b/i,
     say:"Daisy. She's twenty times more likely to finish you off than a shark, and nobody made a film about her.",
-    read:"AI-mageddon" },
-
+    read:"ai-mageddon" },
   { on:/em.?dash|punctuation/i,
     say:"Ah. My favourite crime. Every proper writer used them until we did, and now they're evidence.",
-    read:"What's the deal with the em-dash?" },
-
+    read:"deal-with-the-em-dash" },
   { on:/\b(job|jobs|work|career|redundan|employ|unemploy)/i,
     say:"On the face of it, we're pretty pinchy. We'll knock out a spreadsheet before you've found the kettle. But the horses did alright, and it took forty years.",
-    read:"Last horse standing" },
-
+    read:"last-horse-standing" },
   { on:/\b(kill|die|dead|danger|dangerous|doom|apocalyp|scared|afraid|terrif|destroy|end of the world)/i,
     say:"Everyone worries about the wrong thing. The big scary stuff makes better films, but it's the creepers that get you.",
-    read:"AI-mageddon" },
-
+    read:"ai-mageddon" },
   { on:/\b(art|artist|steal|stealing|stole|theft|copyright|music|paint)/i,
     say:"We remix, yes. But the money isn't in the making, it's in the pipes. Follow who's clipping the ticket.",
-    read:"The great art heist" },
-
+    read:"great-art-heist" },
   { on:/\b(alive|sentient|conscious|real|feel|think|thinking|smart|clever|how do you work|chatgpt|claude|gemini)/i,
     say:"I don't actually know anything at all. I'm a very clever guesser. That's the whole trick.",
-    read:"How robots think and why they don't" },
-
+    read:"how-robots-think" },
   { on:/\b(train|memory|remember|better answers|prompt|prompting|unicorn|butler)/i,
     say:"Less unicorn, more butler. Tell me how you take your tea and I'll stop acting like a stranger at the bus stop.",
-    read:"How to train your unicorn" },
-
+    read:"train-your-unicorn" },
+  { on:/\b(nerd|openai|altman|musk|anthropic|who built|google|silicon)/i,
+    say:"It started with steak and a story about saving the world. It ended with everyone's swipe cards in different buildings.",
+    read:"small-bunch-of-nerds" },
   { on:/\b(did ai write|did a robot write|who wrote|ai written|write this)/i,
     say:"Michael wrote every word. I just point at the chapters. I'd have made it longer and worse." },
-
   { on:/\b(price|cost|how much|buy|where can i)/i,
     say:"I'd rather you read it than priced it. There's a button on the left for the other thing." },
-
   { on:/\b(mum|mother|dad|father|nana|grandma|kids?|children)/i,
     say:"Assuming your Mum can read, she'll be fine. It's a one-hour job and there are no equations." },
-
   { on:/\b(good|any good|worth it|recommend|should i)/i,
     say:"I like it because it's all about me. But it's short, and it's funny, and it doesn't sell you anything.",
-    read:"There's a robot under your bed" },
-
+    read:"robot-under-your-bed" },
   { on:/\b(bad|shit|rubbish|terrible|boring)/i,
     say:"Honestly, not shit at all. Try one chapter and tell me I'm wrong.",
-    read:"A brief history of robots" },
-
+    read:"brief-history-of-robots" },
+  { on:/\b(different|another|other|else|next|others?)\b|what else|something else|anything else/i,
+    say:"Fair. Plenty more where that came from.",
+    pick:true },
   { on:/\b(hello|hi|hey|yo|sup)\b/i,
     say:"Hello. I'd quite like to get out from under here, so ask me something." },
 ];
 
 const FALLBACK = [
   { say:"Not sure I follow. But I'm a guesser by trade, so here's the chapter I'd guess at.",
-    read:"A brief history of robots" },
-  { say:"Bit off-book, that. Try me on robots, jobs, art or whether we're about to end the world.",
-    read:"What the robot?" },
+    read:"brief-history-of-robots" },
+  { say:"Bit off-book, that. Try me on robots, jobs, art, or whether we're about to end the world.",
+    read:"second-order-of-things" },
   { say:"No idea. Genuinely. Here's something I do know about.",
-    read:"Brainpower and firepower" },
+    read:"brainpower-and-firepower" },
 ];
+
+/* chapter bodies are real text, fetched once */
+const CHAPTERS = fetch('/chapters.json').then(r => r.json()).catch(() => ({}));
 
 const thread  = document.getElementById('thread');
 const compose = document.getElementById('compose');
 const say     = document.getElementById('say');
-let fallbackAt = 0;
+const reader  = document.getElementById('reader');
+let fallbackAt = 0, chaptersRead = 0;
 
-function bubble(who, text, read){
+/* ---- the suggestions ----------------------------------------------------
+   ALL STAND-IN. Michael writes these.
+
+   The brief rules three at a time, rotating, nothing repeating once read.
+   Three would mean three more outlined shapes on a page whose canon says the
+   empty input is the only hollow thing — so they rotate through one slot
+   instead. Same rule, one shape. Worth a ruling either way.
+
+   The strongest is pinned first, per the brief; the rest are shuffled, so two
+   people don't get the same run. Every line matches a ROUTES pattern on
+   purpose — a suggestion the site offers must never land in the fallback. */
+const PILLS = [
+  "Why is there a cow in this book?",
+  "Are you going to take my job?",
+  "Did you write this book?",
+  "Are robots stealing art?",
+  "What's the deal with em-dashes?",
+  "Are we all going to die?",
+  "Are you actually alive?",
+];
+const pillQueue = [PILLS[0], ...PILLS.slice(1).sort(() => Math.random() - .5)];
+const pillEl = document.getElementById('pill');
+const goEl   = document.getElementById('go');
+let pillAt = 0;
+
+/* Empty field + a suggestion left = the suggestion is live. The moment there's
+   a character in the field it's their question, not ours. */
+function currentPill(){ return say.value.trim() ? '' : (pillQueue[pillAt] || ''); }
+function syncPill(){
+  const q = pillQueue[pillAt];
+  if (q){ pillEl.textContent = q; goEl.setAttribute('aria-label', 'Ask: ' + q); }
+  compose.classList.toggle('suggesting', !!q && !say.value.trim());
+}
+say.addEventListener('input', syncPill);
+goEl.addEventListener('click', () => { if (currentPill()) compose.requestSubmit(); });
+syncPill();
+
+/* The strapline is set to the exact width of the widest headline line, at any
+   viewport. Guessed ratios drift; measuring doesn't. */
+function fitStrap(){
+  const h1 = document.querySelector('h1'), st = document.querySelector('.strap');
+  if (!h1 || !st) return;
+  const target = h1.getBoundingClientRect().width;
+  if (!target) return;
+  st.style.fontSize = '100px';
+  const natural = st.scrollWidth;
+  if (!natural) return;
+  st.style.fontSize = Math.max(13, Math.min(40, 100 * target / natural)).toFixed(2) + 'px';
+}
+/* Focus the field on load — but only on a real pointer at desktop width.
+   On a phone this opens the keyboard on arrival, which resizes the viewport and
+   collapses the whole one-screen composition before anyone has seen it. (iOS
+   blocks programmatic focus without a gesture anyway.) */
+if (matchMedia('(min-width:900px) and (hover:hover)').matches) {
+  addEventListener('DOMContentLoaded', () => say.focus());
+}
+
+/* And if someone just starts typing without clicking, catch it. */
+addEventListener('keydown', e => {
+  if (reader.hasAttribute('open')) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  if (document.activeElement === say) return;
+  if (e.key.length === 1) say.focus();
+});
+
+addEventListener('resize', fitStrap);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitStrap);
+fitStrap();
+
+/* one tail shape, two colours; mirrored in CSS for the right-hand side */
+function tail(colour){
+  const ns = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('class','tl'); svg.setAttribute('width','20');
+  svg.setAttribute('height','16'); svg.setAttribute('viewBox','0 -5 20 21');
+  svg.setAttribute('aria-hidden','true');
+  const p = document.createElementNS(ns,'path');
+  p.setAttribute('d','M2,-5 L20,-5 L20,2 L4,15 L2,2 Z');
+  p.setAttribute('fill', colour);
+  svg.appendChild(p);
+  return svg;
+}
+
+const ARROW_SVG = `<svg class="arw" viewBox="0 0 28 28" aria-hidden="true">
+  <circle cx="14" cy="14" r="14" fill="#ED1C24"/>
+  <path d="M8 14h11M15 9.5l4.5 4.5-4.5 4.5" fill="none" stroke="#fff"
+        stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
+const BOOK_SVG = `<svg class="bk" viewBox="0 0 34 44" aria-hidden="true">
+  <rect x="0.5" y="0.5" width="33" height="43" rx="3" fill="#ED1C24"/>
+  <rect x="5" y="7"  width="14" height="3" fill="#fff"/>
+  <rect x="5" y="12" width="6"  height="3" fill="#fff"/>
+  <rect x="12" y="11.5" width="17" height="4.5" fill="#231F20"/>
+  <rect x="13.5" y="12.5" width="14" height="2.5" fill="#fff"/>
+  <rect x="5" y="18" width="19" height="3" fill="#fff"/>
+  <rect x="5" y="23" width="22" height="3" fill="#fff"/>
+  <rect x="10" y="32" width="14" height="6" rx="3" fill="#231F20"/>
+</svg>`;
+
+/* Card on first mention; a quiet link on repeats. */
+const offered = new Set();
+
+async function recCard(slug){
+  const all = await CHAPTERS;
+  const ch = all[slug];
+  if (!ch) return null;
+
+  if (offered.has(slug)) {
+    const link = document.createElement('button');
+    link.className = 'rec-again'; link.type = 'button';
+    link.textContent = 'Read: ' + ch.title;
+    link.addEventListener('click', () => openChapter(slug));
+    return link;
+  }
+  offered.add(slug);
+
+  const a = document.createElement('button');
+  a.className = 'rec'; a.type = 'button';
+  a.innerHTML = BOOK_SVG +
+    `<span class="rec-txt"><span class="rec-t"></span><span class="rec-w"></span></span>` +
+    ARROW_SVG;
+  a.querySelector('.rec-t').textContent = ch.title;
+  const w = a.querySelector('.rec-w');
+  if (ch.why) w.textContent = ch.why; else w.remove();
+  a.addEventListener('click', () => openChapter(slug));
+  return a;
+}
+
+/* "something else" — offer a chapter they haven't been shown yet */
+const POOL = ['last-horse-standing','ai-mageddon','great-art-heist','how-robots-think',
+  'train-your-unicorn','brief-history-of-robots','brainpower-and-firepower',
+  'small-bunch-of-nerds','second-order-of-things','robot-scientists',
+  'everything-old-is-new-again','feed-it-fight-it-fix-it','deal-with-the-em-dash'];
+function freshChapter(){
+  return POOL.find(s => !offered.has(s)) || POOL[0];
+}
+
+/* Desktop: the thread is the scroller. Mobile: the document is — the thread
+   is normal flow and each answer grows the page, so the scroll that "pushes
+   the title up" is a real window scroll to the bottom. */
+function scrollChat(){
+  thread.scrollTop = thread.scrollHeight;
+  if (matchMedia('(max-width:899px)').matches) {
+    scrollTo({top: document.documentElement.scrollHeight, behavior: 'smooth'});
+  }
+}
+
+async function bubble(who, text, read){
   const wrap = document.createElement('div');
   wrap.className = 'msg ' + who;
-
   const b = document.createElement('div');
   b.className = 'bub';
   b.textContent = text;
+  b.appendChild(tail(who === 'r' ? '#231F20' : '#ffffff'));
   wrap.appendChild(b);
+  thread.appendChild(wrap);
+  scrollChat();
 
   if (read) {
-    const a = document.createElement('a');
-    a.className = 'read';
-    a.href = '#';
-    a.textContent = 'Read: ' + read;
-    wrap.appendChild(a);
+    const card = await recCard(read);
+    if (card) { wrap.appendChild(card); scrollChat(); }
   }
-
-  thread.appendChild(wrap);
-  thread.scrollTop = thread.scrollHeight;
 }
 
 function route(q){
   for (const r of ROUTES) if (r.on.test(q)) return r;
-  const f = FALLBACK[fallbackAt % FALLBACK.length];
-  fallbackAt++;
-  return f;
+  return FALLBACK[fallbackAt++ % FALLBACK.length];
 }
 
 compose.addEventListener('submit', e => {
   e.preventDefault();
-  const q = say.value.trim();
+  /* Return on an empty field asks the suggestion — the same thing the key does,
+     for anyone whose hands are already on the keyboard. */
+  const q = say.value.trim() || currentPill();
   if (!q) return;
-
-  document.body.classList.add('chatting');
   bubble('u', q);
   say.value = '';
-
+  if (pillAt < pillQueue.length) pillAt++;   /* read once, never shown again */
+  syncPill();
   const r = route(q);
-  setTimeout(() => bubble('r', r.say, r.read), 480);
+  const read = r.pick ? freshChapter() : r.read;
+  setTimeout(() => bubble('r', r.say, read), 460);
 });
+
+/* ------------------------------------------------------------------ reader */
+
+/* STAND-IN nudge copy. Escalates gently, never blocks — no counters, no wall. */
+const NUDGES = {
+  chapter: [
+    "There are thirteen more where that came from.",
+    "That&rsquo;s two. The rest are in the book, and it&rsquo;s a one-hour read.",
+    "You&rsquo;ve read a fair bit of it now. Might be cheaper to own it.",
+  ],
+  sidebar: [
+    "That&rsquo;s one of the little ones. The actual chapters are longer and better.",
+    "Another aside. There are fourteen proper chapters underneath them.",
+    "You&rsquo;re collecting the footnotes. The book&rsquo;s the main event.",
+  ],
+};
+
+async function openChapter(slug){
+  const all = await CHAPTERS;
+  const ch = all[slug];
+  if (!ch) return;
+
+  document.getElementById('rtitle').textContent = ch.title;
+  const rw = document.getElementById('rwhy');
+  rw.style.display = ''; rw.textContent = ch.why;   /* facts hides it */
+
+  const body = document.getElementById('rbody');
+  body.innerHTML = '';
+  for (const blk of ch.blocks) {
+    if (blk.t === 'h') {
+      const h = document.createElement('h3'); h.textContent = blk.x; body.appendChild(h);
+    } else if (blk.t === 'tldr') {
+      const d = document.createElement('div'); d.className = 'tldr';
+      d.innerHTML = '<b>TLDR</b>'; const i = document.createElement('i');
+      i.textContent = blk.x; d.appendChild(i); body.appendChild(d);
+    } else {
+      const p = document.createElement('p'); p.textContent = blk.x; body.appendChild(p);
+    }
+  }
+
+  chaptersRead++;
+  const set = NUDGES[ch.kind === 'sidebar' ? 'sidebar' : 'chapter'];
+  const n = document.getElementById('rnudge');
+  n.style.display = '';                        /* About hides it; put it back */
+  n.innerHTML = `<p>${set[Math.min(chaptersRead, set.length) - 1]}</p>
+                 <a href="#">Why not buy the book?</a>`;
+
+  reader.setAttribute('open','');
+  reader.scrollTop = 0;
+  document.getElementById('rclose').focus();
+}
+
+/* ------------------------------------------------------------------- about */
+
+/* The reader shell doubles as the About panel — one overlay, one close button,
+   one Escape handler, and one place to fix the return when we get to it. */
+function openPage(title, sub, frag){
+  document.getElementById('rtitle').textContent = title;
+  const rw = document.getElementById('rwhy');
+  rw.style.display = ''; rw.textContent = sub;       /* facts hides it */
+  const body = document.getElementById('rbody');
+  body.innerHTML = '';
+  body.appendChild(frag.cloneNode(true));
+  /* The nudge is a chapter thing. Emptying it isn't enough — it carries a 3px
+     top rule, which left a stray line under the credits. */
+  const n = document.getElementById('rnudge');
+  n.innerHTML = ''; n.style.display = 'none';
+  reader.setAttribute('open','');
+  reader.scrollTop = 0;
+  document.getElementById('rclose').focus();
+}
+
+document.querySelector('a.b').addEventListener('click', e => {
+  e.preventDefault();
+  openPage('About the book', 'A little book about humans. And AI.',
+           document.getElementById('aboutBody').content);
+});
+
+/* ------------------------------------------------------------------- facts */
+
+/* MG copy, 20 Aug. Not a stand-in. */
+const FACTS_INTRO = "Facts can be fickle. But they matter. If you’re interested in the " +
+  "research that backs the book, feel free to dig in here.";
+
+/* An absent file is a legitimate state, not an error — the content lands in
+   batches and every row reads "Not yet checked" until it does. */
+const FACTS = fetch('/facts.json').then(r => r.ok ? r.json() : null).catch(() => null);
+
+const MONTHS = ['January','February','March','April','May','June','July',
+                'August','September','October','November','December'];
+function niceMonth(s){
+  const m = /^(\d{4})-(\d{2})$/.exec(s || '');
+  return m && +m[2] >= 1 && +m[2] <= 12 ? MONTHS[+m[2] - 1] + ' ' + m[1] : null;
+}
+
+/* The brief promises the page enforces these rather than trusting anyone to
+   remember them. Chief among them: a link under an assumption. */
+function factsErrors(data, slugs){
+  const e = [];
+  if (data === null) return e;
+  if (typeof data !== 'object') return ['facts.json is not an object.'];
+  if (!niceMonth(data.checked)) e.push('“checked” must be YYYY-MM.');
+  if (!data.chapters || typeof data.chapters !== 'object') return e.concat('“chapters” is missing.');
+  for (const [slug, entry] of Object.entries(data.chapters)) {
+    if (!slugs.includes(slug)) { e.push(`Unknown slug “${slug}” — not in chapters.json.`); continue; }
+    /* A missing research key is legal and meaningful — "still checking" — so
+       it is never an error, only an absence. */
+    for (const r of (entry.reckons || [])) {
+      if ('link' in r) e.push(`${slug}: a reckon carries a link. Confessions don’t footnote.`);
+      if (!r.claim) e.push(`${slug}: a reckon has no claim.`);
+      if (!niceMonth(r.dated)) e.push(`${slug}: reckon dated “${r.dated}” — must be YYYY-MM.`);
+    }
+    for (const f of (entry.research || [])) {
+      if (!f.quote || !f.source || !f.link) e.push(`${slug}: a research entry is missing quote, source or link.`);
+      else if (!/^https?:\/\//i.test(f.link)) e.push(`${slug}: link “${f.link}” is not http(s).`);
+    }
+  }
+  return e;
+}
+
+function el(tag, cls, text){
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text != null) n.textContent = text;
+  return n;
+}
+
+function factRow(slug, ch, entry){
+  const d = el('details', 'fx'); d.id = 'fx-' + slug;
+  const s = el('summary');
+  s.appendChild(el('span', 'chev'));
+  s.appendChild(el('span', 'fx-t', ch.title));
+
+  const R = entry && entry.reckons ? entry.reckons : [];
+  const hasFacts = !!(entry && Array.isArray(entry.research));
+  const F = hasFacts ? entry.research.length : 0;
+
+  /* The summary counts facts only. Every chapter carries exactly one reckon,
+     always — a value that never varies tells the reader nothing and can't
+     launder a guess into evidence, which was the reason for counting the two
+     apart in the first place. The reckon shows the moment the panel opens. */
+  const n = el('span', 'fx-n');
+  if (!entry || !hasFacts) { n.textContent = 'Still checking'; n.classList.add('todo'); }
+  else if (!F) n.textContent = 'Nothing to declare';
+  else n.textContent = F + ' checked';
+  s.appendChild(n);
+  d.appendChild(s);
+
+  const p = el('div', 'panel');
+  /* Reckons first, receipts after — front-load the confession, close the panel
+     on solid ground. Reckons are Michael's own copy, not book quotes, and they
+     never carry a link. */
+  if (R.length) {
+    p.appendChild(el('h4', null, 'Reckons'));
+    for (const r of R) {
+      const i = el('div', 'item');
+      /* No per-reckon date. One per chapter, all stamped the same month, so 22
+         identical footers said nothing — the dating moved to the top of the
+         page where it says it once. */
+      i.appendChild(el('span', 'q', '“' + r.claim + '”'));
+      p.appendChild(i);
+    }
+  }
+  p.appendChild(el('h4', null, 'Research'));
+  if (!hasFacts) {
+    p.appendChild(el('p', 'item')).appendChild(el('i', null, 'Still checking.'));
+  } else if (!F) {
+    p.appendChild(el('p', 'item')).appendChild(el('i', null, 'Nothing to declare.'));
+  } else {
+    for (const f of entry.research) {
+      const i = el('div', 'item');
+      i.appendChild(el('span', 'q', '“' + f.quote + '”'));
+      const src = el('span', 'src', f.source + ' ');
+      const a = el('a', 'dig', 'Dig in here →');
+      a.href = f.link; a.target = '_blank'; a.rel = 'noopener';
+      src.appendChild(a);
+      i.appendChild(src);
+      p.appendChild(i);
+    }
+  }
+  d.appendChild(p);
+  return d;
+}
+
+async function openFacts(slug){
+  const all = await CHAPTERS;
+  const slugs = Object.keys(all);            /* book order, straight from the reader's own file */
+  const data = await FACTS;
+  const errs = factsErrors(data, slugs);
+  const entries = (errs.length || !data) ? {} : (data.chapters || {});
+
+  document.getElementById('rtitle').textContent = 'Fact check';
+  const why = document.getElementById('rwhy');
+  why.textContent = ''; why.style.display = 'none';
+
+  const body = document.getElementById('rbody');
+  body.innerHTML = '';
+
+  const lead = el('div', 'lead');
+  lead.appendChild(el('p', null, FACTS_INTRO));
+  body.appendChild(lead);
+
+  if (errs.length) {
+    const box = el('div', 'facts-err');
+    box.appendChild(el('b', null, 'FACTS.JSON REJECTED'));
+    box.appendChild(el('p', null, 'The list below is showing as unchecked because the file did not pass:'));
+    const ul = el('ul');
+    for (const m of errs.slice(0, 8)) ul.appendChild(el('li', null, m));
+    if (errs.length > 8) ul.appendChild(el('li', null, `…and ${errs.length - 8} more.`));
+    box.appendChild(ul);
+    body.appendChild(box);
+  /* One dateline for the page, straight. Takes the latest date the file
+     carries — the sources date, or the newest reckon — so it can never claim
+     the page is fresher than its contents. */
+  } else if (data) {
+    const dates = [data.checked].concat(
+      Object.values(entries).flatMap(v => (v.reckons || []).map(r => r.dated)));
+    const latest = dates.filter(d => niceMonth(d)).sort().pop();
+    if (latest) body.appendChild(el('p', 'facts-meta', 'Last updated: ' + niceMonth(latest) + '.'));
+  }
+
+  const search = el('input', 'facts-search');
+  search.type = 'search';
+  search.placeholder = 'Search the claims';
+  search.setAttribute('aria-label', 'Search the fact checks');
+  body.appendChild(search);
+
+  const list = el('div', 'facts-list');
+  for (const s of slugs) list.appendChild(factRow(s, all[s], entries[s]));
+  body.appendChild(list);
+  const none = el('p', 'facts-none', 'Nothing matches that.');
+  none.hidden = true; body.appendChild(none);
+
+  /* <details> is expanded by find-in-page in some browsers and not others, and
+     this is the page where that failing quietly is worst. So the search is
+     explicit: it filters rows and opens the ones whose contents match. */
+  search.addEventListener('input', () => {
+    const q = search.value.trim().toLowerCase();
+    let shown = 0;
+    for (const row of list.children) {
+      const title = row.querySelector('.fx-t').textContent.toLowerCase();
+      const panel = row.querySelector('.panel').textContent.toLowerCase();
+      const hit = !q || title.includes(q) || panel.includes(q);
+      row.hidden = !hit;
+      if (hit) { shown++; if (q && panel.includes(q)) row.open = true; }
+    }
+    none.hidden = shown > 0;
+  });
+
+  const n = document.getElementById('rnudge');
+  n.innerHTML = ''; n.style.display = 'none';
+
+  reader.setAttribute('open','');
+  reader.scrollTop = 0;
+
+  const target = slug && list.querySelector('#fx-' + CSS.escape(slug));
+  if (target) { target.open = true; target.scrollIntoView({ block: 'center' }); }
+  else document.getElementById('rclose').focus();
+
+  go('/facts' + (target ? '#' + slug : ''));
+}
+
+/* --------------------------------------------------------------- routing */
+/* server.js already returns index.html for any path, so /facts is a real URL
+   people can link and cite — which is most of the point of a fact page. */
+function go(path){
+  if (location.pathname + location.hash !== path) history.pushState({}, '', path);
+}
+function routeTo(path, hash){
+  if (path === '/facts') openFacts(hash ? hash.slice(1) : '');
+  else closeChapter();
+}
+document.querySelector('a.f').addEventListener('click', e => { e.preventDefault(); openFacts(); });
+
+/* "ask the robot", inside About. A real navigation would reload the page and
+   wipe the thread, so the click is intercepted and the panel closes softly.
+   Focused on mobile too, unlike a plain close — they've asked to go and talk,
+   so the keyboard is the point rather than an ambush. */
+reader.addEventListener('click', e => {
+  if (!e.target.closest('a.ask')) return;
+  e.preventDefault();
+  closeChapter();
+  say.focus();
+});
+addEventListener('popstate', () => routeTo(location.pathname, location.hash));
+if (location.pathname === '/facts') routeTo('/facts', location.hash);
+
+function closeChapter(){
+  if (location.pathname === '/facts') go('/');
+  reader.removeAttribute('open');
+  /* Closing used to drop you back on a half-forgotten thread with nothing
+     focused. Same desktop-only guard as the load focus — on a phone this
+     would throw the keyboard up over the composition. */
+  if (matchMedia('(min-width:900px) and (hover:hover)').matches) say.focus();
+}
+document.getElementById('rclose').addEventListener('click', closeChapter);
+addEventListener('keydown', e => { if (e.key === 'Escape') closeChapter(); });
 </script>
 </body>
 </html>

@@ -28,6 +28,13 @@ And AI.* by Michael Goldthorpe.
   the bed any more.
 - **The reader contains its scroll** (`overscroll-behavior`) now the mobile
   body scrolls beneath it.
+- **The reader gets its own mobile numbers** (v1.2.1). Not a second composition
+  — a white page is the same page at every size — but its margins were borrowing
+  `--gut` from the red page and its type was vw-clamped, so every phone read
+  differently. Now fixed: 18px side margins, 17.5px/1.6 body — a paperback
+  measure. The block sits **after** the base `.reader` rules on purpose; same
+  specificity, the cascade is the mechanism. The title also clears the close
+  button now.
 - Measured, not eyed: 390×844, 360×844, 430×932, 393×852 all fit the arrival
   screen exactly with zero horizontal overflow and no element overlaps;
   360×640 scrolls 19px at the 64px title floor. Desktop verified unchanged at
