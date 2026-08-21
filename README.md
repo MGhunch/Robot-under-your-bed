@@ -3,7 +3,39 @@
 The website for **There's a Robot Under Your Bed** — *A little book about humans.
 And AI.* by Michael Goldthorpe.
 
-**Status: v1.1 — the card.**
+**Status: v1.2 — mobile is its own composition.**
+
+### What's new in v1.2
+
+- **Mobile rebuilt as a scrolling poster** (ruled 21 Aug, Michael). The title is
+  big and fills the red; the thread grows up off the bed and pushes the title up
+  the page and, eventually, off the top — real document scroll, so flicking back
+  up finds it again. The bed anchors the footer as always; **the lockup moves
+  under the bed** — same lockup as desktop, different location, Buy the bottom
+  anchor. One state: no `body.chatting` overrides, no fixed positioning, no
+  full-height inner scroller, and no value shared with a desktop `clamp()`.
+- **The title is sized by two ceilings and the lower wins**, both measured: the
+  widest line (YOUR BED) is 2.99× the font-size in Bebas, so
+  `(100vw − 2·gut)/2.99` fills the measure flush; and the title block grows at
+  3.28px per font px, so `(100svh − 550px)/3.28` is the biggest title that
+  still leaves the bed on the arrival screen. Bed-on-screen outranks
+  flush-right: a Pro Max gets a 92%-of-measure poster, an SE gives up a few
+  percent rather than pushing the bed below the fold.
+- **`.brand` and `.talk` dissolve on mobile** (`display:contents`) so title,
+  thread, compose, bed and lockup become one flex column and the lockup can be
+  ordered below the bed without duplicating any markup.
+- **The red-fill occlusion patch on `.minor a` is removed** — nothing overlaps
+  the bed any more.
+- **The reader contains its scroll** (`overscroll-behavior`) now the mobile
+  body scrolls beneath it.
+- Measured, not eyed: 390×844, 360×844, 430×932, 393×852 all fit the arrival
+  screen exactly with zero horizontal overflow and no element overlaps;
+  360×640 scrolls 19px at the 64px title floor. Desktop verified unchanged at
+  1440×900.
+- **Repo fix:** the tree had a stale `public/` with the current files nested
+  inside it at `public/public/` — the server was one session behind. The
+  current files (research key, dateline logic, circle favicon) are promoted to
+  `public/` and the nest is gone.
 
 ### What's new in v1.1
 

@@ -64,7 +64,7 @@
           "dated": "2026-08"
         }
       ],
-      "facts": []
+      "research": []
     },
     "feed-it-fight-it-fix-it": {
       "reckons": [
@@ -89,7 +89,7 @@
           "dated": "2026-08"
         }
       ],
-      "facts": []
+      "research": []
     },
     "ai-mageddon": {
       "reckons": [
@@ -122,7 +122,7 @@
           "dated": "2026-08"
         }
       ],
-      "facts": []
+      "research": []
     },
     "great-art-heist": {
       "reckons": [
@@ -171,7 +171,7 @@
           "dated": "2026-08"
         }
       ],
-      "facts": []
+      "research": []
     },
     "the-robot-under-your-bed": {
       "reckons": [
@@ -180,7 +180,7 @@
           "dated": "2026-08"
         }
       ],
-      "facts": []
+      "research": []
     }
   }
 }

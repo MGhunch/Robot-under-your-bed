@@ -120,9 +120,10 @@ h1 .box::before{
   font-size:clamp(13px,3.2vw,16px);
   color:var(--white); text-decoration:none; text-align:center;
   border:2px solid var(--white); border-radius:999px;
-  /* Filled with page red rather than transparent: invisible on the red field,
-     but it occludes the bed when the lockup sits over it mid-chat on mobile. */
-  background:var(--red);
+  /* Transparent again. The red fill was an occlusion patch for the lockup
+     sitting fixed over the bed mid-chat on mobile; the lockup lives under the
+     bed now (21 Aug) and nothing overlaps anything. */
+  background:none;
   padding:.62em 0 .48em;
 }
 .minor a.f{flex:1.9 1 0;}   /* sized to the words, still totalling the hero */
@@ -341,25 +342,89 @@ h1 .box::before{
   .bed img{max-height:31cqh;}
 }
 
-/* ---------------------------------------------------------------- mobile, mid-chat */
+/* ---------------------------------------------------------------- mobile */
+
+/* Ruled 21 Aug (Michael): its own composition, not the desktop turned down.
+   A scrolling poster. The title is big and fills the red; the thread grows up
+   off the bed and pushes the title up the page and, eventually, off the top —
+   real document scroll, so flicking back up finds it again. The bed anchors
+   the footer as it always has, and the lockup moves UNDER the bed: the same
+   lockup as desktop, different location. Buy stays the bottom anchor.
+
+   One state. No body.chatting overrides, no fixed positioning, no full-height
+   inner scroller. The desktop's locked screen becomes a document that grows —
+   which is also what makes the keyboard behave: the browser scrolls the
+   focused input into view because there is real scroll to do it with.
+
+   No value here is shared with a desktop clamp() on purpose — the two
+   compositions must not touch (v003). */
 
 @media (max-width:899px){
-  body.chatting h1{font-size:22px;line-height:1;white-space:nowrap;}
-  body.chatting h1 br{display:none;}
-  body.chatting h1 .box{margin-left:.1em;}
-  body.chatting .strap{display:none;}
-  body.chatting .brand{padding-right:56px;}
-  body.chatting .lockup{
-    position:fixed; z-index:30;
-    left:var(--gut); bottom:calc(var(--btm) + env(safe-area-inset-bottom));
-    width:auto;
+
+  /* The page scrolls. Desktop's overflow:hidden one-screen shell is released;
+     the column is at least a screen tall so the bed sits at the bottom on
+     arrival, and grows past it as the thread does. svh, not dvh — dvh
+     reflows the whole page every time the URL bar hides, and the sliver it
+     leaves behind the retracted bar is page-red anyway. */
+  body{display:block; height:auto; min-height:100svh; overflow:visible; overflow-x:hidden;}
+  .stage{height:auto;}
+  .wrap{
+    min-height:100svh; height:auto;
+    display:flex; flex-direction:column; gap:0;
+    padding:clamp(18px,5vw,30px) var(--gut) calc(14px + env(safe-area-inset-bottom));
   }
-  body.chatting .minor{margin-bottom:8px;}
-  body.chatting .minor a{font-size:12px;padding:.5em .9em .38em;flex:0 0 auto;}
-  body.chatting .buy{font-size:16px;padding:.6em 1.3em .44em;width:auto;}
-  body.chatting .bed{justify-content:center;}
-  body.chatting .bed img{height:min(22vh,190px);}
-  .brand{order:0;} .talk{order:1;}
+
+  /* .brand and .talk dissolve — their children become the column, so the
+     lockup can be ordered below the bed without duplicating markup (v003:
+     reorder with order, never fork the DOM). */
+  .brand,.talk{display:contents;}
+  .ttl{order:0;} .thread{order:1;} .compose{order:2;} .bed{order:3;} .lockup{order:4;}
+
+  /* The title owns the red space. flex:1 hands it every pixel the thread
+     hasn't claimed yet, so on arrival it IS the page; each answer takes the
+     slack back and then starts pushing it up the page.
+
+     Sized by TWO ceilings and the lower one wins, both measured:
+     · width — the widest line (YOUR BED) is 2.99× the font-size in Bebas,
+       so (100vw − 2·gut)/2.99 fills the measure flush;
+     · height — everything that isn't title (bubble, input, bed, lockup,
+       padding) needs ~550px at phone widths, and the title block grows at
+       3.28px per font px (4 lines × .82 + the fitted strap), so
+       (100svh − 550px)/3.28 is the biggest title that still leaves the bed
+       on the arrival screen. Bed-on-screen outranks flush-right: a tall
+       phone gets the flush poster, a short one gives up a few % of measure
+       rather than pushing the bed below the fold. */
+  .ttl{flex:1 0 auto;}
+  h1{
+    font-size:clamp(64px,
+      min(calc((100vw - 2*var(--gut))/2.99), calc((100svh - 550px)/3.28)),
+      150px);
+    line-height:.82;
+  }
+  .strap{margin-top:12px;}
+
+  /* The thread is content-height in normal flow — no inner scroll, no
+     bottom-anchoring, no fade mask (there is no scroll edge to fade at).
+     It grows; the document grows; the title moves. */
+  .thread{
+    flex:none; min-height:0; overflow:visible;
+    justify-content:flex-start;
+    gap:10px; padding:20px 0 16px;
+    -webkit-mask-image:none; mask-image:none;
+  }
+
+  .compose{width:100%; margin:0 0 16px;}
+
+  /* The bed spans the column and sits on the lockup. The desktop baseline
+     transform is off — down there it exists to sit the shoes on an invisible
+     line the lockup shares from the side; here the buttons underneath ARE the
+     ground. */
+  .bed{margin:0; justify-content:center;}
+  .bed img{width:100%; max-height:none; transform:none;}
+
+  /* The lockup, under the bed. Same object as desktop — two hollow pills
+     over one solid hero — different location. Buy anchors the page. */
+  .lockup{position:static; width:100%; margin-top:12px; align-self:stretch;}
 }
 
 @media (prefers-reduced-motion:no-preference){
@@ -373,6 +438,9 @@ h1 .box::before{
   position:fixed; inset:0; z-index:60;
   background:var(--white); color:var(--black);
   overflow-y:auto; -webkit-overflow-scrolling:touch;
+  /* The mobile body scrolls now, so a flick past the chapter's end must not
+     scroll the page underneath the overlay. */
+  overscroll-behavior:contain;
   display:none;
 }
 .reader[open]{display:block;}
@@ -471,7 +539,7 @@ h1 .box::before{
 }
 .fx .item{margin-bottom:14px; font-size:clamp(15px,4vw,17px); line-height:1.5;}
 .fx .q{display:block;}
-.fx .src, .fx .when{display:block; opacity:.62; font-size:.92em; margin-top:2px;}
+.fx .src{display:block; opacity:.62; font-size:.92em; margin-top:2px;}
 .reader a.ask{
   color:var(--red); text-decoration:none;
   border-bottom:2px solid var(--red);
@@ -515,7 +583,7 @@ h1 .box::before{
   <div class="brand">
     <!-- Spaces after each <br> matter: mid-chat on mobile the breaks are hidden
          and the title reflows to one line. -->
-    <div>
+    <div class="ttl">
       <h1>There&rsquo;s<br> a <span class="box">Robot</span><br> under<br> your bed</h1>
       <p class="strap">A little book about humans. And AI.</p>
     </div>
@@ -815,6 +883,16 @@ function freshChapter(){
   return POOL.find(s => !offered.has(s)) || POOL[0];
 }
 
+/* Desktop: the thread is the scroller. Mobile: the document is — the thread
+   is normal flow and each answer grows the page, so the scroll that "pushes
+   the title up" is a real window scroll to the bottom. */
+function scrollChat(){
+  thread.scrollTop = thread.scrollHeight;
+  if (matchMedia('(max-width:899px)').matches) {
+    scrollTo({top: document.documentElement.scrollHeight, behavior: 'smooth'});
+  }
+}
+
 async function bubble(who, text, read){
   const wrap = document.createElement('div');
   wrap.className = 'msg ' + who;
@@ -824,11 +902,11 @@ async function bubble(who, text, read){
   b.appendChild(tail(who === 'r' ? '#231F20' : '#ffffff'));
   wrap.appendChild(b);
   thread.appendChild(wrap);
-  thread.scrollTop = thread.scrollHeight;
+  scrollChat();
 
   if (read) {
     const card = await recCard(read);
-    if (card) { wrap.appendChild(card); thread.scrollTop = thread.scrollHeight; }
+    if (card) { wrap.appendChild(card); scrollChat(); }
   }
 }
 
@@ -843,7 +921,6 @@ compose.addEventListener('submit', e => {
      for anyone whose hands are already on the keyboard. */
   const q = say.value.trim() || currentPill();
   if (!q) return;
-  document.body.classList.add('chatting');
   bubble('u', q);
   say.value = '';
   if (pillAt < pillQueue.length) pillAt++;   /* read once, never shown again */
@@ -957,15 +1034,15 @@ function factsErrors(data, slugs){
   if (!data.chapters || typeof data.chapters !== 'object') return e.concat('“chapters” is missing.');
   for (const [slug, entry] of Object.entries(data.chapters)) {
     if (!slugs.includes(slug)) { e.push(`Unknown slug “${slug}” — not in chapters.json.`); continue; }
-    /* A missing facts key is legal and meaningful — "still checking" — so it
-       is never an error, only an absence. */
+    /* A missing research key is legal and meaningful — "still checking" — so
+       it is never an error, only an absence. */
     for (const r of (entry.reckons || [])) {
       if ('link' in r) e.push(`${slug}: a reckon carries a link. Confessions don’t footnote.`);
       if (!r.claim) e.push(`${slug}: a reckon has no claim.`);
       if (!niceMonth(r.dated)) e.push(`${slug}: reckon dated “${r.dated}” — must be YYYY-MM.`);
     }
-    for (const f of (entry.facts || [])) {
-      if (!f.quote || !f.source || !f.link) e.push(`${slug}: a fact is missing quote, source or link.`);
+    for (const f of (entry.research || [])) {
+      if (!f.quote || !f.source || !f.link) e.push(`${slug}: a research entry is missing quote, source or link.`);
       else if (!/^https?:\/\//i.test(f.link)) e.push(`${slug}: link “${f.link}” is not http(s).`);
     }
   }
@@ -986,8 +1063,8 @@ function factRow(slug, ch, entry){
   s.appendChild(el('span', 'fx-t', ch.title));
 
   const R = entry && entry.reckons ? entry.reckons : [];
-  const hasFacts = !!(entry && Array.isArray(entry.facts));
-  const F = hasFacts ? entry.facts.length : 0;
+  const hasFacts = !!(entry && Array.isArray(entry.research));
+  const F = hasFacts ? entry.research.length : 0;
 
   /* The summary counts facts only. Every chapter carries exactly one reckon,
      always — a value that never varies tells the reader nothing and can't
@@ -1008,18 +1085,20 @@ function factRow(slug, ch, entry){
     p.appendChild(el('h4', null, 'Reckons'));
     for (const r of R) {
       const i = el('div', 'item');
+      /* No per-reckon date. One per chapter, all stamped the same month, so 22
+         identical footers said nothing — the dating moved to the top of the
+         page where it says it once. */
       i.appendChild(el('span', 'q', '“' + r.claim + '”'));
-      i.appendChild(el('span', 'when', 'Reckoned ' + (niceMonth(r.dated) || r.dated) + '.'));
       p.appendChild(i);
     }
   }
-  p.appendChild(el('h4', null, 'The facts'));
+  p.appendChild(el('h4', null, 'Research'));
   if (!hasFacts) {
     p.appendChild(el('p', 'item')).appendChild(el('i', null, 'Still checking.'));
   } else if (!F) {
     p.appendChild(el('p', 'item')).appendChild(el('i', null, 'Nothing to declare.'));
   } else {
-    for (const f of entry.facts) {
+    for (const f of entry.research) {
       const i = el('div', 'item');
       i.appendChild(el('span', 'q', '“' + f.quote + '”'));
       const src = el('span', 'src', f.source + ' ');
@@ -1061,12 +1140,14 @@ async function openFacts(slug){
     if (errs.length > 8) ul.appendChild(el('li', null, `…and ${errs.length - 8} more.`));
     box.appendChild(ul);
     body.appendChild(box);
-  /* Only once at least one chapter actually carries a fact. Printing "sources
-     last checked" above 22 rows with no sources in them is the one claim this
-     room can't make. */
-  } else if (data && niceMonth(data.checked) &&
-             Object.values(entries).some(v => v && v.facts && v.facts.length)) {
-    body.appendChild(el('p', 'facts-meta', 'Sources last checked: ' + niceMonth(data.checked) + '.'));
+  /* One dateline for the page, straight. Takes the latest date the file
+     carries — the sources date, or the newest reckon — so it can never claim
+     the page is fresher than its contents. */
+  } else if (data) {
+    const dates = [data.checked].concat(
+      Object.values(entries).flatMap(v => (v.reckons || []).map(r => r.dated)));
+    const latest = dates.filter(d => niceMonth(d)).sort().pop();
+    if (latest) body.appendChild(el('p', 'facts-meta', 'Last updated: ' + niceMonth(latest) + '.'));
   }
 
   const search = el('input', 'facts-search');
