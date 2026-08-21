@@ -269,7 +269,10 @@ h1 .box::before{
    size would read as something already typed rather than something offered. */
 .compose .pill{
   position:absolute; inset:0;
-  display:flex; align-items:center;
+  /* Block, not flex — text-overflow:ellipsis is inert on a flex container,
+     which is why the line ran under the ask key. The padding matches the
+     input's own exactly, so the suggestion sits where typed text would. */
+  display:block;
   padding:.6em 3.2em .68em 1.15em;
   font-family:var(--body); font-size:clamp(14px,3.2vw,19px); line-height:1.32;
   color:var(--white);
@@ -510,7 +513,7 @@ h1 .box::before{
    and find-in-page both work — people come here to look up the one claim they
    don't believe, and Ctrl+F failing silently would break the page's only job. */
 
-.facts-meta{font-size:14px; opacity:.55; margin:-4px 0 26px;}
+.facts-meta{font-size:11px; opacity:.55; margin:-4px 0 26px; letter-spacing:.01em;}
 
 .facts-search{
   width:100%; font-family:var(--body); font-size:16px;
@@ -558,6 +561,8 @@ h1 .box::before{
   border-bottom:2px solid var(--red);
 }
 .fx .dig{
+  /* Its own line, under the source rather than trailing it. */
+  display:block; width:fit-content; margin-top:6px;
   font-family:var(--head); text-transform:uppercase; letter-spacing:.06em;
   font-size:15px; color:var(--red); text-decoration:none;
   border-bottom:2px solid var(--red); padding-bottom:1px;
@@ -1125,7 +1130,9 @@ function factRow(slug, ch, entry){
       /* No per-reckon date. One per chapter, all stamped the same month, so 22
          identical footers said nothing — the dating moved to the top of the
          page where it says it once. */
-      i.appendChild(el('span', 'q', '“' + r.claim + '”'));
+      /* No quote marks. Reckons are crafted authorial copy, not verbatim book
+         lines — quotation marks claim verbatim, and only research entries can. */
+      i.appendChild(el('span', 'q', r.claim));
       p.appendChild(i);
     }
   }
@@ -1138,7 +1145,7 @@ function factRow(slug, ch, entry){
     for (const f of entry.research) {
       const i = el('div', 'item');
       i.appendChild(el('span', 'q', '“' + f.quote + '”'));
-      const src = el('span', 'src', f.source + ' ');
+      const src = el('span', 'src', f.source);
       const a = el('a', 'dig', 'Dig in here →');
       a.href = f.link; a.target = '_blank'; a.rel = 'noopener';
       src.appendChild(a);
