@@ -513,8 +513,10 @@ h1 .box::before{
    and find-in-page both work — people come here to look up the one claim they
    don't believe, and Ctrl+F failing silently would break the page's only job. */
 
-/* Admin, not news — a stamp in a corner, not a line you read. */
-.facts-meta{font-size:9px; opacity:.45; margin:-6px 0 24px; letter-spacing:.04em; text-transform:uppercase;}
+/* Admin, not news — a stamp in a corner, not a line you read.
+   Selector carries .reader because .reader p sets body size at higher
+   specificity — a bare .facts-meta loses the font-size fight silently. */
+.reader p.facts-meta{font-size:9px; opacity:.45; margin:-6px 0 24px; letter-spacing:.04em; text-transform:uppercase;}
 
 /* Type on this page is three sizes with real jumps, not five near-misses:
    22 Bebas for tier headings, 17 serif for everything primary (rows, search,
