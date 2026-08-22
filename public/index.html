@@ -527,7 +527,21 @@ h1 .box::before{
 .buy-cta:hover{transform:scale(1.02);}
 .buy-cta:hover::after{transform:translateX(3px);}
 .buy-cta:active{transform:scale(.98);}
-.reader p.buy-note{font-size:13px; opacity:.62; margin-top:14px;}
+.buy-block{width:fit-content; margin-top:26px;}
+.buy-block .buy-cta{margin-top:0;}
+/* Centred to the button, not the column — it's the button's caption. */
+.reader p.buy-note{font-size:13px; opacity:.62; margin:12px 0 0; text-align:center;}
+
+/* Copy left, the object itself right — the cover is the argument on this page.
+   On a phone the cover leads and the copy follows, product-page order. */
+.buy-grid{display:flex; gap:36px; align-items:flex-start;}
+.buy-copy{flex:1 1 auto; min-width:0;}
+.buy-cover{flex:none; width:220px; height:auto; border-radius:3px;}
+@media (max-width:599px){
+  .buy-grid{flex-direction:column-reverse; align-items:center;}
+  .buy-cover{width:min(58%,230px);}
+  .buy-copy{align-self:stretch;}
+}
 
 /* --------------------------------------------------------------- facts */
 /* The trust room. Straight, no jokes, and the only link on the page sits under
@@ -734,13 +748,23 @@ h1 .box::before{
      One edit made and flagged: "under you pillow" -> "under your pillow".
      Revert if the typo was the joke. -->
 <template id="buyBody">
-  <div class="lead">
-    <p>Yay. Over to you how you like to read. It&rsquo;s cheaper on Kindle and
-       better when you tuck a copy under your pillow.</p>
+  <div class="buy-grid">
+    <div class="buy-copy">
+      <div class="lead">
+        <p>Yay. You choose how you like to read. It&rsquo;s cheaper on Kindle and
+           better when you tuck a real one under your pillow.</p>
+      </div>
+      <!-- TODO: real Amazon listing URL. href set from AMAZON_URL in the JS. -->
+      <div class="buy-block">
+        <a class="buy-cta" href="#" target="_blank" rel="noopener">Get yours on Amazon now</a>
+        <p class="buy-note">(Note pre-orders only right now)</p>
+      </div>
+    </div>
+    <!-- Cover from the V2 interior PDF, 22 Aug — swap the asset if the final
+         cover moves. width/height reserve the box so nothing shifts on load. -->
+    <img class="buy-cover" src="/assets/cover.png" width="640" height="1023"
+         alt="The cover of There&rsquo;s a Robot Under Your Bed">
   </div>
-  <!-- TODO: real Amazon listing URL. href set from AMAZON_URL in the JS. -->
-  <a class="buy-cta" href="#" target="_blank" rel="noopener">Buy one on Amazon now</a>
-  <p class="buy-note">(Note pre-orders only right now)</p>
 </template>
 
 <!-- ============================================================= reader -->
@@ -1108,7 +1132,7 @@ document.querySelector('a.b').addEventListener('click', e => {
 const AMAZON_URL = '#';
 
 function openBuy(){
-  openPage('So you want to buy the book?', '',
+  openPage('Ready to buy the book?', '',
            document.getElementById('buyBody').content);
   document.getElementById('rwhy').style.display = 'none';   /* no sub on this page */
   const cta = document.querySelector('#rbody .buy-cta');
