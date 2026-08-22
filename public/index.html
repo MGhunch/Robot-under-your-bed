@@ -507,6 +507,28 @@ h1 .box::before{
   font-size:13px; line-height:1.7; opacity:.62;
 }
 
+/* ----------------------------------------------------------------- buy */
+/* The one solid thing on the page — solid means said, and this is the site
+   saying its only ask out loud. Bebas on the button, the disc trailing:
+   same go-grammar as the ask key, the card and Dig in here. */
+.buy-cta{
+  display:inline-flex; align-items:center; gap:12px;
+  margin-top:26px; padding:.55em 1.1em .6em 1.3em;
+  background:var(--black); color:#fff; border-radius:999px;
+  font-family:var(--head); text-transform:uppercase; letter-spacing:.04em;
+  font-size:clamp(22px,5.5vw,28px); line-height:1; text-decoration:none;
+  transition:transform .12s ease;
+}
+.buy-cta::after{
+  content:""; flex:none; width:1em; height:1em; border-radius:50%;
+  background:var(--red) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M8 14h11M15 9.5l4.5 4.5-4.5 4.5" fill="none" stroke="%23fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/100% no-repeat;
+  transition:transform .16s ease;
+}
+.buy-cta:hover{transform:scale(1.02);}
+.buy-cta:hover::after{transform:translateX(3px);}
+.buy-cta:active{transform:scale(.98);}
+.reader p.buy-note{font-size:13px; opacity:.62; margin-top:14px;}
+
 /* --------------------------------------------------------------- facts */
 /* The trust room. Straight, no jokes, and the only link on the page sits under
    a fact. Built as <details>/<summary> rather than hand-rolled divs so keyboard
@@ -705,6 +727,20 @@ h1 .box::before{
     Published by Hunch Ltd &middot; ISBN 978-0-473-80267-7<br>
     Design by Stuart Hinds &middot; Set in Bebas Neue and Zodiak
   </p>
+</template>
+
+<!-- ================================================================ buy -->
+<!-- MG copy, 22 Aug. Not a stand-in — do not rewrite.
+     One edit made and flagged: "under you pillow" -> "under your pillow".
+     Revert if the typo was the joke. -->
+<template id="buyBody">
+  <div class="lead">
+    <p>Yay. Over to you how you like to read. It&rsquo;s cheaper on Kindle and
+       better when you tuck a copy under your pillow.</p>
+  </div>
+  <!-- TODO: real Amazon listing URL. href set from AMAZON_URL in the JS. -->
+  <a class="buy-cta" href="#" target="_blank" rel="noopener">Buy one on Amazon now</a>
+  <p class="buy-note">(Note pre-orders only right now)</p>
 </template>
 
 <!-- ============================================================= reader -->
@@ -1063,6 +1099,30 @@ document.querySelector('a.b').addEventListener('click', e => {
   e.preventDefault();
   openPage('About the book', 'A little book about humans. And AI.',
            document.getElementById('aboutBody').content);
+});
+
+/* --------------------------------------------------------------------- buy */
+
+/* TODO: the real Amazon listing URL, once the pre-order page exists. Until it
+   does the CTA is inert — one constant to fill, nothing else to touch. */
+const AMAZON_URL = '#';
+
+function openBuy(){
+  openPage('So you want to buy the book?', '',
+           document.getElementById('buyBody').content);
+  document.getElementById('rwhy').style.display = 'none';   /* no sub on this page */
+  const cta = document.querySelector('#rbody .buy-cta');
+  cta.href = AMAZON_URL;
+  if (AMAZON_URL === '#') cta.removeAttribute('target');    /* don't open a blank tab to nowhere */
+}
+
+document.querySelector('a.buy').addEventListener('click', e => { e.preventDefault(); openBuy(); });
+
+/* The nudge's "Why not buy the book?" is injected per-chapter — delegate so
+   every future nudge is wired without remembering to wire it. */
+document.getElementById('rnudge').addEventListener('click', e => {
+  const a = e.target.closest('a');
+  if (a){ e.preventDefault(); openBuy(); }
 });
 
 /* ------------------------------------------------------------------- facts */
