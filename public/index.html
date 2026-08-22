@@ -488,13 +488,18 @@ h1 .box::before{
   font-size:clamp(19px,4.6vw,25px); letter-spacing:.03em;
   margin:1.7em 0 .55em;
 }
+/* TLDR — ruled 22 Aug: not a box. A key line. The rule breaks in the centre
+   for the TLDR label at the top, echoing the book's treatment. */
 .reader .tldr{
-  background:var(--black); color:#fff; border-radius:4px;
-  padding:22px 26px; margin:34px 0 10px; text-align:center;
+  margin:34px 0 10px; text-align:center;
 }
 .reader .tldr b{
-  display:block; font-family:var(--head); font-size:17px;
-  letter-spacing:.18em; opacity:.75; margin-bottom:8px;
+  display:flex; align-items:center; gap:14px;
+  font-family:var(--head); font-size:17px;
+  letter-spacing:.18em; margin-bottom:12px;
+}
+.reader .tldr b::before, .reader .tldr b::after{
+  content:""; flex:1; border-top:3px solid var(--black);
 }
 .reader .tldr i{font-size:clamp(16px,4.2vw,19px); line-height:1.45;}
 
@@ -658,7 +663,7 @@ h1 .box::before{
   .reader h2{font-size:clamp(30px,10.5vw,44px); padding-right:40px;}
   .reader .why{font-size:16px;}
   .reader h3{font-size:21px;}
-  .reader .tldr{padding:18px; margin:30px 0 10px;}
+  .reader .tldr{margin:30px 0 10px;}
   .reader .tldr i{font-size:16.5px; line-height:1.5;}
   .reader .lead p{font-size:19px; line-height:1.5;}
   /* Fact check rides the same shell, so it already got the margins; its own
@@ -1060,13 +1065,12 @@ compose.addEventListener('submit', e => {
 
 /* ------------------------------------------------------------------ reader */
 
-/* STAND-IN nudge copy. Escalates gently, never blocks — no counters, no wall. */
+/* The chapter nudge — MG, ruled 22 Aug. Per-chapter topic line from
+   chapters.json (`nudge`), then the shared close. Replaces the count-based
+   escalation set. Never blocks — no counters, no wall.
+   NUDGE_CLOSE is MG. The sidebar set is still a STAND-IN — kill or keep. */
+const NUDGE_CLOSE = "There's plenty more book than that.";
 const NUDGES = {
-  chapter: [
-    "There are thirteen more where that came from.",
-    "That&rsquo;s two. The rest are in the book, and it&rsquo;s a one-hour read.",
-    "You&rsquo;ve read a fair bit of it now. Might be cheaper to own it.",
-  ],
   sidebar: [
     "That&rsquo;s one of the little ones. The actual chapters are longer and better.",
     "Another aside. There are fourteen proper chapters underneath them.",
@@ -1099,11 +1103,13 @@ async function openChapter(slug){
   }
 
   chaptersRead++;
-  const set = NUDGES[ch.kind === 'sidebar' ? 'sidebar' : 'chapter'];
+  const line = ch.kind === 'sidebar'
+    ? NUDGES.sidebar[Math.min(chaptersRead, NUDGES.sidebar.length) - 1]
+    : `${ch.nudge} ${NUDGE_CLOSE}`;
   const n = document.getElementById('rnudge');
   n.style.display = '';                        /* About hides it; put it back */
-  n.innerHTML = `<p>${set[Math.min(chaptersRead, set.length) - 1]}</p>
-                 <a href="#">Why not buy the book?</a>`;
+  n.innerHTML = `<p>${line}</p>
+                 <a href="#">Read the book</a>`;
 
   reader.setAttribute('open','');
   reader.scrollTop = 0;
