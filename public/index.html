@@ -501,6 +501,15 @@ h1 .box::before{
 /* About reuses the reader shell — one overlay, one close, one Escape handler,
    one place to fix the return. Only these two rules are new. */
 .reader .lead p{font-size:clamp(18px,4.6vw,22px); line-height:1.42;}
+
+/* The About/Buy pages run the fact page's type system — 22 Bebas headings,
+   22 lead, 17 body, 13 small — with real jumps, scoped by .page so the
+   chapter reader keeps its book-like scale. */
+.reader.page .why{font-size:17px;}
+.reader.page p{font-size:17px;}
+.reader.page .lead p{font-size:22px; line-height:1.42;}
+.reader.page h3{font-size:22px; letter-spacing:.09em;}
+.reader.page .credits{font-size:13px;}
 .reader .credits{
   margin-top:44px; padding-top:18px;
   border-top:1px solid rgba(35,31,32,.22);
@@ -724,7 +733,7 @@ h1 .box::before{
     <p>Because the more we know, the less we worry.</p>
   </div>
 
-  <h3>What&rsquo;s in it?</h3>
+  <h3>What&rsquo;s in the book?</h3>
   <p>A quick adventure into robot world. Where they come from, how they think
      and how to make them useful.</p>
   <p>Plus, a few deeper dives into how the world is changing. What we might want
@@ -1066,6 +1075,7 @@ const NUDGES = {
 };
 
 async function openChapter(slug){
+  reader.classList.remove('page');
   const all = await CHAPTERS;
   const ch = all[slug];
   if (!ch) return;
@@ -1105,6 +1115,7 @@ async function openChapter(slug){
 /* The reader shell doubles as the About panel — one overlay, one close button,
    one Escape handler, and one place to fix the return when we get to it. */
 function openPage(title, sub, frag){
+  reader.classList.add('page');
   document.getElementById('rtitle').textContent = title;
   const rw = document.getElementById('rwhy');
   rw.style.display = ''; rw.textContent = sub;       /* facts hides it */
@@ -1260,6 +1271,7 @@ function factRow(slug, ch, entry){
 }
 
 async function openFacts(slug){
+  reader.classList.remove('page');
   const all = await CHAPTERS;
   const slugs = Object.keys(all);            /* book order, straight from the reader's own file */
   const data = await FACTS;
