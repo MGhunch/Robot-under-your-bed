@@ -504,7 +504,7 @@ h1 .box::before{
 .reader .credits{
   margin-top:44px; padding-top:18px;
   border-top:1px solid rgba(35,31,32,.22);
-  font-size:14px; line-height:1.7; opacity:.6;
+  font-size:13px; line-height:1.7; opacity:.62;
 }
 
 /* --------------------------------------------------------------- facts */
@@ -513,10 +513,15 @@ h1 .box::before{
    and find-in-page both work — people come here to look up the one claim they
    don't believe, and Ctrl+F failing silently would break the page's only job. */
 
-.facts-meta{font-size:11px; opacity:.55; margin:-4px 0 26px; letter-spacing:.01em;}
+/* Admin, not news — a stamp in a corner, not a line you read. */
+.facts-meta{font-size:9px; opacity:.45; margin:-6px 0 24px; letter-spacing:.04em; text-transform:uppercase;}
 
+/* Type on this page is three sizes with real jumps, not five near-misses:
+   22 Bebas for tier headings, 17 serif for everything primary (rows, search,
+   quotes), 13 for everything secondary (counts, sources). A size either says
+   something or it matches — nothing sits 1px off its neighbour. */
 .facts-search{
-  width:100%; font-family:var(--body); font-size:16px;
+  width:100%; font-family:var(--body); font-size:17px;
   color:var(--black); background:none;
   border:2px solid var(--black); border-radius:999px;
   padding:.6em 1.1em .66em; outline:none; margin-bottom:22px;
@@ -530,7 +535,7 @@ h1 .box::before{
 .fx>summary{
   list-style:none; cursor:pointer;
   display:flex; align-items:baseline; gap:12px;
-  padding:15px 2px; font-size:clamp(16px,4.2vw,19px);
+  padding:15px 2px; font-size:17px;
 }
 .fx>summary::-webkit-details-marker{display:none;}
 .fx>summary:focus-visible{outline:2px solid var(--red); outline-offset:3px;}
@@ -545,31 +550,31 @@ h1 .box::before{
 /* Sidebars sit in book order, untagged: eight rows all beginning "What's the
    deal with…" already announce themselves as a set, and a label repeating what
    the title says is furniture on a list 22 rows long. */
-.fx-n{font-size:13px; opacity:.5; white-space:nowrap; flex:none;}
+.fx-n{font-size:13px; opacity:.62; white-space:nowrap; flex:none;}
 .fx-n.todo{font-style:italic;}
 
 .fx .panel{padding:0 0 26px 19px;}
 .fx h4{
   font-family:var(--head); text-transform:uppercase; color:var(--red);
-  font-size:16px; letter-spacing:.09em; margin:16px 0 10px;
+  font-size:22px; letter-spacing:.09em; margin:18px 0 10px;
 }
-.fx .item{margin-bottom:14px; font-size:clamp(15px,4vw,17px); line-height:1.5;}
+.fx .item{margin-bottom:16px; font-size:17px; line-height:1.5;}
 .fx .q{display:block;}
-.fx .src{display:block; opacity:.62; font-size:.92em; margin-top:2px;}
+.fx .src{display:block; opacity:.62; font-size:13px; line-height:1.55; margin-top:3px;}
 .reader a.ask{
   color:var(--red); text-decoration:none;
   border-bottom:2px solid var(--red);
 }
 .fx .dig{
-  /* Its own line, under the source rather than trailing it. */
-  display:block; width:fit-content; margin-top:6px;
-  font-family:var(--head); text-transform:uppercase; letter-spacing:.06em;
-  font-size:15px; color:var(--red); text-decoration:none;
-  border-bottom:2px solid var(--red); padding-bottom:1px;
-  /* Never let the arrow wrap off on its own — a stranded "→" with an underline
-     under it reads as a rendering fault. */
-  white-space:nowrap;
+  /* Its own line, serif and red — the one red action on a black-and-white
+     page. The disc is the affordance, echoing the card and the ask key, so
+     no underline and no Bebas: red caps stays a heading costume only. */
+  display:inline-flex; align-items:center; gap:8px;
+  margin-top:7px; font-family:var(--body); font-size:17px;
+  color:var(--red); text-decoration:none; white-space:nowrap;
 }
+.fx .dig svg{flex:none; width:22px; height:22px; transition:transform .16s ease;}
+.fx .dig:hover svg{transform:translateX(3px);}
 /* Loud on this page, silent everywhere else — a bad facts.json must never take
    the site down, only this panel. */
 .facts-err{
@@ -611,7 +616,6 @@ h1 .box::before{
   /* Fact check rides the same shell, so it already got the margins; its own
      type was still vw-clamped. Same cure. */
   .fx>summary{font-size:17px;}
-  .fx .item{font-size:16px;}
   .fx .panel{padding-left:14px;}
 }
 </style>
@@ -1156,7 +1160,8 @@ function factRow(slug, ch, entry){
       const i = el('div', 'item');
       i.appendChild(el('span', 'q', '“' + f.quote + '”'));
       const src = el('span', 'src', f.source);
-      const a = el('a', 'dig', 'Dig in here →');
+      const a = el('a', 'dig', 'Dig in here');
+      a.insertAdjacentHTML('beforeend', ARROW_SVG);   /* the card's disc, echoed */
       a.href = f.link; a.target = '_blank'; a.rel = 'noopener';
       src.appendChild(a);
       i.appendChild(src);
