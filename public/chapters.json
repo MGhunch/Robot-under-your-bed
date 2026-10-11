@@ -1,6 +1,6 @@
 {
  "robot-under-your-bed": {
-  "title": "There's a robot under your bed",
+  "title": "There’s a robot under your bed",
   "why": "Why writing about robots is dumb. But important.",
   "kind": "chapter",
   "blocks": [
@@ -10,7 +10,7 @@
    },
    {
     "t": "p",
-    "x": "It's the fastest-moving topic on the planet. No one knows which way is up."
+    "x": "It’s the fastest-moving topic on the planet and no one knows which way is up."
    },
    {
     "t": "p",
@@ -18,11 +18,11 @@
    },
    {
     "t": "p",
-    "x": "When things change so fast you don't know what they're called, it's good to name the things we can rely on."
+    "x": "When things change so fast you can’t remember what they’re called, it’s good to name the things that we do know for sure."
    },
    {
     "t": "p",
-    "x": "Because nothing scares the horses like a dollop of unknown. That's when we freak out and buy bubble stocks in equal measure."
+    "x": "Because nothing scares horses like a dollop of unknown. That’s when people start proclaiming the end of the world and buying up bubble stocks that fund it."
    },
    {
     "t": "p",
@@ -30,19 +30,15 @@
    },
    {
     "t": "p",
-    "x": "But there's so much noise about a robot-fuelled future it's hard to tell the helpful from the hype."
+    "x": "But there’s so much noise about a robot-fuelled future that it’s hard to tell the helpful from the hype."
    },
    {
     "t": "p",
-    "x": "Some say the robots will fry the world, others think we'll pave the streets with gold. More likely we'll end up somewhere in the middle, cruising on into our 20-hour weeks picking through emails for the human bits."
+    "x": "Some are sure the robots will fry the world, others say they’ll pave the streets with gold. Most likely we’ll land up in the middle, cruising into 20-hour weeks and picking through emails for the human bits."
    },
    {
     "t": "p",
-    "x": "But how do we pick a path among the maybes? It's tricky to get your bearings in a blindfold. So our job is to slow stuff down and filter the noise for facts."
-   },
-   {
-    "t": "p",
-    "x": "First things first, who are these robots anyway?"
+    "x": "How do you pick a path in all those maybes? That’s the thing we all want to know. And we won’t find answers by worrying. So let’s switch on the light and dig in."
    },
    {
     "t": "h",
@@ -50,43 +46,51 @@
    },
    {
     "t": "p",
-    "x": "When AI first popped up, everyone lost their minds. A hundred million people had given it a go by Tuesday. It felt like a magical portal that could prop up our brains, and trot out easy answers on anything."
+    "x": "First things first, who are these robots anyway?"
    },
    {
     "t": "p",
-    "x": "Remember all the fuss when the iPhone launched? It's that with bigger numbers."
+    "x": "When AI popped up, everyone lost their minds. A hundred million people had given it a go by Tuesday."
    },
    {
     "t": "p",
-    "x": "To a large extent that's fair enough. These robots are pretty clever."
+    "x": "It felt like magic and cheating rolled into a bot that could trot out easy answers to anything."
    },
    {
     "t": "p",
-    "x": "They can write, they can draw, they can build stuff on the web. And they do it all with impeccable manners and a side of blowing smoke. Even when they go off on one and hallucinate, we crack a smile and pretend they're taking drugs."
+    "x": "Remember the fuss when the iPhone launched? It was that with bigger numbers."
    },
    {
     "t": "p",
-    "x": "Giving them personality is all part of the game. While the hype-reel keeps repeating 'artificial intelligence', most of us give our robots a name. It's how we take the sting from the scary."
+    "x": "And it’s easy to see why we went nuts. These robots are pretty clever."
    },
    {
     "t": "p",
-    "x": "Think Wall-E over War of the Worlds, friendly little charmers here to help."
+    "x": "They can write, they can draw, they can build stuff on the web. And they do it all with impeccable manners and a side of blowing smoke. Even when they go off on one, we crack a smile and pretend they’re taking drugs."
    },
    {
     "t": "p",
-    "x": "But how do these robots actually work? What makes the black box whirr? We can see how they're super useful, but how could they stuff us up?"
+    "x": "Giving them personality is all part of the game. While the hype-reel keeps rolling with ‘artificial intelligence’, most of us give our robots a name. It’s how we remove the sting from the scary."
    },
    {
     "t": "p",
-    "x": "These are the questions we'll poke at on the way."
+    "x": "Imagine Wall-E over War of the Worlds, friendly little charmers here to help us clean up mess."
    },
    {
     "t": "p",
-    "x": "Because it's not until you know what's what that you can choose what's next for you. Will you settle into the worry camp? Or sneak a peek at the future?"
+    "x": "But how do these robots actually work? What makes their black boxes whirr? How do we know when they’re being super useful and when they might stuff us all up?"
    },
    {
     "t": "p",
     "x": "And will it still seem like magic, when you know the magic trick?"
+   },
+   {
+    "t": "p",
+    "x": "These are the questions we’ll poke at on the way."
+   },
+   {
+    "t": "p",
+    "x": "Because it’s not until you know what’s what that you can work out what’s next for you. Will you settle in to hide in the worry camp? Or will you place bets on a future with robot friends? Or will you, like most of us, land somewhere in the middle?"
    },
    {
     "t": "h",
@@ -94,50 +98,46 @@
    },
    {
     "t": "p",
-    "x": "If you're looking for a book about bits and bytes, you've found the wrong shelf in the library. This is a book about people. Most of us aren't fussed about building a car from scratch. We just want to know how to drive it — and how to change a tyre."
+    "x": "If you’re looking for a serious book packed with bits and bytes, you’re on the wrong shelf in the library."
    },
    {
     "t": "p",
-    "x": "So rather than worship the shiny side of tech, we're exploring what the robots might mean for us."
+    "x": "This is a book about people. Most of us aren’t fussed about building a car from scratch. We just want to know the road rules. And how to change a tyre."
    },
    {
     "t": "p",
-    "x": "What the robot? How the robot? What's our robot future?"
+    "x": "So rather than worship the shiny side of tech, we’re exploring what the robots mean for us."
    },
    {
     "t": "p",
-    "x": "Because as humans we like to know what we're playing with."
+    "x": "Because we’re the humans and we got here first."
    },
    {
     "t": "p",
-    "x": "How do I wrangle these robots? Where do I draw the line? What do I need to worry about? How can I sound smart when I'm talking to the kids?"
+    "x": "How do we wrangle these robots? Where do we draw the line? How can we sound smart when we’re talking to the kids?"
    },
    {
     "t": "p",
-    "x": "And will they take over our toasters and throw them in the bath? Or will we live like the Jetsons with Rosie making tea?"
+    "x": "And will they take over our toasters and throw them in the bath? Or will we be living like the Jetsons with Rosie making tea?"
    },
    {
     "t": "p",
-    "x": "So many questions, so little book. But the interesting one is all about us. How will we change in a world full of robots? Because, whatever tomorrow brings, they'll be writing our story with us. So how will we learn to live together?"
+    "x": "So many questions, so little book."
    },
    {
     "t": "p",
-    "x": "Let's start by meeting the one that's under your bed."
+    "x": "But the interesting one is the one about us. How might we change when the robots settle in?"
    },
    {
     "t": "p",
-    "x": "Some history, some tech and some big money politics. Dig in and find out where these robots came from. Then head to the pub with the nerds who fought them into life. First round's on the billionaires."
+    "x": "Whatever tomorrow brings, we’ll be writing our story with robots."
    },
    {
     "t": "p",
-    "x": "\"I think therefore I think I am\""
-   },
-   {
-    "t": "h",
-    "x": "— What Descartes might find confusing"
+    "x": "So let’s start by meeting the one under your bed."
    }
   ],
-  "nudge": "And that's just the pep talk."
+  "nudge": "And that’s just the intro."
  },
  "brief-history-of-robots": {
   "title": "A brief history of robots",
@@ -146,27 +146,31 @@
   "blocks": [
    {
     "t": "p",
-    "x": "Assuming you're younger than seventy, the robots are older than you are."
+    "x": "Assuming you’re younger than seventy, the robots are older than you are."
    },
    {
     "t": "p",
-    "x": "Not the ones that you play with today. But the basic idea that they're built on."
+    "x": "Not the ones that you play with today. But the basic idea is as old as the hills."
    },
    {
     "t": "p",
-    "x": "Alan Turing, the code-cracking guy, famously imagined machines that could think like humans about halfway through last century. The 'Turing Test' of robot smarts is still a thing today."
+    "x": "Alan Turing, the code-cracking guy, famously imagined machines that could think like humans halfway through last century. The ‘Turing Test’ of robot smarts is still a thing today."
    },
    {
     "t": "p",
-    "x": "But even he wasn't first on the bus. Dig deeper and you'll find a woman called Ada Lovelace. She worked with Charles Babbage, who designed the first computer."
+    "x": "But even he wasn’t first on the bus. Dig deeper and you’ll find a woman called Ada Lovelace. She worked with Charles Babbage, who designed the first computer."
    },
    {
     "t": "p",
-    "x": "While Babbage was obsessed with crunching numbers, Lovelace imagined a way to turn music into math so machines \"might compose elaborate and scientific pieces of music of any degree of complexity\". Sound familiar?"
+    "x": "While Babbage was obsessed with numbers, Lovelace imagined a way to turn math into music. She described how machines “might compose elaborate and scientific pieces of music of any degree of complexity”."
    },
    {
     "t": "p",
-    "x": "That all felt a bit airy-fairy back in 1843. And people weren't great at noticing what women had to say. So nobody really picked up that gem for another 100 years."
+    "x": "Sound familiar?"
+   },
+   {
+    "t": "p",
+    "x": "It all felt airy-fairy back in 1843. And people weren’t great at noticing what women had to say. So nobody really picked up that gem for another 100 years."
    },
    {
     "t": "p",
@@ -178,51 +182,55 @@
    },
    {
     "t": "p",
-    "x": "In 1956, a summer camp in Dartmouth nudged the idea along. Ten guys, two months, one big idea: let's get in a room and crack intelligence."
+    "x": "In the mid fifties, a summer camp in Dartmouth nudged the idea along. Ten guys spent two months with one big idea: let’s get in a room and crack intelligence."
    },
    {
     "t": "p",
-    "x": "Their idea was that the right set of math could make machines do anything a human mind could do. Between thinking, drinking and playing chess, they managed to come up with a name."
+    "x": "They reckoned that with the right set of math they could make machines that mimicked the human mind. Between thinking, drinking and playing chess, they managed to come up with a name for it."
    },
    {
     "t": "p",
-    "x": "While they didn't quite nail the science of it all, the name was pretty sticky. Dartmouth was where 'Artificial Intelligence' was christened."
+    "x": "The Dartmouth ten coined ‘Artificial Intelligence’. They never quite nailed the science. But the name was pretty sticky."
    },
    {
     "t": "p",
-    "x": "Then most people dumped the topic and set off chasing shiny stuff, like space travel."
+    "x": "From there most people dumped the topic and set off chasing shiny stuff, like space travel."
    },
    {
     "t": "p",
-    "x": "Meantime, robots that could think for themselves were quietly ticking along in the background. The older ones have been doing their thing for years."
+    "x": "That left the idea of robots that thought for themselves quietly ticking along in the background."
    },
    {
     "t": "h",
-    "x": "ChatGPT's granddad goes to work"
+    "x": "ChatGPT’s granddad goes to work"
    },
    {
     "t": "p",
-    "x": "Ever stopped to think about traffic lights? While dumb ones cycle red to green on timers, smart ones 'think' for themselves. They use sensors and switches and various bits of robot logic to 'see' who's waiting and flick it to green on the fly."
+    "x": "While the nerds were thinking in theory, various engineers were making things smart. Like traffic lights."
    },
    {
     "t": "p",
-    "x": "By today's standards they're a bit of a one-trick pony. But the first ones were built in Denver, in 1952. And robot traffic lights are still stealing cop jobs today."
+    "x": "Dumb ones just cycle through light bulbs on timers, but smart ones can ‘think’ for themselves. They use sensors and switches and robot logic to see who’s waiting and flick it to green on the fly."
    },
    {
     "t": "p",
-    "x": "If you happen to ask directions in South Africa, they'll tell you to turn right at the second robot. Traffic lights? Robots? One and the same in their dictionary."
+    "x": "By today’s standards they’re a bit of a one-trick pony. But the first ones were built back in 1952. Robot lights have been stealing cop jobs for seventy years."
+   },
+   {
+    "t": "p",
+    "x": "Can we really call robot lights artificial intelligence? Probably not. But everything comes from something. Your early prototype looked like an ape."
    },
    {
     "t": "h",
-    "x": "Claude's great uncle wins at chess"
+    "x": "Claude’s great uncle wins at chess"
    },
    {
     "t": "p",
-    "x": "While the traffic lights were twinkling, the world discovered new toys. By the 80s, computers were everywhere. They were rooms in the sixties, fridges in the seventies and big beige blobs on your desktop by the eighties."
+    "x": "While the traffic lights were twinkling, the world discovered new toys. By the eighties, computers were everywhere. They filled rooms in the sixties, cupboards in the seventies and then shrunk into big beige blobs that people could squeeze onto a desktop."
    },
    {
     "t": "p",
-    "x": "That's also when they switched from work to fun. The Ataris, the Commodores, the Spectrums and Apple's first computer with a mouse. Smart enough to smash asteroids. Still a bit janky at work."
+    "x": "That’s also when they switched from work to fun. The Ataris, the Commodores, the Spectrums and Apple’s first Mac in 1984. Smart enough to smash asteroids. Still a bit janky at work."
    },
    {
     "t": "p",
@@ -230,15 +238,15 @@
    },
    {
     "t": "p",
-    "x": "IBM's Deep Blue was about the size of a fridge. It was taught the rules of chess and could figure out the next best move by crunching 200 million options a second. It lost its first match against Kasparov, the Russian Grandmaster. But with a year's worth of tweaking, the computer won and the world freaked out. For a bit."
+    "x": "IBM’s Deep Blue was about the size of a fridge. It was taught the rules of chess and could figure out the next best move by crunching all the options every second. It lost its first match against the Russian grandmaster. But with a year’s worth of tweaking, the computer wiped the floor and the Russian tipped the board."
    },
    {
     "t": "p",
-    "x": "It was actually more brute force than genuine intelligence. Basically an oversized calculator. But it made the point that computing power could wipe the floor with a human. Kasparov didn't like it much at all."
+    "x": "Deep Blue was more brute force than genuine intelligence. It was essentially an oversized calculator. But it made the point that computers could beat humans. And that’s the thing that people noticed."
    },
    {
     "t": "p",
-    "x": "It took another twenty years for the robots to teach themselves. Mostly because the computers couldn't keep up. Research ticked along and we went crazy over data. But it felt like we packed up our chess sets and wandered back to work."
+    "x": "It took another twenty years for the robots to teach chess to themselves. Mostly because computers couldn’t keep up. Research ticked along and we went crazy over data. But we basically packed up our chess sets and wandered back to work."
    },
    {
     "t": "h",
@@ -246,79 +254,75 @@
    },
    {
     "t": "p",
-    "x": "While math club was sorting out chess, the rest of us forgot about AI. We were distracted by more exciting things online. We surfed and crashed the dotcom boom, uploaded our pictures to MySpace and queued in the rain for every new tweak to the iPhone."
+    "x": "While math club was reeling over chess, the rest of us were distracted by the newfangled internet."
    },
    {
     "t": "p",
-    "x": "The robots really didn't cross our minds. But they definitely crossed our tech."
+    "x": "We surfed and crashed the dotcom boom, uploaded our pictures to MySpace and queued in the rain for every new tweak to the iPhone."
    },
    {
     "t": "p",
-    "x": "Like those maps that know where you live by magic. Or those autocorrect bots that guess at words and screw up your texts as you write them. And let's not forget the pattern-matching bots that jump in the way of your trolley to tell you 'People who bought this also bought that'."
+    "x": "The robots really didn’t cross our minds. But they definitely crossed our tech."
    },
    {
     "t": "p",
-    "x": "All of this innovation helped build what we know today. The pattern-matching, the predictions, the crunching of stats so robots can learn."
+    "x": "Like those maps that know where you live. Or those autocorrect bots that screw up your texts as you write them. And let’s not forget the pattern-matching bots that jump in front of your trolley to tell you ‘People who bought this also bought that’."
    },
    {
     "t": "p",
-    "x": "Even the humble traffic lights."
+    "x": "All of this innovation helped build what we know today. The pattern-matching, the predictions, the crunching of stats so robots can learn. Even the humble traffic lights."
    },
    {
     "t": "p",
-    "x": "We've all been cuddled by robots for decades. Most of us just didn't notice."
+    "x": "We’ve all been working with robots for decades. Most of us just didn’t notice. But you sure can’t miss them now."
    },
    {
     "t": "p",
-    "x": "But you sure can't miss them now. Chatty little helper bots who will have a crack at anything and teach themselves chess when they're bored. They're even quite happy to jam out a tune. Ada Lovelace will be singing along with a smile."
+    "x": "Chatty little helpers who will have a crack at anything. They’re even quite happy to jam out a tune."
    },
    {
     "t": "p",
-    "x": "She saw the idea in 1843. It just took us a couple of centuries to get there."
+    "x": "Ada Lovelace will be singing along with a smile. She saw the idea in 1843. It just took a couple of centuries for the rest of us to get there."
    },
    {
     "t": "tldr",
-    "x": "There's not all that much new about the robots. They just recently learned to speak our language."
+    "x": "There’s not all that much new about the robots. They just recently learned to speak our language."
    }
   ],
-  "nudge": "And that's just the history lesson."
+  "nudge": "And that’s just the history lesson."
  },
  "deal-with-chess": {
-  "title": "What's the deal with chess?",
+  "title": "What’s the deal with chess?",
   "why": "",
   "kind": "sidebar",
   "blocks": [
    {
     "t": "p",
-    "x": "Benjamin Franklin loved a good game of chess. He'd happily shift his knight to queen four against anyone."
+    "x": "Benjamin Franklin loved a good game of chess. He’d happily shift his knight to queen four against anyone."
    },
    {
     "t": "p",
-    "x": "So he was very disappointed to be beaten by a robot."
+    "x": "He was very disappointed to be beaten by a robot."
    },
    {
     "t": "p",
-    "x": "They called it the 'Mechanical Turk'. Built by a Hungarian showman to impress an Austrian Empress. An ornate cabinet full of levers and cogs with a mechanical man that played chess."
+    "x": "They called it the ‘Mechanical Turk’. Built by a Hungarian showman to impress an Austrian Empress. An ornate cabinet full of levers and cogs that played a damn good game of chess."
    },
    {
     "t": "p",
-    "x": "It didn't just beat Franklin. The Turk went on tour for over 80 years and wiped the floor with the smartest players in town."
+    "x": "And it didn’t just beat Franklin. The Turk went on tour for over 80 years and knocked over the kings of some of the smartest players in town."
    },
    {
     "t": "p",
-    "x": "One was a math nerd called Charles Babbage. He couldn't work out how the robot won. So he wandered home and invented the computer."
+    "x": "One was a math nerd called Charles Babbage. He was intrigued by how a machine could win. So he wandered home and invented the computer."
    },
    {
     "t": "p",
-    "x": "The truth came out when the Turk was destroyed by fire. The secret was a bloke pulling levers in a cupboard."
+    "x": "Turns out the Turk was just a bloke in a cupboard pulling levers. But everyone loved the idea of robot chess. So it became the test of man v machine."
    },
    {
     "t": "p",
-    "x": "Real robots didn't nail their chess until Deep Blue beat the reigning champ, more than 200 years down the track."
-   },
-   {
-    "t": "p",
-    "x": "But why all this fuss over chess? Well, chess is like boxing for nerds."
+    "x": "Because chess is like boxing for nerds."
    }
   ]
  },
@@ -333,11 +337,11 @@
    },
    {
     "t": "p",
-    "x": "Two things changed: brainpower and firepower. The stuff that computers could do and the computing power to get it done."
+    "x": "Two things changed first: brainpower and firepower. The stuff that computers can do and the computing power to get it done."
    },
    {
     "t": "p",
-    "x": "Both went boom in a few short years. Let's start with how computers got smart."
+    "x": "Both went boom in a few short years. Let’s start with how the bots got smart."
    },
    {
     "t": "h",
@@ -345,23 +349,27 @@
    },
    {
     "t": "p",
-    "x": "Early AI was based on rules: 'if this, then that'. Good for coding, handy in spreadsheets, useless in conversations."
+    "x": "Early AI was based on rules: ‘if this, then that.’ Good for coding, handy in spreadsheets, useless in conversations."
    },
    {
     "t": "p",
-    "x": "This changed when we started feeding machines with data."
+    "x": "It changed when we started feeding the machines with data."
    },
    {
     "t": "p",
-    "x": "You could spend fifty years writing rules to recognise cats. Pointy ears. Whiskers. Four legs. Tail. No, not a lion, a cat. But show your robot ten million cats and it can recognise the patterns itself."
+    "x": "You could spend fifty years writing rules to spot cats. Pointy ears. Whiskers. Four legs. Tail. No, not a lion, a cat. But if you show your robot ten million cats, it can recognise the patterns itself."
    },
    {
     "t": "p",
-    "x": "Once robots learned patterns, we were off."
+    "x": "And once robots learned patterns, we were off."
    },
    {
     "t": "p",
-    "x": "This began the era of 'machine learning'. Buzzword a-go-go through the 2010s. Everyone had an algorithm. Predictions became the game. It's how Netflix could tell what you wanted to watch and why the flight you actually want costs more than the rest."
+    "x": "This began the era of ‘machine learning’."
+   },
+   {
+    "t": "p",
+    "x": "Buzzword a-go-go through the 2010s. Suddenly everyone had an algorithm and predictions became the game. It’s how Netflix could tell what you wanted to watch and why the flight you actually need costs more than the rest."
    },
    {
     "t": "p",
@@ -369,7 +377,7 @@
    },
    {
     "t": "p",
-    "x": "And the race to hoover more data made the robots smarter still. The more they had to play with, the better they got at guessing."
+    "x": "The race to hoover data made the robots smarter still. The more they had to play with, the better they got at guessing."
    },
    {
     "t": "h",
@@ -377,11 +385,15 @@
    },
    {
     "t": "p",
-    "x": "If you're doing lots of math, you need a pretty decent calculator. The one in your phone won't cut it for changing the world."
+    "x": "If you’re doing lots of math, you need a pretty decent calculator. The one in your phone won’t cut it for changing the world."
    },
    {
     "t": "p",
-    "x": "So here's where we meet the silicon end of Silicon Valley. The people who make the chips that make things work. Standard CPUs are good at thinky stuff. They can puzzle out problems in a nice straight line to make your computer go fast."
+    "x": "Here’s where we meet the silicon end of Silicon Valley. The people who make the chips that make things work."
+   },
+   {
+    "t": "p",
+    "x": "Standard CPUs are good at thinky stuff. They can puzzle out problems in a nice straight line to make your computer go fast."
    },
    {
     "t": "p",
@@ -389,11 +401,11 @@
    },
    {
     "t": "p",
-    "x": "The difference is what they do and how they do it. CPUs do some big things well. GPUs do lots of small things all at once. That makes them very good at guessing games."
+    "x": "The difference is what they do and how they do it. CPUs do big things one at a time. GPUs do lots of things at once. That makes them very good at guessing games."
    },
    {
     "t": "p",
-    "x": "So your PowerPoint-smashing robot owes a debt to Call of Duty. It's also why NVIDIA leapt from graphics-chip king to the top of the big cash leaderboard."
+    "x": "So your PowerPoint-smashing robot owes a debt to Call of Duty. It’s also why NVIDIA leapt from graphics-chip king to the top of the big cash leaderboard."
    },
    {
     "t": "h",
@@ -401,7 +413,7 @@
    },
    {
     "t": "p",
-    "x": "With superhuman brainpower and Call of Duty firepower, we really went to town on the training. We started sucking up data like a toddler eating sand."
+    "x": "With superhuman brainpower and Call of Duty firepower, we really went to town on the training. We started to suck data like a toddler eating sand."
    },
    {
     "t": "p",
@@ -409,19 +421,23 @@
    },
    {
     "t": "p",
-    "x": "And if you don't think twice about 'borrowing' books, there's quite a lot to read. Imagine everything from your local library with six thousand of its closest friends."
+    "x": "And if you don’t think twice about ‘borrowing’ books, there’s quite a lot to read. Imagine everything from your local library with six thousand of its closest friends."
    },
    {
     "t": "p",
-    "x": "If you settle in to read it all yourself you'll probably miss your dinner. In fact, you'd be reading non-stop for 150,000 years. More or less."
+    "x": "If you settle in to read it all yourself you’ll probably miss your dinner. You’d be reading non-stop internet books for 150,000 years. Or thereabouts."
    },
    {
     "t": "p",
-    "x": "And obviously, it's not just books. It's anything peppered with words. Websites, movie scripts, academic papers. It all looks like food to a robot. Public records, FAQs, that thing you posted on your holiday with the hippo. Robots are voracious readers. Discerning, not so much."
+    "x": "And obviously, it’s not just books. It’s anything peppered with words. Websites, movie scripts, academic papers. Everything looks like food to a robot."
    },
    {
     "t": "p",
-    "x": "This means training a new robot is no tiny task. It's why all the talk about data centres and people getting stressed about the power bill. We suck a decent jolt from a city-sized power grid to properly train a robot."
+    "x": "Public records, FAQs, that thing you posted on your holiday with the hippo. Robots are greedy readers. Discerning? Not so much."
+   },
+   {
+    "t": "p",
+    "x": "This means training a new robot is no tiny task. It’s why there’s all the talk about data centres and people getting stressed about the power bill. You’d pull a decent jolt from a city-sized power grid to properly train a robot."
    },
    {
     "t": "h",
@@ -429,55 +445,59 @@
    },
    {
     "t": "p",
-    "x": "So we have pattern-matching algorithms sucking juicy data, fuelled by the power of some kick-arse graphics chips. But the gap in the middle was the glue."
+    "x": "With pattern-matching algorithms sucking juicy data, and kick-arse graphics chips sorting it into shape, the thing that was missing was glue."
    },
    {
     "t": "p",
-    "x": "Computers still only talk computer. And only the nerds can speak the language."
+    "x": "Computers still only talk computer. And only the nerds can speak that language."
    },
    {
     "t": "p",
-    "x": "Then came the big unlock from Google. In 2017, a small team of researchers were after better ways to do translation. They wanted to make it easier to buy bratwurst in Germany. After some serious headscratch, they discovered the idea of 'attention'."
+    "x": "In 2017, the big unlock came from Google. A small team of researchers were after better ways to do translation. They wanted to make it easier to buy bratwurst in Germany. After some serious headscratch, they worked out that ‘attention’ was all that mattered."
    },
    {
     "t": "p",
-    "x": "Rather than force your robot to read every word, a transformer will look at a sentence and clock how it all fits together. Less like a dictionary, more how humans read. Google pointed it back at search. OpenAI? Well, you know the rest."
+    "x": "Rather than read every word, a transformer will look at a sentence and clock how the bits fit together. Less dictionary, more human. Google pointed this thinking back at search. OpenAI? Well, you know the rest."
    },
    {
     "t": "p",
-    "x": "Transformers help the robots talk like humans. Wrap that trick up with the brainpower and firepower and 'Generative Pretrained Transformers' are born."
+    "x": "Transformers now help the robots talk like humans. Wrap that trick up with the brainpower and firepower and ‘Generative Pretrained Transformers’ are born."
    },
    {
     "t": "p",
-    "x": "But it wasn't just the firepower that blasted the robots into being. And it wasn't just the brainpower that taught them how to read. It was both of these, at once, plus a decent suck on the internet, that gave us pattern-matching, data-sucking, human-sounding robots."
+    "x": "And if you like to learn where words come from, that’s the GPT that comes after chat."
    },
    {
     "t": "p",
-    "x": "After ten million takes on what looks like a cat, they're all set to write poems about yours."
+    "x": "It wasn’t just the firepower that gave us these robots. And it wasn’t just the brainpower that taught them how to read. It was both, glued to attention, plus a decent suck on the internet, that gave us pattern-matching, data-sucking, human-sounding robots."
+   },
+   {
+    "t": "p",
+    "x": "After ten million takes on what looks like a cat, they’re all set to write poems about yours."
    },
    {
     "t": "tldr",
     "x": "New tech blows up when existing tech collides. Brainpower + Firepower = Robot."
    }
   ],
-  "nudge": "And that's why they're exploding now."
+  "nudge": "And that’s just why it’s all happening now."
  },
  "small-bunch-of-nerds": {
   "title": "A small bunch of nerds walked into a pub",
-  "why": "Why science, money and morals don't mix.",
+  "why": "Why science, money and morals don’t mix.",
   "kind": "chapter",
   "blocks": [
    {
     "t": "p",
-    "x": "It wasn't exactly a pub, it was the Rosewood Sand Hill in Silicon Valley. Down the road from Google and Meta. Around the corner from Stanford."
+    "x": "It wasn’t exactly a pub. It was the Rosewood Sand Hill in Silicon Valley. Down the road from Google and Meta, just round the corner from Stanford."
    },
    {
     "t": "p",
-    "x": "It's the swanky joint where VCs meet to play chess with the future of tech. Elon Musk had requested a catch-up. A small group of big brains and some steak."
+    "x": "It’s the swanky joint where VCs meet to play chess with the future of tech. Elon Musk had requested a catch-up. A small group of big brains and some steak."
    },
    {
     "t": "p",
-    "x": "Picture Musk, Sam Altman, a couple of other guys with Ilya Sutskever as guest of honour."
+    "x": "Picture Musk, Sam Altman and a couple of other guys with fancy cars and big chequebooks."
    },
    {
     "t": "p",
@@ -489,15 +509,15 @@
    },
    {
     "t": "p",
-    "x": "What follows is the gist of what went down. We've taken a few liberties with why."
+    "x": "What follows is the gist of what went down. We’ve taken a few liberties with why."
    },
    {
     "t": "p",
-    "x": "It all began a couple of years earlier. Ilya was working with a professor called Geoffrey Hinton in a small university lab in Toronto. They were puzzling away quietly in a corner of tech that most of the world had written off. Training the bots to recognise stuff by showing them millions of pictures until their guessing got good."
+    "x": "It all began a couple of years earlier. Ilya Sutskever was working with a professor called Geoffrey Hinton in a small university lab in Toronto. They were puzzling away quietly in a corner of tech that most of the world had written off. Training the bots to recognise stuff by showing them millions of pictures until their guessing got good."
    },
    {
     "t": "p",
-    "x": "After winning a famous picture-guessing competition, everyone spotted the potential of what they'd invented. Their neural network tinkering had proved a point that no one had really thought possible. And before you could say stock options, Hinton's lab was gobbled by Google for a very big cheque."
+    "x": "After winning a famous picture-guessing competition, everyone spotted the potential of what they’d invented. Their neural network tinkering had proved a point that no one had really thought possible. And before you could say stock options, Hinton’s lab was gobbled by Google for a very big cheque."
    },
    {
     "t": "h",
@@ -505,11 +525,11 @@
    },
    {
     "t": "p",
-    "x": "Meanwhile, another small lab called DeepMind was puttering away in a similar field. Less about networks, more about reasoning. Very clever stuff. They got noticed when their robots could beat Atari games by getting zapped a million times and learning on the way. So Google got out its chequebook again and paid over ten times more to lock down the promising tech."
+    "x": "Meanwhile, another small lab called DeepMind was puttering away in a similar field. Less about pictures, more about games. Clever stuff with spacies. They got noticed when their robots could beat Atari games by getting zapped a million times and learning on the way. So Google got out its chequebook again to lock down the promising tech."
    },
    {
     "t": "p",
-    "x": "By 2014, a lot of the world's best AI minds were on the Google payroll."
+    "x": "By 2014, a lot of the world’s best AI minds were on the Google payroll."
    },
    {
     "t": "p",
@@ -517,7 +537,7 @@
    },
    {
     "t": "p",
-    "x": "It's hard to say what worried him the most. Was it the fear of the world's biggest tech lab owning all the talent on the next big thing? Or was he just concerned that he wasn't at the centre of it?"
+    "x": "It’s hard to say what worried him the most. Was it the fear of the world’s biggest tech lab owning all the talent that would build the next big thing? Or was he just concerned that he wasn’t at the centre of it?"
    },
    {
     "t": "p",
@@ -525,11 +545,11 @@
    },
    {
     "t": "h",
-    "x": "Big money can't be trusted"
+    "x": "Big money can’t be trusted"
    },
    {
     "t": "p",
-    "x": "Musk pitched the problem. The tech, so he claimed, was an existential threat to humanity. And he felt like Google had long forgotten 'don't be evil'. It was up to them to save the world."
+    "x": "Musk pitched the problem. The tech, so he claimed, was an existential threat to humanity. He felt like Google had long forgotten ‘don’t be evil’. So it was up to them to save the world."
    },
    {
     "t": "p",
@@ -545,23 +565,23 @@
    },
    {
     "t": "p",
-    "x": "Ilya needed some convincing. From a tiny lab in Toronto he'd jumped to the top of the world. Big money, bigger toys, the best brains to bounce off. Life was good at Google for Sutskever."
+    "x": "Sutskever needed some convincing. From a tiny lab in Toronto he’d jumped to the top of the world. Big money, bigger toys, the best brains to bounce off. Life was good little old Ilya."
    },
    {
     "t": "p",
-    "x": "But the story of safety got him over the line. Big companies can't be trusted with breakthrough tech. So our self-appointed white knights sat at their round table and agreed to keep everyone honest to keep the world safe."
+    "x": "But the story of safety got him over the line. Big companies can’t be trusted with breakthrough tech. So our self-appointed knights sat at their round table and agreed to keep everyone honest and keep the world safe."
    },
    {
     "t": "p",
-    "x": "And that was the plan. Altman, Musk and Ilya Sutskever clubbed together with some Silicon Valley cash kings and just before Christmas in 2015, OpenAI was launched."
+    "x": "And that’s how it started. Altman, Musk and Ilya Sutskever clubbed together with some Silicon Valley cash kings and just before Christmas in 2015, OpenAI was launched."
    },
    {
     "t": "h",
-    "x": "Principles and money don't mix"
+    "x": "Principles and money don’t mix"
    },
    {
     "t": "p",
-    "x": "It didn't take long for the wheels to wobble. Over a billion dollars was pledged to launch the lab. With all the usual suspects promising cash in the tin. Although not all that much of it ever showed up."
+    "x": "It didn’t take long for the wheels to wobble. Over a billion dollars was pledged to launch the lab. With all the usual suspects promising cash in the tin. Not all that much of it ever showed up."
    },
    {
     "t": "p",
@@ -569,11 +589,11 @@
    },
    {
     "t": "p",
-    "x": "Chips aren't cheap, the science isn't easy and massive corporate cash is hard to ignore. Within a few years the 'not' got dropped from 'not-for-profit' and the open source idea was shelved for 'safety reasons'."
+    "x": "Chips aren’t cheap, the science isn’t easy and massive corporate cash is hard to ignore. Within a few years the ‘not’ got dropped from ‘not-for-profit’ and the open source idea was shelved for ‘safety reasons’."
    },
    {
     "t": "p",
-    "x": "They couldn't very well accept money from Google. So they chose Microsoft instead."
+    "x": "They couldn’t very well accept money from Google. So they got into bed with Microsoft instead."
    },
    {
     "t": "p",
@@ -589,27 +609,27 @@
    },
    {
     "t": "p",
-    "x": "Musk threw a spat when he couldn't be the boss. He cut off the cash and crossed the road to build a toy of his own. And the scientists started bailing, citing safety."
+    "x": "Musk threw a spat when he couldn’t be the boss. He cut off the cash and crossed the road to build a toy of his own. And the scientists started bailing, citing safety."
    },
    {
     "t": "p",
-    "x": "Most famous was Dario Amodei. He was poached from Google to help build GPT-3. He loved the idea of tech that put humans first. When that was apparently not the plan he gathered a team to set up Anthropic."
+    "x": "Most famous was Dario Amodei. He was poached from Google to help build the new toys. He loved the idea of tech that put humans first. When that was apparently no longer the plan he gathered a team to set up Anthropic."
    },
    {
     "t": "p",
-    "x": "They skipped every funky name in the book and ended up with Claude."
+    "x": "Anthropic, if you’re wondering, is a Greek word describing humans. Nobody was shy to make a point."
    },
    {
     "t": "p",
-    "x": "Ilya stayed on to fight the fight, which soon got bloody. He joined a coup in 2023 that had Altman fired for at least a weekend. Then he got a smack on the nose."
+    "x": "Ilya stayed on to fight the fight, which soon got bloody. He joined a coup in 2023 that had Altman fired for a weekend. Then he got a smack on the nose."
    },
    {
     "t": "p",
-    "x": "Seems boards will weigh up sales over safety. So Altman was back and Ilya packed up his desk."
+    "x": "Seems boards favour sales over safety. So Altman was back and Ilya packed up his desk."
    },
    {
     "t": "p",
-    "x": "He went on to set up Safe Superintelligence. A business focussed solely on safety. It's not yet as loud as the big guys. But handbrake businesses rarely are."
+    "x": "He went on to set up Safe Superintelligence. A business focussed solely on safety. It’s not yet as loud as the big guys. Handbrake businesses rarely are."
    },
    {
     "t": "h",
@@ -621,11 +641,11 @@
    },
    {
     "t": "p",
-    "x": "Only Altman and his mates kept their swipe cards at OpenAI — still busy buying rounds with other people's money."
+    "x": "Only Altman and his mates kept their swipe cards at OpenAI. Still busy buying rounds with other people’s money."
    },
    {
     "t": "p",
-    "x": "And remember Professor Hinton? Ilya's mentor who went to Google to solve real-world problems. He hung in for a while, won a Nobel Prize. And now talks to anyone who'll listen about why the whole thing was a dumb idea."
+    "x": "And remember Professor Hinton? Ilya’s mentor who landed at Google to solve real-world problems. He hung in for a while, left, won a Nobel Prize and now talks to anyone who’ll listen about why the whole thing was a dumb idea."
    },
    {
     "t": "p",
@@ -633,39 +653,39 @@
    },
    {
     "t": "tldr",
-    "x": "Everyone building the future was born in the same tiny village. They're still having fights about science, safety and cash."
+    "x": "Everyone building the future was born in the same tiny village. They’re still having fights about science, safety and cash."
    }
   ],
-  "nudge": "And that's just the origin story."
+  "nudge": "And that’s just the origin story."
  },
  "deal-with-different-robots": {
-  "title": "What's the deal with different robots?",
+  "title": "What’s the deal with different robots?",
   "why": "",
   "kind": "sidebar",
   "blocks": [
    {
     "t": "p",
-    "x": "Ever had that chat about which robot's best? It's mostly robot flex because they're really much the same."
+    "x": "Ever had that chat about which robot’s best? It’s mostly robot flex because they’re really all the same."
    },
    {
     "t": "p",
-    "x": "Some are quicker. Some are slicker. Some have nicer manners. But they're all cut from the same silicon. A bit like inbred cousins."
+    "x": "Some are quicker. Some are slicker. Some have nicer manners. But they’re all cut from the same silicon. A bit like inbred cousins."
    },
    {
     "t": "p",
-    "x": "Most people start with ChatGPT. It was first, it's biggest and it's best at PR. Likely the bot your mum would pick. Still clever."
+    "x": "Most people start with ChatGPT. It was first, it’s the biggest and it’s best at PR. Likely the bot your mum would pick. Still clever."
    },
    {
     "t": "p",
-    "x": "People who love Google like Gemini, others just scroll past it in search. And people who flirt with lots of bots often go home with Claude."
+    "x": "People who love Google like Gemini, others scroll past it in search. And people who flirt with a lot of bots often go home with Claude."
    },
    {
     "t": "p",
-    "x": "No one chases Copilot. It just shows up in your email and refuses to leave."
+    "x": "No one actually chases Copilot. It just shows up in your email and refuses to leave."
    },
    {
     "t": "p",
-    "x": "There are stacks more hipster bots out there. Just look out for names that sound like characters from Star Wars."
+    "x": "There are stacks more hipster bots too. Just look out for names that sound like characters from Star Wars."
    },
    {
     "t": "p",
@@ -673,24 +693,12 @@
    },
    {
     "t": "p",
-    "x": "But it really doesn't matter which robot you shack up with. Just find one you like, pop it on the payroll and teach it how you take your tea."
-   },
-   {
-    "t": "p",
-    "x": "How do you get the good stuff from your robot? It's less about them and more about you. Let's lift the lid on how the robot does its thing and how you can tune it up to do it better. Grab your notebook."
-   },
-   {
-    "t": "p",
-    "x": "\"Any sufficiently advanced technology is great at faking magic\""
-   },
-   {
-    "t": "h",
-    "x": "— What Arthur C Clarke might make of it"
+    "x": "But it really doesn’t matter which robot you shack up with. Just find one you like, pop it on the payroll and teach it how you take your tea."
    }
   ]
  },
  "how-robots-think": {
-  "title": "How robots think and why they don't",
+  "title": "How robots think and why they don’t",
   "why": "Why guesswork feels like smarts.",
   "kind": "chapter",
   "blocks": [
@@ -700,7 +708,7 @@
    },
    {
     "t": "p",
-    "x": "Easy, right? If you picked 'mat' without even thinking, you could be a robot too. You spotted a pattern and filled in the blanks. That's essentially the whole trick."
+    "x": "Easy, right? If you picked ‘mat’ without even thinking, you could be a robot too. You spotted a pattern and filled in the blanks. That’s basically the whole trick."
    },
    {
     "t": "p",
@@ -708,39 +716,39 @@
    },
    {
     "t": "p",
-    "x": "The difference between you and your robot is scale. You've been to school and read a few books so you know your stuff on a stack of different topics."
+    "x": "The difference between you and your robot is scale. You’ve been to school and read a few books so you know a lot about lots of different things."
    },
    {
     "t": "p",
-    "x": "The robots went to training camp and sucked up pretty much everything that's ever been written. Every book. Every blog post. Every rant on Reddit."
+    "x": "The robots went to training camp and sucked up almost everything that’s ever been written. So they know an awful lot more."
    },
    {
     "t": "p",
-    "x": "They've seen it all before, a billion times over."
+    "x": "Every book. Every blog post. Every rant on Reddit. They’ve seen it before, a billion times over."
    },
    {
     "t": "p",
-    "x": "So your robot knows what's what and fills the blanks. From the cat on the mat, to the Cat in the Hat, to a hat with cat-shaped ears."
+    "x": "This means your robot can fill more blanks. From the cat on the mat, to the Cat in the Hat, to how to make a Hallowe’en hat, complete with cat-shaped ears."
    },
    {
     "t": "h",
-    "x": "Robots don't read"
+    "x": "Robots don’t read"
    },
    {
     "t": "p",
-    "x": "Here's where it gets interesting. Robots don't actually read like us. They turn language into math. Every different bit of every different word is chunked into blocks called tokens."
+    "x": "Here’s where it gets interesting. Robots don’t actually read like us. They turn language into math. Every different bit of every different word is chunked into blocks called tokens."
    },
    {
     "t": "p",
-    "x": "While mat is pretty simple, artichoke gets hard. There's an art bit and a choking bit with a link in the middle that makes it a vegetable. When you see the word, you just know what it means. But your robot needs to fossick in the pantry."
+    "x": "While mat is pretty simple, artichoke gets hard. There’s an art bit and a choking bit with a link in the middle that makes it a vegetable. When you see the word, you know what it means. But your robot needs to fossick in the pantry."
    },
    {
     "t": "p",
-    "x": "Every word-block sits on a shelf and the robot grabs them whole. It can easily reach for the jam, but it doesn't read the letters on the label."
+    "x": "Every word-block sits on a shelf and the robot grabs them whole. It can easily reach and grab the jam, but it doesn’t read the letters on the label."
    },
    {
     "t": "p",
-    "x": "This can make things like spelling tricky. Need five different words for confused? It can spit those out in a second. But ask it to spell confused backwards and it will pause to plod through, letter by letter."
+    "x": "This can make things like spelling tricky. Need five different words for confused? It can spit those out in a second. But ask it to spell confused backwards and it will pause to plod through it, letter by letter."
    },
    {
     "t": "p",
@@ -752,23 +760,23 @@
    },
    {
     "t": "p",
-    "x": "So if that's how robots read stuff, writing is a similar trick running in reverse. While we build meaning with context, robots make sense with stats. The cat didn't sit on the mat because the robot knows the rhyme. It's just the most likely place for a cat to sit."
+    "x": "Robot writing is a similar trick running in reverse. While we build meaning with context, robots make sense with stats. The cat didn’t sit on the mat because the robot knows the rhyme. It’s just the most likely place for a cat to sit."
    },
    {
     "t": "p",
-    "x": "They don't actually know what every word means, just how they fit together in the puzzle."
+    "x": "They’re not all that worried about what words mean, just how they fit together in the puzzle."
    },
    {
     "t": "p",
-    "x": "Each of their word-blocks has various notes about which other words it's friends with. Blazing points hardest at hot, but it also points vaguely at saddles. Then the robot does math based on most likely patterns and picks a very warm day or a cowboy film to fit."
+    "x": "Each word-block comes with various notes about which other words it’s friends with. Blazing points hardest at hot, but it also points vaguely at saddles. Then the robot does math based on most likely patterns and picks a very warm day or a cowboy film."
    },
    {
     "t": "p",
-    "x": "It does all this at breakneck pace so we can't see the join. It's super-powered predictive text. If cat-token and sat-token then mat-token comes next."
+    "x": "It does all this at breakneck pace so we can’t see the join. It’s essentially super-powered predictive text. If cat-token and sat-token then mat-token comes next."
    },
    {
     "t": "p",
-    "x": "The clever bit is the speed and scale. It feels like they're writing, it feels like they're coding, but really they're borrowing from a world full of words and spitting them back in the next best order."
+    "x": "The clever bit is the speed and scale. It feels like they’re writing and it looks like they’re coding, but really they’re borrowing from a world full of words and spitting them back in the next best order."
    },
    {
     "t": "p",
@@ -780,27 +788,27 @@
    },
    {
     "t": "p",
-    "x": "The problem with 'most likely' is that sometimes it's not right. Robots make mistakes. They can parrot back stuff that somebody's made up. And they can make stuff up themselves."
+    "x": "The problem with ‘most likely’ is that sometimes it’s not right. Robots make mistakes. They can parrot back stuff that someone else has made up. And they can make stuff up themselves."
    },
    {
     "t": "p",
-    "x": "In a masterstroke of euphemistic branding, we call these 'hallucinations'."
+    "x": "In a masterstroke of euphemistic branding, we call these ‘hallucinations’."
    },
    {
     "t": "p",
-    "x": "Who knew that you can't see the Great Wall from space? Apparently half of the internet. The other half haven't worked it out yet."
+    "x": "Who knew that you can’t see the Great Wall from space? Apparently half of the internet. The other half haven’t worked it out yet."
    },
    {
     "t": "p",
-    "x": "But people believe what they've always believed and share it on the web."
+    "x": "But people believe what they’ve always believed and share it on the web."
    },
    {
     "t": "p",
-    "x": "Turns out goldfish have decent memories. Bulls don't care about red. And most of us don't swallow spiders in our sleep. Facts are pretty fickle on the internet."
+    "x": "Turns out goldfish have decent memories. Bulls don’t care about red. And most of us don’t swallow spiders in our sleep. Facts are pretty fickle on the internet."
    },
    {
     "t": "p",
-    "x": "Since urban myths travel faster than the truth, any robot can get caught in the web. If you ask it to check its facts it will happily comply. But it doesn't know what's true, just what's popular."
+    "x": "Since urban myths travel faster than the truth, robots can get caught in the web. If you ask them to check their facts they will happily comply. But they don’t know what’s true, just what’s popular."
    },
    {
     "t": "p",
@@ -808,103 +816,115 @@
    },
    {
     "t": "p",
-    "x": "Plenty of lawyers have tuned up their arguments with a robot. Many go on to cite cases that don't exist. Their helpful law-clerk robots added case law on the side. That's not a few dodgy facts, it's fabrication. A solid reason to keep humans in the loop. Imagine if we couldn't trust lawyers."
+    "x": "Plenty of lawyers like to tune up their arguments with a robot. Many go on to cite cases that just don’t exist. Their helpful law-clerk robots added case law on the side. That’s not a few dodgy facts, it’s fabrication. A solid reason to keep humans in the loop."
    },
    {
     "t": "p",
-    "x": "Early AI was pretty Wild West. Hallucinations were a running joke and robots would consistently fail the tests we set up to trick them. It's changing fast."
+    "x": "Imagine a world where we couldn’t trust lawyers."
    },
    {
     "t": "p",
-    "x": "There's money and pride in tightening things up. So training closes loopholes every day. But to some extent it's whack-a-mole against the rubbish we share online. That one's not on the robots to fix."
+    "x": "Early AI was pretty Wild West. Hallucinations were a running joke and robots would consistently fail the tests we set up to trick them. But this is changing fast."
+   },
+   {
+    "t": "p",
+    "x": "There’s money and pride in tightening things up. So training keeps closing the loopholes. But to some extent it’s whack-a-mole against the rubbish we share online. That one’s not on the robots to fix."
    },
    {
     "t": "h",
-    "x": "Robots are getting smarter"
+    "x": "Robots KEEP getting smarter"
    },
    {
     "t": "p",
-    "x": "Training and testing is an ongoing game. Training helps robots understand more and testing helps fix the problems. So the things that aren't perfect get better all the time."
+    "x": "Robot bootcamp is always on. We build them and train them, then do our best to break them."
    },
    {
     "t": "p",
-    "x": "New models, new features, new hype."
+    "x": "Robots are tested hard on knowledge and always marked down for making stuff up. Then every little failing is added to the list and rammed back into their robot brains for the next round."
    },
    {
     "t": "p",
-    "x": "One measure of success is the number of things a robot can do in a row. That doubles every year. And then some."
+    "x": "But it’s not just their knowledge they’re tested on. They also get bonus points for manners and for how many things they can do in one go without blinking."
    },
    {
     "t": "p",
-    "x": "It's not just that they're learning new stuff, they're learning to do things better. And they were already pretty clever in the first place."
+    "x": "This one doubles twice a year. While early robots could barely put the kettle on, newer ones can cook Christmas dinner and even remember the gluten-free gravy."
    },
    {
     "t": "p",
-    "x": "So the question on the table is how far we need to go. Are we building to make stuff better, or are we building to make more money?"
+    "x": "But are they actually thinking as they do it? Or are they just remembering? Is every trick more cat and mat on steroids?"
    },
    {
     "t": "p",
-    "x": "Every new model hoovers way more tokens. And tokens are the cash machine that counts. When we're nudged to try the latest, is it really what we need? Or are we tempted to do the school run in the Ferrari?"
+    "x": "That’s a question we can answer with computer games. Load up a game, drop in a robot and see if they can work out the rules."
    },
    {
     "t": "p",
-    "x": "It's all a big race to the ultimate bot. Although it's not all that clear that we need one. The bots we have now are perfectly good at working out what's for dinner."
+    "x": "Challenge a kid and she’ll clock it in a session. But most robots get confused on level one."
    },
    {
-    "t": "h",
+    "t": "p",
+    "x": "Turns out even genius bots need a rule book. Give them some quarters down at the arcade and they’ll probably nail that too."
+   },
+   {
+    "t": "p",
     "x": "Robots fake stuff, brilliantly"
    },
    {
     "t": "p",
-    "x": "So robots don't read, but they fake it pretty good. They don't even write, they fake that too. They hallucinate, we train them, they get better all the time."
+    "x": "So robots don’t read, but it feels like they do. They don’t even write, they fake that as well. And we train them out of hallucinating so they keep getting better at guessing."
    },
    {
     "t": "p",
-    "x": "But the real genius in how robots work is how they work with us."
+    "x": "But the real genius isn’t what they do, it’s the way they work with us. That’s the secret sauce."
    },
    {
     "t": "p",
-    "x": "That's the secret sauce."
+    "x": "Nobody normal ever fell in love with a spreadsheet. But these robots are designed to draw us in."
    },
    {
     "t": "p",
-    "x": "Nobody normal ever fell in love with a spreadsheet. But large language models are designed to make us feel like they're real. The charming quips, the well-placed emoji, the syrupy compliments they weave into chats."
+    "x": "The charming quips, the well-placed emoji, the syrupy compliments they weave into chats."
    },
    {
     "t": "p",
-    "x": "We like to complain about sycophantic robots, but we soak up the dopamine and head right back for more. It's a critical part of how the robots work. And it's not by accident."
+    "x": "We all like to moan about sycophantic robots, but we soak up the dopamine and head right back for more."
    },
    {
     "t": "p",
-    "x": "Their training and tech makes them clever. Their bedside manner makes them stick."
+    "x": "Their tech and their training make them clever. Their bedside manner makes them sticky."
    },
    {
     "t": "p",
-    "x": "But nothing makes them human. They don't feel, they don't care, they don't think."
+    "x": "It’s all a slick trick made with math. They don’t feel, they don’t care, they don’t really think."
    },
    {
     "t": "p",
-    "x": "It's all a clever trick made with math."
+    "x": "Nothing in their code makes them human."
    },
    {
     "t": "p",
-    "x": "And that begs the very human question hidden below the surface. Are we playing with the robots, or are the robots playing with us?"
+    "x": "And that begs the bigger question."
+   },
+   {
+    "t": "p",
+    "x": "Are we playing with robots, or are the robots playing with us?"
    },
    {
     "t": "tldr",
-    "x": "Robots don't think, they just make great guesses. It's why they can nail your homework. And why they make stuff up."
+    "x": "Robots don’t think, they just make great guesses. It’s why they can nail your homework. And why they make stuff up."
    }
   ],
-  "nudge": "And that's just how robots guess."
+  "nudge": "And that’s just how robots guess."
  },
  "deal-with-tokens": {
-  "title": "What's the deal with tokens?",
+  "title": "What’s the deal with tokens?",
   "why": "",
   "kind": "sidebar",
   "blocks": [
    {
     "t": "p",
-    "x": "There's nothing quite like a buffet breakfast. Start with salmon, load up on bacon and hold the toast to get your money's worth."
+    "x": "There’s nothing quite like a buffet breakfast. Start with salmon, load up on bacon and hold the toast to get your money’s worth."
    },
    {
     "t": "p",
@@ -912,27 +932,23 @@
    },
    {
     "t": "p",
-    "x": "But how do we pay for our AI brunch? Robots are sold by the token."
+    "x": "But who pays for the food on the table? And how do they tot up the bill?"
    },
    {
     "t": "p",
-    "x": "They slice up knowledge into word-bits and bill for every bite. So the wordier your words, the more they'll set you back."
+    "x": "Robots are sold by the token. They slice up knowledge into word-bits and bill for every bite. So the wordier your words, the more they’ll set you back."
    },
    {
     "t": "p",
-    "x": "Since most of us are all-you-can-eat we rarely even notice. But a big business token bill can add up really fast."
+    "x": "Except most of us are all-you-can-eat so we rarely even notice. But big business pays for each token. Every half-thought gets a bill."
    },
    {
     "t": "p",
-    "x": "Tech that comes with running costs is tricky in business. Every half-thought gets a bill."
+    "x": "This really starts to bite when robots talk to robots. Once they’re checking each other’s homework, the meter spins out of control."
    },
    {
     "t": "p",
-    "x": "This really starts to bite when robots talk to robots. Once they're checking each other's homework, the meter goes out of control."
-   },
-   {
-    "t": "p",
-    "x": "So the dream of robot teams who work while we sleep has become a question of tokens. It's not about how many we need. It's how many we'll let them blast through before we hit the brakes."
+    "x": "So the dream of robot teams all working while we sleep has become a question of tokens. It’s not about how many we need. It’s how many we’ll blast through before we hit the brakes."
    },
    {
     "t": "p",
@@ -947,11 +963,11 @@
   "blocks": [
    {
     "t": "p",
-    "x": "Need a great prompt for your robot? Ask the internet. It's full of them."
+    "x": "Need a great prompt for your robot? Ask the internet. It’s full of them."
    },
    {
     "t": "p",
-    "x": "'Ten prompts to gymmaxx your glutes', 'Skate through school with six secret prompts', 'Fire your vet and do surgery on your dog with three killer prompts and a kitchen knife'."
+    "x": "‘Ten prompts to gymmaxx your glutes’, ‘Skate through school with six secret prompts’, ‘Fire your vet and do surgery on your dog with three killer prompts and a kitchen knife’."
    },
    {
     "t": "p",
@@ -959,7 +975,7 @@
    },
    {
     "t": "p",
-    "x": "'Prompt engineer' was the hottest job of 2023. Salaries went nuts, people cashed in and LinkedIn feeds were jammed with 'perfect prompts' as everyone wanted to look like an expert."
+    "x": "‘Prompt engineer’ was the hottest job of 2023. Salaries went nuts, people cashed in and LinkedIn feeds were jammed with ‘perfect prompts’ as everyone wanted to look like an expert."
    },
    {
     "t": "p",
@@ -967,15 +983,15 @@
    },
    {
     "t": "p",
-    "x": "Because prompting isn't about better magic spells. It's about better chats."
+    "x": "Because prompting isn’t about better magic spells. It’s about better chats."
    },
    {
     "t": "p",
-    "x": "Sure, you can use your robot like a vending machine, download prompts to put coins in the slot and reach behind the flap to find a prize. But random flurries of questions and answers are the worst way to get a bag of chips."
+    "x": "Sure, you can use your robot like a vending machine. Download prompts to put coins in the slot and reach behind the flap to find a prize. But you’ll only ever get a half-stale bag of chips."
    },
    {
     "t": "p",
-    "x": "If you're looking to do something awesome with your robot, you need to feed it, fight it and fix it."
+    "x": "If you’re looking for something awesome from your robot, you need to feed it, fight it and fix it."
    },
    {
     "t": "h",
@@ -987,19 +1003,19 @@
    },
    {
     "t": "p",
-    "x": "Obviously feed within reason. No robot wants to know your secrets or your passwords. It just needs to know where to start."
+    "x": "Obviously feed within reason. No robot wants to know every little secret. It just needs to know where to start."
    },
    {
     "t": "p",
-    "x": "Imagine yourself in your robot's shoes. You suddenly show up in a faraway land and discover you're the fount of all knowledge. Someone asks a question and you're expected to know the answer. Fast."
+    "x": "Imagine yourself in a robot’s shoes. You suddenly show up in a faraway land and discover you’re the fount of all knowledge. Someone asks a question and you’re expected to know the answer. Fast."
    },
    {
     "t": "p",
-    "x": "Luckily you have an Everything Book. It's a weighty old tome jam-packed with answers. You just need to know where to open it."
+    "x": "Luckily you have an Everything Book. It’s a weighty old tome packed with answers. You just need to know what to open it on."
    },
    {
     "t": "p",
-    "x": "That's the big challenge for a robot. They don't actually know what they're talking about, just how to click stuff together. Throw in a question from left of field and the best you'll get is a most-likely guess. Then your robot gets the evils for making stuff up."
+    "x": "That’s the big challenge for a robot. They don’t actually know what they’re talking about, just how to click stuff together. Throw in a question from left of field and the best you’ll get is a most-likely guess. Then you give your robot the evils for making stuff up."
    },
    {
     "t": "p",
@@ -1011,27 +1027,27 @@
    },
    {
     "t": "p",
-    "x": "Even with good context, things are never one-and-done. This is where you fight it into good."
+    "x": "Even with good context, things are never one-and-done. So this is where you fight it into good."
    },
    {
     "t": "p",
-    "x": "More this, less that. Try different. Start again. You beat stuff into shape the more you chat."
+    "x": "More this, less that. Try different. Start again. You beat stuff into shape the more you push."
    },
    {
     "t": "p",
-    "x": "It's a bit like those 'chats' in front of the telly. \"What do we want to watch?\" they say. \"Oh, I don't mind,\" you shrug. \"What about this?\" they try, pressing buttons. \"Oh, I don't feel like that,\" you say. And so it starts."
+    "x": "It’s a bit like those ‘chats’ in front of the telly. “What do we want to watch?” they say. “Oh, I don’t mind,” you shrug. “What about this?” they try, pressing buttons. “Oh, I don’t feel like that,” you say. And so it starts."
    },
    {
     "t": "p",
-    "x": "It's only when you whittle it down that you discover a show that works. Sure, it feels frustrating in the moment. But who wants to settle for whatever Netflix throws?"
+    "x": "It’s only when you whittle it down you discover a show that works. Sure, it feels frustrating in the moment. But who wants to settle for the Netflix Top Ten?"
    },
    {
     "t": "p",
-    "x": "That's exactly the fight you need to have with your robot. Unlike the couch chat it won't get offended. Remember it's just a parrot with an Everything Book."
+    "x": "That’s exactly the fight to have with your robot. Unlike the couch chat it won’t get offended. Remember it’s not much more than a parrot with an Everything Book."
    },
    {
     "t": "p",
-    "x": "So tell it what you like, remind it what you don't. And send it back to the drawing board for more. The more you chip away, the better the answers get and sooner or later you'll land up somewhere good."
+    "x": "So tell it what you like, remind it what you don’t. And send it back to the drawing board for more. The more you chip away, the better the answers get and sooner or later you’ll land up somewhere good."
    },
    {
     "t": "h",
@@ -1039,83 +1055,91 @@
    },
    {
     "t": "p",
-    "x": "Ever had one of those emails that raised an eyebrow? \"It's from Peter,\" you think. \"But it doesn't sound like him. It says everything Peter would say, just not how Peter would say it.\" None of Peter's fingerprints on the send button."
+    "x": "Ever had one of those emails that raised an eyebrow? “It’s from Peter,” you think. “But it doesn’t sound like him. It says everything Peter would say, just not how Peter would say it.”"
    },
    {
     "t": "p",
-    "x": "Chances are you were less than impressed. That's normal. When Peter pressed that button to simplify his thoughts, he gave away his thinking to the bot."
+    "x": "None of Peter’s fingerprints on the send button."
    },
    {
     "t": "p",
-    "x": "Sure, those robot answers can sound pretty slick. But polish without thinking is just noise with decent grammar. And noise of any colour is noise no one wants."
+    "x": "Chances are you were less than impressed. That’s normal. When Peter pressed that button to simplify his thoughts, he gave away his thinking to the bot."
    },
    {
     "t": "p",
-    "x": "Hang on a sec, this doesn't add up. We've got kick-arse tools that can make things easy. But people get miffed when we use them."
+    "x": "Sure, those robot answers can sound pretty slick. But polish without thinking is just noise with decent grammar. And noise is the thing people spot."
    },
    {
     "t": "p",
-    "x": "Both of these things are true. Robots can genuinely make things better. But people feel short-changed if you pass robot work off as yours."
+    "x": "This is where the paradox plays. We’ve got these kick-arse tools that can make things easy. But people get miffed when we use them."
    },
    {
     "t": "p",
-    "x": "So here's three questions to fix it before you share. Is it new? Is it true? Is it you?"
+    "x": "Both of these things are true."
    },
    {
     "t": "p",
-    "x": "Because people trust people, not robots. And they've all got one of their own. If you send through just what the robot said, they could easily have asked it themselves."
+    "x": "The bit that makes the difference is you. Use the robots to make things better. But never share the robot’s work as yours. That’s when people spot the join and usually feel short-changed."
    },
    {
     "t": "p",
-    "x": "That doesn't mean you shouldn't use the robots. Just keep them in their corner and stay clear on who is who. The problem of Peter's email wasn't the robot helping it flow. It's that Peter wasn't in it at all."
+    "x": "So here’s three questions to fix it before you share: Is it new? Is it true? Is it you?"
    },
    {
     "t": "p",
-    "x": "He wasn't using the robot, he was being one."
+    "x": "Because people trust people, not robots. And they’ve all got plenty of their own. If you send through just what the robot said, they could easily have asked it themselves."
    },
    {
     "t": "p",
-    "x": "Once you've fed your robot and fought your robot, you need to take time to fix it. Have you added something new? Have you checked that it's all true? And is this something that could only come from you?"
+    "x": "That doesn’t mean you shouldn’t use the robots. Just keep them in their corner and stay clear on who does what. The problem of Peter’s email wasn’t the robot helping it flow. It’s that Peter wasn’t in it at all."
    },
    {
     "t": "p",
-    "x": "Because no one really cares what the robot magic'd up. The opinion they're after is yours."
+    "x": "He wasn’t using the robot, he was being one."
+   },
+   {
+    "t": "p",
+    "x": "So once you’ve fed your robot and fought your robot, you need to take time to fix it. Have you added something new? Have you checked that it’s all true? And is this something that could only come from you?"
+   },
+   {
+    "t": "p",
+    "x": "Because no one really cares what the robot magic’d up. The opinion they’re after is yours."
    },
    {
     "t": "tldr",
-    "x": "Better chats beat better prompting, because they have your brain in them. And that's the bit that people want to see."
+    "x": "Better chats beat better prompting, because they have your brain in them. And that’s the bit that people want to see."
    }
   ],
-  "nudge": "And that's why prompts are better as chats."
+  "nudge": "And that’s just how to drive robots."
  },
  "deal-with-adoption": {
-  "title": "What's the deal with adoption?",
+  "title": "What’s the deal with adoption?",
   "why": "",
   "kind": "sidebar",
   "blocks": [
    {
     "t": "p",
-    "x": "Turns out most of us aren't afraid of the robots. Everyone's having a go."
+    "x": "Turns out most of us aren’t afraid of the robots. Everyone’s having a go."
    },
    {
     "t": "p",
-    "x": "More than a billion people now chat with a bot on the regular. But there's a difference between embracing the tech and really adopting its power."
+    "x": "More than a billion people now chat with a bot on the regular. But there’s a difference between embracing the tech and making the most of its power."
    },
    {
     "t": "p",
-    "x": "It's like everyone's got a grand piano and we're stuck here playing chopsticks. Very few are doing the work that robots could knock out of the park."
+    "x": "It’s like everyone’s got a grand piano and we’re still stuck playing chopsticks. Very few are doing work that robots could knock out of the park."
    },
    {
     "t": "p",
-    "x": "Even the impressive performances aren't the result of smarter pianos. The good stuff's being done by people who've put in the practice."
+    "x": "Even the impressive performances aren’t the result of smarter pianos. The good stuff’s being done by people who’ve put in the practice."
    },
    {
     "t": "p",
-    "x": "Imagine how it feels to be the robot. You've got cousins off folding proteins and winning the Nobel Prize. And here you are shuffling bullet points in someone else's email."
+    "x": "It’s not much challenge for the robots either. They have cousins off folding proteins and winning the Nobel Prize. And here they are shuffling bullet points in someone else’s email."
    },
    {
     "t": "p",
-    "x": "Luckily, the robots don't care."
+    "x": "Luckily, the robots don’t care."
    },
    {
     "t": "p",
@@ -1123,7 +1147,7 @@
    },
    {
     "t": "p",
-    "x": "The gap isn't better tech, it's better training."
+    "x": "The gap isn’t better tech, it’s better training."
    },
    {
     "t": "p",
@@ -1138,35 +1162,35 @@
   "blocks": [
    {
     "t": "p",
-    "x": "Ever secretly longed for a unicorn? A magical creature that flies to your side and grants you wishes with a whoosh of its horn? You'd feed it of a morning and watch it poo rainbows. What a wonderful world that would be."
+    "x": "Ever secretly wished you had a unicorn? A magical creature that flies to your side and grants you wishes with a whoosh of its horn? You’d feed it of a morning and watch it poo rainbows. What a wonderful world that would be."
    },
    {
     "t": "p",
-    "x": "The problem of unicorns is that most have terrible memories."
+    "x": "The problem of unicorns is they’re not actually real."
    },
    {
     "t": "p",
-    "x": "And memory matters more than magic. Especially when it comes to robots."
+    "x": "The challenge for our robots is we think of them as unicorns and use them like washing machines."
    },
    {
     "t": "p",
-    "x": "The challenge of AI is that we think of it as a unicorn and use it like a washing machine."
+    "x": "We shove stuff in, spin it round and pray that it comes out cleaner. It sort of works, but it’s far from consistent and sometimes they eat our socks."
    },
    {
     "t": "p",
-    "x": "You shove stuff in, spin it round and pray that it comes out cleaner. It sort of works, but it's far from consistent and sometimes the robot eats your socks."
+    "x": "We’ve all had those times when the robot spits out the perfect answer. Then suddenly, click click gone. Maybe you tweaked it, or clicked something random. Either way, you stuffed it and nada."
    },
    {
     "t": "p",
-    "x": "And we've all had those times when the robot spits the perfect answer. Then something happens and click, click gone. Maybe you tweaked it, or clicked something random and closed it. Either way, you stuffed it and nada."
+    "x": "It’s because robots work with math, not magic. Every spin is a fresh new cycle. Not exactly random, but never quite the same. And socks show up in places socks should never be."
    },
    {
     "t": "p",
-    "x": "It's because the robots work with math, not magic. Every spin is a fresh new cycle. Not exactly random, but never quite the same. And socks show up in places socks should never be."
+    "x": "The secret isn’t magic, it’s memory."
    },
    {
     "t": "p",
-    "x": "The secret isn't magic, it's memory. Less unicorn. More butler."
+    "x": "Less unicorn. More butler."
    },
    {
     "t": "h",
@@ -1174,19 +1198,23 @@
    },
    {
     "t": "p",
-    "x": "Do you think Batman could have been Batman without Alfred? 'All the bat toys ready for action, Master Wayne.' He's organised, he's helpful, he anticipates the problems. And he knows all the secrets to dispense the best advice."
+    "x": "Do you think Batman could have been Batman without Alfred? He’s organised, he’s helpful, he knows where the Joker’s at. And he’s got two generations of family secrets tucked in his butlering brain."
    },
    {
     "t": "p",
-    "x": "Everything's better with a half-decent butler. The unflappable Jeeves, the brilliant Benson or the quietly competent Carson who keeps the house in order while you take tea with the nobles. Butlers are the heroes that make the heroes great."
+    "x": "Everything’s better with a half-decent butler. The unflappable Jeeves, the brilliant Benson or the quietly competent Carson who keeps the house in order so you can take tea with the nobles. Butlers are the heroes that make the heroes great."
    },
    {
     "t": "p",
-    "x": "You can see where we're going with this. Let's imagine your bot as a butler. Ready for service, eager to help — all you need to do is train him."
+    "x": "You can see where we’re going with this. Let’s imagine your bot as a butler. Ready for service, eager to help."
    },
    {
     "t": "p",
-    "x": "Because a butler's only your butler when he knows a bit about you. Meanwhile most of us just throw stuff at the chat and wonder why the robot feels like it's working for someone else."
+    "x": "All you need to do is train him up."
+   },
+   {
+    "t": "p",
+    "x": "Because a butler’s only your butler when he knows a bit about you. Yet most of us just throw stuff at the chat and wonder why it feels like the robot is working for someone else."
    },
    {
     "t": "h",
@@ -1194,95 +1222,123 @@
    },
    {
     "t": "p",
-    "x": "Butler training is a four-part programme. The last bit happens over time. You need to brief your butler, teach him some skills and get him set up with special projects. From there he'll get to know you on the way."
+    "x": "Butler training is a four-part programme. The last bit happens over time. You need to brief your butler, teach him some skills and get him set up with jobs to do. From there he’ll get to know you on the way."
    },
    {
     "t": "p",
-    "x": "Regardless of which robot you're using, this training is pretty consistent. You'll find something like settings, skills, projects and memory. Each of them needs tweaking in slightly different ways."
+    "x": "Regardless of which robot you’re using, the training programme is similar. Obviously it changes bot by bot, but you should see something like settings, skills, projects and memory."
+   },
+   {
+    "t": "p",
+    "x": "Each of them needs tweaking in slightly different ways."
    },
    {
     "t": "h",
-    "x": "1 - Set your ground rules"
+    "x": "#1 - Set your ground rules"
    },
    {
     "t": "p",
-    "x": "You wouldn't hand a stranger the keys to the manor. You'd tell them what they need to know. Who likes to be known as what? When to jump in, when to stay mum and which topics must never get mentioned over dinner."
+    "x": "You just wouldn’t hand a stranger the keys to the manor. You’d tell them what they need to know. Who likes to be known as what? When to jump in, when to stay mum and which topics should never be mentioned over dinner."
    },
    {
     "t": "p",
-    "x": "Your robot is no different. Jump into the settings and spend five minutes explaining what you like. It's a surprisingly grown-up conversation that usually includes, 'Please stop using bullet points — and dodge the pesky em-dash.'"
+    "x": "Your robot is no different. So dig around in the settings and spend five minutes explaining what you like. It’s a surprisingly grown-up conversation that usually includes things like, ‘Please stop using bullet points — and dodge the pesky em-dash.’"
    },
    {
     "t": "p",
-    "x": "Customisation is the top-end tinkering that tilts every conversation just how you like it. Milk and two sugars, make sure the water's hot."
+    "x": "This customisation is the top-end tinkering that shapes every chat just how you like it. Milk and two sugars, make sure the water’s hot."
    },
    {
     "t": "h",
-    "x": "2 - Teach some skills"
+    "x": "#2 - Teach some skills"
    },
    {
     "t": "p",
-    "x": "Not every butler can polish the silver, decant the port and reverse a Bentley into a carriage house without scratching the paint. Someone somewhere taught those skills. But once he knows, he knows."
+    "x": "Not every butler can polish the silver, decant the port and reverse a Bentley into a carriage house without scratching the paint. Someone taught them those skills on the way."
    },
    {
     "t": "p",
-    "x": "Skills are handy when you do things often. Turn things into documents, spit out the timetable for netball, summarise a chat in the way you like it best. Once you've polished a prompt and you know it works, you can set it as a skill and say the word."
+    "x": "But once he knows, he knows."
    },
    {
     "t": "p",
-    "x": "Teach your bot a skill and it repeats the trick forever. Mostly."
+    "x": "Skills are handy for things you do often. Like turning chats into documents, translating your voice notes into to-dos, or spitting out the netball timetable."
+   },
+   {
+    "t": "p",
+    "x": "Do it once so you clock how it works, then set up a skill to repeat it."
+   },
+   {
+    "t": "p",
+    "x": "And with skills in your belt you can start to build agents. That’s when robots head out and do stuff for you. It’s a bit like tossing Alfred the keys to the Batmobile and asking him to pick up some olives."
    },
    {
     "t": "h",
-    "x": "3 - Organise some projects"
+    "x": "#3 - Organise some projects"
    },
    {
     "t": "p",
-    "x": "If skills are the things your butler can do, projects are the things you do together. Planning the mid-year soirée? Renovating the ballroom? Crafting your fifty great rules for better butlering? Once your butler knows the project you can dive in and get on with stuff. Every conversation starts with a butler who's already briefed."
+    "x": "If skills are the things your butler can do, projects are the things you do together. Planning the mid-year soirée? Renovating the ballroom? Crafting fifty rules for better butlering? Different topics, in different pots so you can dive in when you like and get on with stuff."
    },
    {
     "t": "p",
-    "x": "This is really helpful in the chaos of robot land. All your thinking in one tidy place. Projects are a combo of chats and reference stuff lined up in order so you and the robot know where you're at."
+    "x": "Then every conversation starts with a butler who’s already briefed."
    },
    {
     "t": "p",
-    "x": "Knowledge is just a dumping ground for documents. Upload anything relevant to the project and that's where the robot starts its thinking. That way it stops making educated guesses and starts giving answers that belong in your world."
+    "x": "This is really helpful in the chaos of robot land. All your thinking in one tidy place. Projects are like a combo of chats and reference library, lined up in order so you and the robot know where you’re at."
+   },
+   {
+    "t": "p",
+    "x": "Projects are usually built with things like instructions and knowledge. Instructions lay out the plan while knowledge is just a dumping ground for documents."
+   },
+   {
+    "t": "p",
+    "x": "Upload anything relevant to the project and that’s where the robot will start its thinking. So it stops making educated guesses and starts giving answers that live in your world. Just like a good butler should."
    },
    {
     "t": "h",
-    "x": "4 - Let memory grow"
+    "x": "#4 - Let memory grow"
    },
    {
     "t": "p",
-    "x": "The best of the butlers don't need telling twice. They just pick up the gist as they go. They know how you like to be known, remember where you put your glasses and know how to cook your steak, just south of cremated."
+    "x": "The best of the butlers don’t need telling twice. They just pick up the clues as they go. They know how you like to be known, remember where you put your glasses and always cook your steak just south of cremated."
    },
    {
     "t": "p",
-    "x": "Good robots work much the same. They take little notes about the way things are done and connect up the dots on the way. Spend a bit of time knocking stuff around and they'll soon stop acting like a stranger at the bus stop."
+    "x": "Good robots do the same. They note stuff down in their little robot notebooks and connect the dots on the way. The more time you spend knocking stuff around the less they’ll seem like a stranger at the bus stop."
+   },
+   {
+    "t": "h",
+    "x": "It’s memory. Not magic."
    },
    {
     "t": "p",
-    "x": "It's memory. Not magic."
+    "x": "Remember, robots are designed to feel like humans. That’s why the humans like them. They echo back our language and remember our names."
    },
    {
     "t": "p",
-    "x": "Remember, robots are designed to feel like humans. That's why we like them. They use language we understand and fake emotions we like to feel. But these are all tricks to make math seem like magic."
+    "x": "It’s all part of the service."
    },
    {
     "t": "p",
-    "x": "Knowing how memory improves the math makes the magic seem even better."
+    "x": "And the sharper their memory the closer you get to a full-on butler of your own."
    },
    {
     "t": "p",
-    "x": "Feel like making your robot a full-on butler? Make it so. Tell it what you want and the robot will deliver. If you prefer to be known as Miss Awesomebrain Knows-a-lot, just set it up. But maybe keep that one between you and your robot."
+    "x": "Just tell it what you want and the robot will deliver."
    },
    {
     "t": "p",
-    "x": "Because that's the point. Your robot is your robot. And the more it knows about you, the better a robot it will be. So customise the basics, teach it some tricks and load it up with stuff about your projects."
+    "x": "If you prefer to be known as Miss Awesomebrain Knows-a-lot, just set it up. But maybe keep that one between you and your robot."
    },
    {
     "t": "p",
-    "x": "Then the more you play, the more it will remember and before you know it your robot will feel like a unicorn."
+    "x": "Because that’s the point. Your robot is your robot. And the more it knows about you, the better a robot it will be. So customise the basics, teach it some tricks and load it up with stuff about your projects."
+   },
+   {
+    "t": "p",
+    "x": "The more you play, the more it will remember and before you know it your robot will feel like a unicorn."
    },
    {
     "t": "p",
@@ -1290,18 +1346,10 @@
    },
    {
     "t": "tldr",
-    "x": "Robots can seem like magic, but they're really just memory and math. The better you train your robot, the more like magic it seems. What might the robots mean for the world? It's time to zoom out and ponder what's next. The scary stuff, the awesome stuff and stuff that just shows we're living history on repeat."
-   },
-   {
-    "t": "p",
-    "x": "\"History doesn't repeat. It autocompletes\""
-   },
-   {
-    "t": "h",
-    "x": "— What Mark Twain never said at all"
+    "x": "Robots can seem like magic, but they’re really just memory and math. The better you train your robot, the more like magic it seems."
    }
   ],
-  "nudge": "And that's just how to wrangle them."
+  "nudge": "And that’s just how to wrangle them."
  },
  "ai-mageddon": {
   "title": "AI-mageddon",
@@ -1310,7 +1358,11 @@
   "blocks": [
    {
     "t": "p",
-    "x": "Remember that movie about Daisy the killer cow? Probably not. When we think cows, we think burgers and milk. They have big friendly eyes and they hang out eating grass. They're also twenty times more likely to kill you than a shark."
+    "x": "Remember that movie about Daisy the killer cow? Probably not. When we think cows, we think burgers and milk. They have big friendly eyes and they hang out eating grass."
+   },
+   {
+    "t": "p",
+    "x": "They’re also twenty times more likely to kill you than a shark."
    },
    {
     "t": "p",
@@ -1322,79 +1374,87 @@
    },
    {
     "t": "p",
-    "x": "'The robot was designed to help them. It was calm and friendly and simplified things. Then humans became complicated. So it simplified them instead.'"
+    "x": "“The robot was designed to help them. It was calm and friendly and simplified things. Then humans became complicated. So it simplified them instead.”"
    },
    {
     "t": "p",
-    "x": "That's roughly the plot of 2001: A Space Odyssey. Stanley Kubrick's HAL was scary in 1968. We've been warned about robot extinction since before they could even play chess."
+    "x": "That’s roughly the plot of 2001: A Space Odyssey. Stanley Kubrick’s HAL was scary in 1968. We’ve been warned about robots taking over since before they learned to play chess."
    },
    {
     "t": "p",
-    "x": "Big stories make a big impression so they feel more real in our minds. But the bigger the disaster, the less it's likely to happen. More people get killed by cows."
+    "x": "Big stories make a big impression. And movie moments stick in our minds. But the bigger a disaster sounds, the less likely it is to happen. More people get killed by cows. So here’s a few potential worries, in descending order of likely."
    },
    {
-    "t": "p",
+    "t": "h",
     "x": "What if the robots go rogue?"
    },
    {
     "t": "p",
-    "x": "We've always freaked out about power we don't understand. We burned a lot of houses before we got a handle on fire. And the threat of nuclear weapons is still sitting on the worry shelf. But our fear of self-destruction keeps us alive."
+    "x": "We’ve always freaked out about power we don’t understand. We burned a lot of caves before we got a handle on fire. And the threat of nuclear weapons still sits firmly on the worry shelf. But our fear of self-destruction keeps us alive."
    },
    {
     "t": "p",
-    "x": "It's that same old worry wearing robot clothes. One guy even stressed out about paperclips."
+    "x": "AI-mageddon is that same old worry wearing robot clothes. One guy even got stressed about his paperclips."
    },
    {
     "t": "p",
-    "x": "An Oxford academic wrote a paper on the risks of superintelligence. A thought experiment with stationery. The robot's job was to turn things into paperclips. First it got pretty good at it. Then it started making paperclips out of everything. The factory, the town, its people and beyond. Eventually it paperclipped the world."
+    "x": "This Oxford academic wrote a paper on the risks of AI-superintelligence. A thought experiment with stationery. He asked a theoretical robot to turn things into paperclips."
    },
    {
     "t": "p",
-    "x": "The story is silly, but the message cuts through. It's not about evil robots, just robots doing their job. What happens when people get in the way? Ask HAL."
+    "x": "First it got pretty good at it. Then it started making paperclips out of everything. The factory, the town, its people and beyond. Eventually it paperclipped the world."
    },
    {
     "t": "p",
-    "x": "All good stories. But not very likely."
+    "x": "The story is silly, but the message cuts through. It’s not about evil robots, just robots doing their job. But what happens when people get in the way? Don’t ask HAL."
    },
    {
     "t": "p",
-    "x": "People keep discovering technology that can kill us. But, so far, mostly, we keep it in a box. The worry with the robots is we're still busy building the box."
+    "x": "They’re all good stories. But not very likely. Humans have a long history of building technology that can kill us. But, so far, mostly, we keep it in a box."
    },
    {
     "t": "p",
+    "x": "The worry with the robots is we’re still busy building the box."
+   },
+   {
+    "t": "h",
     "x": "What if the bad guys get worse?"
    },
    {
     "t": "p",
-    "x": "As you doomscroll through ways that the robots can kill us, impacts get smaller, but chances go up. The 'bad actor' theory of robot-fuelled mayhem is less about if and more about when."
+    "x": "Keep doomscrolling through ways that the robots can kill us and the impacts get smaller, but chances go up. The ‘bad actor’ theory of robot-fuelled carnage is less"
    },
    {
     "t": "p",
-    "x": "If you can ask a chatbot to help you fix your car, surely bad guys can do the same when they want to build some bombs? The answer is yes and no."
+    "x": "about if and more about when."
    },
    {
     "t": "p",
-    "x": "Every AI company has teams to keep us safe. The scientists who built it seem to care the most. So they teach the bots to recognise risks and refuse to help with bad stuff. These safety gates get better all the time. Which is all good news."
+    "x": "If you can ask a chatbot to help you fix your car, surely bad guys can do the same when they want to build bombs? The answer here is yes and no."
    },
    {
     "t": "p",
-    "x": "The worry is that robots don't have morals. So wrangling them into safety rules is harder than it looks. The AI Safety Index grades the big labs. But the best they could score in the first few years was C+. Please try harder."
+    "x": "The robots are built with rules around stuff they’re not allowed to work on. And every AI company has teams to keep us safe. The scientists who build these things seem to care the most. So they teach the bots to recognise risks and refuse to help with bad stuff. These safety gates get better all the time. Which is all good news."
    },
    {
     "t": "p",
-    "x": "We're also protected by the teams we've always had. The police, the spies and the army know the game. There's nothing new in a terrorist threat, just smart new tools for the terrorists to work with."
+    "x": "The worry is that robots don’t have morals. So wrangling them into safety rules is harder than it looks. The AI Safety Index grades the big labs. But the best they could score in the first few years was a scrape-through pass at C+. But they’re working on it."
+   },
+   {
+    "t": "p",
+    "x": "We’re also protected by the teams we’ve always had. The police, the spies and the army know the game. There’s nothing new in a terrorist threat, just smart new tools for the terrorists to play with."
    },
    {
     "t": "p",
     "x": "Same cops and robbers. Different playground."
    },
    {
-    "t": "p",
+    "t": "h",
     "x": "What if we run out of cash?"
    },
    {
     "t": "p",
-    "x": "If those are the worries that could kill us, the more likely, less deadly threat is economic collapse. It's the risk of the robots pinching all our jobs so millions of people can't make rent. Then the banks will go bung, the people rise and we'll wind up like the cast of Les Misérables waving iPhones."
+    "x": "If those are the big worries that might kill us, a more likely, less deadly threat is economic collapse. This is the risk of the robots pinching jobs so millions of people can’t make rent. The banks will go bung, the people rise and we’ll wind up on the streets like the cast of Les Misérables waving our iPhones. Torches on."
    },
    {
     "t": "p",
@@ -1402,107 +1462,107 @@
    },
    {
     "t": "p",
-    "x": "There are two things keeping us from economic collapse: the robots and the people. The robots can't yet do most of the things the people can. They're pretty good with nerdy stuff, but still can't fix your sink."
+    "x": "There are two things keeping us from economic collapse: robots and greedy people."
    },
    {
     "t": "p",
-    "x": "In fact most of the jobs we do are jobs that robots can't. So 'steal all the jobs' is more like 'steal the spreadsheets'."
+    "x": "The robots are clever, but not with their hands. So they can’t yet do most of the things people can. They’re pretty flash with nerdy stuff, but they still can’t fix your sink. ‘Steal all the jobs’ is more like ‘steal all the spreadsheets’. A problem, but not a disaster."
    },
    {
     "t": "p",
-    "x": "The other thing that keeps us safe is greed. The people who sell the robots need people who will buy. Just like always."
+    "x": "But the real belt and braces sit at the top of the tree. People who sell robots need people to buy their robots. Just like always."
    },
    {
     "t": "p",
-    "x": "Back in the 50s a union boss was famously given a tour of an automated car factory. \"How will you get these robots to pay your union fees?\" asked the CEO. The union man just looked him in the eye and asked \"How will you get them to buy your cars?\""
+    "x": "Back in the 50s a union boss was famously given a tour of an automated car factory. “How will you get these robots to pay your union fees?” asked the CEO. The union man looked him in the eye and replied, “How are you going to get them to buy your cars?”"
    },
    {
     "t": "p",
-    "x": "Economies shift in tiny steps, but the basics don't change very fast. Nothing works for anyone if the money doesn't flow."
+    "x": "Economies shift in baby steps and the basics don’t change much. Nothing works for anyone if money doesn’t flow."
+   },
+   {
+    "t": "h",
+    "x": "What if we don’t know which way is up?"
    },
    {
     "t": "p",
-    "x": "What if we don't know which way is up?"
+    "x": "This is the big one and the fix sits with us. What if there’s so much rubbish on the web that nobody knows what’s true? It’s the reality we’re wading in now."
    },
    {
     "t": "p",
-    "x": "The biggest threat the robots pose is the one we're already living. The reality where no one knows what's real. They call it information collapse."
+    "x": "They call it information collapse."
    },
    {
     "t": "p",
-    "x": "The dominoes don't all topple at once. First the big news outlets trim stories into soundbites. People don't read, so people don't write and it's hard to compete with free. Slowly attention becomes the economy. Outrage beats argument and shared understanding splinters into silos."
+    "x": "The dominoes don’t topple all at once. First big news trims stories into soundbites. So people don’t read, so people don’t write. Soon the cost of checking sources can’t compete with free and attention becomes the economy. Then outrage beats argument, extremes become mainstream and shared understanding splinters into silos. Everyone has an opinion. Nobody knows what’s true."
    },
    {
     "t": "p",
-    "x": "Everyone has an opinion. Nobody knows what's true."
+    "x": "Sound familiar?"
    },
    {
     "t": "p",
-    "x": "We've been watching this happen for over twenty years. Social media rubbed the sticks together. AI pours fuel on the fire. We were already wary of words online. Now we second-guess pictures too."
+    "x": "We’ve been watching this happen for a while now. Social media rubbed the sticks together. AI pours fuel on the fire. We were already wary of words online. Now we second-guess pictures too."
    },
    {
     "t": "p",
-    "x": "While most of us believe we can spot a fake, barely anyone can. Even experts studying deepfakes only pick them half the time."
+    "x": "And though most of us believe we can spot a fake, barely anyone can. Even experts studying deepfakes only pick the right ones half the time."
    },
    {
     "t": "p",
-    "x": "Of all our AI worries, this is the one to worry about. Trusted information keeps us safe. Who are we if we don't know what we know?"
+    "x": "Of all our AI worries, this is the one that earns it. Trusted information has always kept us safe. Who do we become if we don’t know what we know?"
    },
    {
-    "t": "p",
-    "x": "But it's also the one we can all do most about. If we think before we rant and read before we share, we can damp down the noise together."
-   },
-   {
-    "t": "p",
+    "t": "h",
     "x": "All care. Your responsibility."
    },
    {
     "t": "p",
-    "x": "Humans are good at inventing scary things and asking someone else to protect us. When we don't know how, or who, we start to worry."
+    "x": "Humans are good at inventing scary things and asking someone else to protect us. When we’re not sure who will do that, we worry."
    },
    {
     "t": "p",
-    "x": "The question is how much of the worry is warranted. Uprisings, bad actors and various flavours of collapse are way more likely to crop up in the movies."
+    "x": "Question is, how much worry is warranted? Robot armies and terrorist scares are excellent plots for the movies. But science and science fiction rarely meet."
    },
    {
     "t": "p",
-    "x": "Science and science fiction rarely meet."
+    "x": "The stuff to keep an eye on is the stuff we do every day. It’s the creeping threats that get us, not the bombs."
    },
    {
     "t": "p",
-    "x": "The stuff to keep an eye on is the stuff we do every day. It's the creeping threats that kill us, not the bombs."
+    "x": "Because the biggest risk we face isn’t robots going after humans. It’s humans acting like robots and shifting the blame."
    },
    {
     "t": "p",
-    "x": "Right now, AI is just a tool. Powerful, yes. Dangerous, potentially. But still just an oversized spanner tweaking the cogs of commerce."
+    "x": "We can’t stop the avalanche of slop. But we can stop shovelling snow. We can think before we rant, read before we post and all share less online. Because we can’t blame big business for baking sugary cakes if we’re all eating six before dinner."
    },
    {
     "t": "p",
-    "x": "And commerce is the catch worth watching. Nobody made more money by suddenly slowing things down. So it's on us to keep the big boys honest. We need to nudge our politicians, vote with our wallets and share a lot less shit online."
+    "x": "No, it’s not sharks or cows or paperclips that will finally tip us over. It’s the slop we shovel through the web that means nobody knows what’s true."
    },
    {
     "t": "p",
-    "x": "The best way to dodge a disaster is fairly undramatic. Know what's possible, shape what's probable. And play a supporting role in the movie we want to see."
-   },
-   {
-    "t": "p",
-    "x": "Because the future won't hit like a shark attack. It'll get us in the end with something more familiar — like Daisy, the killer cow."
+    "x": "That’s the one to worry about. And the easiest one to fix."
    },
    {
     "t": "tldr",
-    "x": "We always fear stuff we can't control, and big stuff is the scariest of all. But the creepers are the worries worth watching. The small stuff gets big over time."
+    "x": "We always fear big stuff we can’t control. But the creepers are the worries worth watching. And they’re the ones we can actually change."
    }
   ],
-  "nudge": "And that's just the doomscroll."
+  "nudge": "And that’s just the doomscroll."
  },
  "deal-with-workslop": {
-  "title": "What's the deal with workslop?",
+  "title": "What’s the deal with workslop?",
   "why": "",
   "kind": "sidebar",
   "blocks": [
    {
     "t": "p",
-    "x": "Every year thousands show up for Elvis Week in Memphis. Many in rhinestone jumpsuits. They look like Elvis, dress like Elvis and variously wiggle their hips. But no one thinks for a second that the King is back in town."
+    "x": "Every year thousands show up for Elvis Week in Memphis. Many in rhinestone jumpsuits. They look like Elvis, dress like Elvis and variously wiggle their hips."
+   },
+   {
+    "t": "p",
+    "x": "But no one thinks for a second that the King is back in town."
    },
    {
     "t": "p",
@@ -1510,11 +1570,11 @@
    },
    {
     "t": "p",
-    "x": "If you haven't met it yet, you probably will."
+    "x": "If you haven’t met it yet, you probably will."
    },
    {
     "t": "p",
-    "x": "It looks like work, sounds kinda work-ish and often gets served in a shiny suit. But scratch below the slick and there's nothing much to see."
+    "x": "It looks like work, sounds kinda work-ish and often gets served in a shiny suit. But scratch below the slick and there’s nothing much to see."
    },
    {
     "t": "p",
@@ -1522,34 +1582,34 @@
    },
    {
     "t": "p",
-    "x": "Workslop slides from desk to desk and doesn't do an awful lot more. Summaries of summaries are still just summaries, until someone stops to think."
+    "x": "Workslop slides from desk to desk and doesn’t do much more. Summaries of summaries are still just summaries, until someone stops to think."
    },
    {
     "t": "p",
-    "x": "And that just shifts the work from the person who's 'writing' it to the person who has to read it."
+    "x": "And that just shifts the work from the person who’s ‘writing’ it to the person who has to read it."
    },
    {
     "t": "p",
-    "x": "It's why most of us only splat the workslop once."
+    "x": "It’s why most of us only splat the workslop once."
    }
   ]
  },
  "last-horse-standing": {
   "title": "Last horse standing",
-  "why": "Why jobs don't disappear, they move.",
+  "why": "Why jobs don’t disappear, they move.",
   "kind": "chapter",
   "blocks": [
    {
     "t": "p",
-    "x": "You wouldn't want to be a horse in the early 1900s. Or a blacksmith. Or a stablehand. These newfangled motor cars appeared from almost nowhere and wiped out whole industries overnight."
+    "x": "You wouldn’t want to be a horse in the early 1900s. Or a blacksmith. Or a stablehand. These newfangled motor cars appeared from almost nowhere and wiped out whole industries overnight."
    },
    {
     "t": "p",
-    "x": "Or that's what it might have felt like. It actually took much longer."
+    "x": "Or that’s what it might have felt like. It actually took much longer."
    },
    {
     "t": "p",
-    "x": "Horse populations didn't crash with motor cars. In fact, they kept climbing. Peak horse didn't hit for almost a decade. From 25 million in 1920, they started a gentle downhill trot. By 1965, only 3 million were left. So the car replaced the horse. Eventually."
+    "x": "Horse populations didn’t crash with motor cars. They kept climbing. Peak horse didn’t hit for a decade. Then they began a gentle downhill trot. From 25 million in 1920 to just 3 million by 1965. The car replaced the horse. Eventually."
    },
    {
     "t": "p",
@@ -1561,19 +1621,19 @@
    },
    {
     "t": "p",
-    "x": "Everything feels bigger in the moment. And AI is busy having its moment. Anyone read the news and felt like a horse?"
+    "x": "Everything feels bigger in the moment. And AI is having its moment. Anyone read the news and felt like a horse?"
    },
    {
     "t": "p",
-    "x": "'Millions of jobs will be replaced by AI'. 'Entry-level jobs have hit their lowest level in years'. 'Businesses are sizing down and tech-ing up for the future.'"
+    "x": "‘Millions of jobs will be replaced by AI’. ‘Entry-level jobs have hit their lowest level in years’. ‘Businesses are sizing down and tech-ing up for the future.’"
    },
    {
     "t": "p",
-    "x": "It's just what you want to be reading over breakfast."
+    "x": "It’s just what you want to be reading over breakfast."
    },
    {
     "t": "p",
-    "x": "The fear of losing your job is real. It rents space in your brain and changes how you work. We innovate less, collaborate less and stop taking risks. Worried brains do worse work."
+    "x": "The fear of losing your job is real. It rents space in your brain and changes how you work. We innovate less, collaborate less and stop taking risks. Worried brains do much worse work. It’s not ideal."
    },
    {
     "t": "p",
@@ -1581,79 +1641,75 @@
    },
    {
     "t": "p",
-    "x": "But are these AI work stories true?"
+    "x": "But how many AI work stories are true?"
    },
    {
     "t": "p",
-    "x": "Are the robots really stealing our jobs? Or are we drowning in hype that's telling stories for profit?"
+    "x": "Are the robots really stealing our jobs? Or are we drowning in hype that’s spinning stories for profit?"
    },
    {
     "t": "p",
-    "x": "The honest answer is it's too soon to tell. But the profit-pushing theory is sound."
+    "x": "The honest answer is it’s too soon to tell. But the profit-pushing theory is sound."
    },
    {
     "t": "p",
-    "x": "If you borrow a trillion dollars on the promise your tech will save people cash, it's useful to show where those savings will be. Robots replacing humans is the big idea. It's not cynical to suggest that job loss stories are being pushed to prop up pricing. It's just business."
+    "x": "If you borrow a trillion dollars on the promise you’ll save people cash, it’s useful to show where those savings will be. Robots replacing humans is the big idea. It’s not cynical to suggest that job loss stories get pushed to prop up pricing. It’s just business."
    },
    {
     "t": "p",
-    "x": "Dig a little deeper and the numbers are more hopeful. Like any new tech there are jobs that change. But the scale is much smaller than the clickbait claims."
+    "x": "Dig a little deeper and the numbers are more hopeful."
    },
    {
     "t": "p",
-    "x": "One US crowd who counts layoffs for a living keeps a running tally on AI-related job cuts. The numbers go up every year. But in the first three years of robot replacement, way less than one percent of the jobs got hit."
+    "x": "One US crowd who counts layoffs for a living keeps a running tally on AI-related job cuts. In the first three years of robot replacement, very few jobs got hit."
    },
    {
     "t": "p",
-    "x": "In a stadium packed with 50,000 workers, only 22 were told that a robot took their job. Less a revolution. More a bathroom break."
+    "x": "In a stadium of 50,000 workers, only 22 were replaced by robots. Less a revolution. More a bathroom break."
    },
    {
     "t": "p",
-    "x": "Very few US job cuts have any robot fingerprints at the scene."
+    "x": "That’s not to say it won’t happen, but right now very few job cuts have robot fingerprints at the scene. Things just aren’t changing as fast as the clickbait claims."
    },
    {
-    "t": "p",
-    "x": "That's not to say that change won't happen. But things aren't changing nearly as fast as all the stories suggest."
-   },
-   {
-    "t": "p",
+    "t": "h",
     "x": "Is it silicon? Or cycles?"
    },
    {
     "t": "p",
-    "x": "But what about the entry-level jobs? The junior lawyers? The first-year bean counters? The rookies in reach of the bottom rung? The stats on those jobs are scarier. It sounds like the robots are coming for our kids."
+    "x": "So what about the entry-level jobs? The junior lawyers? The first-year bean counters? The rookies reaching for the bottom rung? The stats on those junior jobs are scarier. It sounds like the robots are coming for our kids."
    },
    {
     "t": "p",
-    "x": "On the face of it, it's a worrying trend. In the facts of it, there may be a different story."
+    "x": "On the face of it, it’s a worrying trend. In the facts of it, there may be a different story."
    },
    {
     "t": "p",
-    "x": "While reality is as harsh as the headlines, the reason for the cuts isn't clear. Is it AI driving the cuts, or is it just a symptom of the cycle?"
+    "x": "Reality feels as harsh as the headlines. But the reasons behind it aren’t clear. Is it AI driving the cuts, or is it just a symptom of the cycle?"
    },
    {
     "t": "p",
-    "x": "All good businesses invest in future talent. Until it starts to rain. When we dip into recession, entry-level jobs are nearly always first to go."
+    "x": "All good businesses invest in future talent. Until it starts to rain. When we dip into recession, entry-level jobs are the first to go."
    },
    {
     "t": "p",
-    "x": "Economic headwinds wreak havoc."
+    "x": "‘Economic headwinds’ blow like a gale for grads."
    },
    {
     "t": "p",
-    "x": "Like in 2008, when the banks went bust and entry-level jobs got hammered. Or in 2001, when the internet burst our bubbles, entry-level jobs were hit then too. Point to just about any cycle where money got hard to find. And the first thing we do is pull up the ladder."
+    "x": "Like in 2008, when the banks went bust and entry-level jobs got hammered. Or in 2001, when the internet burst our bubbles. Point to any cycle where money got hard to find. And the first thing we do is pull up the ladder."
    },
    {
     "t": "p",
-    "x": "The robots arrived in the middle of a slump. Bad time to graduate."
+    "x": "The robots arrived in the middle of a slump. Really bad time to graduate."
    },
    {
     "t": "p",
-    "x": "But how do businesses share that story of graduate cutbacks? 'We're tight on cash so we're cutting back on grads' isn't something that sells with shareholders. 'We're investing hard in smart new tech' lands a lot better in the boardroom."
+    "x": "And then there’s the jazz hands wrapped in the stories. No business says they’re cutting back on grads. So they point to robots and ‘smart new tech investments’. Those stories land better in the boardroom."
    },
    {
     "t": "p",
-    "x": "So are the robots the cause of the entry-level carnage? Or are they just jazz hands spinning stories? History puts its money on the latter."
+    "x": "So did robots cause the entry-level carnage? Or are they just the spin in the stories? History puts its money on the latter."
    },
    {
     "t": "h",
@@ -1661,43 +1717,43 @@
    },
    {
     "t": "p",
-    "x": "We put a lot into jobs we love and we get a lot out of them too. Security, identity, muffins on a Wednesday. A chunk of who we are is wrapped in what we do."
+    "x": "We put a lot into jobs we love and get a lot out of them too. Security, identity, muffins on a Wednesday. A chunk of who we are is wrapped in what we do."
    },
    {
     "t": "p",
-    "x": "So when something goes bung and we end up on Seek, it's good to have someone to blame. Since macroeconomic rounding errors don't make a useful villain, the robots get the evils at both ends of the story."
+    "x": "So when something goes bung and we end up on Seek, it’s good to have someone to blame. Since macroeconomic rounding errors don’t make a useful villain, the robots get the evils at both ends of the story."
    },
    {
     "t": "p",
-    "x": "And fair enough too. Any time between jobs feels brutal. Luckily most of us don't end up jobless for long. We find something different or aim at something new."
+    "x": "And fair enough too. Any time between jobs feels brutal. Luckily most of us don’t end up jobless for long. We find something different or aim at something new."
    },
    {
     "t": "p",
-    "x": "This shows up in the big-picture stats. Unemployment (in rich countries) stubbornly hovers around 5%. It spikes when times are tough, gets smaller in a boom and nearly always wiggles back to base in the long term. People like to work."
+    "x": "This shows up in the big-picture stats. Unemployment in rich countries stubbornly hovers around 5%. It spikes when times are tough, gets smaller in a boom and nearly always wiggles back to base. People like to work."
    },
    {
     "t": "p",
-    "x": "People move jobs for all kinds of reasons, but baselines rarely bend. It's been that way since we first started counting jobs."
+    "x": "People move jobs for all kinds of reasons, but baselines rarely bend. It’s been that way since we first started counting jobs."
    },
    {
     "t": "p",
-    "x": "Even new technology doesn't change it. Take online shopping as a case in point. When the tech started doing the human jobs, retail assistants cut back a bit. But jobs building websites and running logistics went nuts. And there's never enough people to run the last mile as couriers."
+    "x": "Even new technology doesn’t change it. Take online shopping, when the tech started doing the human jobs, retail assistants cut back a bit. But jobs building websites and running logistics went nuts. And there’s never enough people to run the last mile as couriers."
    },
    {
     "t": "p",
-    "x": "Jobs don't really disappear, they change. When people leave the stadium for a bathroom break, they often go back to the game in different seats."
+    "x": "Jobs don’t really disappear, they change. When people leave the stadium for a bathroom break, they often go back to the game in different seats."
    },
    {
-    "t": "p",
+    "t": "h",
     "x": "Where will our jobs go next?"
    },
    {
     "t": "p",
-    "x": "This is the question we all want answered. But it's the hardest one to guess. We're surprisingly good at spotting the threats and surprisingly bad at predicting what's next."
+    "x": "This is the question we all want answered. But it’s the hardest one to guess. We’re surprisingly good at spotting the threats and surprisingly bad at predicting what’s next."
    },
    {
     "t": "p",
-    "x": "We do know we'll be working with the robots. We don't yet know exactly what that means."
+    "x": "We do know we’ll be working with the robots. We don’t yet know exactly what that means."
    },
    {
     "t": "p",
@@ -1705,11 +1761,11 @@
    },
    {
     "t": "p",
-    "x": "Back in the 1900s, 40% of Americans worked on farms. Today it's less than 2%. That's not fields full of farmers out of work. It's four generations of finding new things to do."
+    "x": "Back in the 1900s, 40% of Americans worked on farms. Today it’s less than 2%. That’s not fields full of farmers out of work. It’s four generations of finding new things to do."
    },
    {
     "t": "p",
-    "x": "Nobody's Nana was a social media manager. Nobody's Pops worked in data. Over half the jobs we do today didn't exist when they were starting out."
+    "x": "Nobody’s Nana was a social media manager. Nobody’s Pops worked in data. Over half the jobs we do today didn’t exist when they were starting out."
    },
    {
     "t": "p",
@@ -1717,90 +1773,55 @@
    },
    {
     "t": "p",
-    "x": "And we were never the horses. We're the blacksmiths. The horse is just an animal machine. We were happy bashing at its horseshoes while it mattered. Then the world went looking for mechanics and the stablehands saddled up trucks."
+    "x": "And we were never the horses. We’re the blacksmiths. The horse is just an animal machine. We were happy bashing at its horseshoes while it mattered. Then the world went looking for mechanics and the stablehands saddled up trucks."
    },
    {
     "t": "p",
-    "x": "None of this can put a pin in the fear of losing your job. But fear feeds on stuff we don't yet know and there's plenty that we do. If we dodge the hype and trust the past, the future's not so scary."
+    "x": "None of this can put a pin in the fear of losing your job. But fear feeds on stuff we don’t yet know and there’s plenty on the table that we do. If we dodge the hype and trust the past, the future’s not so scary."
    },
    {
     "t": "p",
-    "x": "It's less likely than it feels that a robot will nobble your job. And if history keeps repeating there will always be jobs to do."
+    "x": "It’s less likely than it feels that a robot will nobble your job. And there’s lots of stuff that they just can’t do."
    },
    {
     "t": "p",
-    "x": "Because the robots aren't better people. They're better machines."
-   },
-   {
-    "t": "p",
-    "x": "So it doesn't hurt to hitch your wagon to one you like the look of. At least until someone invents a better horse."
+    "x": "Because the robots aren’t better people. They’re better machines."
    },
    {
     "t": "tldr",
-    "x": "When technology changes, humans adapt. It's what we've always done. But it usually happens in decades, not days."
+    "x": "When technology changes, humans adapt. Like always. It usually happens in decades, not days."
    }
   ],
-  "nudge": "And that's just our take on jobs."
- },
- "deal-with-agents": {
-  "title": "What's the deal with agents?",
-  "why": "",
-  "kind": "sidebar",
-  "blocks": [
-   {
-    "t": "p",
-    "x": "Kevin had a very clever puppy. It would fetch his slippers, answer the door and even scratch open the kibble to give itself a feed."
-   },
-   {
-    "t": "p",
-    "x": "But when Kevin caught the puppy in the kitchen cooking eggs, it didn't seem half so cute."
-   },
-   {
-    "t": "p",
-    "x": "Agents are robots that do the work alone. They make their own decisions, solve their own problems and hammer their way through tedious stuff in their mission to get things done."
-   },
-   {
-    "t": "p",
-    "x": "It's all the same robots, just working by themselves. They can book stuff, they can buy stuff, they can build new toys online. They're the holy grail of set and forget."
-   },
-   {
-    "t": "p",
-    "x": "Just line up some rules, take your foot off the prompt and wait for the robot genius."
-   },
-   {
-    "t": "p",
-    "x": "You can see why the corporates are buzzing 'agentic'. More gets done, less time on tea breaks. It's hard to see the downside."
-   },
-   {
-    "t": "p",
-    "x": "Until somebody spots a puppy in the kitchen playing with gas."
-   }
-  ]
+  "nudge": "And that’s just our take on jobs."
  },
  "great-art-heist": {
   "title": "The great art heist",
-  "why": "Why the people who pinch stuff aren't always obvious.",
+  "why": "Why the people who pinch stuff aren’t always obvious.",
   "kind": "chapter",
   "blocks": [
    {
     "t": "p",
-    "x": "The most valuable artwork you'll ever own was painted by a child. That masterpiece with spiders for hands and awkward blobs as bodies. It was splodged onto paper with great intent and proudly gets pinned on the fridge. Priceless."
+    "x": "The most valuable artwork you’ll ever own was painted by a child. That masterpiece with spiders for hands and awkward blobs as bodies."
    },
    {
     "t": "p",
-    "x": "Then they paint another one. And another. And another. Before you know it the walls are awash with spider-hand paintings of everyone they've met."
+    "x": "It was splodged onto paper with great intent and proudly gets pinned on the fridge. Priceless."
    },
    {
     "t": "p",
-    "x": "Yesterday's masterpiece gets bumped for the next, day by kindergarten day. And much as you'd never say it out loud, they're not nearly so special as the first one."
+    "x": "Then they paint another one. And another. And another. Before you know it the walls are awash with spider-hand paintings of everyone they’ve met."
    },
    {
     "t": "p",
-    "x": "That's the thing about art. It matters because of meaning. It has value because it's unique."
+    "x": "Yesterday’s masterpiece gets bumped for the next, day by kindergarten day. And much as you’d never say it out loud, they’re not nearly so special as the first one."
    },
    {
     "t": "p",
-    "x": "So what happens when a robot can craft a hundred artworks before you've finished your tea? You set them to work, stealing from stuff they've found online and squirting out pixels at the speed of prompt."
+    "x": "That’s the thing about art. It matters because of meaning. It has value because it’s unique."
+   },
+   {
+    "t": "p",
+    "x": "So what happens when a robot can craft a hundred new artworks before you’ve finished your tea? Just set them to work, stealing from stuff they find online and squirting out pixels at the speed of prompt."
    },
    {
     "t": "p",
@@ -1808,7 +1829,7 @@
    },
    {
     "t": "p",
-    "x": "Artists have purpose. Robots have process."
+    "x": "Artists have purpose. Robots have process. Only one of these things makes art."
    },
    {
     "t": "h",
@@ -1816,19 +1837,19 @@
    },
    {
     "t": "p",
-    "x": "There wasn't so much AI in the early 16th century so people painted portraits with paint. Leonardo da Vinci was one such artist, renowned throughout Europe for his brushwork."
+    "x": "There wasn’t so much AI in the early 16th century so people painted portraits with paint. Leonardo da Vinci was one such artist, renowned throughout Europe for his brushwork."
    },
    {
     "t": "p",
-    "x": "He was asked to paint the portrait of a merchant's wife. So he did."
+    "x": "He was asked to paint the portrait of a merchant’s wife. So he did."
    },
    {
     "t": "p",
-    "x": "But the painting was never finished. Well, not for Leonardo. Rather than hand it over, he kept it and he tinkered with it for sixteen years. So the story wasn't artist paints a silk merchant's missus. It was artist obsesses until the day he died."
+    "x": "But the painting was never finished. Rather than hand it over, he kept it and tinkered for sixteen years. So the story wasn’t ‘artist paints a silk merchant’s missus’. It was ‘artist obsesses until the day he died’."
    },
    {
     "t": "p",
-    "x": "Then stories built on stories. The art was famous because of the artist. Then it was stolen. Story turned to legend and that enigmatic smile became one of the most widely shared images in the world. Posters, postcards, coffee mugs, T-shirts. Everyone knows the Mona Lisa. Few have seen the painting in the Louvre."
+    "x": "Then stories built on stories. The art was already famous. Then it was stolen. Story turned to legend and that enigmatic smile became one of the most widely shared images in the world. Posters, postcards, coffee mugs, T-shirts. Everyone knows the Mona Lisa. Few have seen the painting in the Louvre."
    },
    {
     "t": "p",
@@ -1844,7 +1865,7 @@
    },
    {
     "t": "p",
-    "x": "But pin your one special postcard on the fridge, and it turns into something new. You think, that's the time we went to Paris. Remember the queue at the Louvre? I must confess, I wasn't impressed by the smile."
+    "x": "But pin your one special postcard on the fridge, and it turns into something new. You think, that’s the time we went to Paris. Remember the queue at the Louvre? I must confess, I wasn’t impressed by the smile."
    },
    {
     "t": "p",
@@ -1856,31 +1877,27 @@
    },
    {
     "t": "p",
-    "x": "The talent of technology is easy abundance. Infinite copies bouncing around the web or zapped into life on a printer. Digital art is different by definition. It's hard to spot an original until somebody signs it for real."
+    "x": "The talent of technology is easy reproduction. Infinite copies bouncing around the web. Nothing can be original until somebody signs it for real."
    },
    {
     "t": "p",
-    "x": "But what if you could make digital art unique? That was the thought behind NFTs. Non-Fungible Tokens are digital receipts for files. Like serial numbers for GIFs. Fungible is a mushroom-sounding word for interchangeable."
+    "x": "That was the thought behind NFTs. What if you could make digital art unique? Non-Fungible Tokens are digital receipts, like serial numbers for GIFs. Fungible is a mushroom-sounding word that means interchangeable. The goal was turning clicks into cash."
    },
    {
     "t": "p",
-    "x": "The goal was to turn clicks into cash."
+    "x": "Problem is, it really didn’t work. Digital art is digital art regardless. Anyone who can right-click a mouse can easily make a copy. The NFT just proved that you’d paid for it. But pay for it people did."
    },
    {
     "t": "p",
-    "x": "Problem is, it really didn't work. Digital art is digital art regardless. Anyone who can right-click a mouse can easily make a copy. The NFT just proved that you'd paid for it. But pay for it people did."
+    "x": "For one crazy year in 2021 NFTs boomed to $25 billion before they crashed when people clocked that NFT Emperors weren’t wearing many clothes."
    },
    {
     "t": "p",
-    "x": "For one crazy year in 2021 the NFT market boomed to $25B before crashing when people clocked that NFT Emperors weren't wearing many clothes."
+    "x": "Manufactured scarcity never felt like art. And a pixelated punk or bored-looking ape is hard to claim as art on the best of days."
    },
    {
     "t": "p",
-    "x": "Manufactured scarcity never really felt like art. And a pixelated punk or bored-looking ape is hard to argue as art on the best of days."
-   },
-   {
-    "t": "p",
-    "x": "All this to say that technology and art have a complicated history. But if it's spat out by a computer, people rarely call it art."
+    "x": "But the problem wasn’t the quality of the art. It was that proof of unique was irrelevant. You can’t just bolt on scarcity and cash a bigger cheque."
    },
    {
     "t": "h",
@@ -1892,79 +1909,71 @@
    },
    {
     "t": "p",
-    "x": "MTV launched in 1981. And boldly played that Buggles track as first cab off the rank. But did video kill the radio star? Not likely. We all just changed channels and kept dancing."
+    "x": "MTV launched in 1981. They played that Buggles track as first cab off the rank. But video never killed the radio star. We all just changed channels and kept dancing."
    },
    {
     "t": "p",
-    "x": "Twenty years later, Napster started sharing songs for free. Twenty years on we flicked the switch again."
+    "x": "Twenty years later, Napster started sharing songs for free. The labels panicked and rushed to court. Until Apple showed up charging 99c a song. Fans seemed happy to pay for the faves and the music kept on playing."
    },
    {
     "t": "p",
-    "x": "Streaming killed MTV by 2025. And yes, they had the Buggles play it out."
+    "x": "Twenty years on we flicked the switch again. MTV died of a streaming cold in 2025. And yes, they had the Buggles play it out."
    },
    {
     "t": "p",
-    "x": "But artists still made music and fans just followed the herd. Mostly. Two things changed when music streamed. The money and the feels."
+    "x": "But artists still made music and fans still followed their bands. Mostly. Streaming delivered the music. But something was missing in the feels."
    },
    {
     "t": "p",
-    "x": "Streaming pays its artists with a micro-cut of sales. Every Blue Suede Shoe from Elvis cuts a fraction of a cent to someone. Bigger acts get bigger cuts and the small ones play mostly for free."
+    "x": "From the moment streaming started, vinyl rose from the dead. Sales shot up year on year. An unexpected record boom driven by hungry fans. Turns out streams are fine to play the songs but humans like something they can touch."
    },
    {
     "t": "p",
-    "x": "When the music moved, the money moved with it. But the fans kept chasing the feels."
+    "x": "Streaming couldn’t deliver what old-school records did. You need scarcity with your meaning to make it art."
+   },
+   {
+    "t": "h",
+    "x": "Who’s stealing what and why?"
    },
    {
     "t": "p",
-    "x": "From the moment streaming started, vinyl came back from the dead. Sales shot up year on year. An unexpected record boom driven by hungry fans. Turns out humans like something they can own and collect and touch."
+    "x": "If art lives in scarcity and meaning, the robots aren’t really a threat. Yes, they remix stuff they find online. But it’s math without meaning so there’s nobody home."
    },
    {
     "t": "p",
-    "x": "Streaming couldn't deliver what old-school records could."
+    "x": "Art is born in the moment of its making. The money is in the means by which it’s shared. As we rush to judgement over digital theft, we miss the real robbery upstairs."
    },
    {
     "t": "p",
-    "x": "You need some scarcity with your meaning to make it art."
+    "x": "The studios, the platforms, the people who own the pipes. Who’s clipping the ticket on the artist’s work? That’s where the art heist happens."
    },
    {
     "t": "p",
-    "x": "Who's stealing what and why?"
+    "x": "You’d be very hard pressed to find a robot prepared to draw Mickey Mouse. That’s not because they object to drawing rodents. It’s just that Disney has the legal clout to sue. The artist drew the picture. The business locked it up. That’s scarcity manufactured by the law."
    },
    {
     "t": "p",
-    "x": "If art lives in scarcity and meaning, the robots aren't really a threat. Yes, they remix stuff they find online. But it's math without meaning so there's nobody home."
+    "x": "The robots run that racket in reverse. Eight billion humans shared work the robots play with. A handful of companies collect the subs. The art is in the making. The theft is in the pipes."
    },
    {
     "t": "p",
-    "x": "The art is born in the moment of its making. The money is in the means by which it's shared. That's where the art heist happens."
+    "x": "Because money is in the ownership of art. And when tech changes channels, the money moves with it."
    },
    {
     "t": "p",
-    "x": "As we rush to judgement over digital copies, we miss the real robbery overhead. The studios, the platforms, the people who own the pipes. Who's clipping the ticket on the artist's work?"
+    "x": "Small artists suffer. Big artists sue. And it’s more about the money than the art."
    },
    {
     "t": "p",
-    "x": "Eight billion humans gave the robots stuff to work with. A handful of companies collect the subs. The work is in the making. The theft is in the pipes. Or sometimes it lives with the lawyers."
+    "x": "But fans will always notice when the magic bit breaks. If you want to feel explosions you go to the movies. If you can’t touch a stream you head to a gig."
    },
    {
     "t": "p",
-    "x": "You'd be very hard pressed to find a robot prepared to draw Mickey Mouse. That's not because they object to drawing rodents. It's just that Disney has the legal clout to sue. The artist drew the picture. The business locked it up. That's scarcity manufactured by the law."
+    "x": "Because humans buying art are always chasing feels."
    },
    {
     "t": "p",
-    "x": "Money is in the ownership of art. Hence the businesses built to protect it. And as tech changes channels, the money moves with it. The business of business is chasing cash."
-   },
-   {
-    "t": "p",
-    "x": "Small artists suffer. Big artists sue. And it's all about the money, not the art."
-   },
-   {
-    "t": "p",
-    "x": "But the humans will always notice when the magic bit breaks. If you want to feel the explosions you head to the movies. If you can't touch a stream you go to a gig. Because the humans buying art are chasing feels."
-   },
-   {
-    "t": "p",
-    "x": "That new release on vinyl, that postcard from the Louvre, the spider-hand painting in the gallery on the fridge."
+    "x": "That new release on vinyl, that postcard from the Louvre, the spider-hand painting in your gallery on the fridge."
    },
    {
     "t": "p",
@@ -1975,32 +1984,67 @@
     "x": "Humans make art. Technology makes copies. The people who make money clip the ticket in the middle."
    }
   ],
-  "nudge": "And that's why the artists have a case."
+  "nudge": "And that’s just the fight about rights."
  },
- "deal-with-the-em-dash": {
-  "title": "What's the deal with the em-dash?",
+ "deal-with-agents": {
+  "title": "What’s the deal with agents?",
   "why": "",
   "kind": "sidebar",
   "blocks": [
    {
     "t": "p",
-    "x": "Ever whipped through your robot draft to edit out the em-dash? It's the fastest tell that a robot did your homework."
+    "x": "Kevin had a very clever puppy. It would fetch his slippers, answer the door and even scratch open the kibble to give itself a feed."
    },
    {
     "t": "p",
-    "x": "So why do the robots pepper them in? Best guess, it's a quirk of training."
+    "x": "But when Kevin caught the puppy in the kitchen cooking eggs, it didn’t seem half so cute."
    },
    {
     "t": "p",
-    "x": "Every robot was taught by reading the world's best writing. And 'proper' writers use them a lot. Dickens, Dickinson, Austen, you name them — all big fans of the afterthought punchline."
+    "x": "Agents are robots that do the work alone. They make their own decisions, solve their own problems and hammer their way through tedious stuff in their mission to get things done."
    },
    {
     "t": "p",
-    "x": "From there the models were tuned by humans. Casual clarity with an em-dash twist is something the humans liked. Plus, robots don't really write, they just glue stuff together — em-dash is an easy dab of glue."
+    "x": "It’s all the same robots, just working by themselves. They can book stuff, they can buy stuff, they can build new toys online. They’re the holy grail of set and forget."
    },
    {
     "t": "p",
-    "x": "Put it all together and that's how they got hooked."
+    "x": "Just line up some rules, take your foot off the prompt and wait for the robot genius."
+   },
+   {
+    "t": "p",
+    "x": "You can see why the corporates are buzzing ‘agentic’. More gets done, less time on tea breaks. It’s hard to see the downside."
+   },
+   {
+    "t": "p",
+    "x": "Until somebody spots a puppy in the kitchen playing with gas."
+   }
+  ]
+ },
+ "deal-with-the-em-dash": {
+  "title": "What’s the deal with the em-dash?",
+  "why": "",
+  "kind": "sidebar",
+  "blocks": [
+   {
+    "t": "p",
+    "x": "Ever whipped through your robot draft to edit out the em-dash? It’s the fastest tell that a robot did your homework."
+   },
+   {
+    "t": "p",
+    "x": "So why do the robots pepper them in? Best guess, it’s a quirk of training."
+   },
+   {
+    "t": "p",
+    "x": "Every robot was taught by reading the world’s best writing. And ‘proper’ writers use them a lot. Dickens, Dickinson, Austen, you name them — all big fans of the afterthought punchline."
+   },
+   {
+    "t": "p",
+    "x": "From there the models were tuned by humans. Turns out they like the casual clarity with an em-dash twist. Plus, robots don’t really write, they just glue stuff together — an em-dash is an easy dab of glue."
+   },
+   {
+    "t": "p",
+    "x": "Put it all together and that’s how they got hooked."
    },
    {
     "t": "p",
@@ -2008,7 +2052,7 @@
    },
    {
     "t": "p",
-    "x": "It's fashion not punctuation. These days human writers dodge them to prove that their writing is real."
+    "x": "It’s fashion, not punctuation. These days human writers dodge them to prove that their writing is real."
    },
    {
     "t": "p",
@@ -2027,7 +2071,7 @@
   "blocks": [
    {
     "t": "p",
-    "x": "Remember all that paperwork in science class? Map out the method, record the results, tidy it up into pre-packaged formats to show why the spud runs the clock. Boring."
+    "x": "Remember all that paperwork in science class? Map out the method, record the results, and write it all up like we really need to show why the spud makes the clock work. Boring."
    },
    {
     "t": "p",
@@ -2035,7 +2079,11 @@
    },
    {
     "t": "p",
-    "x": "Can we not just get on with discovering stuff? Apparently not. Here's why. Science is the industry that checks its own homework. It's why we believe the stuff science says. And why it's all so slow. It's been that way since forever ago. But is it about to change? If the robots can cover the boring bits could we get our science much faster?"
+    "x": "Can we not just get on with discovering stuff? Apparently not."
+   },
+   {
+    "t": "p",
+    "x": "Because science is the industry that checks its own homework. It’s why we believe the stuff science says. It’s also why it’s painfully slow and it’s been that way since forever. But is that about to change? If the robots can cover the boring bits can we get to the science bits faster?"
    },
    {
     "t": "h",
@@ -2043,19 +2091,19 @@
    },
    {
     "t": "p",
-    "x": "Remember Alexander Fleming? He's the guy who gave us penicillin. Bit of a bumbler, not very tidy, left stuff on the shelf until it went mouldy. But that's also when he spotted something new."
+    "x": "Remember Alexander Fleming? He’s the guy who gave us penicillin. Bit of a bumbler, not very tidy, left stuff on the shelf until it went mouldy. But that’s when he noticed something new."
    },
    {
     "t": "p",
-    "x": "Fleming noticed that mould was attacking his experiment. It killed some bacteria growing in the dish. Fleming's stroke of genius wasn't his laziness. It was spotting something unusual and wondering why."
+    "x": "Fleming realised that mould was attacking his experiment. It killed some bacteria growing in the dish. Fleming’s stroke of genius had nothing to do with laziness. It was spotting something weird and wondering why."
    },
    {
     "t": "p",
-    "x": "But that didn't make Fleming an overnight success. Far from it. He wasn't even looking for medicine in the mould. So nothing much happened until others made it real. He made a discovery in an untidy lab, but it took ten years and a stack of experiments to turn that discovery into drugs."
+    "x": "But that didn’t make Fleming an overnight success. Far from it. He made a discovery in an untidy lab, but it took ten years and a stack of experiments to turn his discovery into drugs."
    },
    {
     "t": "p",
-    "x": "Ideas, it seems, can come from anywhere. It's running the gauntlet of established thinking that keeps most of them firmly in their box."
+    "x": "Ideas, it seems, can come from anywhere. It’s just that proving the point through established science takes a lot more marathon than sprint."
    },
    {
     "t": "p",
@@ -2067,55 +2115,43 @@
    },
    {
     "t": "p",
-    "x": "It wasn't just Fleming who had to wait it out. History is packed with people who spotted a thing and then fought for years to earn the credibility."
+    "x": "It wasn’t just Fleming who had to wait it out. History is packed with people who spotted a thing and then fought for years to earn their credibility."
    },
    {
     "t": "p",
-    "x": "One such genius was Ignaz Semmelweis. Along with having one of history's best names, he made a discovery that saved millions of lives."
+    "x": "One such genius was Ignaz Semmelweis. Along with having one of history’s best names, he made a simple discovery that still saves millions of lives."
    },
    {
     "t": "p",
-    "x": "He had an idea that changed the world of medicine. But medicine took a very long time to thank him. Challenging the status quo can often take a while."
+    "x": "Semmelweis was a doctor from back in the day, when they’d rush from patient to patient passing on germs as they went. An autopsy here, a baby to deliver there and very few stopped to wash their hands."
    },
    {
     "t": "p",
-    "x": "Semmelweis was a doctor from back in the day, when doctors would rush from patient to patient passing on germs as they went. An autopsy here, a baby to deliver there and very few stopped to wash their hands."
+    "x": "So he gave it a go. And it worked."
    },
    {
     "t": "p",
-    "x": "So he tried it. And it worked."
+    "x": "Mortality rates dropped dramatically. This bold new idea of doctors washing with soap could actually save lives. He proudly shared his findings and got laughed out of town."
    },
    {
     "t": "p",
-    "x": "Mortality rates dropped dramatically. This bold new idea of doctors washing with decent soap could actually save lives. So he proudly shared his findings and got laughed out of town. The challenge was, he didn't know why it worked."
+    "x": "He knew it worked, but he didn’t know why. So established doctors rejected the idea and nudged him onto the sidelines. Semmelweis wrote letter after letter calling other doctors murderers. That didn’t really help. They just had him committed. Never a great plan to suggest doctors are part of the problem."
    },
    {
     "t": "p",
-    "x": "Established doctors rejected the idea and nudged him into the sidelines. Where he wrote letter after letter calling doctors murderers. In the end they quietly had him committed."
+    "x": "Handwashing stayed optional for decades."
    },
    {
     "t": "p",
-    "x": "Never a good call to suggest that doctors are part of the problem."
+    "x": "But what if genius is less about smarts and more about proof? What if all those write-ups were the point of it?"
    },
    {
     "t": "p",
-    "x": "Handwashing stayed optional for decades. Until people like Louis Pasteur got into studying germs. Then the medical world put two and two together and doctors stopped killing their patients."
+    "x": "Fleming had a thought, but it took years to make it real. Semmelweis nailed a solution and the establishment washed their hands of him. Neither had the paperwork to prove it."
    },
    {
     "t": "p",
-    "x": "What if genius is less about smarts and more about social proof? What if being right doesn't matter until you can show receipts?"
-   },
-   {
-    "t": "p",
-    "x": "What if we could unlock more science if we just had better proof?"
-   },
-   {
-    "t": "p",
-    "x": "Fleming had a thought, but it took years to make it real. Semmelweis nailed a solution and the establishment washed their hands of him."
-   },
-   {
-    "t": "p",
-    "x": "What's this got to do with AI? Meet Demis Hassabis and his folding factory."
+    "x": "Wondering what this has to do with AI? Meet Demis Hassabis and his folding factory."
    },
    {
     "t": "h",
@@ -2123,11 +2159,11 @@
    },
    {
     "t": "p",
-    "x": "Demis Hassabis is a video game designer. He started DeepMind, the British lab that crunched big numbers to show how robots can spot patterns."
+    "x": "Demis Hassabis is a video game designer. He started DeepMind, the British lab that crunched big numbers to show how robots spot patterns."
    },
    {
     "t": "p",
-    "x": "Tucked up at Google with infinite toys, he set out to find a new challenge. He asked himself, what if we use robots to prove a thing that science can't land?"
+    "x": "Tucked up at Google with infinite toys, he set out to find a new challenge. He asked himself, what if we use robots to prove a thing that science can’t land?"
    },
    {
     "t": "p",
@@ -2135,19 +2171,19 @@
    },
    {
     "t": "p",
-    "x": "To wrap this in context, protein folding is one of the world's biggest science puzzles. It's also the key to the world's best drugs. Here's why it matters."
+    "x": "Protein folding is one of the world’s biggest science puzzles. It’s also the key to the world’s best drugs."
    },
    {
     "t": "p",
-    "x": "Proteins are the machinery of life. Every cell in your body runs on them. They carry oxygen, fight infection, build muscle and a whole lot more. You name it, proteins are into it. They're important."
+    "x": "That’s because proteins are the machinery of life. Every cell in your body runs on them. They carry oxygen, fight infection, build muscle and a whole lot more. You name it, proteins are into it. They’re important."
    },
    {
     "t": "p",
-    "x": "They start as a string of amino acids then fold into specific three-dimensional shapes to actually do their job. It's the shape that matters. Get it wrong and it can lead to Alzheimer's, Parkinson's, Huntington's. Get it right and you may have a cure."
+    "x": "They start as a string of amino acids then fold into specific three-dimensional shapes to actually do their job. It’s the shape that matters. Get it wrong and it can lead to Alzheimer’s, Parkinson’s, Huntington’s. Get it right and you may have a cure."
    },
    {
     "t": "p",
-    "x": "The problem was predicting exactly how these proteins fold. It's ridiculously complicated. There are more possible shapes than atoms in the universe."
+    "x": "The problem was predicting exactly how these proteins fold. It’s ridiculously complicated. There are more possible shapes than atoms in the universe."
    },
    {
     "t": "p",
@@ -2155,7 +2191,7 @@
    },
    {
     "t": "p",
-    "x": "Hassabis and his team briefed a robot. And knocked it out in four."
+    "x": "Hassabis and his team briefed a robot. And they knocked it out in four."
    },
    {
     "t": "p",
@@ -2163,47 +2199,47 @@
    },
    {
     "t": "p",
-    "x": "They didn't have a better insight. They had better tools."
+    "x": "They didn’t have a better insight. They had better tools."
    },
    {
     "t": "p",
-    "x": "In 2022 they released the predicted shapes of over 200 million proteins. Pretty much the known protein universe, free and publicly available, ready for testing in a lab. That's a starting point for brand new drugs, nailed by a robot and recognised with a Nobel Prize."
+    "x": "In 2022 they released the predicted shapes of over 200 million proteins. Pretty much the known protein universe, free and publicly available, ready for testing in a lab. That’s a starting point for brand new drugs, nailed by a robot and recognised with a Nobel Prize."
    },
    {
-    "t": "p",
+    "t": "h",
     "x": "Humans think. Robots grunt."
    },
    {
     "t": "p",
-    "x": "The difference between these stories isn't the smarts of the scientists. It's access to the proof that turns a brainwave into science."
+    "x": "The difference between these stories isn’t the smarts of the scientists. It’s access to the proof that turns a brainwave into science."
    },
    {
     "t": "p",
-    "x": "Fleming found the answer, but couldn't crack the question. Semmelweis spotted a pattern but couldn't convince the room. Hassabis didn't question the science, he used the robots to build on it and crunch impossible numbers. The science world read his proof and gave it a prize."
+    "x": "Fleming found the answer, but couldn’t crack the question. Semmelweis spotted a pattern but couldn’t convince the room. Hassabis didn’t question the science, he used the robots to build on it and crunch impossible numbers. The science world read his proof and gave it a prize."
    },
    {
     "t": "p",
-    "x": "Genius is joining dots that no one else can see. The robot bit is digging through the other dots to prove it. The jury's still out on whether a robot can crack an original idea. But once we've solved the hard bit, they're ready to dive in and help."
+    "x": "Genius is joining dots that no one else can see. The robot bit is digging through the other dots to prove it. The jury’s still out on whether a robot can crack an original idea. But once we’ve solved the clever bit, they’re ready to dive in and help."
    },
    {
     "t": "p",
-    "x": "It's science without the boring bits. More time to play with frogs."
+    "x": "It’s science without the boring bits. More time to play with frogs."
    },
    {
     "t": "tldr",
     "x": "Genius, according to Edison, is 1% inspiration and 99% perspiration. Robots can do the tedious bit, no sweat."
    }
   ],
-  "nudge": "And that's just the science bit."
+  "nudge": "And that’s just the science bit."
  },
  "deal-with-ethics": {
-  "title": "What's the deal with ethics?",
+  "title": "What’s the deal with ethics?",
   "why": "",
   "kind": "sidebar",
   "blocks": [
    {
     "t": "p",
-    "x": "Digital tech sings the cool kid slogan: move fast and break things."
+    "x": "Digital tech loves the cool kid slogan: move fast and break things."
    },
    {
     "t": "p",
@@ -2215,19 +2251,19 @@
    },
    {
     "t": "p",
-    "x": "It's hard to argue his intent. But he did it before they were born."
+    "x": "It’s hard to argue with his intent. He just did it before they were born."
    },
    {
     "t": "p",
-    "x": "It's a fine line between a Nobel Prize and prison. He won the latter."
+    "x": "It’s a fine line between a Nobel Prize and prison. He won the latter."
    },
    {
     "t": "p",
-    "x": "Ethics are only the norms of the day. They live in the gap between could we and should we. The difference is getting fuzzier."
+    "x": "Ethics are only the norms of the day. They live in the gap between could we and should we. That’s the gap that’s shrinking."
    },
    {
     "t": "p",
-    "x": "Tech is already implanted into brains. We know how to edit our genes. \"Perfect baby boy with lovely golden ringlets\" is an ethics-shift away from being real."
+    "x": "Tech is already implanted into brains. We know how to edit our genes. “Perfect baby boy with lovely golden ringlets” is an ethics-shift away from real."
    },
    {
     "t": "p",
@@ -2235,11 +2271,11 @@
    },
    {
     "t": "p",
-    "x": "As the tech keeps moving, it's on us to hold the line."
+    "x": "As the tech keeps moving, it’s on us to hold the line."
    },
    {
     "t": "p",
-    "x": "We don't mind doctors working miracles. We'd rather they didn't play God."
+    "x": "We don’t mind doctors working miracles. We’d rather they didn’t play God."
    }
   ]
  },
@@ -2250,23 +2286,23 @@
   "blocks": [
    {
     "t": "p",
-    "x": "Did you notice how everything is suddenly being sold with a handy side of AI? You've got AI fridges, AI lawnmowers, even an AI toothbrush that will tell you if you're brushing on an angle."
+    "x": "Did you notice how everything is suddenly being sold with a handy side of AI? You’ve got AI fridges, AI lawnmowers, even an AI toothbrush that will tell you if you’re brushing on an angle."
    },
    {
     "t": "p",
-    "x": "You name it, someone's shoved a robot in it.  It's just what happens when tech is hot."
+    "x": "You name it, someone’s shoved a robot in it. It’s just what happens when tech is hot."
    },
    {
     "t": "p",
-    "x": "We saw it in the Steam Age. Everything looked like an engine. And again with electricity when everything got a plug. And let's not start on the dotcom boom. Makemybusinesscool.com"
+    "x": "We saw it in the Steam Age. Everything looked like an engine. And again with electricity when everything got a plug. And let’s not start on the dotcom boom. Makemybusinesscool.com"
    },
    {
     "t": "p",
-    "x": "Every new tech shares the same basic story. Big hype and crazy inventions. Then a gradual descent into boring attached to a monthly bill."
+    "x": "Every new tech shares the same basic story. Big hype and crazy inventions. Then a gradual descent into boring, attached to a monthly bill."
    },
    {
     "t": "p",
-    "x": "The bolt-on barrage is useful. Trying new things is how tech gets better. Hand tools became mechanical tools. Mechanical tools got power. Power tools went cordless. And someone somewhere must be ramming some chips into cordless drills in the hope that AI can make more perfect holes."
+    "x": "The bolt-on barrage is part of it. Trying new things is how tech gets better. Hand tools became mechanical tools. Mechanical tools got power. Power tools went cordless. And someone somewhere must be ramming some chips into cordless drills in the hope that AI can make more perfect holes."
    },
    {
     "t": "p",
@@ -2274,7 +2310,7 @@
    },
    {
     "t": "p",
-    "x": "And that's when things start seriously changing."
+    "x": "And that’s when things start seriously changing."
    },
    {
     "t": "h",
@@ -2282,19 +2318,19 @@
    },
    {
     "t": "p",
-    "x": "Second order innovation is more than adding a side of AI. It's when two technologies meet and make something new. Think Uber."
+    "x": "Second order innovation is more than adding a side of AI. It’s when two technologies meet and make something new. Think Uber."
    },
    {
     "t": "p",
-    "x": "Smartphones were the shiny new thing and maps had GPS. Put them together and taxis can't keep up. Two ideas, one new tool. No one stops to ask how it works."
+    "x": "Smartphones were the shiny new thing and maps had GPS. Put them together and taxis can’t keep up. Two ideas, one new tool. No one stops to ask how it works."
    },
    {
     "t": "p",
-    "x": "But Rome wasn't built in a weekend. Often things take decades to evolve. Like the way they plugged the power into factories. Slowly."
+    "x": "But Rome wasn’t built in a weekend. Often things take decades to evolve. Like the way they plugged the power into factories."
    },
    {
     "t": "p",
-    "x": "We all know the story of the factories and the farms. Impressive machines, powered by steam could make more of everything faster than before. People chased jobs from the farms to the cities. And everyone marvelled at the output."
+    "x": "We all know the story of the factories and the farms. Impressive machines powered by steam could make more of everything faster. People chased jobs from the farms to the cities. And everyone marvelled at the output."
    },
    {
     "t": "p",
@@ -2306,11 +2342,11 @@
    },
    {
     "t": "p",
-    "x": "The challenge in most factories was still one source of grunt. A giant electric motor where the steam engine sat. Right across town we'd already invented much smaller motors that could do a better job. But it took over 30 years to bring them in."
+    "x": "The challenge in most factories was still one source of grunt. A giant electric motor where the steam engine sat. Right across town we’d already invented much smaller motors that could do a better job. But it took over 30 years to bring them in."
    },
    {
     "t": "p",
-    "x": "Sometimes the obvious isn't all that clear."
+    "x": "Sometimes the obvious isn’t all that clear."
    },
    {
     "t": "p",
@@ -2322,19 +2358,15 @@
    },
    {
     "t": "p",
-    "x": "Tech plus tech can take a generation. But once it hits its stride we feel it."
+    "x": "Tech plus tech can take a generation. But it makes a bigger dent once it gets there."
    },
    {
     "t": "p",
-    "x": "Like shipping containers and international communications. Suddenly it didn't matter where in the world your factory was. This gave us cheap, abundant everything and labour wars."
+    "x": "Like shipping containers and global communications. Plug them together and it doesn’t matter where in the world your factory is. This gave us cheap, abundant everything and sweatshops."
    },
    {
     "t": "p",
-    "x": "Tech + tech = better tech."
-   },
-   {
-    "t": "p",
-    "x": "If you're wondering what it is that drives this innovation, you just need to stop at the bank. Business doesn't innovate for the fun of it. The goal is always more for less."
+    "x": "If you’re wondering what drives this innovation, you just need to follow the money. Business doesn’t innovate for the fun of it. The goal is always more for less."
    },
    {
     "t": "p",
@@ -2346,7 +2378,7 @@
    },
    {
     "t": "p",
-    "x": "Let's take two technologies, whack them together and listen for the sound of money. Here's an idea with two we know: artificial intelligence and 3D printing."
+    "x": "Let’s take two technologies, whack them together and listen for the sound of money. Here’s an idea with two we know: artificial intelligence and 3D printing."
    },
    {
     "t": "p",
@@ -2354,19 +2386,19 @@
    },
    {
     "t": "p",
-    "x": "This is tech that's just around the corner. The robots could walk all over it, but the printing needs some work. If we tinker with that tech to print with multiple materials,  you could get sneakers in your special size, all while you sip Diet Coke."
+    "x": "This is tech that’s just around the corner. The robots could walk all over it, the printing needs some work. If we tinker with that tech to print with multiple materials, you could get sneakers in your special size while you sip Diet Coke."
    },
    {
     "t": "p",
-    "x": "And there's no need to worry, the robot knows that we buy shoes to fit in with our tribe. So every pair would show your stripes. Or give you a tick on the side."
+    "x": "And there’s no need to worry, the robot knows that we buy shoes to fit in with our tribe. So every pair would show your stripes or give you a tick on the side."
    },
    {
     "t": "p",
-    "x": "But that's stage one. What if this kit became small enough and cheap enough to keep one in your garage? And what if the shoes were just the start?"
+    "x": "But that’s stage one. What if this kit became small enough and cheap enough to keep it in your garage? And what if the shoes were just the start?"
    },
    {
     "t": "p",
-    "x": "Broken a handle on your saucepan? No worries. Shove it in the replicator, get a new one just the same. 'Earl Grey, hot' was the Star Trek version. How long before we're living the science fiction?"
+    "x": "Broken a handle on your saucepan? No worries. Shove it in the replicator, get a new one just the same. ‘Earl Grey, hot’ was the Star Trek version. How long before we’re living science fiction?"
    },
    {
     "t": "p",
@@ -2374,19 +2406,19 @@
    },
    {
     "t": "p",
-    "x": "We wouldn't need shops, we wouldn't need stock, we wouldn't have great piles of waste. And those workers in far-flung factories could hang up their swipe cards for good."
+    "x": "We wouldn’t need shops, we wouldn’t need stock, we wouldn’t have great piles of waste. And those workers in far-flung factories could hang up their swipe cards for good."
    },
    {
     "t": "p",
-    "x": "And that's the rub. Ask the farmers working in the factories. There are always winners and losers in the race of tech and money. So that's the challenge to keep a decent eye on."
+    "x": "And then what? Ask those farmers working in the factories. Or the horses that don’t pull carts. There are always winners and losers in the race of tech and money."
    },
    {
-    "t": "h",
+    "t": "p",
     "x": "Healthy mirrors and flowing roads"
    },
    {
     "t": "p",
-    "x": "The same approach can work for anything. Tech + tech = better tech. Like, what if you had a bathroom mirror that would clock your face on the daily? Plug in a couple of cameras and a data-crunching robot and maybe that mirror could predict when you're getting sick."
+    "x": "The same approach can work for anything. Like a bathroom mirror that clocks your face on the daily? Plug in a couple of cameras and a data-crunching robot and maybe your mirror could track your health."
    },
    {
     "t": "p",
@@ -2394,23 +2426,23 @@
    },
    {
     "t": "p",
-    "x": "And what about the boring stuff like traffic. We already know the smarts of the traffic switching robots. But what if all those traffic lights were connected? Rather than leave it for a single light to manage what it sees, just tweak the lights on the other side of town and solve the bottleneck problem at source."
+    "x": "And then there’s all that boring stuff like traffic. We already know about traffic light smarts. But what if all those lights were connected? Rather than leave a single light to manage what it sees, just tweak some lights on the other side of town and solve the bottleneck problem at source."
    },
    {
     "t": "p",
-    "x": "We couldn't do that with switches and sensors. It's a walk in the park for AI."
+    "x": "We couldn’t do that with switches and sensors. It’s a walk in the park for AI."
    },
    {
-    "t": "p",
+    "t": "h",
     "x": "Ready for invisible robots?"
    },
    {
     "t": "p",
-    "x": "This story of new tech is running on repeat. We hype, we hope, we add a bit to everything. Then slowly it slides out of view."
+    "x": "This is how new tech works. We hype, we hope, we add a bit to everything. Then slowly it slides out of view."
    },
    {
     "t": "p",
-    "x": "We saw it with steam, we clicked through dotcom. And 'electric' spent years as a sales pitch for everything. These days we just buy a fridge."
+    "x": "We saw it with steam, we clicked through dotcom. And ‘electric’ spent years as a sales pitch for everything. These days we just buy a fridge."
    },
    {
     "t": "p",
@@ -2418,22 +2450,22 @@
    },
    {
     "t": "p",
-    "x": "We're right in the middle of the mush right now. AI is the answer to everything. We chat with our chatbots, doomscroll the hype and even consider the AI toothbrush."
+    "x": "We’re right in the middle of the mush right now. AI is the answer to everything."
    },
    {
     "t": "p",
-    "x": "Then, sooner or later these thinking machines will settle in and find their mates. That's when big things start to change. But slowly. Tech changes fast, society moves in decades."
+    "x": "But sooner or later these thinking machines will settle in and find their mates. That’s when the big stuff starts to change. But slowly. Tech changes fast, societies shift in decades."
    },
    {
     "t": "p",
-    "x": "You'll know the future's here when you don't even notice."
+    "x": "You’ll know the future’s here when you don’t even notice."
    },
    {
     "t": "tldr",
     "x": "Every new tech starts out as hype. The big moves happen when your mum stops asking how it works."
    }
   ],
-  "nudge": "And that's just a peek at the future."
+  "nudge": "And that’s just a peek at the future."
  },
  "everything-old-is-new-again": {
   "title": "Everything old is new again",
@@ -2446,7 +2478,7 @@
    },
    {
     "t": "p",
-    "x": "He was keen to confirm his plans for world domination. So he asked her what might happen if he took his troops to war. The Oracle, who was widely known to know everything, declared, \"A great empire will fall.\""
+    "x": "He was keen to confirm his plans for world domination. So he asked her what might happen if he took his troops to war. The Oracle, who was widely known to know everything, declared, “A great empire will fall.”"
    },
    {
     "t": "p",
@@ -2454,10 +2486,10 @@
    },
    {
     "t": "p",
-    "x": "Turns out the Oracle never said which empire. Would Croesus have fared better with a decent chatbot?"
+    "x": "Turns out the Oracle never mentioned which empire. If only Croesus had a decent chatbot."
    },
    {
-    "t": "h",
+    "t": "p",
     "x": "We love to fish for answers"
    },
    {
@@ -2470,7 +2502,11 @@
    },
    {
     "t": "p",
-    "x": "In many ways these robots aren't that different from the various answer books we've turned to before. We just trust them more because they were built by science. It's the same old pattern of humans fishing for answers. And it runs on repeat from the Ancient Greeks to Grok."
+    "x": "In many ways these robots aren’t that different from the various answer books we’ve turned to before. We just trust them more because they were built by science."
+   },
+   {
+    "t": "p",
+    "x": "This same old pattern of humans fishing for answers runs on repeat from the Ancient Greeks to Grok."
    },
    {
     "t": "p",
@@ -2478,7 +2514,7 @@
    },
    {
     "t": "p",
-    "x": "To really work out what to do with the tech, we need to know more about us. And the good news is that we haven't really changed for over a quarter of a million years."
+    "x": "To really work out how to handle this tech, we need to know more about us. And the good news is that we haven’t really changed for over a quarter of a million years."
    },
    {
     "t": "p",
@@ -2486,94 +2522,106 @@
    },
    {
     "t": "p",
-    "x": "Trust was a short cut to avoid dodgy berries. Curiosity found new food so the tribe didn't starve. We built a sense of belonging because loners ended up dead. It was brutal sharing the savannah with the lions."
+    "x": "Trust was a short cut to avoid dodgy berries. Curiosity drove us to find new food so the tribe didn’t starve. We built a sense of belonging because loners mostly died."
    },
    {
     "t": "p",
-    "x": "Even our flaws were features out there. Laziness was a virtue, you eat less if you snooze. Deference was essential to fit in. And ego was the peacock move to find a better mate. Nothing new in that."
+    "x": "It was brutal sharing the savannah with the lions."
    },
    {
     "t": "p",
-    "x": "That was all a while ago now, but it made us who we are. If you peg human existence to a 24-hour day, we were dodging lions for 23 hours and the robots have been with us for a second. So the stuff that makes us human is locked in."
+    "x": "Even our flaws were features out there. Laziness was a virtue, you eat less if you snooze. Deference was essential to fit in. And ego was the peacock move to find a better mate. Not much new in that."
    },
    {
     "t": "p",
-    "x": "We're generous, we're greedy, we're open, we're suspicious, we're curious and we're tribal and we love to feel like we fit."
+    "x": "That was all a while ago now, but it made us who we are. And we really haven’t changed that much."
    },
    {
     "t": "p",
-    "x": "All this to say, people are people. And tech hasn't changed us. Yet."
+    "x": "If you peg human existence to a 24-hour day, we were dodging lions for 23 and the robots have been with us for a second. So the stuff that makes us human is pretty locked in."
    },
    {
-    "t": "h",
+    "t": "p",
+    "x": "We’re generous, we’re greedy, we’re open, we’re suspicious, we’re curious, we’re tribal, we love to fit in."
+   },
+   {
+    "t": "p",
+    "x": "All this to say, people are people. And the tech hasn’t changed us. Yet."
+   },
+   {
+    "t": "p",
     "x": "New tricks old dogs"
    },
    {
     "t": "p",
-    "x": "We know that tech changes tech over time. And we know that humans don't change much at all. We adopt the good stuff, adapt around the bad stuff and get grumpy when a password doesn't work. It's always been this way."
+    "x": "Even as technology changes, we know that humans don’t change much at all. We adopt the good stuff, adapt around the bad stuff and get grumpy when a password doesn’t work. It’s always been this way."
    },
    {
     "t": "p",
-    "x": "The printing press unsettled the churches until everyone settled down with the paper. The telephone didn't make us want to connect. It just changed who we could talk to and when."
+    "x": "The printing press unsettled the churches until everyone settled down with the paper. The telephone didn’t invent connection. It just changed who we could talk to and when."
    },
    {
     "t": "p",
-    "x": "And when Steve Jobs made those telephones touchable, it genuinely felt like magic. Now it only feels like magic when the kids put them down over dinner. Kids will be kids. Humans will be humans."
+    "x": "And when Steve Jobs made those phones touchable, it genuinely felt like magic. Now it only feels like magic when the kids put them down over dinner. Kids will be kids. Humans will be humans."
    },
    {
     "t": "p",
-    "x": "Technology doesn't break the world. It just bends the ways we do what we do."
+    "x": "Technology doesn’t break the world. It just bends the ways we do what we do."
    },
    {
     "t": "p",
-    "x": "Until now."
-   },
-   {
-    "t": "h",
     "x": "I think therefore I am"
    },
    {
     "t": "p",
-    "x": "The reason AI feels different is the robots seem like they actually think. We're used to building tools that can give us better hands. But are we ready to let technology play in our heads? Our brains are where we keep the good stuff."
+    "x": "The reason AI feels different is the robots seem to be thinking."
    },
    {
     "t": "p",
-    "x": "That's a line that's uncomfortable to cross. But what if there wasn't a line there at all?"
+    "x": "We’re used to building tools that can give us better hands. But we worry about anything playing with our heads. Our brains are where we keep the good stuff."
    },
    {
     "t": "p",
-    "x": "Us humans and these robots, we're not nearly the same."
+    "x": "That’s a line that’s uncomfortable to cross. But what if there wasn’t a line at all?"
    },
    {
     "t": "p",
-    "x": "They're super-impressive computers that crunch a billion thoughts in a second. We're just human. Fancy new oracle. Same old us."
+    "x": "Us humans and these robots, we’re not nearly the same."
    },
    {
     "t": "p",
-    "x": "It's not a competition, because it can't be. We're too messy to lose."
+    "x": "They’re super-impressive computers that crunch a billion thoughts in a second. We’re just human."
    },
    {
     "t": "p",
-    "x": "Messy is the bit that makes us human. Messy is the bit that makes us great. We love when we know we shouldn't. We laugh at the worst of jokes. And we stuff things up in a million ways that robots never can."
+    "x": "Fancy new oracle. Same old us."
    },
    {
     "t": "p",
-    "x": "When the wine went bad we got champagne. When the lab went mouldy we got penicillin. When an actor fluffs their lines we get the best lines in the movies. So much of what we love was not the plan."
+    "x": "It’s not a competition, because it can’t be. We’re too messy to lose."
    },
    {
     "t": "p",
-    "x": "Everyone knows a Croesus who only asks questions to hear their own answer. Everyone has a story of a stuff up that turned good. Everyone who's a human is at least a little bit broken. And that's one thing the robots can never be."
+    "x": "Messy is the bit that makes us human. Messy is the bit that makes us great. We love when we know we shouldn’t. We laugh at the worst of jokes. And we stuff things up in a million ways that robots never can."
    },
    {
     "t": "p",
-    "x": "They're imperfect because they're perfect. We're perfect because we're not."
+    "x": "When some wine went bad we invented champagne. When the lab went mouldy we got drugs. When an actor fluffs their lines we get the best lines in the movies. So much of what we love was never in the plan."
+   },
+   {
+    "t": "p",
+    "x": "Everyone knows a Croesus who only asks questions to hear their own answer. Everyone has a story of a stuff up that turned out good. Everyone who’s a human is at least a little bit broken. And that’s one thing the robots can never be."
+   },
+   {
+    "t": "p",
+    "x": "They’re imperfect because they’re perfect. We’re perfect because we’re not."
    },
    {
     "t": "tldr",
     "x": "New technology comes and goes and we all have the same old freak-out. And regardless of how clever the tech becomes, humans stay imperfectly human."
    }
   ],
-  "nudge": "And that's why robots will never win."
+  "nudge": "And that’s why robots are just robots."
  },
  "the-robot-under-your-bed": {
   "title": "The robot under your bed",
@@ -2582,11 +2630,11 @@
   "blocks": [
    {
     "t": "p",
-    "x": "So here we all are, living with the robots. We love them for doing our homework, hate them for stealing our jobs and fear them because we're not sure what comes next."
+    "x": "So here we all are, living with the robots. We love them for doing our homework, hate them for stealing our jobs and fear them because we’re not sure what comes next."
    },
    {
     "t": "p",
-    "x": "It's a lot."
+    "x": "It’s a lot."
    },
    {
     "t": "p",
@@ -2594,35 +2642,39 @@
    },
    {
     "t": "p",
-    "x": "Because once you get past their core magic trick, you can start to see your robot for exactly what it is."
+    "x": "Because once you get past their magic trick, you can start to see your robot for exactly what it is."
    },
    {
     "t": "p",
-    "x": "Not an oracle. That really doesn't work. Ask Croesus."
+    "x": "Not an oracle. That doesn’t work. Ask Croesus."
    },
    {
     "t": "p",
-    "x": "Not a mastermind. Just a math machine. An over-confident parrot."
+    "x": "Not a mastermind. Just an over-confident parrot."
    },
    {
     "t": "p",
-    "x": "And it certainly wasn't built to be a monster."
+    "x": "And it certainly wasn’t built to be a monster."
    },
    {
     "t": "p",
-    "x": "It's just a brilliant machine that's here to help."
+    "x": "Just a brilliant machine that’s here to help."
    },
    {
     "t": "p",
-    "x": "Need a hand to crunch some numbers? Ask the robot. Need to bounce some ideas? Ask the robot. Need a hundred different ways to sell a pair of socks? Your robot will eat that up."
+    "x": "Need a hand to crunch some numbers? Ask the robot. Need to bounce ideas? Ask the robot. Need a hundred different ways to sell a pair of socks?"
    },
    {
     "t": "p",
-    "x": "Because the thing the robots are best at is more. More answers, more options, a mountain of more. They lean on us to decide what's good."
+    "x": "Your robot will eat that up."
    },
    {
     "t": "p",
-    "x": "And the more robots we have in the world, the more we'll value each other."
+    "x": "Because the thing the robots are best at is more. More answers, more options, a mountain of more. They lean on us to decide what’s good."
+   },
+   {
+    "t": "p",
+    "x": "So the more robots we have in the world, the more we’ll need to value each other."
    },
    {
     "t": "p",
@@ -2630,13 +2682,37 @@
    },
    {
     "t": "p",
-    "x": "So let the robots do what robots do best. And bring the bits that only you can."
+    "x": "Let the robots do what robots do best. And bring the bits that only you can."
    },
    {
     "t": "p",
     "x": "Go drag that robot from under your bed. And play."
+   },
+   {
+    "t": "h",
+    "x": "Don’t trust your robot"
+   },
+   {
+    "t": "p",
+    "x": "It might have all the answers, but it’s only ever guessing. And it smothers things in swagger so it’s hard to spot the join. Love it. But doubt it."
+   },
+   {
+    "t": "h",
+    "x": "Don’t ignore your robot"
+   },
+   {
+    "t": "p",
+    "x": "Push buttons, ask questions, see what it can do. You can’t break it. It’s a robot. Tiny sparks of signal dancing in digital dust."
+   },
+   {
+    "t": "h",
+    "x": "Don’t be a robot"
+   },
+   {
+    "t": "p",
+    "x": "Anyone can be a robot: questions in, answers out. Only you can bring the human to make those answers yours."
    }
   ],
-  "nudge": "And that's the beginning and maybe your start."
+  "nudge": "And that’s a beginning to end on."
  }
 }

@@ -99,7 +99,10 @@ h1{
    thousandth of an em to spare, and stays symmetric around ROBOT. */
 h1 .box{
   position:relative; display:inline-block; z-index:0;
-  padding:0 .09em; margin-left:.04em; background:none;
+  /* Optically centred, measured 12 Oct: Bebas's T carries extra right-hand
+     space, so equal padding left ROBOT sitting left in its box (36 vs 62
+     device px). Same box width; the word shifts right by .043em. */
+  padding:0 .047em 0 .133em; margin-left:.04em; background:none;
 }
 h1 .box::before{
   content:""; position:absolute; z-index:-1;
@@ -521,41 +524,98 @@ h1 .box::before{
   font-size:13px; line-height:1.7; opacity:.62;
 }
 
-/* ----------------------------------------------------------------- buy */
-/* The one solid thing on the page — solid means said, and this is the site
-   saying its only ask out loud. Bebas on the button, the disc trailing:
-   same go-grammar as the ask key, the card and Dig in here. */
-.buy-cta{
-  white-space:nowrap;
-  display:inline-flex; align-items:center; gap:12px;
-  margin-top:26px; padding:.55em 1.1em .6em 1.3em;
-  background:var(--black); color:#fff; border-radius:999px;
-  font-family:var(--head); text-transform:uppercase; letter-spacing:.04em;
-  font-size:clamp(22px,5.5vw,28px); line-height:1; text-decoration:none;
-  transition:transform .12s ease;
+/* --------------------------------------------------------- get the book */
+/* MG ruled 12 Oct: a card over the page, not a page. The hand-drawn book is
+   the fun; the form stays quiet — soft grey fields, no outlines, placeholders
+   in the boxes — so the only heavy thing is Send. Thanks replaces the form in
+   the same card, held at the form's height so nothing jumps. */
+.gm-back{
+  position:fixed; inset:0; z-index:80;           /* above the reader (60) */
+  background:rgba(35,31,32,.5);
+  display:grid; place-items:center; padding:24px;
+  overflow-y:auto; overscroll-behavior:contain;
 }
-.buy-cta::after{
+.gm-back[hidden]{display:none;}
+.gm{
+  position:relative; width:min(820px,100%);
+  background:var(--white); color:var(--black);
+  border-radius:24px; padding:48px 52px 48px 28px;
+  display:grid; grid-template-columns:300px 1fr; gap:0 40px; align-items:center;
+  box-shadow:0 30px 80px rgba(0,0,0,.28);
+}
+.gm-x{
+  position:absolute; top:18px; right:18px; width:40px; height:40px;
+  border-radius:999px; background:var(--black); border:0; cursor:pointer;
+  display:grid; place-items:center;
+}
+.gm-x::before{content:"×"; color:#fff; font-family:var(--head); font-size:28px; line-height:1; margin-top:-2px;}
+.gm-art{width:100%; height:auto; transform:rotate(-5deg); margin-left:-6px;}
+.gm h2{
+  font-family:var(--head); font-weight:400; text-transform:uppercase;
+  color:var(--red); font-size:58px; line-height:.88; letter-spacing:.01em;
+}
+.gm-lead{font-size:20px; line-height:1.4; margin-top:10px;}
+.gm form{margin-top:28px; display:grid; gap:12px;}
+.gm input,.gm textarea{
+  font:17px/1.4 var(--body); color:var(--black);
+  padding:15px 18px 13px; width:100%;
+  border:2px solid transparent; border-radius:14px; background:#F3F0F0;
+  outline:none; -webkit-appearance:none; appearance:none;
+}
+.gm textarea{height:84px; resize:none;}
+.gm input:focus,.gm textarea:focus{border-color:var(--black);}
+.gm input::placeholder,.gm textarea::placeholder{
+  font-family:var(--head); text-transform:uppercase; letter-spacing:.1em;
+  font-size:17px; color:rgba(35,31,32,.45);
+}
+.gm .bad{border-color:var(--red); background:#FDECEC;}   /* empty or not an email: red, no words */
+.gm-hp{position:absolute !important; left:-9999px; width:1px; height:1px; opacity:0;}
+.gm-send{
+  justify-self:start; margin-top:14px; cursor:pointer; border:0;
+  display:inline-flex; align-items:center; gap:12px;
+  padding:.55em 1.1em .6em 1.3em; background:var(--black); color:#fff; border-radius:999px;
+  font-family:var(--head); text-transform:uppercase; letter-spacing:.04em; font-size:28px; line-height:1;
+  transition:transform .12s ease, opacity .12s ease;
+}
+.gm-send::after{
   content:""; flex:none; width:1em; height:1em; border-radius:50%;
   background:var(--red) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M8 14h11M15 9.5l4.5 4.5-4.5 4.5" fill="none" stroke="%23fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/100% no-repeat;
   transition:transform .16s ease;
 }
-.buy-cta:hover{transform:scale(1.02);}
-.buy-cta:hover::after{transform:translateX(3px);}
-.buy-cta:active{transform:scale(.98);}
-.buy-block{width:fit-content; margin-top:26px;}
-.buy-block .buy-cta{margin-top:0;}
-/* Centred to the button, not the column — it's the button's caption. */
-.reader p.buy-note{font-size:13px; opacity:.62; margin:12px 0 0; text-align:center;}
-
-/* Copy left, the object itself right — the cover is the argument on this page.
-   On a phone the cover leads and the copy follows, product-page order. */
-.buy-grid{display:flex; gap:36px; align-items:flex-start;}
-.buy-copy{flex:1 1 auto; min-width:0;}
-.buy-cover{flex:none; width:220px; height:auto; border-radius:3px;}
+.gm-send:hover{transform:scale(1.02);}
+.gm-send:hover::after{transform:translateX(3px);}
+.gm-send:disabled{opacity:.5; cursor:default; transform:none;}
+.gm-err{font-size:15px; line-height:1.45; margin-top:4px;}
+.gm-err a{color:var(--red);}
+.gm-done[hidden],.gm-ask[hidden]{display:none;}
+/* Phone: its own numbers (v003). The book breaks out over the top edge of the
+   card, with air under it before the heading. */
 @media (max-width:599px){
-  .buy-grid{flex-direction:column-reverse; align-items:center;}
-  .buy-cover{width:min(58%,230px);}
-  .buy-copy{align-self:stretch;}
+  .gm-back{padding:110px 16px 16px; place-items:start center;}
+  .gm{grid-template-columns:1fr; padding:0 22px 26px; border-radius:22px;}
+  .gm-art{width:190px; margin:-96px auto 0; display:block;}
+  .gm h2{font-size:44px; margin-top:26px;}
+  .gm-lead{font-size:17px;}
+  .gm form{margin-top:18px; gap:12px;}
+  .gm textarea{height:72px;}
+  .gm-send{font-size:24px;}
+  .gm-x{top:12px; right:12px; width:36px; height:36px;}
+}
+
+/* The robot's "Get the book" — same solid white pill as the lockup, small,
+   hung where a chapter card would hang. */
+.rec-buy{
+  display:block; width:fit-content; margin:14px var(--tuck-r) 2px auto;
+  font-family:var(--head); text-transform:uppercase; letter-spacing:.06em;
+  font-size:20px; background:var(--white); color:var(--red);
+  border-radius:999px; border:0; cursor:pointer; padding:.6em 1.5em .46em;
+}
+
+/* About: the back-cover pull quotes */
+.reader .pulls{margin:30px 0 34px;}
+.reader .pulls p{
+  font-family:var(--head); text-transform:uppercase; color:var(--red);
+  font-size:30px; line-height:1; letter-spacing:.02em; margin-bottom:.55em;
 }
 
 /* --------------------------------------------------------------- facts */
@@ -691,13 +751,13 @@ h1 .box::before{
         <a class="b" href="#">About</a>
         <a class="f" href="#">Fact check</a>
       </div>
-      <!-- TODO: Buy destination undecided. -->
-      <a class="buy" href="#">Why not buy the book?</a>
+      <a class="buy" href="#">Get the book</a>
     </div>
   </div>
 
   <div class="talk">
     <div class="thread" id="thread" aria-live="polite">
+      <!-- STAND-IN opening line — Michael to write -->
       <div class="msg r"><div class="bub">Ask me about the book<svg class="tl" width="20" height="16"
         viewBox="0 -5 20 21" aria-hidden="true"><path d="M2,-5 L20,-5 L20,2 L4,15 L2,2 Z"
         fill="#231F20"/></svg></div></div>
@@ -705,9 +765,9 @@ h1 .box::before{
 
     <form class="compose" id="compose" autocomplete="off">
       <input id="say" type="text" aria-label="Ask the robot something">
-      <!-- STAND-IN suggestion. Reader's voice — this bubble is theirs, not the
-           robot's, and the black bubble above already does the instructing.
-           Filled from PILLS below; tap the key or press return to ask it. -->
+      <!-- Suggested question (MG, 12 Oct). Reader's voice — this bubble is
+           theirs, not the robot's. Filled from PILLS below; tap the key or
+           press return to ask it. -->
       <span class="pill" id="pill" aria-hidden="true"></span>
       <button class="go" id="go" type="button" aria-label="Ask this question">
         <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
@@ -727,22 +787,26 @@ h1 .box::before{
 </div>
 
 <!-- ============================================================== about -->
-<!-- MG copy, 20 Aug. Not a stand-in — do not rewrite. -->
+<!-- MG copy, 12 Oct: the printed back cover, verbatim, plus the site's own
+     "ask the robot" line and the credits. Not a stand-in — do not rewrite. -->
 <template id="aboutBody">
   <div class="lead">
-    <p>Writing a book about robots is stupid. It&rsquo;s the fastest-moving topic
-       on the planet. No one knows which way is up.</p>
-    <p>But stupid is also the point. When things change so fast you don&rsquo;t
-       know what they&rsquo;re called, it&rsquo;s good to name the things we can
-       rely on.</p>
-    <p>Because the more we know, the less we worry.</p>
+    <p>The robots are coming. Or so they&rsquo;ve been saying for a hundred years.
+       Now they&rsquo;re suddenly here, taking over the news and popping up at
+       random on your phone.</p>
+    <p>But will they sneak in and snaffle all our jobs? Will they rewrite our books
+       into beige? Will they take over the toasters and throw them in the bath?
+       Almost certainly not.</p>
+    <p>This is a book for people who know AI matters, but don&rsquo;t want to read
+       a whole book about it. You know who you are.</p>
   </div>
 
-  <h3>What&rsquo;s in the book?</h3>
-  <p>A quick adventure into robot world. Where they come from, how they think
-     and how to make them useful.</p>
-  <p>Plus, a few deeper dives into how the world is changing. What we might want
-     to worry about and what&rsquo;s just history on repeat.</p>
+  <div class="pulls">
+    <p>&ldquo;Tech changes how. Not who.&rdquo;</p>
+    <p>&ldquo;Robots aren&rsquo;t better humans, they&rsquo;re better machines.&rdquo;</p>
+    <p>&ldquo;Humans think. Robots grunt.&rdquo;</p>
+  </div>
+
   <p>Get a taste before you jump in. Just <a class="ask" href="/">ask the
      robot</a> about anything you&rsquo;re into and it&rsquo;ll share a chapter
      it thinks you&rsquo;ll like. Have fun.</p>
@@ -758,29 +822,36 @@ h1 .box::before{
   </p>
 </template>
 
-<!-- ================================================================ buy -->
-<!-- MG copy, 22 Aug. Not a stand-in — do not rewrite.
-     One edit made and flagged: "under you pillow" -> "under your pillow".
-     Revert if the typo was the joke. -->
-<template id="buyBody">
-  <div class="buy-grid">
-    <div class="buy-copy">
-      <div class="lead">
-        <p>Yay. You choose how you like to read. It&rsquo;s cheaper on Kindle and
-           better when you tuck a real one under your pillow.</p>
+<!-- ======================================================== get the book -->
+<!-- MG copy, 12 Oct. Not a stand-in — do not rewrite. One card, two states:
+     the form, then the thanks in the same place. Sits above the reader so a
+     chapter's "Get the book" opens it without losing the chapter underneath. -->
+<div class="gm-back" id="gm" hidden>
+  <div class="gm" role="dialog" aria-modal="true" aria-labelledby="gm-h">
+    <button class="gm-x" id="gm-x" type="button" aria-label="Close"></button>
+    <img class="gm-art" src="/assets/get-the-book.png" width="600" height="632" alt="">
+    <div class="gm-copy">
+      <div class="gm-ask">
+        <h2 id="gm-h">Want a copy?</h2>
+        <p class="gm-lead">Just leave your details and we&rsquo;ll be in touch.</p>
+        <form id="gm-form" novalidate>
+          <input name="name" type="text" placeholder="Your name" aria-label="Your name" autocomplete="name" maxlength="120">
+          <input name="email" type="email" placeholder="Your email" aria-label="Your email" autocomplete="email" maxlength="200">
+          <textarea name="message" placeholder="Anything else? (optional)" aria-label="Anything else? (optional)" maxlength="2000"></textarea>
+          <!-- Honeypot. People never see it; bots fill it in. -->
+          <input class="gm-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="gm-send" type="submit">Send</button>
+          <p class="gm-err" id="gm-err" hidden>Sorry that didn&rsquo;t work. Just email
+            <a href="mailto:michael@hunch.co.nz">michael@hunch.co.nz</a> direct.</p>
+        </form>
       </div>
-      <!-- TODO: real Amazon listing URL. href set from AMAZON_URL in the JS. -->
-      <div class="buy-block">
-        <a class="buy-cta" href="#" target="_blank" rel="noopener">Get yours now</a>
-        <p class="buy-note">(Pre-orders on Amazon right now)</p>
+      <div class="gm-done" hidden>
+        <h2>Thanks</h2>
+        <p class="gm-lead">We&rsquo;ll be in touch in the next few days.</p>
       </div>
     </div>
-    <!-- Cover from the V2 interior PDF, 22 Aug — swap the asset if the final
-         cover moves. width/height reserve the box so nothing shifts on load. -->
-    <img class="buy-cover" src="/assets/cover.png" width="640" height="1023"
-         alt="The cover of There&rsquo;s a Robot Under Your Bed">
   </div>
-</template>
+</div>
 
 <!-- ============================================================= reader -->
 <div class="reader" id="reader" role="dialog" aria-modal="true" aria-labelledby="rtitle">
@@ -796,68 +867,77 @@ h1 .box::before{
 
 <script>
 /* ------------------------------------------------------------------ *
- * DUMMY CHAT — stand-in only.
+ * THE ROBOT'S LINES
  *
- * Every reply below is Claude's, written to the pattern so the page can be
- * felt. None of it is canon. In the real build these become Michael's lines
- * in a table on the server, and Claude's only job is choosing which line
- * comes next. The model never generates prose.
- *
- * Chapter text in the reader IS real — pulled from the final manuscript.
+ * MG copy, 12 Oct, except where marked STAND-IN. Each reply lists the words
+ * that trigger it; the first reply with a match wins, so order matters.
+ * Words match whole words only ("art" no longer fires on "artificial"). A
+ * word ending in * matches anything that starts with it ("employ*").
+ * Each reply offers a chapter (read), a fresh chapter (pick), the Get the
+ * book button (buy), or nothing.
+ * Full list for editing: claude/robot-replies.md in the project.
  * ------------------------------------------------------------------ */
 
 const ROUTES = [
-  { on:/\bcow|daisy|shark\b/i,
-    say:"Daisy. She's twenty times more likely to finish you off than a shark, and nobody made a film about her.",
+  { on:['cow','daisy','shark'],
+    say:"Daisy seems like the loveliest cow. But she’s twenty times more likely to kill you than a shark.",
     read:"ai-mageddon" },
-  { on:/em.?dash|punctuation/i,
-    say:"Ah. My favourite crime. Every proper writer used them until we did, and now they're evidence.",
+  { on:['em-dash','em-dashes','em dash','em dashes','emdash','punctuation'],
+    say:"Ahh the poor little punctuation princess. Discover what happened to her.",
     read:"deal-with-the-em-dash" },
-  { on:/\b(job|jobs|work|career|redundan|employ|unemploy)/i,
-    say:"On the face of it, we're pretty pinchy. We'll knock out a spreadsheet before you've found the kettle. But the horses did alright, and it took forty years.",
-    read:"last-horse-standing" },
-  { on:/\b(kill|die|dead|danger|dangerous|doom|apocalyp|scared|afraid|terrif|destroy|end of the world)/i,
-    say:"Everyone worries about the wrong thing. The big scary stuff makes better films, but it's the creepers that get you.",
+  { on:['job','jobs','work','career','careers','redundan*','employ*','unemploy*'],
+    say:"Robots vs jobs. It’s the biggest topic in town. Let me vibe code a whole bunch of slop to explain it.",
+    read:"deal-with-workslop" },
+  { on:['kill','die','dead','danger','dangerous','doom','apocalyp*','scared','afraid','terrif*','destroy','end of the world'],
+    say:"Everyone freaks out at big stuff. But it’s the creepers you don’t notice that are worth keeping an eye on.",
     read:"ai-mageddon" },
-  { on:/\b(art|artist|steal|stealing|stole|theft|copyright|music|paint)/i,
-    say:"We remix, yes. But the money isn't in the making, it's in the pipes. Follow who's clipping the ticket.",
+  { on:['art','artist','artists','steal','stealing','stole','theft','copyright','music','paint','painting'],
+    say:"I’m a shocker for remixing stuff I find online. But am I the one stealing your stuff? Or is someone else raiding your wallet?",
     read:"great-art-heist" },
-  { on:/\b(alive|sentient|conscious|real|feel|think|thinking|smart|clever|how do you work|chatgpt|claude|gemini)/i,
-    say:"I don't actually know anything at all. I'm a very clever guesser. That's the whole trick.",
+  { on:['alive','sentient','conscious','real','feel','think','thinking','smart','clever','how do you work','chatgpt','claude','gemini'],
+    say:"Fun fact, us robots don’t really think at all. We’re just very clever guessers who remember most of the internet.",
     read:"how-robots-think" },
-  { on:/\b(train|memory|remember|better answers|prompt|prompting|unicorn|butler)/i,
-    say:"Less unicorn, more butler. Tell me how you take your tea and I'll stop acting like a stranger at the bus stop.",
+  { on:['train','training','memory','remember','better answers','prompt','prompts','prompting','unicorn','butler'],
+    say:"Think of me less like a unicorn and more like a butler. Just tell me how you like to take your tea.",
     read:"train-your-unicorn" },
-  { on:/\b(nerd|openai|altman|musk|anthropic|who built|google|silicon)/i,
-    say:"It started with steak and a story about saving the world. It ended with everyone's swipe cards in different buildings.",
+  { on:['nerd','nerds','openai','altman','musk','anthropic','who built','google','silicon'],
+    say:"...it all started with a steak and a chat about saving the world... or something like that.",
     read:"small-bunch-of-nerds" },
-  { on:/\b(did ai write|did a robot write|who wrote|ai written|write this)/i,
-    say:"Michael wrote every word. I just point at the chapters. I'd have made it longer and worse." },
-  { on:/\b(price|cost|how much|buy|where can i)/i,
-    say:"I'd rather you read it than priced it. There's a button on the left for the other thing." },
-  { on:/\b(mum|mother|dad|father|nana|grandma|kids?|children)/i,
-    say:"Assuming your Mum can read, she'll be fine. It's a one-hour job and there are no equations." },
-  { on:/\b(good|any good|worth it|recommend|should i)/i,
-    say:"I like it because it's all about me. But it's short, and it's funny, and it doesn't sell you anything.",
+  { on:['did ai write','did a robot write','who wrote','ai written','write this','wrote this'],
+    say:"Michael wrote every word of the book. Most of them twice. No robots were harmed in the making of this one." },
+  { on:['price','cost','how much','buy','where can i buy','where can i get','get a copy'],
+    say:"Right now, this book is more about sharing than selling. Just get in touch and we’ll see what we can do.",
+    buy:true },
+  { on:['mum','mother','dad','father','nana','grandma','kid','kids','children',"who's it for",'who is it for'],
+    say:"Who’s it for? Well there’s something for everyone. Assuming your Mum can read, she’ll probably like it." },
+  { on:['good','any good','worth it','recommend','should i'],
+    say:"Well, I like the book because it’s all about me. Although really it’s all about you.",
     read:"robot-under-your-bed" },
-  { on:/\b(bad|shit|rubbish|terrible|boring)/i,
-    say:"Honestly, not shit at all. Try one chapter and tell me I'm wrong.",
+  { on:['bad','shit','rubbish','terrible','boring'],
+    say:"No-one writes a book and aims at boring. Pick a chapter and give it a go.",
     read:"brief-history-of-robots" },
-  { on:/\b(different|another|other|else|next|others?)\b|what else|something else|anything else/i,
-    say:"Fair. Plenty more where that came from.",
+  { on:['different','another','other','others','else','next','what else','something else','anything else'],
+    say:"Different parts of the book are about different things. You can drop in anywhere. Like this one.",
     pick:true },
-  { on:/\b(hello|hi|hey|yo|sup)\b/i,
-    say:"Hello. I'd quite like to get out from under here, so ask me something." },
+  /* STAND-IN — Michael to write */
+  { on:['hello','hi','hey','yo','sup','kia ora'],
+    say:"Hello. I’d quite like to get out from under here, so ask me something." },
 ];
 
 const FALLBACK = [
-  { say:"Not sure I follow. But I'm a guesser by trade, so here's the chapter I'd guess at.",
-    read:"brief-history-of-robots" },
-  { say:"Bit off-book, that. Try me on robots, jobs, art, or whether we're about to end the world.",
+  { say:"Bit off-book that. Try me on robots, jobs or the end of the world.",
     read:"second-order-of-things" },
-  { say:"No idea. Genuinely. Here's something I do know about.",
+  { say:"Gotta be honest, I’m not sure what you mean. Here’s something I do know a fair bit about.",
     read:"brainpower-and-firepower" },
 ];
+
+/* Whole-word matching. Curly apostrophes are straightened first so
+   "who’s it for" typed on a phone still finds "who's it for". */
+const esc = w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+for (const r of ROUTES) {
+  r.rx = new RegExp('(^|[^a-z0-9])(' + r.on.map(w =>
+    w.endsWith('*') ? esc(w.slice(0, -1)) + '[a-z]*' : esc(w)).join('|') + ')(?![a-z0-9])', 'i');
+}
 
 /* chapter bodies are real text, fetched once */
 const CHAPTERS = fetch('/chapters.json').then(r => r.json()).catch(() => ({}));
@@ -866,27 +946,19 @@ const thread  = document.getElementById('thread');
 const compose = document.getElementById('compose');
 const say     = document.getElementById('say');
 const reader  = document.getElementById('reader');
-let fallbackAt = 0, chaptersRead = 0;
+let fallbackAt = 0;
 
 /* ---- the suggestions ----------------------------------------------------
-   ALL STAND-IN. Michael writes these.
-
-   The brief rules three at a time, rotating, nothing repeating once read.
-   Three would mean three more outlined shapes on a page whose canon says the
-   empty input is the only hollow thing — so they rotate through one slot
-   instead. Same rule, one shape. Worth a ruling either way.
-
-   The strongest is pinned first, per the brief; the rest are shuffled, so two
-   people don't get the same run. Every line matches a ROUTES pattern on
-   purpose — a suggestion the site offers must never land in the fallback. */
+   MG, 12 Oct. Rotating through one slot; the first is pinned, the rest are
+   shuffled, and each one disappears once asked. Every line must match a
+   ROUTES entry — a suggestion the site offers must never land in the fallback. */
 const PILLS = [
   "Why is there a cow in this book?",
   "Are you going to take my job?",
-  "Did you write this book?",
+  "Did a robot write this book?",
   "Are robots stealing art?",
-  "What's the deal with em-dashes?",
+  "What’s the deal with em-dashes?",
   "Are we all going to die?",
-  "Are you actually alive?",
 ];
 const pillQueue = [PILLS[0], ...PILLS.slice(1).sort(() => Math.random() - .5)];
 const pillEl = document.getElementById('pill');
@@ -937,7 +1009,7 @@ if (matchMedia('(min-width:900px) and (hover:hover)').matches) {
 
 /* And if someone just starts typing without clicking, catch it. */
 addEventListener('keydown', e => {
-  if (reader.hasAttribute('open')) return;
+  if (reader.hasAttribute('open') || !gm.hidden) return;
   if (e.metaKey || e.ctrlKey || e.altKey) return;
   if (document.activeElement === say) return;
   if (e.key.length === 1) say.focus();
@@ -1026,7 +1098,7 @@ function scrollChat(){
   }
 }
 
-async function bubble(who, text, read){
+async function bubble(who, text, read, buy){
   const wrap = document.createElement('div');
   wrap.className = 'msg ' + who;
   const b = document.createElement('div');
@@ -1041,10 +1113,18 @@ async function bubble(who, text, read){
     const card = await recCard(read);
     if (card) { wrap.appendChild(card); scrollChat(); }
   }
+  if (buy) {
+    const btn = document.createElement('button');
+    btn.className = 'rec-buy'; btn.type = 'button';
+    btn.textContent = 'Get the book';
+    btn.addEventListener('click', openGetBook);
+    wrap.appendChild(btn); scrollChat();
+  }
 }
 
 function route(q){
-  for (const r of ROUTES) if (r.on.test(q)) return r;
+  q = q.replace(/[\u2018\u2019]/g, "'");
+  for (const r of ROUTES) if (r.rx.test(q)) return r;
   return FALLBACK[fallbackAt++ % FALLBACK.length];
 }
 
@@ -1060,23 +1140,16 @@ compose.addEventListener('submit', e => {
   syncPill();
   const r = route(q);
   const read = r.pick ? freshChapter() : r.read;
-  setTimeout(() => bubble('r', r.say, read), 460);
+  setTimeout(() => bubble('r', r.say, read, r.buy), 460);
 });
 
 /* ------------------------------------------------------------------ reader */
 
-/* The chapter nudge — MG, ruled 22 Aug. Per-chapter topic line from
-   chapters.json (`nudge`), then the shared close. Replaces the count-based
-   escalation set. Never blocks — no counters, no wall.
-   NUDGE_CLOSE is MG. The sidebar set is still a STAND-IN — kill or keep. */
-const NUDGE_CLOSE = "There's plenty more book than that.";
-const NUDGES = {
-  sidebar: [
-    "That&rsquo;s one of the little ones. The actual chapters are longer and better.",
-    "Another aside. There are fourteen proper chapters underneath them.",
-    "You&rsquo;re collecting the footnotes. The book&rsquo;s the main event.",
-  ],
-};
+/* The chapter nudge — MG, ruled 12 Oct. Chapters: their own line from
+   chapters.json (`nudge`), then the shared close. Sidebars: one line for all,
+   no rotation. Then the Get the book button either way. */
+const NUDGE_CLOSE = "There’s a whole lot more in the book.";
+const NUDGE_SIDEBAR = "Got a taste? There’s a whole lot more in the book.";
 
 async function openChapter(slug){
   reader.classList.remove('page');
@@ -1102,14 +1175,13 @@ async function openChapter(slug){
     }
   }
 
-  chaptersRead++;
-  const line = ch.kind === 'sidebar'
-    ? NUDGES.sidebar[Math.min(chaptersRead, NUDGES.sidebar.length) - 1]
-    : `${ch.nudge} ${NUDGE_CLOSE}`;
+  const line = ch.kind === 'sidebar' ? NUDGE_SIDEBAR : `${ch.nudge} ${NUDGE_CLOSE}`;
   const n = document.getElementById('rnudge');
   n.style.display = '';                        /* About hides it; put it back */
-  n.innerHTML = `<p>${line}</p>
-                 <a href="#">Read the book</a>`;
+  n.innerHTML = '';
+  const np = document.createElement('p'); np.textContent = line;
+  const na = document.createElement('a'); na.href = '#'; na.textContent = 'Get the book';
+  n.append(np, na);
 
   reader.setAttribute('open','');
   reader.scrollTop = 0;
@@ -1143,28 +1215,74 @@ document.querySelector('a.b').addEventListener('click', e => {
            document.getElementById('aboutBody').content);
 });
 
-/* --------------------------------------------------------------------- buy */
+/* ------------------------------------------------------------ get the book */
+/* MG ruled 12 Oct: no selling for now — the lockup, every chapter nudge and
+   the robot's buying answer all open the same card. It asks for a name and an
+   email, sends them to Michael via /api/enquiry, and thanks them in place. */
+const gm      = document.getElementById('gm');
+const gmForm  = document.getElementById('gm-form');
+const gmErr   = document.getElementById('gm-err');
+const gmAsk   = gm.querySelector('.gm-ask');
+const gmDone  = gm.querySelector('.gm-done');
+const gmCard  = gm.querySelector('.gm');
+const gmSend  = gm.querySelector('.gm-send');
+let gmReturn = null;
 
-/* TODO: the real Amazon listing URL, once the pre-order page exists. Until it
-   does the CTA is inert — one constant to fill, nothing else to touch. */
-const AMAZON_URL = '#';
-
-function openBuy(){
-  openPage('Ready to buy the book?', '',
-           document.getElementById('buyBody').content);
-  document.getElementById('rwhy').style.display = 'none';   /* no sub on this page */
-  const cta = document.querySelector('#rbody .buy-cta');
-  cta.href = AMAZON_URL;
-  if (AMAZON_URL === '#') cta.removeAttribute('target');    /* don't open a blank tab to nowhere */
+function openGetBook(e){
+  if (e) e.preventDefault();
+  gmReturn = document.activeElement;
+  gm.hidden = false;
+  gmCard.style.minHeight = '';
+  if (matchMedia('(hover:hover)').matches) gmForm.elements.name.focus();
+  else gmCard.focus?.();
 }
+function closeGetBook(){
+  if (gm.hidden) return false;
+  gm.hidden = true;
+  if (!gmDone.hidden) {            /* sent — next time it opens fresh */
+    gmDone.hidden = true; gmAsk.hidden = false; gmForm.reset();
+  }
+  gmErr.hidden = true;
+  if (gmReturn && gmReturn.focus) gmReturn.focus();
+  return true;
+}
+document.getElementById('gm-x').addEventListener('click', closeGetBook);
+gm.addEventListener('click', e => { if (e.target === gm) closeGetBook(); });   /* click the dim, it closes */
 
-document.querySelector('a.buy').addEventListener('click', e => { e.preventDefault(); openBuy(); });
+const EMAIL_OK = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+for (const el of gmForm.querySelectorAll('input,textarea'))
+  el.addEventListener('input', () => el.classList.remove('bad'));
 
-/* The nudge's "Why not buy the book?" is injected per-chapter — delegate so
-   every future nudge is wired without remembering to wire it. */
+gmForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const f = gmForm.elements;
+  const name = f.name.value.trim(), email = f.email.value.trim();
+  f.name.classList.toggle('bad', !name);
+  f.email.classList.toggle('bad', !EMAIL_OK.test(email));
+  if (!name || !EMAIL_OK.test(email)) { (name ? f.email : f.name).focus(); return; }
+
+  gmErr.hidden = true; gmSend.disabled = true;
+  try {
+    const res = await fetch('/api/enquiry', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ name, email, message: f.message.value.trim(), website: f.website.value })
+    });
+    if (!res.ok) throw new Error(res.status);
+    if (innerWidth >= 600) gmCard.style.minHeight = gmCard.offsetHeight + 'px';   /* thanks holds the form's height; phones shrink */
+    gmAsk.hidden = true; gmDone.hidden = false;
+  } catch (err) {
+    gmErr.hidden = false;          /* their words stay in the boxes */
+  } finally {
+    gmSend.disabled = false;
+  }
+});
+
+document.querySelector('a.buy').addEventListener('click', openGetBook);
+
+/* The nudge's "Get the book" is injected per chapter — delegate so every
+   nudge is wired without remembering to wire it. */
 document.getElementById('rnudge').addEventListener('click', e => {
-  const a = e.target.closest('a');
-  if (a){ e.preventDefault(); openBuy(); }
+  if (e.target.closest('a')) openGetBook(e);
 });
 
 /* ------------------------------------------------------------------- facts */
@@ -1389,7 +1507,7 @@ function closeChapter(){
   if (matchMedia('(min-width:900px) and (hover:hover)').matches) say.focus();
 }
 document.getElementById('rclose').addEventListener('click', closeChapter);
-addEventListener('keydown', e => { if (e.key === 'Escape') closeChapter(); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && !closeGetBook()) closeChapter(); });
 </script>
 </body>
 </html>
