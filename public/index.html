@@ -99,10 +99,11 @@ h1{
    thousandth of an em to spare, and stays symmetric around ROBOT. */
 h1 .box{
   position:relative; display:inline-block; z-index:0;
-  /* Optically centred, measured 12 Oct: Bebas's T carries extra right-hand
-     space, so equal padding left ROBOT sitting left in its box (36 vs 62
-     device px). Same box width; the word shifts right by .043em. */
-  padding:0 .047em 0 .133em; margin-left:.04em; background:none;
+  /* Matched to the printed cover, measured 12 Oct (MG: "the space before
+     Robot"). On the cover the gap from A to the box is 0.108 of the box's
+     height, and ROBOT sits .108 in from the left, .22 from the right. The
+     site had a 0.28 gap. The negative margin eats most of the word space. */
+  padding:0 .064em 0 .055em; margin-left:-.115em; background:none;
 }
 h1 .box::before{
   content:""; position:absolute; z-index:-1;
@@ -110,27 +111,37 @@ h1 .box::before{
   background:var(--black);
 }
 .strap{white-space:nowrap;font-size:18px;margin-top:clamp(10px,2vh,20px);}
-/* ---- the lockup: two hollow pills above one solid hero ----
-   The pills total the hero's width, which is what makes it one object rather
-   than three adjacent ones. Proportional split, because forcing ABOUT to match
-   FACT CHECK leaves it padded out. Subordinates sit ABOVE so the hero keeps the
-   baseline it shares with the bed. */
+/* ---- the lockup: one solid button, snug to its words ----
+   Sits ABOVE nothing now; it keeps the baseline it shares with the bed. */
 .lockup{display:inline-block; align-self:flex-start;}
 
-.minor{display:flex; gap:10px; margin-bottom:11px;}
-.minor a{
-  font-family:var(--head); text-transform:uppercase; letter-spacing:.1em;
-  font-size:clamp(13px,3.2vw,16px);
-  color:var(--white); text-decoration:none; text-align:center;
-  border:2px solid var(--white); border-radius:999px;
-  /* Transparent again. The red fill was an occlusion patch for the lockup
-     sitting fixed over the bed mid-chat on mobile; the lockup lives under the
-     bed now (21 Aug) and nothing overlaps anything. */
-  background:none;
-  padding:.62em 0 .48em;
+/* ---- the menu (MG, 12 Oct) ----
+   A white ring, top right, scrolling with the page rather than floating over
+   the chat. Opens a small white card; About and Fact check open as before. */
+.stage{position:relative;}
+.hb{
+  position:absolute; z-index:20; top:clamp(18px,3vw,40px); right:var(--gut);
+  width:46px; height:46px; border-radius:999px; border:2px solid var(--white);
+  background:none; cursor:pointer; padding:0;
+  display:grid; place-content:center; gap:5px;
 }
-.minor a.f{flex:1.9 1 0;}   /* sized to the words, still totalling the hero */
-.minor a.b{flex:1 1 0;}
+.hb i{display:block; width:20px; height:2.5px; background:var(--white); border-radius:2px; transition:transform .16s ease, opacity .16s ease;}
+.hb[aria-expanded="true"] i:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+.hb[aria-expanded="true"] i:nth-child(2){opacity:0;}
+.hb[aria-expanded="true"] i:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+.hb:focus{outline:none;}
+.hb:focus-visible{outline:3px solid var(--black); outline-offset:3px;}
+.hbm{
+  position:absolute; z-index:20; top:calc(clamp(18px,3vw,40px) + 58px); right:var(--gut);
+  background:var(--white); border-radius:16px; padding:18px 26px;
+  display:grid; gap:14px; box-shadow:0 18px 40px rgba(0,0,0,.25);
+}
+.hbm[hidden]{display:none;}
+.hbm a{
+  font-family:var(--head); text-transform:uppercase; letter-spacing:.12em;
+  font-size:22px; color:var(--red); text-decoration:none;
+}
+.hbm a:hover{color:var(--black);}
 
 .buy{
   display:block; width:100%; text-align:center; white-space:nowrap;
@@ -342,7 +353,6 @@ h1 .box::before{
   .rec-again{font-size:clamp(13px,1.8cqh,17px);}
   .rec .bk{width:3.2cqh;height:4.2cqh;}
 
-  .minor a{font-size:clamp(12px,1.95cqh,19px);}
   .buy{font-size:clamp(17px,3.1cqh,31px);}
 
   .bed img{max-height:31cqh;}
@@ -536,6 +546,8 @@ h1 .box::before{
   overflow-y:auto; overscroll-behavior:contain;
 }
 .gm-back[hidden]{display:none;}
+.buy:focus{outline:none;}
+.buy:focus-visible{outline:3px solid var(--black); outline-offset:4px;}
 .gm{
   position:relative; width:min(820px,100%);
   background:var(--white); color:var(--black);
@@ -737,6 +749,15 @@ h1 .box::before{
 <body>
 
 <div class="stage">
+<!-- MG ruled 12 Oct: About and Fact check live in a hamburger, top right, so
+     Get the book is the only button on the page. -->
+<button class="hb" id="hb" type="button" aria-label="Menu" aria-expanded="false" aria-controls="hbm">
+  <i></i><i></i><i></i>
+</button>
+<nav class="hbm" id="hbm" hidden>
+  <a class="b" href="#">About</a>
+  <a class="f" href="#">Fact check</a>
+</nav>
 <div class="wrap">
 
   <div class="brand">
@@ -747,10 +768,6 @@ h1 .box::before{
       <p class="strap">A little book about humans. And AI.</p>
     </div>
     <div class="lockup">
-      <div class="minor">
-        <a class="b" href="#">About</a>
-        <a class="f" href="#">Fact check</a>
-      </div>
       <a class="buy" href="#">Get the book</a>
     </div>
   </div>
@@ -953,7 +970,7 @@ let fallbackAt = 0;
    shuffled, and each one disappears once asked. Every line must match a
    ROUTES entry — a suggestion the site offers must never land in the fallback. */
 const PILLS = [
-  "Why is there a cow in this book?",
+  "Why is there a cow in it?",
   "Are you going to take my job?",
   "Did a robot write this book?",
   "Are robots stealing art?",
@@ -1230,7 +1247,9 @@ let gmReturn = null;
 
 function openGetBook(e){
   if (e) e.preventDefault();
-  gmReturn = document.activeElement;
+  /* Only hand focus back to keyboard users (a keyboard "click" has detail 0) —
+     otherwise the browser draws its blue ring round the button on close. */
+  gmReturn = (!e || e.detail === 0) ? document.activeElement : null;
   gm.hidden = false;
   gmCard.style.minHeight = '';
   if (matchMedia('(hover:hover)').matches) gmForm.elements.name.focus();
@@ -1278,6 +1297,17 @@ gmForm.addEventListener('submit', async e => {
 });
 
 document.querySelector('a.buy').addEventListener('click', openGetBook);
+
+/* ------------------------------------------------------------------ menu */
+const hb = document.getElementById('hb'), hbm = document.getElementById('hbm');
+function menu(open){
+  hbm.hidden = !open;
+  hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  return true;
+}
+hb.addEventListener('click', e => { e.stopPropagation(); menu(hbm.hidden); });
+hbm.addEventListener('click', e => { if (e.target.closest('a')) menu(false); });   /* About / Fact check still open as before */
+addEventListener('click', e => { if (!hbm.hidden && !e.target.closest('#hbm')) menu(false); });
 
 /* The nudge's "Get the book" is injected per chapter — delegate so every
    nudge is wired without remembering to wire it. */
@@ -1507,7 +1537,12 @@ function closeChapter(){
   if (matchMedia('(min-width:900px) and (hover:hover)').matches) say.focus();
 }
 document.getElementById('rclose').addEventListener('click', closeChapter);
-addEventListener('keydown', e => { if (e.key === 'Escape' && !closeGetBook()) closeChapter(); });
+addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (closeGetBook()) return;
+  if (!hbm.hidden) { menu(false); return; }
+  closeChapter();
+});
 </script>
 </body>
 </html>
